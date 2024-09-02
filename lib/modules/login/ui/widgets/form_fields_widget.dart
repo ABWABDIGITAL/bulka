@@ -2,7 +2,9 @@ import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/core/utils/widgets/form_fields/default_email_form_field_widget.dart';
 import 'package:bulka/core/utils/widgets/form_fields/default_form_field.dart';
+import 'package:bulka/core/utils/widgets/form_fields/default_password_form_field_widget.dart';
 import 'package:bulka/core/utils/widgets/validation/validation.dart';
 import 'package:bulka/modules/login/controllers/login_cubit.dart';
 import 'package:bulka/modules/login/controllers/login_state.dart';
@@ -22,54 +24,19 @@ class LoginFormFieldsWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 18.r),
       child: Column(
         children: [
-          DefaultFormField(
-            titleText: AppStrings.email.tr(),
-            hintText: AppStrings.enterYourEmail.tr(),
-            validator: (value) => validateEmail(value),
+          DefaultEmailFormFieldWidget(
             controller: cubit.emailController,
-            prefixIcon: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  AssetIcons.smstracking,
-                  height: 20.h,
-                  width: 20.w,
-                  fit: BoxFit.contain,
-                ),
-              ],
-            ),
           ),
           vSpace(20),
           BlocBuilder<LoginCubit, LoginState>(
             buildWhen: (previous, current) => current is ChangePasswordStatus,
             builder: (context, state) {
-              return DefaultFormField(
-                titleText: AppStrings.password.tr(),
+              return DefaultPasswordFormFieldWidget(
                 controller: cubit.passwordController,
-                obscureText: cubit.isVisiable,
-                hintText: AppStrings.enterYourPassword.tr(),
-                prefixIcon: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      AssetIcons.lock1,
-                      height: 20.h,
-                      width: 20.w,
-                      fit: BoxFit.contain,
-                    ),
-                  ],
-                ),
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    cubit.changeVisibility();
-                  },
-                  icon: Icon(
-                    cubit.isVisiable
-                        ? CupertinoIcons.eye
-                        : CupertinoIcons.eye_slash,
-                    color: AppColors.iconGrey,
-                  ),
-                ),
+                isVisiable: cubit.isVisiable,
+                changeVisiabiltyOnPressed: () {
+                  cubit.changeVisibility();
+                },
               );
             },
           ),

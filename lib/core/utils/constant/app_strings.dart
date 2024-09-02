@@ -66,4 +66,15 @@ class AppStrings {
   static const String forgotPassword = "Forgot password ?";
   static const String chooseOneWayToResetYourPassword =
       "Choose one way to reset your password!";
+  static const String confirm = "Confirm";
+  static const String verificationCode = "Verification code";
+  static const String enterTheIncommingCode = "Enter the incoming code.";
+  static const String enterTheCode = "Enter your code";
+  static const String createNewPassword = "Create New Password";
+  static const String strongPasswordInclude = "Strong password include A,a@#4";
+  static const String newPassword = "New Password";
+  static const String passwordSuccessfullyCreated =
+      "Password Successfully Created 👍";
+  static const String yourNewPasswordHaseBeenCreateSuccessfully =
+      "Your new password has been created successfully!";
 }

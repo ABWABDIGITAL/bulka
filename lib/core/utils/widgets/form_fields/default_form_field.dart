@@ -138,8 +138,7 @@ class DefaultFormField extends StatelessWidget {
                 onSaved: onSaved,
                 maxLines: maxLines == -1 ? null : maxLines ?? 1,
                 onChanged: onChanged,
-                style: style ??
-                    TextStyle(color: textColor ?? const Color(0xFFDCDCDC)),
+                style: style ?? TextStyle(color: textColor ?? AppColors.black),
                 decoration: decoration ??
                     InputDecoration(
                       filled: true,

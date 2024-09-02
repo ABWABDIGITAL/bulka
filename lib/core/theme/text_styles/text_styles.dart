@@ -68,6 +68,11 @@ class TextStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.iconGrey,
   );
+  static TextStyle rubik15W500Primary = GoogleFonts.rubik(
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.primary,
+  );
   static TextStyle rubik15W400SoftGrey = GoogleFonts.rubik(
     fontSize: 15.sp,
     fontWeight: FontWeight.w400,

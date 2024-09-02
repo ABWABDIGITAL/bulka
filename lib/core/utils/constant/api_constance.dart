@@ -9,4 +9,6 @@ class ApiConstance {
       '/public/auth/forgotPasswordWithEmail';
   static const String forgotPasswordWithPhone =
       '/public/auth/forgotPasswordWithPhone';
+  static const String verifyForgotPasswordCode =
+      '/public/auth/verifyForgotPasswordCode';
 }

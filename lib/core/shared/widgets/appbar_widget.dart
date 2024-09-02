@@ -21,6 +21,7 @@ class CustomeAppBarWidget extends StatelessWidget {
     this.shape,
     this.systemOverlayStyle,
     this.leadingWidth,
+    this.iconTheme,
   });
   final Color? backgroundColor;
   final List<Widget>? actions;
@@ -36,6 +37,7 @@ class CustomeAppBarWidget extends StatelessWidget {
   final ShapeBorder? shape;
   final SystemUiOverlayStyle? systemOverlayStyle;
   final double? leadingWidth;
+  final IconThemeData? iconTheme;
   @override
   Widget build(BuildContext context) {
     final Color backcolor = backgroundColor ?? AppColors.white;
@@ -51,9 +53,12 @@ class CustomeAppBarWidget extends StatelessWidget {
                 : Brightness.light,
             systemStatusBarContrastEnforced: true,
           ),
-      iconTheme: IconThemeData(
-        color: backcolor == AppColors.white ? AppColors.black : AppColors.white,
-      ),
+      iconTheme: iconTheme ??
+          IconThemeData(
+            color: backcolor == AppColors.white
+                ? AppColors.black
+                : AppColors.white,
+          ),
       backgroundColor: backcolor,
       centerTitle: centerTitle,
       leadingWidth: leadingWidth,

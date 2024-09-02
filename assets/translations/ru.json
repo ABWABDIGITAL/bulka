@@ -46,5 +46,16 @@
   "Home": "Главная",
   "Reset Password": "Сброс пароля",
   "Forgot password ?": "Забыли пароль?",
-  "Choose one way to reset your password!": "Выберите один способ сброса пароля!"
+  "Choose one way to reset your password!": "Выберите один способ сброса пароля!",
+  "Invalid phone number": "Неверный номер телефона",
+  "Search": "Поиск",
+  "Confirm": "Подтвердите",
+  "Verification code": "Код проверки",
+  "Enter the incoming code.": "Введите входящий код.",
+  "Enter your code": "Введите код",
+  "Create New Password": "Создать новый пароль",
+  "Strong password include A,a@#4": "Надежный пароль включает A,a@#4",
+  "New Password": "Новый пароль",
+  "Password Successfully Created 👍": "Пароль успешно создан 👍",
+  "Your new password has been created successfully!": "Ваш новый пароль был успешно создан!"
 }

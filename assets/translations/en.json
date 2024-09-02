@@ -46,5 +46,16 @@
   "Home": "Home",
   "Reset Password": "Reset Password",
   "Forgot password ?": "Forgot password ?",
-  "Choose one way to reset your password!": "Choose one way to reset your password!"
+  "Choose one way to reset your password!": "Choose one way to reset your password!",
+  "Invalid phone number": "Invalid phone number",
+  "Search": "Search",
+  "Confirm": "Confirm",
+  "Verification code": "Verification code",
+  "Enter the incoming code.": "Enter the incoming code.",
+  "Enter your code": "Enter your code",
+  "Create New Password": "Create New Password",
+  "Strong password include A,a@#4": "Strong password include A,a@#4",
+  "New Password": "New Password",
+  "Password Successfully Created 👍": "Password Successfully Created 👍",
+  "Your new password has been created successfully!": "Your new password has been created successfully!"
 }
