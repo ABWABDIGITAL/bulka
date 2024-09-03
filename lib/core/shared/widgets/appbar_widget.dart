@@ -1,10 +1,12 @@
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
+import 'package:bulka/core/utils/constant/strings.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class CustomeAppBarWidget extends StatelessWidget {
+class CustomeAppBarWidget extends StatelessWidget
+    implements PreferredSizeWidget {
   const CustomeAppBarWidget({
     super.key,
     this.backgroundColor,
@@ -22,7 +24,9 @@ class CustomeAppBarWidget extends StatelessWidget {
     this.systemOverlayStyle,
     this.leadingWidth,
     this.iconTheme,
+    this.height,
   });
+  final double? height;
   final Color? backgroundColor;
   final List<Widget>? actions;
   final String? title;
@@ -84,4 +88,7 @@ class CustomeAppBarWidget extends StatelessWidget {
       shape: shape,
     );
   }
+
+  @override
+  Size get preferredSize => Size.fromHeight(height ?? appbarheight);
 }

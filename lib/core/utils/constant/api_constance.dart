@@ -11,4 +11,6 @@ class ApiConstance {
       '/public/auth/forgotPasswordWithPhone';
   static const String verifyForgotPasswordCode =
       '/public/auth/verifyForgotPasswordCode';
+//---------------------------------INTERESTS----------------------------------//
+  static const String interests = '/public/auth/interests';
 }

@@ -8,6 +8,8 @@ class EnumSwitchReturn {
         return UserRole.user;
       case 'company':
         return UserRole.company;
+      case 'visitor':
+        return UserRole.visitor;
       default:
         return UserRole.unkown;
     }

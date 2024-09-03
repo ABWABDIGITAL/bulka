@@ -1,12 +1,12 @@
 import 'package:bulka/core/services/servies_locator/service_locator.dart';
-import 'package:bulka/modules/company_register/data/repo/company_register_repo.dart';
-import 'package:bulka/modules/forgot_password/data/repo/forgot_password_repo.dart';
-import 'package:bulka/modules/login/data/repo/login_repo.dart';
-import 'package:bulka/modules/reset_password/data/repo/reset_password_repo.dart';
-import 'package:bulka/modules/user_register/data/repo/user_register_repo.dart';
-import 'package:bulka/modules/verify_account/data/repo/verify_account_repo.dart';
-import 'package:bulka/modules/verify_forgot_password_code/controllers/verify_forgot_password_cubit.dart';
-import 'package:bulka/modules/verify_forgot_password_code/data/repo/verify_forgot_password_repo.dart';
+import 'package:bulka/modules/authentication/company_register/data/repo/company_register_repo.dart';
+import 'package:bulka/modules/authentication/forgot_password/data/repo/forgot_password_repo.dart';
+import 'package:bulka/modules/authentication/login/data/repo/login_repo.dart';
+import 'package:bulka/modules/authentication/reset_password/data/repo/reset_password_repo.dart';
+import 'package:bulka/modules/authentication/user_register/data/repo/user_register_repo.dart';
+import 'package:bulka/modules/authentication/verify_account/data/repo/verify_account_repo.dart';
+import 'package:bulka/modules/authentication/verify_forgot_password_code/controllers/verify_forgot_password_cubit.dart';
+import 'package:bulka/modules/authentication/verify_forgot_password_code/data/repo/verify_forgot_password_repo.dart';
 
 void authenticationLocator() {
 //-----------------------------------LOGIN------------------------------------//

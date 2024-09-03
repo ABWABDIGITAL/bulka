@@ -9,7 +9,8 @@ import 'package:bulka/core/utils/constant/shared_pref_keys.dart';
 import 'package:bulka/core/utils/constant/strings.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/core/utils/widgets/buttons/default_button.dart';
-import 'package:bulka/modules/login/ui/views/login_screen.dart';
+import 'package:bulka/modules/authentication/login/ui/views/login_screen.dart';
+import 'package:bulka/modules/choose_interests/ui/views/choose_interests_screen.dart';
 import 'package:bulka/modules/on_boarding/ui/widgets/onboarding_clip_bottom_widget.dart';
 import 'package:bulka/modules/on_boarding/ui/widgets/onboarding_content_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -122,7 +123,8 @@ class _FirstScreenOnboardingScreenState
                   true,
                 ).then(
                   (_) {
-                    context.push(const LoginScreen());
+                    // context.push(const LoginScreen());
+                    context.push(const ChooseInterestsScreen());
                   },
                 );
               } else {

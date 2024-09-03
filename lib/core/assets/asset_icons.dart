@@ -21,4 +21,8 @@ class AssetIcons {
       'assets/icons/secure_lock_and_key_successfully_unlocked.png';
   static const String callSvg = 'assets/icons/call_svg.svg';
   static const String smsSvg = 'assets/icons/sms_svg.svg';
+  static const String postSvg = 'assets/icons/post.svg';
+  static const String homeSvg = 'assets/icons/home.svg';
+  static const String profileeSvg = 'assets/icons/profile.svg';
+  static const String messagesSvg = 'assets/icons/messages.svg';
 }

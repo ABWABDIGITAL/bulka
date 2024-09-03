@@ -13,6 +13,7 @@ class ShimmerContainerWidget extends StatelessWidget {
     this.padding,
     this.decoration,
     this.child,
+    this.isLoading = true,
   });
   final double? height;
   final double? width;
@@ -21,24 +22,36 @@ class ShimmerContainerWidget extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
   final Decoration? decoration;
   final Widget? child;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
-    return Shimmer.fromColors(
-      baseColor: Colors.grey[300]!,
-      highlightColor: Colors.grey[100]!,
-      child: Container(
-        height: height ?? 3.h,
-        width: width ?? 100.w,
-        margin: margin,
-        padding: padding,
-        alignment: Alignment.center,
-        decoration: decoration ??
-            BoxDecoration(
-              borderRadius: BorderRadius.circular(borderRadiusValue ?? 8.r),
-              color: AppColors.grey,
+    return isLoading
+        ? Shimmer.fromColors(
+            baseColor: Colors.grey[300]!,
+            highlightColor: Colors.grey[100]!,
+            child: Container(
+              height: height ?? 3.h,
+              width: width ?? 100.w,
+              margin: margin,
+              padding: padding,
+              alignment: Alignment.center,
+              decoration: decoration ??
+                  BoxDecoration(
+                    borderRadius:
+                        BorderRadius.circular(borderRadiusValue ?? 8.r),
+                    color: AppColors.grey,
+                  ),
+              child: child,
             ),
-        child: child,
-      ),
-    );
+          )
+        : Container(
+            height: height ?? 3.h,
+            width: width ?? 100.w,
+            margin: margin,
+            padding: padding,
+            alignment: Alignment.center,
+            decoration: decoration,
+            child: child,
+          );
   }
 }

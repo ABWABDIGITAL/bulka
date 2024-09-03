@@ -77,4 +77,21 @@ class AppStrings {
       "Password Successfully Created 👍";
   static const String yourNewPasswordHaseBeenCreateSuccessfully =
       "Your new password has been created successfully!";
+  static const String agreetothetermsandconditions =
+      'Agree to the terms and conditions';
+  static const String pleaseAgreeOurTermsAndConditionsFirst =
+      "Please agree our terms and conditions first";
+  static const String goDeepAsVisitor = "Go deep as a visitor";
+  static const String skip = "Skip";
+  static const String whatAreYourInterstsInBuying =
+      "What are your interests in buying and selling?";
+  static const String loading = "loading";
+  static const String successfullyBecomeExplorer =
+      "successfully Become Explorer ! 😀";
+  static const String exploreTheDealWithOtherPeople =
+      "Explore the deal with other people";
+  static const String letsExplore = "Let's Explore";
+  static const String posts = "Posts";
+  static const String chat = "Chat";
+  static const String profile = "Profile";
 }

@@ -8,20 +8,28 @@ class ShimmerTextWidget extends StatelessWidget {
     super.key,
     this.style,
     this.textAlign,
+    this.isLoading = false,
   });
   final String text;
   final TextStyle? style;
   final TextAlign? textAlign;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
-    return Shimmer.fromColors(
-      baseColor: Colors.grey[200]!,
-      highlightColor: Colors.grey[100]!,
-      child: Text(
-        text,
-        style: style ?? TextStyles.dummy,
-        textAlign: textAlign ?? TextAlign.start,
-      ),
-    );
+    return isLoading
+        ? Shimmer.fromColors(
+            baseColor: Colors.grey[200]!,
+            highlightColor: Colors.grey[100]!,
+            child: Text(
+              text,
+              style: style ?? TextStyles.dummy,
+              textAlign: textAlign ?? TextAlign.start,
+            ),
+          )
+        : Text(
+            text,
+            style: style ?? TextStyles.dummy,
+            textAlign: textAlign ?? TextAlign.start,
+          );
   }
 }

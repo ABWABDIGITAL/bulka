@@ -1,3 +1,3 @@
-enum UserRole { user, company, unkown }
+enum UserRole { user, company, visitor, unkown }
 
 enum VerifyAccountMethod { email, phone, unkown }
