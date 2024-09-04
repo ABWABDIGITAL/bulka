@@ -13,6 +13,7 @@ import 'package:bulka/modules/authentication/login/ui/views/login_screen.dart';
 import 'package:bulka/modules/choose_interests/ui/views/choose_interests_screen.dart';
 import 'package:bulka/modules/on_boarding/ui/widgets/onboarding_clip_bottom_widget.dart';
 import 'package:bulka/modules/on_boarding/ui/widgets/onboarding_content_widget.dart';
+import 'package:bulka/modules/posts/ui/views/posts_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -124,7 +125,8 @@ class _FirstScreenOnboardingScreenState
                 ).then(
                   (_) {
                     // context.push(const LoginScreen());
-                    context.push(const ChooseInterestsScreen());
+                    // context.push(const ChooseInterestsScreen());
+                    context.push(const PostsScreen());
                   },
                 );
               } else {

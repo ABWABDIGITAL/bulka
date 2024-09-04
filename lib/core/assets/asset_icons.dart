@@ -25,4 +25,18 @@ class AssetIcons {
   static const String homeSvg = 'assets/icons/home.svg';
   static const String profileeSvg = 'assets/icons/profile.svg';
   static const String messagesSvg = 'assets/icons/messages.svg';
+  static const String bellSvg = 'assets/icons/bell.svg';
+  static const String searchSvg = 'assets/icons/search.svg';
+  static const String filterSvg = 'assets/icons/filter.svg';
+  static const String likeSvg = 'assets/icons/like.svg';
+  static const String bedSvg = 'assets/icons/bed.svg';
+  static const String shawerSvg = 'assets/icons/shawer.svg';
+  static const String carSvg = 'assets/icons/car.svg';
+  static const String sizeSvg = 'assets/icons/size.svg';
+  static const String speedoMeter2Svg = 'assets/icons/speedometer2.svg';
+  static const String threeDotsSvg = 'assets/icons/three_dots.svg';
+  static const String calenderSvg = 'assets/icons/Calendar.svg';
+  static const String unlockSvg = 'assets/icons/Unlock.svg';
+  static const String scanSvg = 'assets/icons/scan.svg';
+  static const String heartSvg = 'assets/icons/Heart.svg';
 }

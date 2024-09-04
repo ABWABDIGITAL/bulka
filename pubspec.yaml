@@ -63,6 +63,9 @@ dependencies:
   intl_phone_field: ^3.2.0
   flutter_svg: ^2.0.10+1
   skeletonizer: ^1.4.2
+  badges: ^3.1.2
+  carousel_slider: ^5.0.0
+  reaction_askany: ^0.1.2
 
 dev_dependencies:
   flutter_test:

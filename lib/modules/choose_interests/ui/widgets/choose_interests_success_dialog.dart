@@ -5,6 +5,7 @@ import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/core/utils/widgets/buttons/default_button.dart';
 import 'package:bulka/core/utils/widgets/dialogs/app_bottom_sheet.dart';
+import 'package:bulka/modules/home/ui/views/home_screen.dart';
 import 'package:bulka/modules/navbar_layout/ui/views/navbar_layout_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,8 @@ void chooseInterestsSuccessDialog(BuildContext context) {
         vSpace(35),
         DefaultButton(
           onPressed: () {
-            context.push(const NavbarLayoutScreen());
+            // context.push(const NavbarLayoutScreen());
+            context.push(const HomeScreen());
           },
           text: AppStrings.letsExplore.tr(),
         )

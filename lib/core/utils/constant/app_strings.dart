@@ -94,4 +94,12 @@ class AppStrings {
   static const String posts = "Posts";
   static const String chat = "Chat";
   static const String profile = "Profile";
+  static const String seachAboutSomeThingHere = "Search about something here !";
+  static const String seeAll = "See all";
+  static const String exploreCategories = "Explore Categories";
+  static const String propertiesForSale = "Properties for sale";
+  static const String carsForSale = "Cars for sale";
+  static const String jops = "Jobs";
+  static const String readMore = "Read more...";
+  static const String readLess = "Read less...";
 }

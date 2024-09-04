@@ -9,7 +9,32 @@ class TextStyles {
     fontSize: 12.sp,
     color: AppColors.primary,
   );
+  static TextStyle roboto14W600Black2 = GoogleFonts.roboto(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.black2,
+  );
+  static TextStyle roboto12W500Black2 = GoogleFonts.roboto(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.black2,
+  );
+  static TextStyle roboto12W500SoftGrey3 = GoogleFonts.roboto(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.softGrey3,
+  );
+  static TextStyle roboto10W500MediumGrey2 = GoogleFonts.roboto(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.mediumGrey2,
+  );
 
+  static TextStyle roboto12W400IconGrey = GoogleFonts.roboto(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.iconGrey,
+  );
   static TextStyle rubik20W500White = GoogleFonts.rubik(
     fontSize: 20.sp,
     fontWeight: FontWeight.w500,
@@ -29,6 +54,11 @@ class TextStyles {
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
     color: AppColors.black,
+  );
+  static TextStyle rubik14W500LigtBlack = GoogleFonts.rubik(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.lightBlack,
   );
   static TextStyle rubik14W500MediumGrey7 = GoogleFonts.rubik(
     fontSize: 14.sp,
@@ -73,10 +103,40 @@ class TextStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.iconGrey,
   );
+  static TextStyle rubik12W400DarkGrey4 = GoogleFonts.rubik(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.darkGrey4,
+  );
+  static TextStyle rubik12W700White = GoogleFonts.rubik(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.white,
+  );
+  static TextStyle rubik12W400LightPrimary = GoogleFonts.rubik(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.lightPrimary,
+  );
   static TextStyle rubik10W400Primary = GoogleFonts.rubik(
-    fontSize: 100.sp,
+    fontSize: 10.sp,
     fontWeight: FontWeight.w400,
     color: AppColors.primary,
+  );
+  static TextStyle rubik10W400BlueGrey = GoogleFonts.rubik(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.blueGrey,
+  );
+  static TextStyle rubik10W400Black100 = GoogleFonts.rubik(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.black100,
+  );
+  static TextStyle rubik6W400Black100 = GoogleFonts.rubik(
+    fontSize: 6.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.black100,
   );
 
   static TextStyle rubik15W500Primary = GoogleFonts.rubik(

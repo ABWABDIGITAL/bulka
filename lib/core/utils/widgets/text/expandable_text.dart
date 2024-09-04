@@ -1,5 +1,6 @@
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
 
@@ -42,19 +43,20 @@ class CustomeExpandableText extends StatelessWidget {
   Widget build(BuildContext context) {
     return ExpandableText(
       longText,
-      expandText: 'showmore',
-      collapseText: 'show less',
-      maxLines: maxLines ?? 4,
+      expandText: AppStrings.readMore.tr(),
+      collapseText: AppStrings.readLess.tr(),
+      maxLines: maxLines ?? 3,
       linkColor: seeMoreColor ?? AppColors.primary,
-      style: TextStyle(
-        color: color ?? AppColors.grey,
-        fontWeight: fontWeight ?? FontWeight.w400,
-        decoration: decoration,
-        fontSize: fontSize,
-        wordSpacing: wordSpacing,
-        letterSpacing: letterSpacing,
-        height: textHeight,
-      ),
+      style: style ??
+          TextStyle(
+            color: color ?? AppColors.grey,
+            fontWeight: fontWeight ?? FontWeight.w400,
+            decoration: decoration,
+            fontSize: fontSize,
+            wordSpacing: wordSpacing,
+            letterSpacing: letterSpacing,
+            height: textHeight,
+          ),
       animation: true,
       animationCurve: Curves.ease,
       animationDuration: const Duration(milliseconds: 750),
