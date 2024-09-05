@@ -25,6 +25,7 @@ class CustomeAppBarWidget extends StatelessWidget
     this.leadingWidth,
     this.iconTheme,
     this.height,
+    this.statusbarColor,
   });
   final double? height;
   final Color? backgroundColor;
@@ -42,6 +43,7 @@ class CustomeAppBarWidget extends StatelessWidget
   final SystemUiOverlayStyle? systemOverlayStyle;
   final double? leadingWidth;
   final IconThemeData? iconTheme;
+  final Color? statusbarColor;
   @override
   Widget build(BuildContext context) {
     final Color backcolor = backgroundColor ?? AppColors.white;
@@ -49,9 +51,10 @@ class CustomeAppBarWidget extends StatelessWidget
       elevation: elevation ?? 0,
       systemOverlayStyle: systemOverlayStyle ??
           SystemUiOverlayStyle(
-            statusBarColor: backcolor == AppColors.white
-                ? AppColors.white
-                : AppColors.primary,
+            statusBarColor: statusbarColor ??
+                (backcolor == AppColors.white
+                    ? AppColors.white
+                    : AppColors.primary),
             statusBarIconBrightness: backcolor == AppColors.white
                 ? Brightness.dark
                 : Brightness.light,

@@ -40,6 +40,12 @@ class TextStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.white,
   );
+  static TextStyle rubik20W500Primary200 = GoogleFonts.rubik(
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.primary200,
+  );
+
   static TextStyle rubik17W500Black = GoogleFonts.rubik(
     fontSize: 17.sp,
     fontWeight: FontWeight.w500,
@@ -50,6 +56,22 @@ class TextStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.hardGrey2,
   );
+  static TextStyle rubik16W500Black3 = GoogleFonts.rubik(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.black3,
+  );
+  static TextStyle rubik16W400Black = GoogleFonts.rubik(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.black,
+  );
+  static TextStyle rubik16W400MediumGrey10 = GoogleFonts.rubik(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.mediumGrey10,
+  );
+
   static TextStyle rubik14W500Black = GoogleFonts.rubik(
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
@@ -76,6 +98,12 @@ class TextStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.darkGrey2,
   );
+  static TextStyle rubik14W400DarkGrey5 = GoogleFonts.rubik(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.darkGrey5,
+  );
+
   static TextStyle rubik14W400Primary = GoogleFonts.rubik(
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,
@@ -86,6 +114,11 @@ class TextStyles {
     fontSize: 13.sp,
     fontWeight: FontWeight.w500,
     color: AppColors.darkGrey,
+  );
+  static TextStyle rubik13W500Green2 = GoogleFonts.rubik(
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.green2,
   );
 
   static TextStyle rubik13W500Primary = GoogleFonts.rubik(
@@ -98,6 +131,7 @@ class TextStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.iconGrey,
   );
+
   static TextStyle rubik13W400IconGrey = GoogleFonts.rubik(
     fontSize: 13.sp,
     fontWeight: FontWeight.w400,
@@ -108,11 +142,39 @@ class TextStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.darkGrey4,
   );
+  static TextStyle rubik12W400MediumGrey9 = GoogleFonts.rubik(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.mediumGrey9,
+  );
+
+  static TextStyle rubik12W500White = GoogleFonts.rubik(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.white,
+  );
+  static TextStyle rubik12W500Primary400 = GoogleFonts.rubik(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.primary400,
+  );
+
   static TextStyle rubik12W700White = GoogleFonts.rubik(
     fontSize: 12.sp,
     fontWeight: FontWeight.w700,
     color: AppColors.white,
   );
+  static TextStyle rubik16W700Black = GoogleFonts.rubik(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.black,
+  );
+  static TextStyle rubik14W700Black = GoogleFonts.rubik(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.black,
+  );
+
   static TextStyle rubik12W400LightPrimary = GoogleFonts.rubik(
     fontSize: 12.sp,
     fontWeight: FontWeight.w400,
@@ -133,6 +195,12 @@ class TextStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.black100,
   );
+  static TextStyle rubik9W400MediumGrey9 = GoogleFonts.rubik(
+    fontSize: 9.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.mediumGrey9,
+  );
+
   static TextStyle rubik6W400Black100 = GoogleFonts.rubik(
     fontSize: 6.sp,
     fontWeight: FontWeight.w400,
@@ -148,6 +216,17 @@ class TextStyles {
     fontSize: 14.sp,
     fontWeight: FontWeight.w600,
     color: AppColors.primary,
+  );
+  static TextStyle rubik12W600MediumGrey12 = GoogleFonts.rubik(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.mediumGrey12,
+  );
+
+  static TextStyle rubik14W600Black = GoogleFonts.rubik(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
   );
   static TextStyle rubik15W400SoftGrey = GoogleFonts.rubik(
     fontSize: 15.sp,

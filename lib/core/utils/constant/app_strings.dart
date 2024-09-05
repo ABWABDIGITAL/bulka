@@ -58,6 +58,7 @@ class AppStrings {
       "Please verify your contact information";
   static const String sms = "SMS";
   static const String phoneNumber = "Phone number";
+  static const String phone = "Phone";
   static const String verifiedSuccessfully = "Verified successfully! 😀";
   static const String youHaveVerifiedYourEmailSuccess =
       "You have verified your email successfully";
@@ -102,4 +103,15 @@ class AppStrings {
   static const String jops = "Jobs";
   static const String readMore = "Read more...";
   static const String readLess = "Read less...";
+  static const String commentHere = "Comment here !";
+  static const String message = "Message";
+  static const String verified = "Verified";
+  static const String paymentDetails = "Payment Details";
+  static const String totalProductPrice = "Total Product Price";
+  static const String realFees = "Real Fees";
+  static const String taxes = "Taxes";
+  static const String totalAmount = "Total Amount";
+  static const String propertyDetails = "property details";
+  static const String aboutProperty = "About Property";
+  static const String contactSeller = "Contact Seller";
 }

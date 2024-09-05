@@ -5,6 +5,10 @@ class AppColors {
   static const Color primary = Color(0xFF3865FF);
   static const Color lightPrimary = Color(0xFF446EFF);
   static const Color opactiyPrimary = Color(0xFFEBF0FF);
+  static const Color primary200 = Color(0xFF6B8DFF);
+
+  static const Color primary300 = Color(0xFF5279FF);
+  static const Color primary400 = Color(0xFF446EFF);
 
   static const Color greyFont = Color(0xFF4E5F6A);
   static const Color grey = Color(0xFFEEEEEE);
@@ -26,10 +30,18 @@ class AppColors {
   static const Color mediumGrey5 = Color(0xFF8C8C8C);
   static const Color mediumGrey6 = Color(0xFFE6E6E6);
   static const Color mediumGrey7 = Color(0xFF686868);
+  static const Color mediumGrey8 = Color(0xFFF8F8F8F8);
+  static const Color mediumGrey9 = Color(0xFF878787);
+  static const Color mediumGrey10 = Color(0xFF7D7F88);
+  static const Color mediumGrey11 = Color(0xFFF3F4F5);
+  static const Color mediumGrey12 = Color(0xFF6A7380);
+
   static const Color darkGrey4 = Color(0xFF6A6A6A);
+  static const Color darkGrey5 = Color(0xFF545454);
 
   static const Color red = Color(0xFFE3022C);
   static const Color green = Color(0xFF4EE03C);
+  static const Color green2 = Color(0xFF45A923);
 
   static const Color newSearchFontColor = Color(0xFF707070);
   static const Color searchBackGround = Color(0xFFF2F2F2);
@@ -46,6 +58,7 @@ class AppColors {
   static const Color lightBlack = Color(0xFF121212);
   static const Color black100 = Color(0xFF202020);
   static const Color black2 = Color(0xFF2E2E2E);
+  static const Color black3 = Color(0xFF323232);
 
   static const Color white = Colors.white;
   static const Color darkText = Color(0xFF494747);

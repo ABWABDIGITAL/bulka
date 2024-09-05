@@ -10,4 +10,5 @@ class AssetImages {
       'assets/images/right_clipper_image.png';
   static const String operationSuccess =
       'assets/images/verify_operation_success.png';
+  static const String map = 'assets/images/map.png';
 }

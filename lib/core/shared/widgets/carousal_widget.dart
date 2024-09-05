@@ -10,6 +10,7 @@ class SharedCarousalWidget extends StatelessWidget {
     this.height,
     this.onPageChanged,
     this.autoPlay = true,
+    this.enlargeCenterPage = true,
   });
   final Widget Function(BuildContext context, int index, int reelIndex)?
       itemBuilder;
@@ -18,6 +19,7 @@ class SharedCarousalWidget extends StatelessWidget {
   final double? viewportFraction;
   final dynamic Function(int, CarouselPageChangedReason)? onPageChanged;
   final bool autoPlay;
+  final bool enlargeCenterPage;
   @override
   Widget build(BuildContext context) {
     return CarouselSlider.builder(
@@ -25,7 +27,7 @@ class SharedCarousalWidget extends StatelessWidget {
       itemCount: itemCount,
       options: CarouselOptions(
         autoPlay: autoPlay,
-        enlargeCenterPage: true,
+        enlargeCenterPage: enlargeCenterPage,
         enlargeStrategy: CenterPageEnlargeStrategy.scale,
         pauseAutoPlayOnManualNavigate: true,
         pauseAutoPlayOnTouch: true,
