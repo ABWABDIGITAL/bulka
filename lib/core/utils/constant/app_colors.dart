@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 class AppColors {
   static const Color scaffoldBackGround = Color(0xFFFFFFFF);
   static const Color primary = Color(0xFF3865FF);
+  static const Color primary2 = Color(0xFF3840F7);
+
   static const Color lightPrimary = Color(0xFF446EFF);
   static const Color opactiyPrimary = Color(0xFFEBF0FF);
+
   static const Color primary200 = Color(0xFF6B8DFF);
 
   static const Color primary300 = Color(0xFF5279FF);
@@ -18,6 +21,8 @@ class AppColors {
   static const Color softGrey1 = Color(0xFFF8F8F8);
   static const Color softGrey2 = Color(0xFFE9E8E8);
   static const Color softGrey3 = Color(0xFFE7E7E7);
+  static const Color softGrey4 = Color(0xFFE2E2E2);
+  static const Color softGrey5 = Color(0xFFF4F4F4);
 
   static const Color iconGrey = Color(0xFF9E9E9E);
   static const Color darkGrey = Color(0xFF626262);
@@ -35,9 +40,12 @@ class AppColors {
   static const Color mediumGrey10 = Color(0xFF7D7F88);
   static const Color mediumGrey11 = Color(0xFFF3F4F5);
   static const Color mediumGrey12 = Color(0xFF6A7380);
+  static const Color mediumGrey13 = Color(0xFFE8E8E8);
+  static const Color mediumGrey14 = Color(0xFF858585);
 
   static const Color darkGrey4 = Color(0xFF6A6A6A);
   static const Color darkGrey5 = Color(0xFF545454);
+  static const Color darkGrey6 = Color(0xFF898A8D);
 
   static const Color red = Color(0xFFE3022C);
   static const Color green = Color(0xFF4EE03C);
@@ -59,6 +67,8 @@ class AppColors {
   static const Color black100 = Color(0xFF202020);
   static const Color black2 = Color(0xFF2E2E2E);
   static const Color black3 = Color(0xFF323232);
+  static const Color black4 = Color(0xFF333333);
+  static const Color black5 = Color(0xFF424242);
 
   static const Color white = Colors.white;
   static const Color darkText = Color(0xFF494747);

@@ -9,64 +9,128 @@ import 'package:bulka/modules/navbar_layout/controllers/navbar_layout_state.dart
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class NavbarLayoutCubit extends Cubit<NavbarLayoutState> {
   NavbarLayoutCubit() : super(NavbarLayoutInitial());
 //---------------------------------VARIABLES----------------------------------//
   int currentIndex = 0;
+  final bottomPad = 6.r;
 
   List<BottomNavigationBarItem> items = [
     BottomNavigationBarItem(
-      activeIcon: SvgPicture.asset(
-        AssetIcons.homeSvg,
-        color: AppColors.primary,
+      activeIcon: Padding(
+        padding: EdgeInsetsDirectional.only(bottom: 8.r),
+        child: SvgPicture.asset(
+          AssetIcons.homeSvg,
+          color: AppColors.primary,
+          height: 20.h,
+          width: 20.w,
+        ),
       ),
-      icon: SvgPicture.asset(
-        AssetIcons.homeSvg,
-        color: AppColors.mediumGrey5,
+      icon: Padding(
+        padding: EdgeInsetsDirectional.only(bottom: 8.r),
+        child: SvgPicture.asset(
+          AssetIcons.homeSvg,
+          color: AppColors.mediumGrey5,
+          height: 20.h,
+          width: 20.w,
+        ),
       ),
       label: AppStrings.home.tr(),
       tooltip: AppStrings.home.tr(),
     ),
     BottomNavigationBarItem(
-      activeIcon: SvgPicture.asset(
-        AssetIcons.postSvg,
-        color: AppColors.primary,
+      activeIcon: Padding(
+        padding: EdgeInsetsDirectional.only(bottom: 8.r),
+        child: SvgPicture.asset(
+          AssetIcons.postSvg,
+          color: AppColors.primary,
+          height: 20.h,
+          width: 20.w,
+        ),
       ),
-      icon: SvgPicture.asset(
-        AssetIcons.postSvg,
-        color: AppColors.mediumGrey5,
+      icon: Padding(
+        padding: EdgeInsetsDirectional.only(bottom: 8.r),
+        child: SvgPicture.asset(
+          AssetIcons.postSvg,
+          color: AppColors.mediumGrey5,
+          height: 20.h,
+          width: 20.w,
+        ),
       ),
       label: AppStrings.posts.tr(),
       tooltip: AppStrings.posts.tr(),
     ),
-    // const BottomNavigationBarItem(
-    //   activeIcon: Icon(CupertinoIcons.add_circled),
-    //   icon: Icon(CupertinoIcons.add_circled),
-    //   label: '',
-    //   tooltip: '',
-    // ),
     BottomNavigationBarItem(
-      activeIcon: SvgPicture.asset(
-        AssetIcons.messagesSvg,
-        color: AppColors.primary,
+      activeIcon: FloatingActionButton(
+        onPressed: () {},
+        mini: true,
+        elevation: 0,
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(300.r)),
+        backgroundColor: AppColors.primary.withOpacity(.3),
+        child: const Icon(
+          CupertinoIcons.add,
+          color: AppColors.primary2,
+        ),
       ),
-      icon: SvgPicture.asset(
-        AssetIcons.messagesSvg,
-        color: AppColors.mediumGrey5,
+      icon: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: AppColors.primary.withOpacity(.3),
+        mini: true,
+        elevation: 0,
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(300.r)),
+        child: const Icon(
+          CupertinoIcons.add,
+          color: AppColors.primary2,
+        ),
+      ),
+      label: '',
+      tooltip: '',
+    ),
+    BottomNavigationBarItem(
+      activeIcon: Padding(
+        padding: EdgeInsetsDirectional.only(bottom: 8.r),
+        child: SvgPicture.asset(
+          AssetIcons.messagesSvg,
+          color: AppColors.primary,
+          height: 20.h,
+          width: 20.w,
+        ),
+      ),
+      icon: Padding(
+        padding: EdgeInsetsDirectional.only(bottom: 8.r),
+        child: SvgPicture.asset(
+          AssetIcons.messagesSvg,
+          color: AppColors.mediumGrey5,
+          height: 20.h,
+          width: 20.w,
+        ),
       ),
       label: AppStrings.chat.tr(),
       tooltip: AppStrings.chat.tr(),
     ),
     BottomNavigationBarItem(
-      activeIcon: SvgPicture.asset(
-        AssetIcons.profileeSvg,
-        color: AppColors.primary,
+      activeIcon: Padding(
+        padding: EdgeInsetsDirectional.only(bottom: 8.r),
+        child: SvgPicture.asset(
+          AssetIcons.profileeSvg,
+          color: AppColors.primary,
+          height: 20.h,
+          width: 20.w,
+        ),
       ),
-      icon: SvgPicture.asset(
-        AssetIcons.profileeSvg,
-        color: AppColors.mediumGrey5,
+      icon: Padding(
+        padding: EdgeInsetsDirectional.only(bottom: 8.r),
+        child: SvgPicture.asset(
+          AssetIcons.profileeSvg,
+          color: AppColors.mediumGrey5,
+          height: 20.h,
+          width: 20.w,
+        ),
       ),
       label: AppStrings.profile.tr(),
       tooltip: AppStrings.profile.tr(),

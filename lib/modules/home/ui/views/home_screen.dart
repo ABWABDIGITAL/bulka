@@ -13,23 +13,20 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const HomeAppbarWidget(),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.r),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const HomeCategoriesWidget(),
-              const HomeBannerWidget(),
-              vSpace(10),
-              const PropertiesForSaleListWidget(),
-              vSpace(10),
-              const CarForSaleListWidget(),
-              vSpace(10),
-              const HomeJopsSectionWidget(),
-            ],
-          ),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20.r),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const HomeCategoriesWidget(),
+            const HomeBannerWidget(),
+            vSpace(10),
+            const PropertiesForSaleListWidget(),
+            vSpace(10),
+            const CarForSaleListWidget(),
+            vSpace(10),
+            const HomeJopsSectionWidget(),
+          ],
         ),
       ),
     );

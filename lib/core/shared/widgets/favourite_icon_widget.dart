@@ -4,14 +4,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class FavouriteIconWidget extends StatelessWidget {
-  const FavouriteIconWidget({super.key});
-
+  const FavouriteIconWidget({
+    super.key,
+    this.color,
+  });
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(
       AssetIcons.likeSvg,
       width: 15.w,
       height: 15.h,
+      color: color,
     );
   }
 }

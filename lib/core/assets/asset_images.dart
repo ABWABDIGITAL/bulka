@@ -11,4 +11,5 @@ class AssetImages {
   static const String operationSuccess =
       'assets/images/verify_operation_success.png';
   static const String map = 'assets/images/map.png';
+  static const String companyLogoJustForTest = 'assets/images/company_logo.png';
 }

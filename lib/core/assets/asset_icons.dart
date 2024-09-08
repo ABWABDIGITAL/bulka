@@ -46,4 +46,6 @@ class AssetIcons {
   static const String verifySvg = 'assets/icons/verify.svg';
   static const String rateSvg = 'assets/icons/rate.svg';
   static const String locationSvg = 'assets/icons/location.svg';
+  static const String fuelSvg = 'assets/icons/fuel.svg';
+  static const String checkBlue = 'assets/icons/check_blue.png';
 }

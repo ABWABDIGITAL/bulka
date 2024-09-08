@@ -1,4 +1,4 @@
-import 'package:bulka/core/shared/widgets/jop_card_widget.dart';
+import 'package:bulka/core/shared/widgets/product_details_cards/jop_card_widget.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/modules/home/ui/widgets/home_title_widget.dart';
 import 'package:easy_localization/easy_localization.dart';

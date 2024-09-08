@@ -114,4 +114,11 @@ class AppStrings {
   static const String propertyDetails = "property details";
   static const String aboutProperty = "About Property";
   static const String contactSeller = "Contact Seller";
+  static const String specification = "Specification";
+  static const String whatsIncluded = "What’s included?";
+  static const String overView = "Over View";
+  static const String reviews = "Reviews";
+  static const String jobDescription = "Job Description";
+  static const String requirements = "Requirements";
+  static const String products = "Products";
 }

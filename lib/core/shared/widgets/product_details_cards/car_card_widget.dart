@@ -4,7 +4,9 @@ import 'package:bulka/core/shared/widgets/favourite_icon_widget.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
+import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/core/utils/widgets/misc/default_network_image.dart';
+import 'package:bulka/modules/car_product_details/ui/views/car_product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -34,7 +36,9 @@ class CarCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomeInkWellWidget(
-      onTap: () {},
+      onTap: () {
+        context.push(const CarProductDetailsScreen());
+      },
       child: Container(
         height: height,
         width: width,
