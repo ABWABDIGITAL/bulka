@@ -22,7 +22,7 @@ class NavbarLayoutScreen extends StatelessWidget {
         builder: (context, state) {
           final cubit = context.read<NavbarLayoutCubit>();
           return Scaffold(
-            appBar: const HomeAppbarWidget(),
+            appBar: cubit.navAppbars[cubit.currentIndex],
             bottomNavigationBar: SizedBox(
               height: 90.h,
               child: BottomNavigationBar(
@@ -44,8 +44,7 @@ class NavbarLayoutScreen extends StatelessWidget {
                 type: BottomNavigationBarType.fixed,
               ),
             ),
-            body:
-                ImportAndExportScreen(), //cubit.navbarScreens[cubit.currentIndex],
+            body: cubit.navbarScreens[cubit.currentIndex],
           );
         },
       ),

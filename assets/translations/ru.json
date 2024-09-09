@@ -96,5 +96,22 @@
   "Over View": "Обзор",
   "Reviews": "Отзывы",
   "Job Description": "Описание работы",
-  "Requirements": "Требования"
+  "Requirements": "Требования",
+  "Completed": "Завершено",
+  "Active": "Активный",
+  "Pending": "В ожидании",
+  "Cancelled": "Отменено",
+  "Contact info": "Контактная информация",
+  "Basic info": "Основная информация",
+  "Verify id": "Проверить идентификатор",
+  "Work experience": "Опыт работы",
+  "Education": "Образование",
+  "Skills": "Навыки",
+  "Languages": "Языки",
+  "Certification": "Сертификация",
+  "CV": "Биография",
+  "Packeges": "Пакеты",
+  "Payments": "Платежи",
+  "Support": "Поддержка",
+  "Privacy & Terms": "Конфиденциальность и условия"
 }

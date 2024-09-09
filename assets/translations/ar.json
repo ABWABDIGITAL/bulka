@@ -96,5 +96,22 @@
   "Over View": "نظرة عامة",
   "Reviews": "المراجعات",
   "Job Description": "تفاصيل الوظيفه",
-  "Requirements": "المتطلبات"
+  "Requirements": "المتطلبات",
+  "Completed": "مكتمل",
+  "Active": "نشط",
+  "Pending": "قيد الانتظار",
+  "Cancelled": "تم الإلغاء",
+  "Contact info": "معلومات الاتصال",
+  "Basic info": "معلومات أساسية",
+  "Verify id": "التحقق من الهوية",
+  "Work experience": "الخبره العملية",
+  "Education": "الدرجه العلميه",
+  "Skills": "المهارات",
+  "Languages": "اللغات",
+  "Certification": "الشهادات",
+  "CV": "السيره الذاتيه",
+  "Packeges": "الحزم",
+  "Payments": "المدفوعات",
+  "Support": "الدعم",
+  "Privacy & Terms": "الخصوصية والشروط"
 }

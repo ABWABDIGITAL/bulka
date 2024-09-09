@@ -12,4 +12,6 @@ class AssetImages {
       'assets/images/verify_operation_success.png';
   static const String map = 'assets/images/map.png';
   static const String companyLogoJustForTest = 'assets/images/company_logo.png';
+  static const String profileBackground =
+      'assets/images/profile_background.png';
 }

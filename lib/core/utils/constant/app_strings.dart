@@ -121,4 +121,21 @@ class AppStrings {
   static const String jobDescription = "Job Description";
   static const String requirements = "Requirements";
   static const String products = "Products";
+  static const String completed = 'Completed';
+  static const String active = 'Active';
+  static const String pending = 'Pending';
+  static const String cancelled = 'Cancelled';
+  static const String contactInfo = 'Contact info';
+  static const String basicInfo = 'Basic info';
+  static const String verifyId = 'Verify id';
+  static const String workExperience = 'Work experience';
+  static const String education = 'Education';
+  static const String skills = 'Skills';
+  static const String languages = 'Languages';
+  static const String certification = 'Certification';
+  static const String cv = 'CV';
+  static const String packages = 'Packages';
+  static const String payments = 'Payments';
+  static const String support = 'Support';
+  static const String privacyAndTerms = 'Privacy & Terms';
 }

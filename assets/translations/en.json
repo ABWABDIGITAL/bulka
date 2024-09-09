@@ -96,5 +96,22 @@
   "Over View": "Over View",
   "Reviews": "Reviews",
   "Job Description": "Job Description",
-  "Requirements": "Requirements"
+  "Requirements": "Requirements",
+  "Completed": "Completed",
+  "Active": "Active",
+  "Pending": "Pending",
+  "Cancelled": "Cancelled",
+  "Contact info": "Contact info",
+  "Basic info": "Basic info",
+  "Verify id": "Verify id",
+  "Work experience": "Work experience",
+  "Education": "Education",
+  "Skills": "Skills",
+  "Languages": "Languages",
+  "Certification": "Certification",
+  "CV": "CV",
+  "Packeges": "Packeges",
+  "Payments": "Payments",
+  "Support": "Support",
+  "Privacy & Terms": "Privacy & Terms"
 }

@@ -4,7 +4,6 @@ import 'package:bulka/core/shared/widgets/badge_icon_widget.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
-import 'package:bulka/core/utils/constant/strings.dart';
 import 'package:bulka/core/utils/widgets/form_fields/default_form_field.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -13,12 +12,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class HomeAppbarWidget extends StatelessWidget implements PreferredSizeWidget {
-  const HomeAppbarWidget({super.key});
-
+  const HomeAppbarWidget({super.key, this.height});
+  final double? height;
   @override
   Widget build(BuildContext context) {
     return CustomeAppBarWidget(
-      height: 205.h,
+      height: height ?? 205.h,
       backgroundColor: AppColors.opactiyPrimary,
       systemOverlayStyle: const SystemUiOverlayStyle(
         statusBarColor: AppColors.opactiyPrimary,
@@ -85,5 +84,5 @@ class HomeAppbarWidget extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(205.h);
+  Size get preferredSize => Size.fromHeight(height ?? 205.h);
 }

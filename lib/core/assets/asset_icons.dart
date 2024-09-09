@@ -48,4 +48,16 @@ class AssetIcons {
   static const String locationSvg = 'assets/icons/location.svg';
   static const String fuelSvg = 'assets/icons/fuel.svg';
   static const String checkBlue = 'assets/icons/check_blue.png';
+  static const String boxTickCompeleted =
+      'assets/icons/box_tick_compeleted.svg';
+  static const String boxTickActive = 'assets/icons/box_tick_active.svg';
+  static const String boxTickPending = 'assets/icons/box_time_pending.svg';
+  static const String profileCircleSvg = 'assets/icons/profile-circle.svg';
+  static const String workExperienceSvg = 'assets/icons/work_experience.svg';
+  static const String educationSvg = 'assets/icons/education.svg';
+  static const String skillSvg = 'assets/icons/skill.svg';
+  static const String languageSvg = 'assets/icons/language.svg';
+  static const String certificationSvg = 'assets/icons/certification.svg';
+  static const String ticketDiscountSvg = 'assets/icons/ticketdiscount.svg';
+  static const String emptyWalletSvg = 'assets/icons/empty-wallet.svg';
 }

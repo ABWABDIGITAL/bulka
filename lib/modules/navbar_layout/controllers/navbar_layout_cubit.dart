@@ -5,7 +5,11 @@ import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/modules/home/ui/views/home_screen.dart';
+import 'package:bulka/modules/home/ui/widgets/home_appbar_widget.dart';
 import 'package:bulka/modules/navbar_layout/controllers/navbar_layout_state.dart';
+import 'package:bulka/modules/posts_module/posts/ui/views/posts_screen.dart';
+import 'package:bulka/modules/profile/ui/views/profile_screen.dart';
+import 'package:bulka/modules/profile/ui/widgets/profile_appbar_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -138,10 +142,18 @@ class NavbarLayoutCubit extends Cubit<NavbarLayoutState> {
   ];
   List<Widget> navbarScreens = [
     const HomeScreen(),
+    const PostsScreen(),
     const HomeScreen(),
     const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
+    const ProfileScreen(),
+  ];
+
+  List<PreferredSizeWidget> navAppbars = [
+    const HomeAppbarWidget(),
+    const HomeAppbarWidget(),
+    const HomeAppbarWidget(),
+    const HomeAppbarWidget(),
+    const ProfileAppbarWidget(),
   ];
 
 //---------------------------------FUNCTIONS----------------------------------//

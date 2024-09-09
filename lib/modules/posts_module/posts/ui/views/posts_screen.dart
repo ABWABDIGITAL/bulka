@@ -8,14 +8,11 @@ class PostsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const HomeAppbarWidget(),
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          return const PostCardWidget().animate().fade(delay: (index * 50).ms);
-        },
-        itemCount: 10,
-      ),
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        return const PostCardWidget().animate().fade(delay: (index * 50).ms);
+      },
+      itemCount: 10,
     );
   }
 }
