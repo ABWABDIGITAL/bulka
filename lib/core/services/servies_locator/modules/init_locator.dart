@@ -7,11 +7,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Future<void> initLocator() async {
   DioHelper.init();
-  await Future.wait([
-    SharedPrefHelper.init(),
-    ScreenUtil.ensureScreenSize(),
-  ]);
+  await SharedPrefHelper.init();
+  await ScreenUtil.ensureScreenSize();
 
-  EasyLocalization.ensureInitialized();
   Bloc.observer = MyBlocObserver();
 }

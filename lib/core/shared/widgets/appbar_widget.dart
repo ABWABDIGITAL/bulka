@@ -1,7 +1,9 @@
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
+import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/constant/strings.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -26,6 +28,7 @@ class CustomeAppBarWidget extends StatelessWidget
     this.iconTheme,
     this.height,
     this.statusbarColor,
+    this.statusBarIconBrightness,
   });
   final double? height;
   final Color? backgroundColor;
@@ -44,6 +47,8 @@ class CustomeAppBarWidget extends StatelessWidget
   final double? leadingWidth;
   final IconThemeData? iconTheme;
   final Color? statusbarColor;
+  final Brightness? statusBarIconBrightness;
+
   @override
   Widget build(BuildContext context) {
     final Color backcolor = backgroundColor ?? AppColors.white;
@@ -55,9 +60,10 @@ class CustomeAppBarWidget extends StatelessWidget
                 (backcolor == AppColors.white
                     ? AppColors.white
                     : AppColors.primary),
-            statusBarIconBrightness: backcolor == AppColors.white
-                ? Brightness.dark
-                : Brightness.light,
+            statusBarIconBrightness: statusBarIconBrightness ??
+                (backcolor == AppColors.white
+                    ? Brightness.dark
+                    : Brightness.light),
             systemStatusBarContrastEnforced: true,
           ),
       iconTheme: iconTheme ??
@@ -94,4 +100,28 @@ class CustomeAppBarWidget extends StatelessWidget
 
   @override
   Size get preferredSize => Size.fromHeight(height ?? appbarheight);
+}
+
+class OpacityAppbarWidget extends StatelessWidget
+    implements PreferredSizeWidget {
+  const OpacityAppbarWidget({
+    super.key,
+    this.title,
+  });
+  final String? title;
+  @override
+  Widget build(BuildContext context) {
+    return CustomeAppBarWidget(
+      backgroundColor: AppColors.opactiyPrimary,
+      statusbarColor: AppColors.opactiyPrimary,
+      statusBarIconBrightness: Brightness.dark,
+      title: title ?? AppStrings.languages.tr(),
+      centerTitle: true,
+      titleStyle: TextStyles.rubik14W500Black,
+      iconTheme: const IconThemeData(color: AppColors.black),
+    );
+  }
+
+  @override
+  Size get preferredSize => Size.fromHeight(appbarheight);
 }

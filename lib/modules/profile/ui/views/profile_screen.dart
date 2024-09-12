@@ -1,4 +1,3 @@
-import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/modules/profile/ui/widgets/profile_basic_info_widget.dart';
 import 'package:bulka/modules/profile/ui/widgets/profile_orders_taps_widget.dart';
 import 'package:bulka/modules/profile/ui/widgets/profile_privacy_terms_widget.dart';

@@ -113,5 +113,10 @@
   "Packeges": "الحزم",
   "Payments": "المدفوعات",
   "Support": "الدعم",
-  "Privacy & Terms": "الخصوصية والشروط"
+  "Privacy & Terms": "الخصوصية والشروط",
+  "Upload CV/Resume": "تحميل السيرة الذاتية",
+  "Upload files in PDF format up to 5 MB. Just upload it once and you can use it in your next application.": "قم بتحميل الملفات بصيغة PDF حتى 5 ميغابايت. فقط قم بتحميلها مرة واحدة ويمكنك استخدامها في طلبك التالي.",
+  "Upload": "التحميل",
+  "Remove file": "إزالة الملف",
+  "Add CV": "إضافة سيرة ذاتية"
 }

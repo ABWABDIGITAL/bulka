@@ -113,5 +113,10 @@
   "Packeges": "Пакеты",
   "Payments": "Платежи",
   "Support": "Поддержка",
-  "Privacy & Terms": "Конфиденциальность и условия"
+  "Privacy & Terms": "Конфиденциальность и условия",
+  "Upload CV/Resume": "Загрузить резюме",
+  "Upload files in PDF format up to 5 MB. Just upload it once and you can use it in your next application.": "Загружайте файлы в формате PDF размером до 5 МБ. Достаточно загрузить его один раз, и вы сможете использовать его в следующем приложении.",
+  "Upload": "Загрузить",
+  "Remove file": "Удалить файл",
+  "Add CV": "Добавить резюме"
 }

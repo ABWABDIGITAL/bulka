@@ -138,4 +138,8 @@ class AppStrings {
   static const String payments = 'Payments';
   static const String support = 'Support';
   static const String privacyAndTerms = 'Privacy & Terms';
+  static const String uploadCvResume = 'Upload CV/Resume';
+  static const String upload = 'Upload';
+  static const String removeFile = 'Remove file';
+  static const String addCv = 'Add CV';
 }

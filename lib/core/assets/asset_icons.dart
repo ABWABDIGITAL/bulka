@@ -60,4 +60,7 @@ class AssetIcons {
   static const String certificationSvg = 'assets/icons/certification.svg';
   static const String ticketDiscountSvg = 'assets/icons/ticketdiscount.svg';
   static const String emptyWalletSvg = 'assets/icons/empty-wallet.svg';
+  static const String uploadSvg = 'assets/icons/upload.svg';
+  static const String pdf = 'assets/icons/PDF.png';
+  static const String trashFill = 'assets/icons/trash-fill.svg';
 }

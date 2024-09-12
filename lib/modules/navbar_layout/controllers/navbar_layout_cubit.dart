@@ -4,6 +4,8 @@ import 'package:bloc/bloc.dart';
 import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/modules/chats/specific_chat/data/params/get_specific_chat_params.dart';
+import 'package:bulka/modules/chats/specific_chat/view/screens/specific_chat_screen.dart';
 import 'package:bulka/modules/home/ui/views/home_screen.dart';
 import 'package:bulka/modules/home/ui/widgets/home_appbar_widget.dart';
 import 'package:bulka/modules/navbar_layout/controllers/navbar_layout_state.dart';
@@ -144,7 +146,7 @@ class NavbarLayoutCubit extends Cubit<NavbarLayoutState> {
     const HomeScreen(),
     const PostsScreen(),
     const HomeScreen(),
-    const HomeScreen(),
+    const SpecificChatScreen(GetSpecificChatParams(chatId: "1")),
     const ProfileScreen(),
   ];
 
@@ -152,7 +154,8 @@ class NavbarLayoutCubit extends Cubit<NavbarLayoutState> {
     const HomeAppbarWidget(),
     const HomeAppbarWidget(),
     const HomeAppbarWidget(),
-    const HomeAppbarWidget(),
+    PreferredSize(
+        preferredSize: Size.fromHeight(0), child: const HomeAppbarWidget()),
     const ProfileAppbarWidget(),
   ];
 

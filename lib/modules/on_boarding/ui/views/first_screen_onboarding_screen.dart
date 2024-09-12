@@ -1,4 +1,5 @@
 import 'package:bulka/core/assets/asset_images.dart';
+import 'package:bulka/core/assets/asset_translations.dart';
 import 'package:bulka/core/services/cache/shared_pref.dart';
 import 'package:bulka/core/shared/widgets/appbar_widget.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
