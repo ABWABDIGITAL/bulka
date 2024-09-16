@@ -16,18 +16,18 @@ class ChatModel extends ChatEntity {
   factory ChatModel.fromJson(Map<String, dynamic> json) {
     List<chat.Message> messages = [];
 
-    if (checkFromArray(json['messages'])) {
-      messages = (json['messages'] as List)
-          .map(
-            (e) => chat.TextMessage(
-              author: MySideInChatModel.fromJson(json['user']).user,
-              createdAt: DateTime.now().millisecondsSinceEpoch,
-              id: const Uuid().v4(),
-              text: json['message'],
-            ),
-          )
-          .toList();
-    }
+    // if (checkFromArray(json['messages'])) {
+    //   messages = (json['messages'] as List)
+    //       .map(
+    //         (e) => chat.TextMessage(
+    //           author: MySideInChatModel.fromJson(json['user']).user,
+    //           createdAt: DateTime.now().millisecondsSinceEpoch,
+    //           id: const Uuid().v4(),
+    //           text: json['message'],
+    //         ),
+    //       )
+    //       .toList();
+    // }
 
     return ChatModel(
       mySideInChatEntity: MySideInChatModel.fromJson(json['user']),

@@ -142,4 +142,5 @@ class AppStrings {
   static const String upload = 'Upload';
   static const String removeFile = 'Remove file';
   static const String addCv = 'Add CV';
+  static const String typeYourMessage = 'Type your message';
 }

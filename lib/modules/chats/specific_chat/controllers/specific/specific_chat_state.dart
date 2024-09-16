@@ -9,6 +9,8 @@ final class SpecificChatInitial extends SpecificChatState {}
 
 final class UpdateChatUi extends SpecificChatState {}
 
+final class UpdateChatFormField extends SpecificChatState {}
+
 final class GetSpecificChatLoading extends SpecificChatState {}
 
 final class GetSpecificChatSuccess extends SpecificChatState {

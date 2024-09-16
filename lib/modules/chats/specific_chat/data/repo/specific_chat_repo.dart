@@ -16,7 +16,7 @@ class SpecificChatRepo {
   Future<Either<ApiErrorEntity, ChatEntity>> getSpecificChat(
       GetSpecificChatParams params) async {
     try {
-      List<chat.TextMessage> messages = [];
+      List<chat.Message> messages = [];
       chat.User user = const chat.User(
         id: 'user-id',
         firstName: 'Adel',

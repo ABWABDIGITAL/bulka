@@ -22,12 +22,19 @@ class SpecificChatCubit extends Cubit<SpecificChatState> {
   SpecificChatCubit(this._specificChatRepo) : super(SpecificChatInitial());
 //---------------------------------VARIABLES----------------------------------//
   late ChatEntity _chatEntity;
-
+  bool _isRec = false;
+  TextEditingController _messageController = TextEditingController();
 //---------------------------------FUNCTIONS----------------------------------//
   List<types.Message> get messages => _chatEntity.messages;
   types.User get user => _chatEntity.mySideInChatEntity.user;
   types.User get doctor => _chatEntity.otherSideInChatEntity.user;
   ChatEntity get chatEntity => _chatEntity;
+  bool get isRec => _isRec;
+  TextEditingController get messageController => _messageController;
+  void _addMessage(types.Message message) {
+    _chatEntity.messages.insert(0, message);
+    emit(UpdateChatUi());
+  }
 
   bool checkChatEntityIsInit() {
     try {
@@ -35,11 +42,6 @@ class SpecificChatCubit extends Cubit<SpecificChatState> {
     } catch (e) {
       return false;
     }
-  }
-
-  void _addMessage(types.Message message) {
-    _chatEntity.messages.insert(0, message);
-    emit(UpdateChatUi());
   }
 
   void handleSendPressed(types.PartialText message) {
@@ -182,6 +184,54 @@ class SpecificChatCubit extends Cubit<SpecificChatState> {
         ),
       ),
     );
+  }
+
+  void handlePreviewDataFetched(
+      types.TextMessage message, types.PreviewData previewData) {
+    final index =
+        _chatEntity.messages.indexWhere((element) => element.id == message.id);
+    final updatedMessage =
+        (_chatEntity.messages[index] as types.TextMessage).copyWith(
+      previewData: previewData,
+    );
+
+    _chatEntity.messages[index] = updatedMessage;
+    emit(UpdateChatUi());
+  }
+
+  void handleVoiceMessage(File soundFile, String time) {
+    final message = types.AudioMessage(
+      author: user,
+      createdAt: DateTime.now().millisecondsSinceEpoch,
+      id: const Uuid().v4(),
+      duration: _parseTimeToDuration(time),
+      name: soundFile.path.split('/').last,
+      size: soundFile.lengthSync(),
+      uri: '',
+    );
+
+    _addMessage(message);
+  }
+
+  Duration _parseTimeToDuration(String time) {
+    // Split the input string by the colon
+    List<String> parts = time.split(':');
+
+    // Parse the minutes and seconds
+    int minutes = int.parse(parts[0]);
+    int seconds = int.parse(parts[1]);
+
+    // Return a Duration object
+    return Duration(minutes: minutes, seconds: seconds);
+  }
+
+  void onChangeRecorder(bool val) {
+    _isRec = val;
+    emit(UpdateChatUi());
+  }
+
+  void onChangeFormField() {
+    emit(UpdateChatFormField());
   }
 
 //----------------------------------REQUEST-----------------------------------//
