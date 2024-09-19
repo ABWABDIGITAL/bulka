@@ -127,11 +127,11 @@ class _FirstScreenOnboardingScreenState
                   true,
                 ).then(
                   (_) {
-                    // context.push(const LoginScreen());
+                    context.push(const LoginScreen());
                     // context.push(const ChooseInterestsScreen());
                     // context.push(const PostsScreen());
                     // context.push(const HomeScreen());
-                    context.push(const NavbarLayoutScreen());
+                    // context.push(const NavbarLayoutScreen());
                   },
                 );
               } else {

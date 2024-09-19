@@ -10,10 +10,12 @@ class ApiErrorModel extends ApiErrorEntity {
     required super.errors,
   });
 
-  factory ApiErrorModel.fromJson(Map<String, dynamic> json, {int? statusCode}) {
+  factory ApiErrorModel.fromJson(Map<String, dynamic> json, int statusCode) {
     return ApiErrorModel(
-      status: json['status'] ?? ApiInternalStatus.faliure,
-      code: statusCode ?? json['code'] ?? -1000,
+      status: json['status'] == 'fail'
+          ? ApiInternalStatus.faliure
+          : ApiInternalStatus.success,
+      code: statusCode,
       message: json['message'] ?? "Invalid",
       errors: checkFromArray(json['errors'])
           ? List<String>.from(json['errors'])

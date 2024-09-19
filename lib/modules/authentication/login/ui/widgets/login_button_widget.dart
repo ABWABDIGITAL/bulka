@@ -1,6 +1,8 @@
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/core/utils/widgets/buttons/default_button.dart';
 import 'package:bulka/core/utils/widgets/dialogs/dialogs.dart';
+import 'package:bulka/modules/authentication/choose_registration_type/ui/views/choose_registeration_type_screen.dart';
 import 'package:bulka/modules/authentication/login/controllers/login_cubit.dart';
 import 'package:bulka/modules/authentication/login/controllers/login_state.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -38,11 +40,12 @@ class LoginButtonWidget extends StatelessWidget {
           child: DefaultButton(
             borderRadiusValue: 12.r,
             onPressed: () async {
-              if (cubit.loginKey.currentState!.validate()) {
-                cubit.loginKey.currentState!.save();
-                FocusScope.of(context).unfocus();
-                cubit.loginStatesHandled();
-              }
+              // if (cubit.loginKey.currentState!.validate()) {
+              //   cubit.loginKey.currentState!.save();
+              //   FocusScope.of(context).unfocus();
+              //   cubit.loginStatesHandled(context);
+              // }
+              context.push(const ChooseRegisterationTypeScreen());
             },
             text: AppStrings.login.tr(),
             isLoading: state is LoginStateLoading ? true : false,

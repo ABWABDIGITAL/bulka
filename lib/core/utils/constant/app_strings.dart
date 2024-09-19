@@ -26,9 +26,13 @@ class AppStrings {
       'We make it easy to buy and sell real estate';
   static const String loginToUs = 'Login to us';
   static const String email = 'Email';
+  static const String fullname = 'Full Name';
+
   static const String password = 'Password';
   static const String confirmPassword = 'Confirm Password';
   static const String enterYourEmail = 'Enter your email';
+  static const String enterYourFullName = 'Enter your full name';
+
   static const String enterYourPassword = 'Enter your password';
   static const String rememberMe = 'Remember me';
   static const String forgetPassword = 'Forget Password';
@@ -143,4 +147,6 @@ class AppStrings {
   static const String removeFile = 'Remove file';
   static const String addCv = 'Add CV';
   static const String typeYourMessage = 'Type your message';
+  static const String mismatchedPassword = 'Mismatched Password';
+  static const String languageNotSelected = 'Language not selected';
 }

@@ -119,5 +119,9 @@
   "Upload": "Загрузить",
   "Remove file": "Удалить файл",
   "Add CV": "Добавить резюме",
-  "Type your message": "Напечатайте свое сообщение"
+  "Type your message": "Напечатайте свое сообщение",
+  "Mismatched Password": "Несоответствующий пароль",
+  "Language not selected": "Язык не выбран",
+  "Full Name": "Полное имя",
+  "Enter your full name": "Введите свое полное имя"
 }

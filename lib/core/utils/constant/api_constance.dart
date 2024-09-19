@@ -1,9 +1,11 @@
 class ApiConstance {
-  static const String baseUrl = 'https://api.ABWAB.com/v1';
+  static const String baseUrl =
+      'https://bulka.thesoftwarecompany.io/public/api/v1';
 //------------------------------AUTHENTICATION--------------------------------//
-  static const String login = '/public/auth/login';
+  static const String login = '/app/login';
+  static const String countries = '/app/helpers/countries';
+  static const String userRegister = '/app/client/register';
   static const String companyRegister = '/public/auth/companyRegister';
-  static const String userRegister = '/public/auth/userRegister';
   static const String verifyAccount = '/public/auth/verify';
   static const String forgotPasswordWithEmail =
       '/public/auth/forgotPasswordWithEmail';

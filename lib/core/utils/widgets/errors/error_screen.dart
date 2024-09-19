@@ -1,6 +1,7 @@
 import 'package:bulka/core/assets/asset_images.dart';
 import 'package:bulka/core/shared/entity/api_error_entity.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -33,8 +34,13 @@ class _ErrorScreenState extends State<ErrorScreen> {
       padding: EdgeInsets.symmetric(horizontal: 20.r),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [],
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(widget.error.message),
+          IconButton(
+              onPressed: widget.onPressed,
+              icon: const Icon(CupertinoIcons.restart))
+        ],
       ),
     );
   }

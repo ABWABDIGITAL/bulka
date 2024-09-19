@@ -119,5 +119,9 @@
   "Upload": "التحميل",
   "Remove file": "إزالة الملف",
   "Add CV": "إضافة سيرة ذاتية",
-  "Type your message": "اكتب رسالتك"
+  "Type your message": "اكتب رسالتك",
+  "Mismatched Password": "كلمة السر غير متطابقة",
+  "Language not selected": "اللغة غير محددة",
+  "Full Name": "الاسم الكامل",
+  "Enter your full name": "أدخل اسمك بالكامل"
 }

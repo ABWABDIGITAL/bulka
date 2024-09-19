@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:bulka/core/assets/asset_flags.dart';
 import 'package:bulka/core/services/cache/shared_pref.dart';
 import 'package:bulka/core/utils/constant/shared_pref_keys.dart';
+import 'package:bulka/core/utils/constant/strings.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
@@ -43,8 +44,11 @@ class AssetTranslations {
     final lang = await SharedPrefHelper.getData(SharedPrefKeys.savedLang);
 
     if (lang != null) {
+      currentLanguage = LanguageConfig.fromJson(json.decode(lang));
+
       return LanguageConfig.fromJson(json.decode(lang));
     } else {
+      currentLanguage = _startedLanguage;
       return _startedLanguage;
     }
   }

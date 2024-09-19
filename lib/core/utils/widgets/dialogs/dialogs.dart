@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:bulka/core/assets/asset_lottie.dart';
 import 'package:bulka/core/services/haptic/haptic_vibrate.dart';
+import 'package:bulka/core/services/sound/sound_helper.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -168,25 +169,25 @@ class Dialogs {
     FutureOr Function(void)? onSuccessFinishedCallback,
   }) {
     const int milliseconds = 1150;
-    Timer(
-        const Duration(milliseconds: milliseconds),
-        callback ??
-            () async {
-              // await SoundHelper.successSound()
-              //     .then(onSuccessFinishedCallback ?? (_) => context.pop());
-            });
-    Timer(
-        const Duration(milliseconds: milliseconds - 50),
-        callback ??
-            () async {
-              await HapticsHelper.vibrate(HapticsType.success);
-            });
 
     showDialog(
       context: context,
       barrierDismissible: false,
       barrierColor: AppColors.transparent,
-      builder: (context) {
+      builder: (dialogContext) {
+        Timer(
+            const Duration(milliseconds: milliseconds),
+            callback ??
+                () async {
+                  await SoundHelper.successSound().then(
+                      onSuccessFinishedCallback ?? (_) => dialogContext.pop());
+                });
+        Timer(
+            const Duration(milliseconds: milliseconds - 50),
+            callback ??
+                () async {
+                  await HapticsHelper.vibrate(HapticsType.success);
+                });
         return Dialog(
           elevation: 0,
           backgroundColor: Colors.transparent,

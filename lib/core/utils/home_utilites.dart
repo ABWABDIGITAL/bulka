@@ -2,6 +2,7 @@ import 'package:bulka/core/services/cache/shared_pref.dart';
 import 'package:bulka/core/utils/constant/strings.dart';
 import 'package:bulka/core/utils/widgets/responsive/responsive.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 
 bool checkFromArray(dynamic myArray) {
   if (myArray != null && myArray is List && myArray.isNotEmpty) {
@@ -63,4 +64,40 @@ Future<bool> clearAllDataToLogout() async {
     debugPrint(e.toString());
   }
   return false;
+}
+
+Future<Position?> getCurrentPosition() async {
+  // Check if location services are enabled
+  bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+  if (!serviceEnabled) {
+    // Location services are not enabled, return an error or request to enable it
+    return null;
+    // throw Exception('Location services are disabled.');
+  }
+
+  // Check location permission
+  LocationPermission permission = await Geolocator.checkPermission();
+  if (permission == LocationPermission.denied) {
+    // Request permission if it hasn't been granted
+    permission = await Geolocator.requestPermission();
+    if (permission == LocationPermission.denied) {
+      return null;
+      // Permissions are denied, return an error or handle it accordingly
+      // throw Exception('Location permissions are denied.');
+    }
+  }
+
+  if (permission == LocationPermission.deniedForever) {
+    return null;
+    // Permissions are denied forever, return an error or prompt user to enable it
+    // throw Exception(
+    //     'Location permissions are permanently denied, we cannot request permissions.');
+  }
+
+  // If all permissions are granted, get the current position
+  Position position = await Geolocator.getCurrentPosition(
+    desiredAccuracy: LocationAccuracy.high,
+  );
+
+  return position;
 }

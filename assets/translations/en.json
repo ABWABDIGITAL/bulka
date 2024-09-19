@@ -119,5 +119,9 @@
   "Upload": "Upload",
   "Remove file": "Remove file",
   "Add CV": "Add CV",
-  "Type your message": "Type your message"
+  "Type your message": "Type your message",
+  "Mismatched Password": "Mismatched Password",
+  "Language not selected": "Language not selected",
+  "Full Name": "Full Name",
+  "Enter your full name": "Enter your full name"
 }

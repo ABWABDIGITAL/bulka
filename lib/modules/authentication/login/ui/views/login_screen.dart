@@ -3,6 +3,7 @@ import 'package:bulka/core/shared/widgets/appbar_widget.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/modules/authentication/login/controllers/login_cubit.dart';
 import 'package:bulka/modules/authentication/login/ui/widgets/auth_divider_widget.dart';
 import 'package:bulka/modules/authentication/login/ui/widgets/dont_have_account_widget.dart';

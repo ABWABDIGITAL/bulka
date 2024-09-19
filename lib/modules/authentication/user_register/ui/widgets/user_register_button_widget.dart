@@ -30,7 +30,9 @@ class UserRegisterButtonWidget extends StatelessWidget {
           Dialogs.errorDialog(context: context, error: state.error);
         }
         if (state is UserRegisterSuccess) {
-          Dialogs.successDialog(context);
+          // Dialogs.successDialog(context);
+          context.push(VerifyAccountScreen(
+              accountVerification: VerifyAccountWithPhone()));
         }
       },
       buildWhen: (previous, current) =>
@@ -61,15 +63,15 @@ class UserRegisterButtonWidget extends StatelessWidget {
                 return;
               }
               if (isValid && cubit.agreePolicyAndConditions) {
-                // cubit.userRegisterStatesHandled();
-                context.push(
-                  const ChooseVerifyMethodScreen(
-                    ChooseVerifyMethodParams(
-                      email: 'test@test.com',
-                      phone: '1234567890',
-                    ),
-                  ),
-                );
+                cubit.userRegisterStatesHandled();
+                // context.push(
+                //   const ChooseVerifyMethodScreen(
+                //     ChooseVerifyMethodParams(
+                //       email: 'test@test.com',
+                //       phone: '1234567890',
+                //     ),
+                //   ),
+                // );
               }
             },
             text: AppStrings.signUp.tr(),

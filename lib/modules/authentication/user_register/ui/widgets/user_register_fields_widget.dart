@@ -3,9 +3,12 @@ import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/widgets/form_fields/default_form_field.dart';
+import 'package:bulka/core/utils/widgets/form_fields/default_phone_form_field.dart';
 import 'package:bulka/core/utils/widgets/validation/validation.dart';
 import 'package:bulka/modules/authentication/user_register/controllers/user_register_cubit.dart';
 import 'package:bulka/modules/authentication/user_register/controllers/user_register_state.dart';
+import 'package:bulka/modules/authentication/user_register/ui/widgets/user_phone_form_field_widget.dart';
+import 'package:bulka/modules/countries/controllers/cubit/country_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +26,40 @@ class UserRegisterFieldsWidget extends StatelessWidget {
       child: Form(
         key: cubit.userRegisterKey,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            DefaultFormField(
+              titleText: AppStrings.fullname.tr(),
+              hintText: AppStrings.enterYourFullName.tr(),
+              controller: cubit.fullNameController,
+              prefixIcon: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    AssetIcons.personFill,
+                    height: 20.h,
+                    width: 20.w,
+                    fit: BoxFit.contain,
+                  ),
+                ],
+              ),
+            ),
+            vSpace(20),
+            DefaultPhoneFormField(
+              controller: cubit.phoneController,
+              onCountryChangedReturnApiCountry: (country) {
+                cubit.phoneCodeController.text = country.phoneCode;
+                cubit.countryId = country.id;
+              },
+              // onCountryChanged: (country) {
+              //   cubit.phoneCodeController.text = country.dialCode;
+              //   context.read<CountryCubit>().countries?.forEach((element) {
+              //     if (element.phoneCode == country.dialCode) {
+              //       cubit.countryId = element.id;
+              //     }
+              //   });
+              // },
+            ),
             DefaultFormField(
               titleText: AppStrings.email.tr(),
               hintText: AppStrings.enterYourEmail.tr(),
