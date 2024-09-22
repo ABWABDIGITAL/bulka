@@ -7,7 +7,7 @@ import 'package:bulka/modules/authentication/choose_verify_method/data/params/ch
 import 'package:bulka/modules/authentication/choose_verify_method/ui/views/choose_verify_method_screen.dart';
 import 'package:bulka/modules/authentication/company_register/controllers/company_register_cubit.dart';
 import 'package:bulka/modules/authentication/company_register/controllers/company_register_state.dart';
-import 'package:bulka/modules/authentication/verify_account/ui/views/verify_account_screen.dart';
+import 'package:bulka/modules/authentication/verify_phone/ui/views/verify_phone_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -61,14 +61,14 @@ class CompanyRegisterButtonWidget extends StatelessWidget {
               }
               if (isValid && cubit.agreePolicyAndConditions) {
                 // cubit.companyRegisterStatesHandled();
-                context.push(
-                  const ChooseVerifyMethodScreen(
-                    ChooseVerifyMethodParams(
-                      email: 'test@test.com',
-                      phone: '1234567890',
-                    ),
-                  ),
-                );
+                // context.push(
+                //   const ChooseVerifyMethodScreen(
+                //     ChooseVerifyMethodParams(
+                //       email: 'test@test.com',
+                //       phone: '1234567890',
+                //     ),
+                //   ),
+                // );
               }
             },
             text: AppStrings.signUp.tr(),

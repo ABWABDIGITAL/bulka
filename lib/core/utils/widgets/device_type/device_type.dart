@@ -1,10 +1,12 @@
+import 'dart:io';
+
 import 'package:bulka/core/utils/widgets/responsive/responsive.dart';
 import 'package:flutter/cupertino.dart';
 
 enum DeviceTypeEnum { phone, phoneTablet, tablet, largeDevice, xLargeDevice }
 
 class DeviceType {
-  static String getDeviceType(BuildContext context) {
+  static String getDeviceTypeBySize(BuildContext context) {
     if (Responsive.isSmall(context)) {
       return DeviceTypeEnum.phone.name;
     }
@@ -21,5 +23,24 @@ class DeviceType {
       return DeviceTypeEnum.xLargeDevice.name;
     }
     return DeviceTypeEnum.xLargeDevice.name;
+  }
+
+  static String getDeviceType() {
+    if (Platform.isIOS) {
+      return 'ios';
+    }
+    if (Platform.isAndroid) {
+      return 'android';
+    }
+    if (Platform.isFuchsia) {
+      return 'fuchsia';
+    }
+    if (Platform.isMacOS) {
+      return 'mac os';
+    }
+    if (Platform.isLinux) {
+      return 'linux';
+    }
+    return 'huawei';
   }
 }

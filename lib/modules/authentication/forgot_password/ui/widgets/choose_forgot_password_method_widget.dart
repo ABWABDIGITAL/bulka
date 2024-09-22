@@ -74,6 +74,9 @@ class ChooseForgotPasswordMethodWidget extends StatelessWidget {
                   duration: 500.ms,
                   child: DefaultPhoneFormField(
                     controller: cubit.phoneController,
+                    onCountryChangedReturnApiCountry: (country) {
+                      cubit.phoneCodeController.text = country.phoneCode;
+                    },
                   ),
                 ),
               if (cubit.verifyAccountMethod == VerifyAccountMethod.email)

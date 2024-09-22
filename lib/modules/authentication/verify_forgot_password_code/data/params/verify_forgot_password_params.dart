@@ -10,7 +10,12 @@ class VerifyForgotPasswordParams extends Equatable {
   final AccountForgotPassword accountForgotPassword;
 
   Map<String, dynamic> returnedMap() {
-    Map<String, dynamic> map = {"code": code};
+    Map<String, dynamic> map = {
+      "reset_code": code,
+      "phone": accountForgotPassword.phone,
+      "phone_code": accountForgotPassword.phoneCode,
+      "email": accountForgotPassword.email,
+    };
     map.removeWhere((key, value) => value == null);
     return map;
   }

@@ -1,7 +1,8 @@
 import 'package:equatable/equatable.dart';
 
-class VerifyAccountEntity extends Equatable {
-  const VerifyAccountEntity({required this.message});
+class ResendVerifyPhoneEntity extends Equatable {
+  const ResendVerifyPhoneEntity({required this.message});
+
   final String message;
 
   @override

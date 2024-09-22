@@ -44,7 +44,7 @@ class ChooseVerifyMethodScreen extends StatelessWidget {
               vSpace(20),
               ChooseVerifyMethodWidget(params),
               vSpace(20),
-              const ChooseVerifyAccountButtonWidget(),
+              ChooseVerifyAccountButtonWidget(params),
               vSpace(20),
             ],
           ),

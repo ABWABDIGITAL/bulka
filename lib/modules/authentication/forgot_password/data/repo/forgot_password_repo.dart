@@ -16,7 +16,6 @@ class ForgotPasswordRepo extends Equatable {
     try {
       final response = await DioHelper.post(
         params.endPoint,
-        data: params.returnedMap(),
       );
       return Right(ForgotPasswordModel.fromJson(response.data['data']));
     } catch (error) {

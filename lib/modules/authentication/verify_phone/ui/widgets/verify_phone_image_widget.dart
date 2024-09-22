@@ -1,14 +1,10 @@
+import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/assets/asset_images.dart';
-import 'package:bulka/core/shared/abstractions/account_verification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class VerifyImageWidget extends StatelessWidget {
-  const VerifyImageWidget({
-    super.key,
-    required this.accountVerification,
-  });
-  final AccountVerification accountVerification;
+class VerifyPhoneImageWidget extends StatelessWidget {
+  const VerifyPhoneImageWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +15,7 @@ class VerifyImageWidget extends StatelessWidget {
         alignment: AlignmentDirectional.center,
         children: [
           Image.asset(
-            accountVerification.imagePath,
+            AssetIcons.verifyEmail,
             height: 130.h,
             width: 130.w,
           ),

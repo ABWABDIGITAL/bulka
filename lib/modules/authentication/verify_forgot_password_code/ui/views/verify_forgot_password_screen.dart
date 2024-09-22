@@ -16,7 +16,6 @@ import 'package:bulka/modules/authentication/verify_forgot_password_code/ui/widg
 import 'package:bulka/modules/authentication/verify_forgot_password_code/ui/widgets/verify_forgot_password_fields_widget.dart';
 import 'package:bulka/modules/authentication/verify_forgot_password_code/ui/widgets/verify_forgot_password_resend_timer_wiget.dart';
 import 'package:bulka/modules/authentication/verify_forgot_password_code/ui/widgets/verify_forgot_password_title_widget.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -51,11 +50,10 @@ class VerifyForgotPasswordScreen extends StatelessWidget {
                   VerifyForgotPasswordTitleWidget(
                     accountForgotPassword: accountForgotPassword,
                   ),
-                  const VerifyForgotPasswordFieldsWidget(),
+                  VerifyForgotPasswordFieldsWidget(accountForgotPassword),
                   const VerifyForgotPasswordResendTimerWiget(),
                   VerifyForgotPasswordButtonWidget(
-                    accountForgotPassword: accountForgotPassword,
-                  ),
+                      accountForgotPassword: accountForgotPassword),
                 ],
               ),
             ),

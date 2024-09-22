@@ -1,46 +1,37 @@
-import 'package:bulka/core/assets/asset_icons.dart';
-import 'package:bulka/core/utils/constant/app_strings.dart';
-import 'package:bulka/modules/authentication/verify_account/data/params/verify_account_with_phone_params.dart';
-import 'package:easy_localization/easy_localization.dart';
+// import 'package:bulka/core/assets/asset_icons.dart';
+// import 'package:bulka/core/utils/constant/app_strings.dart';
 
-abstract class AccountVerification {
-  late String title;
-  late String description;
-  late String imagePath;
-  Future<void> sendVerificationCode(String email);
-  Future<void> verifyCode(String email, String code);
-}
+// import 'package:easy_localization/easy_localization.dart';
 
-class VerifyAccountWithEmail implements AccountVerification {
-  @override
-  Future<void> sendVerificationCode(String email) async {}
+// abstract class AccountVerification {
+//   late String title;
+//   late String description;
+//   late String imagePath;
+// }
 
-  @override
-  Future<void> verifyCode(String email, String code) async {}
+// class VerifyAccountWithEmail implements AccountVerification {
+//   @override
+//   String title = AppStrings.verifyYourEmail.tr();
 
-  @override
-  String title = AppStrings.verifyYourEmail.tr();
+//   @override
+//   String description = AppStrings.checkYourEmailAndEnterVerification.tr();
 
-  @override
-  String description = AppStrings.checkYourEmailAndEnterVerification.tr();
+//   @override
+//   String imagePath = AssetIcons.verifyEmail;
+// }
 
-  @override
-  String imagePath = AssetIcons.verifyEmail;
-}
+// class VerifyAccountWithPhone implements AccountVerification {
+//   VerifyAccountWithPhone({required this.phoneCode, required this.phone});
+//   @override
+//   String title = AppStrings.verifyYourPhone.tr();
 
-class VerifyAccountWithPhone implements AccountVerification {
-  @override
-  Future<void> sendVerificationCode(String phone) async {}
+//   @override
+//   String description = AppStrings.checkYourPhoneAndEnterVerification.tr();
+//   @override
+//   String imagePath = AssetIcons.verifyEmail;
 
-  @override
-  Future<void> verifyCode(String phone, String code) async {}
-  @override
-  String title = AppStrings.verifyYourPhone.tr();
+//   final String phoneCode;
+//   final String phone;
 
-  @override
-  String description = AppStrings.checkYourPhoneAndEnterVerification.tr();
-  @override
-  String imagePath = AssetIcons.verifyEmail;
-
-  // final VerifyAccountWithPhoneParams params;
-}
+//   // final VerifyAccountWithPhoneParams params;
+// }

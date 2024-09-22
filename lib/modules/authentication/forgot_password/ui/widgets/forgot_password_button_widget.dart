@@ -46,11 +46,6 @@ class ForgotPasswordButtonWidget extends StatelessWidget {
             if (isValid) {
               switch (cubit.verifyAccountMethod) {
                 case VerifyAccountMethod.email:
-                  // cubit.forgotPasswordViaEmailStatesHandled(
-                  //   GetForgotPasswordCodeViaEmail(
-                  //     email: cubit.emailController.text,
-                  //   ),
-                  // );
                   context.push(
                     VerifyForgotPasswordScreen(
                       accountForgotPassword: GetForgotPasswordCodeViaEmail(
@@ -59,15 +54,11 @@ class ForgotPasswordButtonWidget extends StatelessWidget {
                     ),
                   );
                 case VerifyAccountMethod.phone:
-                  // cubit.forgotPasswordViaEmailStatesHandled(
-                  //   GetForgotPasswordCodeViaPhone(
-                  //     phone: cubit.phoneController.text,
-                  //   ),
-                  // );
                   context.push(
                     VerifyForgotPasswordScreen(
                       accountForgotPassword: GetForgotPasswordCodeViaPhone(
                         phone: cubit.phoneController.text,
+                        phoneCode: cubit.phoneCodeController.text,
                       ),
                     ),
                   );

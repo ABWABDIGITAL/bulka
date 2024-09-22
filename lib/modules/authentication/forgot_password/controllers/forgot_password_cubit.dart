@@ -17,6 +17,7 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
   VerifyAccountMethod _verifyAccountMethod = VerifyAccountMethod.email;
   TextEditingController emailController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
+  TextEditingController phoneCodeController = TextEditingController();
   final GlobalKey<FormState> forgotKey = GlobalKey<FormState>();
 //---------------------------------FUNCTIONS----------------------------------//
   VerifyAccountMethod get verifyAccountMethod => _verifyAccountMethod;

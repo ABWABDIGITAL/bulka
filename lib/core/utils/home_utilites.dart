@@ -1,4 +1,9 @@
+import 'dart:convert';
+
 import 'package:bulka/core/services/cache/shared_pref.dart';
+import 'package:bulka/core/shared/entity/token_entity.dart';
+import 'package:bulka/core/shared/models/token_model.dart';
+import 'package:bulka/core/utils/constant/shared_pref_keys.dart';
 import 'package:bulka/core/utils/constant/strings.dart';
 import 'package:bulka/core/utils/widgets/responsive/responsive.dart';
 import 'package:flutter/material.dart';
@@ -22,23 +27,28 @@ bool checkFromMap(dynamic myMap) {
   }
 }
 
-// Future<void> saveToken(TokenEntity tokenEntity) async {
-//   try {
-//     await SharedPrefHelper.setSecuredString(
-//         SharedPrefKeys.userToken, tokenEntity.accessToken);
-//   } catch (e) {
-//     debugPrint(e.toString());
-//   }
-// }
+Future<void> saveToken(TokenEntity tokenEntity) async {
+  try {
+    await SharedPrefHelper.setSecuredString(
+        SharedPrefKeys.userToken, jsonEncode(tokenEntity.toJson()));
+    await getToken();
+  } catch (e) {
+    debugPrint(e.toString());
+  }
+}
 
-// Future<String?> getToken() async {
-//   try {
-//     return await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
-//   } catch (e) {
-//     debugPrint(e.toString());
-//   }
-//   return null;
-// }
+Future<TokenEntity?> getToken() async {
+  try {
+    final String? userToken =
+        await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
+    token =
+        userToken != null ? TokenModel.fromJson(jsonDecode(userToken)) : null;
+    return token;
+  } catch (e) {
+    debugPrint(e.toString());
+  }
+  return null;
+}
 
 bool isScreenSmallFun(BuildContext context) {
   if (Responsive.isSmall(context) || Responsive.isMedium(context)) {

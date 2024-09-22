@@ -10,7 +10,6 @@ import 'package:bulka/modules/authentication/verify_forgot_password_code/control
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class VerifyForgotPasswordButtonWidget extends StatelessWidget {
   const VerifyForgotPasswordButtonWidget({
@@ -30,7 +29,16 @@ class VerifyForgotPasswordButtonWidget extends StatelessWidget {
           current is VerifyForgotPasswordError,
       listener: (context, state) {
         if (state is VerifyForgotPasswordSuccess) {
-          // Dialogs.successDialog(context);
+          if (state.entity.message != null) {
+            Dialogs.customeToast(
+              text: state.entity.message!,
+              context: context,
+              isSuccess: true,
+            );
+          }
+          if (state.entity.isCodeCorrect) {
+            context.push(const ResetPasswordScreen());
+          }
         }
         if (state is VerifyForgotPasswordError) {
           Dialogs.errorDialog(context: context, error: state.error);
@@ -51,9 +59,7 @@ class VerifyForgotPasswordButtonWidget extends StatelessWidget {
           textColor:
               cubit.isOtpFilled ? AppColors.white : AppColors.mediumGrey2,
           onPressed: () {
-            if (cubit.isOtpFilled) {
-              context.push(const ResetPasswordScreen());
-            }
+            if (cubit.isOtpFilled) {}
           },
         );
       },

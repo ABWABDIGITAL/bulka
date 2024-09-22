@@ -15,7 +15,7 @@ class VerifyForgotPasswordRepo extends Equatable {
       verifyForgotPassword(VerifyForgotPasswordParams params) async {
     try {
       final response = await DioHelper.post(
-        ApiConstance.verifyForgotPasswordCode,
+        params.accountForgotPassword.endPoint,
         data: params.returnedMap(),
       );
       return Right(VerifyForgotPasswordModel.fromJson(response.data['data']));

@@ -4,8 +4,7 @@ import 'package:bulka/modules/authentication/forgot_password/data/repo/forgot_pa
 import 'package:bulka/modules/authentication/login/data/repo/login_repo.dart';
 import 'package:bulka/modules/authentication/reset_password/data/repo/reset_password_repo.dart';
 import 'package:bulka/modules/authentication/user_register/data/repo/user_register_repo.dart';
-import 'package:bulka/modules/authentication/verify_account/data/repo/verify_account_repo.dart';
-import 'package:bulka/modules/authentication/verify_forgot_password_code/controllers/verify_forgot_password_cubit.dart';
+import 'package:bulka/modules/authentication/verify_phone/data/repo/verify_phone_repo.dart';
 import 'package:bulka/modules/authentication/verify_forgot_password_code/data/repo/verify_forgot_password_repo.dart';
 
 void authenticationLocator() {
@@ -21,7 +20,7 @@ void authenticationLocator() {
   sl.registerLazySingleton<UserRegisterRepo>(() => const UserRegisterRepo());
 //-------------------------------VERIFY ACCOUNT-------*----------------------//
   //REPOSITORIES
-  sl.registerLazySingleton<VerifyAccountRepo>(() => const VerifyAccountRepo());
+  sl.registerLazySingleton<VerifyPhoneRepo>(() => const VerifyPhoneRepo());
 //-------------------------------FORGOT PASSWORD-------*----------------------//
   //REPOSITORIES
   sl.registerLazySingleton<ForgotPasswordRepo>(

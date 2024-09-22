@@ -61,9 +61,9 @@ class SharedPrefHelper extends Equatable {
   }
 
   /// Gets an String value from SharedPreferences with given [key].
-  static getString(String key) async {
+  static Future<String?> getString(String key) async {
     debugPrint('SharedPrefHelper : getString with key : $key');
-    return _sharedPreferences.getString(key) ?? '';
+    return _sharedPreferences.getString(key);
   }
 
   /// Gets an String value from SharedPreferences with given [key].

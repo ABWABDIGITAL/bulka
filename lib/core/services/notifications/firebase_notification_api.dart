@@ -11,7 +11,7 @@ Future<void> handleBackgroundMessage(RemoteMessage message) async {
 Future<void> handleOnAppOpenedMessage(RemoteMessage message) async {
   // Handle message
 }
-String? fcmToken;
+String? fcmToken = 'null';
 
 class FirebaseNotificationApi {
   static const String _channelId = 'high_importance_channel';

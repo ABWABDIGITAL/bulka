@@ -43,6 +43,7 @@ class LoginCubit extends Cubit<LoginState> {
       {double? latitude, double? longitude}) async {
     if (latitude == null || longitude == null) return null;
     await placemarkFromCoordinates(latitude, longitude);
+    return null;
   }
 
   Future<LoginLocationParams> _loginLocation() async {
@@ -67,15 +68,13 @@ class LoginCubit extends Cubit<LoginState> {
     emit(const LoginStateLoading());
     final LoginLocationParams locations = await _loginLocation();
 
-    String deviceType = DeviceType.getDeviceType(context);
-
     final response = await _loginRepo.login(
       LoginParams(
         phone: emailController.text,
         password: passwordController.text,
         email: emailController.text,
         deviceToken: fcmToken,
-        deviceType: deviceType,
+        deviceType: DeviceType.getDeviceType(),
         lat: locations.lat,
         lng: locations.lng,
         location: locations.location,

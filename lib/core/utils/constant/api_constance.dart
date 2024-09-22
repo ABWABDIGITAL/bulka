@@ -7,10 +7,11 @@ class ApiConstance {
   static const String userRegister = '/app/client/register';
   static const String companyRegister = '/public/auth/companyRegister';
   static const String verifyAccount = '/public/auth/verify';
-  static const String forgotPasswordWithEmail =
-      '/public/auth/forgotPasswordWithEmail';
-  static const String forgotPasswordWithPhone =
-      '/public/auth/forgotPasswordWithPhone';
+  static const String verifyWithPhone = '/app/verify';
+  static const String resendVerifyWithPhone = '/app/send-code';
+
+  static const String forgotPasswordWithEmail = '/app/check-code';
+  static const String forgotPasswordWithPhone = '/app/check-code';
   static const String verifyForgotPasswordCode =
       '/public/auth/verifyForgotPasswordCode';
 //---------------------------------INTERESTS----------------------------------//
