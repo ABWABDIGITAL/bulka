@@ -1,4 +1,5 @@
 import 'package:bulka/core/services/servies_locator/modules/authentication_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/category_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/chat_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/country_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/init_locator.dart';
@@ -22,5 +23,7 @@ class ServiceLocator {
     chatLocator();
 //--------------------------------COUNTRIES--------------------------------------//
     countryLocator();
+//-------------------------------CATEGORIES--------------------------------------//
+    categoryLocator();
   }
 }

@@ -2,7 +2,9 @@ import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/core/utils/widgets/form_fields/default_category_drop_down_widget.dart';
 import 'package:bulka/core/utils/widgets/form_fields/default_form_field.dart';
+import 'package:bulka/core/utils/widgets/form_fields/default_phone_form_field.dart';
 import 'package:bulka/core/utils/widgets/validation/validation.dart';
 import 'package:bulka/modules/authentication/company_register/controllers/company_register_cubit.dart';
 import 'package:bulka/modules/authentication/company_register/controllers/company_register_state.dart';
@@ -25,6 +27,30 @@ class CompanyRegisterFieldsWidget extends StatelessWidget {
         child: Column(
           children: [
             DefaultFormField(
+              titleText: AppStrings.fullname.tr(),
+              hintText: AppStrings.enterYourFullName.tr(),
+              controller: cubit.fullNameController,
+              prefixIcon: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    AssetIcons.personFill,
+                    height: 20.h,
+                    width: 20.w,
+                    fit: BoxFit.contain,
+                  ),
+                ],
+              ),
+            ),
+            vSpace(20),
+            DefaultPhoneFormField(
+              controller: cubit.phoneController,
+              onCountryChangedReturnApiCountry: (country) {
+                cubit.phoneCodeController.text = country.phoneCode;
+                cubit.countryId = country.id;
+              },
+            ),
+            DefaultFormField(
               titleText: AppStrings.email.tr(),
               hintText: AppStrings.enterYourEmail.tr(),
               validator: (value) => validateEmail(value),
@@ -37,6 +63,58 @@ class CompanyRegisterFieldsWidget extends StatelessWidget {
                     height: 20.h,
                     width: 20.w,
                     fit: BoxFit.contain,
+                  ),
+                ],
+              ),
+            ),
+            vSpace(20),
+            DefaultCategoryDropdownWidget(
+              onSelected: (choosenCategory) {
+                if (choosenCategory != null) {
+                  cubit.categoryId = choosenCategory.id;
+                }
+              },
+            ),
+            vSpace(20),
+            DefaultFormField(
+              titleText: AppStrings.description.tr(),
+              hintText: AppStrings.enterYourDescription.tr(),
+              controller: cubit.descriptionController,
+              maxLines: -1,
+              keyboardType: TextInputType.multiline,
+              prefixIcon: const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.text_fields,
+                    color: AppColors.iconGrey,
+                  ),
+                ],
+              ),
+            ),
+            vSpace(20),
+            DefaultFormField(
+              titleText: AppStrings.website.tr(),
+              hintText: AppStrings.enterYourWebsiteDomain.tr(),
+              controller: cubit.websiteController,
+              keyboardType: TextInputType.url,
+              validator: (value) {
+                String pattern =
+                    r'(http|https)://[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?';
+                RegExp regExp = RegExp(pattern);
+                if (value!.isEmpty) {
+                  return 'Please enter url'.tr();
+                } else if (!regExp.hasMatch(value)) {
+                  return 'Please enter valid url'.tr();
+                }
+                return null;
+              },
+              prefixIcon: const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.web,
+                    color: AppColors.iconGrey,
                   ),
                 ],
               ),

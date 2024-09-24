@@ -1,4 +1,4 @@
-import 'package:bulka/core/shared/abstractions/account_forgot_password.dart';
+import 'package:bulka/modules/authentication/verify_forgot_password_code/data/abstractions/account_forgot_password.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/enums/enums.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
@@ -26,7 +26,28 @@ class ForgotPasswordButtonWidget extends StatelessWidget {
           Dialogs.errorDialog(context: context, error: state.error);
         }
         if (state is GetForgotPasswordCodeSuccess) {
-          Dialogs.successDialog(context);
+          // Dialogs.successDialog(context);
+          switch (cubit.verifyAccountMethod) {
+            case VerifyAccountMethod.email:
+              context.push(
+                VerifyForgotPasswordScreen(
+                  accountForgotPassword: GetForgotPasswordCodeViaEmail(
+                    email: cubit.emailController.text,
+                  ),
+                ),
+              );
+            case VerifyAccountMethod.phone:
+              context.push(
+                VerifyForgotPasswordScreen(
+                  accountForgotPassword: GetForgotPasswordCodeViaPhone(
+                    phone: cubit.phoneController.text,
+                    phoneCode: cubit.phoneCodeController.text,
+                  ),
+                ),
+              );
+            case VerifyAccountMethod.unkown:
+              debugPrint(VerifyAccountMethod.unkown.toString());
+          }
         }
       },
       buildWhen: (previous, current) =>
@@ -36,6 +57,7 @@ class ForgotPasswordButtonWidget extends StatelessWidget {
       builder: (context, state) {
         return DefaultButton(
           text: AppStrings.confirm.tr(),
+          isLoading: state is GetForgotPasswordCodeLoading ? true : false,
           onPressed: () {
             bool isValid = false;
             if (cubit.forgotKey.currentState!.validate()) {
@@ -44,27 +66,7 @@ class ForgotPasswordButtonWidget extends StatelessWidget {
               isValid = true;
             }
             if (isValid) {
-              switch (cubit.verifyAccountMethod) {
-                case VerifyAccountMethod.email:
-                  context.push(
-                    VerifyForgotPasswordScreen(
-                      accountForgotPassword: GetForgotPasswordCodeViaEmail(
-                        email: cubit.emailController.text,
-                      ),
-                    ),
-                  );
-                case VerifyAccountMethod.phone:
-                  context.push(
-                    VerifyForgotPasswordScreen(
-                      accountForgotPassword: GetForgotPasswordCodeViaPhone(
-                        phone: cubit.phoneController.text,
-                        phoneCode: cubit.phoneCodeController.text,
-                      ),
-                    ),
-                  );
-                case VerifyAccountMethod.unkown:
-                  debugPrint(VerifyAccountMethod.unkown.toString());
-              }
+              cubit.forgotPasswordViaPhoneStatesHandled();
             }
           },
         );

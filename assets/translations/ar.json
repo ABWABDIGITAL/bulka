@@ -123,5 +123,14 @@
   "Mismatched Password": "كلمة السر غير متطابقة",
   "Language not selected": "اللغة غير محددة",
   "Full Name": "الاسم الكامل",
-  "Enter your full name": "أدخل اسمك بالكامل"
+  "Enter your full name": "أدخل اسمك بالكامل",
+  "a smoothly running business": "أعمال تسير بسلاسة",
+  "successfull operation": "عملية ناجحة",
+  "Categories": "الفئات",
+  "Description": "الوصف",
+  "Enter your description": "أدخل الوصف الخاص بك",
+  "Website": "الموقع الإلكتروني",
+  "Enter your website domain": "أدخل نطاق موقع الويب الخاص بك",
+  "Please enter valid url": "يُرجى إدخال عنوان URL صالح",
+  "Please enter url": "الرجاء إدخال الرابط"
 }

@@ -1,13 +1,7 @@
 import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/services/servies_locator/service_locator.dart';
-import 'package:bulka/core/shared/abstractions/account_forgot_password.dart';
-import 'package:bulka/core/shared/widgets/build_forgot_password_return_method_circle_widget.dart';
-import 'package:bulka/core/shared/widgets/spacing.dart';
-import 'package:bulka/core/theme/text_styles/text_styles.dart';
-import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/modules/authentication/verify_forgot_password_code/data/abstractions/account_forgot_password.dart';
 import 'package:bulka/core/utils/constant/strings.dart';
-import 'package:bulka/core/utils/widgets/buttons/default_button.dart';
-import 'package:bulka/modules/authentication/forgot_password/controllers/forgot_password_cubit.dart';
 import 'package:bulka/modules/authentication/forgot_password/ui/widgets/forgot_password_appbar_widget.dart';
 import 'package:bulka/modules/authentication/forgot_password/ui/widgets/forgot_password_background_widget.dart';
 import 'package:bulka/modules/authentication/forgot_password/ui/widgets/forgot_password_card_widget.dart';
@@ -51,7 +45,7 @@ class VerifyForgotPasswordScreen extends StatelessWidget {
                     accountForgotPassword: accountForgotPassword,
                   ),
                   VerifyForgotPasswordFieldsWidget(accountForgotPassword),
-                  const VerifyForgotPasswordResendTimerWiget(),
+                  VerifyForgotPasswordResendTimerWiget(accountForgotPassword),
                   VerifyForgotPasswordButtonWidget(
                       accountForgotPassword: accountForgotPassword),
                 ],

@@ -9,11 +9,10 @@ class ApiConstance {
   static const String verifyAccount = '/public/auth/verify';
   static const String verifyWithPhone = '/app/verify';
   static const String resendVerifyWithPhone = '/app/send-code';
-
   static const String forgotPasswordWithEmail = '/app/check-code';
   static const String forgotPasswordWithPhone = '/app/check-code';
-  static const String verifyForgotPasswordCode =
-      '/public/auth/verifyForgotPasswordCode';
+//---------------------------------CATEGORY----------------------------------//
+  static const String categories = '/app/helpers/categories';
 //---------------------------------INTERESTS----------------------------------//
   static const String interests = '/public/auth/interests';
 }

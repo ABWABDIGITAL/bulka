@@ -123,5 +123,14 @@
   "Mismatched Password": "Несоответствующий пароль",
   "Language not selected": "Язык не выбран",
   "Full Name": "Полное имя",
-  "Enter your full name": "Введите свое полное имя"
+  "Enter your full name": "Введите свое полное имя",
+  "a smoothly running business": "бесперебойно работающий бизнес",
+  "successfull operation": "успешная работа",
+  "Categories": "Категории",
+  "Description": "Описание",
+  "Enter your description": "Введите ваше описание",
+  "Website": "Сайт",
+  "Enter your website domain": "Введите домен вашего сайта",
+  "Please enter valid url": "Пожалуйста, введите правильный url",
+  "Please enter url": "Пожалуйста, введите url"
 }

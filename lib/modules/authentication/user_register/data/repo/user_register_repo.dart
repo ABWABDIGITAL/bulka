@@ -1,8 +1,8 @@
 import 'package:bulka/core/services/api_handler/api_error_handler.dart';
 import 'package:bulka/core/services/network/dio_helper.dart';
 import 'package:bulka/core/shared/entity/api_error_entity.dart';
-import 'package:bulka/modules/countries/data/entity/country_entity.dart';
-import 'package:bulka/modules/countries/data/model/country_model.dart';
+import 'package:bulka/core/services/countries/data/entity/country_entity.dart';
+import 'package:bulka/core/services/countries/data/model/country_model.dart';
 import 'package:bulka/core/utils/constant/api_constance.dart';
 import 'package:bulka/core/utils/home_utilites.dart';
 import 'package:bulka/modules/authentication/user_register/data/entity/user_reigster_entity.dart';

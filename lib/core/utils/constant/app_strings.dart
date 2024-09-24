@@ -32,7 +32,6 @@ class AppStrings {
   static const String confirmPassword = 'Confirm Password';
   static const String enterYourEmail = 'Enter your email';
   static const String enterYourFullName = 'Enter your full name';
-
   static const String enterYourPassword = 'Enter your password';
   static const String rememberMe = 'Remember me';
   static const String forgetPassword = 'Forget Password';
@@ -102,6 +101,7 @@ class AppStrings {
   static const String seachAboutSomeThingHere = "Search about something here !";
   static const String seeAll = "See all";
   static const String exploreCategories = "Explore Categories";
+  static const String categories = "Categories";
   static const String propertiesForSale = "Properties for sale";
   static const String carsForSale = "Cars for sale";
   static const String jops = "Jobs";
@@ -149,4 +149,10 @@ class AppStrings {
   static const String typeYourMessage = 'Type your message';
   static const String mismatchedPassword = 'Mismatched Password';
   static const String languageNotSelected = 'Language not selected';
+  static const String smoothlyRunningBusiness = 'a smoothly running business';
+  static const String successfullOperation = 'successfull operation';
+  static const String description = 'Description';
+  static const String enterYourDescription = 'Enter your description';
+  static const String website = 'Website';
+  static const String enterYourWebsiteDomain = 'Enter your website domain';
 }

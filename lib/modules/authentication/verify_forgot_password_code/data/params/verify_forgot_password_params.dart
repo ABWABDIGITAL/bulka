@@ -1,4 +1,4 @@
-import 'package:bulka/core/shared/abstractions/account_forgot_password.dart';
+import 'package:bulka/modules/authentication/verify_forgot_password_code/data/abstractions/account_forgot_password.dart';
 import 'package:equatable/equatable.dart';
 
 class VerifyForgotPasswordParams extends Equatable {

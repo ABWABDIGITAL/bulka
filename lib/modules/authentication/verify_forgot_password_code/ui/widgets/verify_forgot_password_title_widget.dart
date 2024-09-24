@@ -1,5 +1,5 @@
 import 'package:bulka/core/assets/asset_icons.dart';
-import 'package:bulka/core/shared/abstractions/account_forgot_password.dart';
+import 'package:bulka/modules/authentication/verify_forgot_password_code/data/abstractions/account_forgot_password.dart';
 import 'package:bulka/core/shared/widgets/build_forgot_password_return_method_circle_widget.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';

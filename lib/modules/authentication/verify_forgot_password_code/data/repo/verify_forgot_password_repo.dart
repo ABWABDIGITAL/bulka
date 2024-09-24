@@ -18,7 +18,7 @@ class VerifyForgotPasswordRepo extends Equatable {
         params.accountForgotPassword.endPoint,
         data: params.returnedMap(),
       );
-      return Right(VerifyForgotPasswordModel.fromJson(response.data['data']));
+      return Right(VerifyForgotPasswordModel.fromJson(response.data));
     } catch (error) {
       return Left(ErrorHandler.handleError(error));
     }

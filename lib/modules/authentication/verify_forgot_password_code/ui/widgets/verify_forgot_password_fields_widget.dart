@@ -1,5 +1,5 @@
 import 'package:bulka/core/services/servies_locator/service_locator.dart';
-import 'package:bulka/core/shared/abstractions/account_forgot_password.dart';
+import 'package:bulka/modules/authentication/verify_forgot_password_code/data/abstractions/account_forgot_password.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
@@ -49,7 +49,7 @@ class VerifyForgotPasswordFieldsWidget extends StatelessWidget {
             ),
             const Divider(thickness: .5),
             PinCodeTextField(
-              length: 5,
+              length: 6,
               obscureText: false,
               animationType: AnimationType.fade,
               autoDisposeControllers: true,
@@ -62,8 +62,8 @@ class VerifyForgotPasswordFieldsWidget extends StatelessWidget {
               pinTheme: PinTheme(
                 shape: PinCodeFieldShape.box,
                 borderRadius: BorderRadius.circular(12.r),
-                fieldHeight: 55.h,
-                fieldWidth: 60.w,
+                // fieldHeight: 55.h,
+                // fieldWidth: 60.w,
                 borderWidth: 1,
                 activeBorderWidth: 1,
                 inactiveBorderWidth: 1,

@@ -71,15 +71,22 @@ class _VerifyPhoneResendVerificationCodeWidgetState
               isSuccess: true,
             );
           }
+          if (state is ResendVerifyPhoneOtpError) {
+            Dialogs.customeToast(
+              text: state.error.message,
+              context: context,
+              isSuccess: false,
+            );
+          }
         },
         listenWhen: (previous, current) =>
             current is ResendVerifyPhoneOtpLoading ||
             current is ResendVerifyPhoneOtpSuccess ||
-            current is ResendVerifyPhoneOtpSuccess,
+            current is ResendVerifyPhoneOtpError,
         buildWhen: (previous, current) =>
             current is ResendVerifyPhoneOtpLoading ||
             current is ResendVerifyPhoneOtpSuccess ||
-            current is ResendVerifyPhoneOtpSuccess,
+            current is ResendVerifyPhoneOtpError,
         builder: (context, state) {
           return state is ResendVerifyPhoneOtpLoading
               ? ShimmerTextWidget(AppStrings.loading.tr())

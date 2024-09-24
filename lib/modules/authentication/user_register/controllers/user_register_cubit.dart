@@ -110,7 +110,6 @@ class UserRegisterCubit extends Cubit<UserRegisterState> {
 //----------------------------------REQUEST-----------------------------------//
   Future<void> userRegisterStatesHandled() async {
     emit(UserRegisterLoading());
-    print(phoneController.text);
     if (!_isValid()) {
       return;
     }

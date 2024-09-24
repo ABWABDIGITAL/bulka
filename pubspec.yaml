@@ -88,6 +88,7 @@ dependencies:
   firebase_core: ^2.24.2
   firebase_messaging: ^14.7.10
   flutter_local_notifications: ^17.2.1+2
+  flutter_form_builder: ^9.3.0
 
 dev_dependencies:
   flutter_test:

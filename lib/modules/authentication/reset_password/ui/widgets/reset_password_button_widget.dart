@@ -1,4 +1,5 @@
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/core/utils/widgets/buttons/default_button.dart';
 import 'package:bulka/core/utils/widgets/dialogs/dialogs.dart';
 import 'package:bulka/modules/authentication/reset_password/controllers/reset_password_cubit.dart';
@@ -22,7 +23,13 @@ class ResetPasswordButtonWidget extends StatelessWidget {
           current is ResetPasswordError,
       listener: (context, state) {
         if (state is ResetPasswordSuccess) {
-          // Dialogs.successDialog(context);
+          Dialogs.successDialog(
+            context,
+            onSuccessFinishedCallback: (p0) {
+              context.pop();
+              resetPasswordSuccessBottomWidget(context);
+            },
+          );
         }
         if (state is ResetPasswordError) {
           Dialogs.errorDialog(context: context, error: state.error);
@@ -40,8 +47,13 @@ class ResetPasswordButtonWidget extends StatelessWidget {
             FocusScope.of(context).unfocus();
             if (cubit.resetKey.currentState!.validate()) {
               cubit.resetKey.currentState!.save();
-
-              resetPasswordSuccessBottomWidget(context);
+              Dialogs.successDialog(
+                context,
+                onSuccessFinishedCallback: (p0) {
+                  context.pop();
+                  resetPasswordSuccessBottomWidget(context);
+                },
+              );
             }
           },
         );

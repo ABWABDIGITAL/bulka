@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:bulka/modules/countries/controllers/cubit/country_state.dart';
-import 'package:bulka/modules/countries/data/entity/country_entity.dart';
-import 'package:bulka/modules/countries/data/repo/country_repo.dart';
+import 'package:bulka/core/services/countries/controllers/cubit/country_state.dart';
+import 'package:bulka/core/services/countries/data/entity/country_entity.dart';
+import 'package:bulka/core/services/countries/data/repo/country_repo.dart';
 
 class CountryCubit extends Cubit<CountryState> {
   final CountryRepo _countryRepo;

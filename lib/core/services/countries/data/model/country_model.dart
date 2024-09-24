@@ -1,5 +1,5 @@
-import 'package:bulka/modules/countries/data/entity/country_entity.dart';
-import 'package:bulka/modules/countries/data/helpers/country_helpers.dart';
+import 'package:bulka/core/services/countries/data/entity/country_entity.dart';
+import 'package:bulka/core/services/countries/data/helpers/country_helpers.dart';
 
 class CountryModel extends CountryEntity {
   const CountryModel({

@@ -1,4 +1,4 @@
-import 'package:bulka/core/shared/abstractions/account_forgot_password.dart';
+import 'package:bulka/modules/authentication/verify_forgot_password_code/data/abstractions/account_forgot_password.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
@@ -7,6 +7,7 @@ import 'package:bulka/core/utils/widgets/dialogs/dialogs.dart';
 import 'package:bulka/modules/authentication/reset_password/ui/views/reset_password_screen.dart';
 import 'package:bulka/modules/authentication/verify_forgot_password_code/controllers/verify_forgot_password_cubit.dart';
 import 'package:bulka/modules/authentication/verify_forgot_password_code/controllers/verify_forgot_password_state.dart';
+import 'package:bulka/modules/authentication/verify_forgot_password_code/data/params/verify_forgot_password_params.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -59,7 +60,14 @@ class VerifyForgotPasswordButtonWidget extends StatelessWidget {
           textColor:
               cubit.isOtpFilled ? AppColors.white : AppColors.mediumGrey2,
           onPressed: () {
-            if (cubit.isOtpFilled) {}
+            if (cubit.isOtpFilled) {
+              cubit.verifyForgotPasswordStatesHandled(
+                VerifyForgotPasswordParams(
+                  code: cubit.otpController.text,
+                  accountForgotPassword: accountForgotPassword,
+                ),
+              );
+            }
           },
         );
       },

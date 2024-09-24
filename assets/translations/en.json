@@ -123,5 +123,14 @@
   "Mismatched Password": "Mismatched Password",
   "Language not selected": "Language not selected",
   "Full Name": "Full Name",
-  "Enter your full name": "Enter your full name"
+  "Enter your full name": "Enter your full name",
+  "a smoothly running business": "a smoothly running business",
+  "successfull operation": "successfull operation",
+  "Categories": "Categories",
+  "Description": "Description",
+  "Enter your description": "Enter your description",
+  "Website": "Website",
+  "Enter your website domain": "Enter your website domain",
+  "Please enter valid url": "Please enter valid url",
+  "Please enter url": "Please enter url"
 }

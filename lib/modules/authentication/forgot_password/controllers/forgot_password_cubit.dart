@@ -1,12 +1,10 @@
 import 'package:bloc/bloc.dart';
-import 'package:bulka/core/shared/abstractions/account_forgot_password.dart';
 import 'package:bulka/core/shared/entity/api_error_entity.dart';
 import 'package:bulka/core/utils/enums/enums.dart';
 import 'package:bulka/modules/authentication/forgot_password/data/entity/forgot_password_entity.dart';
+import 'package:bulka/modules/authentication/forgot_password/data/params/forgot_password_with_phone_params.dart';
 import 'package:bulka/modules/authentication/forgot_password/data/repo/forgot_password_repo.dart';
-import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-
 part 'forgot_password_state.dart';
 
 class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
@@ -28,10 +26,14 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
   }
 
 //---------------------------------REQUEST----------------------------------//
-  Future<void> forgotPasswordViaEmailStatesHandled(
-      AccountForgotPassword params) async {
+  Future<void> forgotPasswordViaPhoneStatesHandled() async {
     emit(const GetForgotPasswordCodeLoading());
-    final response = await _forgotPasswordRepo.forgotPasswordCode(params);
+    final response = await _forgotPasswordRepo.forgotPasswordViaPhone(
+      ForgotPasswordWithPhoneParams(
+        phone: phoneController.text,
+        phoneCode: phoneCodeController.text,
+      ),
+    );
     response.fold((failure) {
       return emit(GetForgotPasswordCodeError(failure));
     }, (success) async {
