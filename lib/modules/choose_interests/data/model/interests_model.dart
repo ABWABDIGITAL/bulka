@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:bulka/modules/choose_interests/data/entity/interests_entity.dart';
 
 class InterestsModel extends InterestsEntity {
@@ -11,7 +13,7 @@ class InterestsModel extends InterestsEntity {
     return InterestsModel(
       image: json['image'],
       name: json['name'],
-      id: json['id'],
+      id: json['id'] ?? Random().nextInt(1000),
     );
   }
 }

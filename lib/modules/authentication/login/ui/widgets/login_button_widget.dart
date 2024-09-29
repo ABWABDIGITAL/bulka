@@ -1,10 +1,12 @@
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
+import 'package:bulka/core/utils/home_utilites.dart';
 import 'package:bulka/core/utils/widgets/buttons/default_button.dart';
 import 'package:bulka/core/utils/widgets/dialogs/dialogs.dart';
 import 'package:bulka/modules/authentication/choose_registration_type/ui/views/choose_registeration_type_screen.dart';
 import 'package:bulka/modules/authentication/login/controllers/login_cubit.dart';
 import 'package:bulka/modules/authentication/login/controllers/login_state.dart';
+import 'package:bulka/modules/choose_interests/ui/views/choose_interests_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,7 +29,14 @@ class LoginButtonWidget extends StatelessWidget {
           Dialogs.errorDialog(context: context, error: state.error);
         }
         if (state is LoginStateSuccess) {
-          Dialogs.successDialog(context);
+          saveToken(state.loginEntity.tokenEntity)
+              .then((_) => Dialogs.successDialog(
+                    context,
+                    onSuccessFinishedCallback: (_) {
+                      context.pop();
+                      context.push(const ChooseInterestsScreen());
+                    },
+                  ));
         }
       },
       buildWhen: (previous, current) =>
@@ -40,12 +49,11 @@ class LoginButtonWidget extends StatelessWidget {
           child: DefaultButton(
             borderRadiusValue: 12.r,
             onPressed: () async {
-              // if (cubit.loginKey.currentState!.validate()) {
-              //   cubit.loginKey.currentState!.save();
-              //   FocusScope.of(context).unfocus();
-              //   cubit.loginStatesHandled(context);
-              // }
-              context.push(const ChooseRegisterationTypeScreen());
+              if (cubit.loginKey.currentState!.validate()) {
+                cubit.loginKey.currentState!.save();
+                FocusScope.of(context).unfocus();
+                cubit.loginStatesHandled(context);
+              }
             },
             text: AppStrings.login.tr(),
             isLoading: state is LoginStateLoading ? true : false,

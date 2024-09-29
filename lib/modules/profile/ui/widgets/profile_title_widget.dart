@@ -64,7 +64,7 @@ class _ProfileTitleWidgetState extends State<ProfileTitleWidget>
                 CircleAvatar(
                   radius: 60.r,
                   backgroundImage: const NetworkImage(
-                      'https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+                      'https://th.bing.com/th/id/OIP.7TXIEeCyh4kc8wYrXrHWIgHaEK?w=1920&h=1080&rs=1&pid=ImgDetMain'),
                 ),
                 vSpace(16),
                 Text(

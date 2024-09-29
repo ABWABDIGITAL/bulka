@@ -108,7 +108,11 @@ class _DefaultCategoryDropdownWidgetState
                           widget.fillColor ?? AppColors.scaffoldBackGround,
                       errorMaxLines: widget.errorMaxLines ?? 2,
                       suffixIcon: widget.suffixIcon,
-                      prefixIcon: widget.prefixIcon,
+                      prefixIcon: widget.prefixIcon ??
+                          const Icon(
+                            Icons.category_outlined,
+                            color: AppColors.iconGrey,
+                          ),
                       labelText: widget.labelText,
                       labelStyle: const TextStyle(color: AppColors.greyFont),
                       hintStyle: TextStyles.rubik13W400IconGrey,

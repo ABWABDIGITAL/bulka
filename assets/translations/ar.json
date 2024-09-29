@@ -132,5 +132,11 @@
   "Website": "الموقع الإلكتروني",
   "Enter your website domain": "أدخل نطاق موقع الويب الخاص بك",
   "Please enter valid url": "يُرجى إدخال عنوان URL صالح",
-  "Please enter url": "الرجاء إدخال الرابط"
+  "Please enter url": "الرجاء إدخال الرابط",
+  "Additional domain": "نطاق إضافي",
+  "Enter your additional domain": "أدخل نطاقك الإضافي",
+  "Enter Company Size": "أدخل حجم الشركة",
+  "Company Size": "حجم الشركة",
+  "Company logo": "شعار الشركة",
+  "Please enter your company logo": "يُرجى إدخال شعار شركتك"
 }

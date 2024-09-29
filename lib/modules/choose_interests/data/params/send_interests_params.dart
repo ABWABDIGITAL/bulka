@@ -6,7 +6,11 @@ class SendInterestsParams extends Equatable {
   final List<InterestsEntity> choosenInterests;
 
   Map<String, dynamic> returnedMap() {
-    Map<String, dynamic> map = {"choosenInterests": choosenInterests};
+    List<int> choosenIntrestIds = [];
+    for (var element in choosenInterests) {
+      choosenIntrestIds.add(element.id);
+    }
+    Map<String, dynamic> map = {"interest_ids": choosenIntrestIds};
     map.removeWhere((key, value) => value == null);
     return map;
   }

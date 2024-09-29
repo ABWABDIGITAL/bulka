@@ -1,8 +1,10 @@
 import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
+import 'package:bulka/core/shared/widgets/upload_image_widget.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/widgets/form_fields/default_category_drop_down_widget.dart';
+import 'package:bulka/core/utils/widgets/form_fields/default_company_size_drop_down_widget.dart';
 import 'package:bulka/core/utils/widgets/form_fields/default_form_field.dart';
 import 'package:bulka/core/utils/widgets/form_fields/default_phone_form_field.dart';
 import 'package:bulka/core/utils/widgets/validation/validation.dart';
@@ -26,6 +28,13 @@ class CompanyRegisterFieldsWidget extends StatelessWidget {
         key: cubit.companyKey,
         child: Column(
           children: [
+            vSpace(20),
+            ImageUploadScreen(
+              onSelected: (image) {
+                cubit.companyLogo = image;
+              },
+            ),
+            vSpace(20),
             DefaultFormField(
               titleText: AppStrings.fullname.tr(),
               hintText: AppStrings.enterYourFullName.tr(),
@@ -118,6 +127,45 @@ class CompanyRegisterFieldsWidget extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+            vSpace(20),
+            DefaultFormField(
+              titleText: AppStrings.additionalDomain.tr(),
+              hintText: AppStrings.enterYourAdditionalDomain.tr(),
+              controller: cubit.additionalWebsiteController,
+              keyboardType: TextInputType.url,
+              validator: (value) {
+                if (value != null && value.isNotEmpty) {
+                  String pattern =
+                      r'(http|https)://[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?';
+                  RegExp regExp = RegExp(pattern);
+                  if (value.isEmpty) {
+                    return 'Please enter url'.tr();
+                  } else if (!regExp.hasMatch(value)) {
+                    return 'Please enter valid url'.tr();
+                  }
+                  return null;
+                } else {
+                  return null;
+                }
+              },
+              prefixIcon: const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.web,
+                    color: AppColors.iconGrey,
+                  ),
+                ],
+              ),
+            ),
+            vSpace(20),
+            DefaultCompanySizeDropdownWidget(
+              onSelected: (choosenSize) {
+                if (choosenSize != null) {
+                  cubit.companySizeController.text = choosenSize;
+                }
+              },
             ),
             vSpace(20),
             BlocBuilder<CompanyRegisterCubit, CompanyRegisterState>(

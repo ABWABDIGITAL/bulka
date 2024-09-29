@@ -1,4 +1,6 @@
 import 'package:bloc/bloc.dart';
+import 'package:bulka/core/services/api_handler/api_response_code.dart';
+import 'package:bulka/core/shared/entity/api_error_entity.dart';
 import 'package:bulka/modules/choose_interests/controllers/choose_interests_state.dart';
 import 'package:bulka/modules/choose_interests/data/entity/interests_entity.dart';
 import 'package:bulka/modules/choose_interests/data/params/send_interests_params.dart';
@@ -27,6 +29,21 @@ class ChooseInterestsCubit extends Cubit<ChooseInterestsState> {
     return _choosenInterests.contains(interest);
   }
 
+  _ifChoosenIntrestEmpty() {
+    if (_choosenInterests.isEmpty) {
+      return emit(
+        SendInterestsError(
+          const ApiErrorEntity(
+            code: ResponseCode.validationError,
+            errors: ['please choose atleast one'],
+            message: 'please choose atleast one',
+            status: false,
+          ),
+        ),
+      );
+    }
+  }
+
 //----------------------------------REQUEST-----------------------------------//
   Future<void> chooseInterestsStatesHandled() async {
     emit(const GetInterestsLoading());
@@ -40,6 +57,7 @@ class ChooseInterestsCubit extends Cubit<ChooseInterestsState> {
   }
 
   Future<void> sendInterestsStatesHandled() async {
+    _ifChoosenIntrestEmpty();
     emit(const SendInterestsLoading());
     final response = await _interestsRepo.sendInterestsData(
       SendInterestsParams(choosenInterests: choosenInterests),

@@ -38,7 +38,12 @@ class VerifyForgotPasswordButtonWidget extends StatelessWidget {
             );
           }
           if (state.entity.isCodeCorrect) {
-            context.push(const ResetPasswordScreen());
+            context.push(
+              ResetPasswordScreen(
+                accountForgotPassword: accountForgotPassword,
+                resetCode: cubit.otpController.text,
+              ),
+            );
           }
         }
         if (state is VerifyForgotPasswordError) {

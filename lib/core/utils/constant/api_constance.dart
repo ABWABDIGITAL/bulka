@@ -5,14 +5,16 @@ class ApiConstance {
   static const String login = '/app/login';
   static const String countries = '/app/helpers/countries';
   static const String userRegister = '/app/client/register';
-  static const String companyRegister = '/public/auth/companyRegister';
+  static const String companyRegister = '/app/company/register';
   static const String verifyAccount = '/public/auth/verify';
   static const String verifyWithPhone = '/app/verify';
   static const String resendVerifyWithPhone = '/app/send-code';
   static const String forgotPasswordWithEmail = '/app/check-code';
   static const String forgotPasswordWithPhone = '/app/check-code';
+  static const String resetPassword = '/app/reset-password';
 //---------------------------------CATEGORY----------------------------------//
-  static const String categories = '/app/helpers/categories';
+  static const String categories = '/app/categories';
 //---------------------------------INTERESTS----------------------------------//
-  static const String interests = '/public/auth/interests';
+  static const String interests = '/app/helpers/interests';
+  static const String updateInterests = '/app/update-interests';
 }

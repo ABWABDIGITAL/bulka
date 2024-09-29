@@ -14,9 +14,11 @@ class CompanyRegisterRepo extends Equatable {
   Future<Either<ApiErrorEntity, CompanyRegisterEntity>> register(
       CompanyRegisterParams params) async {
     try {
+      final data = await params.returnedMap();
       final response = await DioHelper.post(
         ApiConstance.companyRegister,
-        data: params.returnedMap(),
+        data: data,
+        isFormData: true,
       );
       return Right(CompanyRegisterModel.fromJson(response.data));
     } catch (error) {

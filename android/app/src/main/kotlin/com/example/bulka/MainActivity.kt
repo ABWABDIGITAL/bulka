@@ -1,4 +1,4 @@
-package com.example.bulka
+package abwab.digital.bulka
 
 import io.flutter.embedding.android.FlutterActivity
 

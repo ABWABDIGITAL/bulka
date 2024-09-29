@@ -1,9 +1,14 @@
+import 'package:bulka/core/shared/entity/token_entity.dart';
 import 'package:equatable/equatable.dart';
 
 class LoginEntity extends Equatable {
   final String message;
-  const LoginEntity({required this.message});
+  final TokenEntity tokenEntity;
+  const LoginEntity({
+    required this.message,
+    required this.tokenEntity,
+  });
 
   @override
-  List<Object?> get props => [message];
+  List<Object?> get props => [message, tokenEntity];
 }

@@ -1,3 +1,4 @@
+import 'package:bulka/core/utils/enums/enums.dart';
 import 'package:equatable/equatable.dart';
 
 class CategoryEntity extends Equatable {
@@ -5,12 +6,14 @@ class CategoryEntity extends Equatable {
     required this.id,
     required this.image,
     required this.name,
+    required this.type,
   });
 
   final int id;
   final String image;
   final String name;
+  final CategoryTypes? type;
 
   @override
-  List<Object?> get props => [id, image, name];
+  List<Object?> get props => [id, image, name, type];
 }

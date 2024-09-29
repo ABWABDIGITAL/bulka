@@ -14,6 +14,10 @@ class ResetPasswordCubit extends Cubit<ResetPasswordState> {
 //---------------------------------VARIABLES----------------------------------//
   TextEditingController newPasswordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
+  late final String _phone;
+  late final String _phoneCode;
+  late final String _resetCode;
+
   final GlobalKey<FormState> resetKey = GlobalKey<FormState>();
   bool _isVisiablePassword = false;
   bool _isVisiableConfirm = false;
@@ -21,6 +25,13 @@ class ResetPasswordCubit extends Cubit<ResetPasswordState> {
 //---------------------------------FUNCTIONS----------------------------------//
   bool get isVisiablePassword => _isVisiablePassword;
   bool get isVisiableConfirm => _isVisiableConfirm;
+
+  void fillOtpVerificationData(
+      String phone, String phoneCode, String resetCode) {
+    _phone = phone;
+    _phoneCode = phoneCode;
+    _resetCode = resetCode;
+  }
 
   void changeVisibilityPassword() {
     _isVisiablePassword = !_isVisiablePassword;
@@ -62,6 +73,9 @@ class ResetPasswordCubit extends Cubit<ResetPasswordState> {
     final response = await _resetPasswordRepo.resetPassword(ResetPasswordParams(
       confirmPassword: confirmPasswordController.text,
       newPassword: newPasswordController.text,
+      phone: _phone,
+      phoneCode: _phoneCode,
+      resetCode: _resetCode,
     ));
     response.fold((failure) {
       return emit(ResetPasswordError(failure));

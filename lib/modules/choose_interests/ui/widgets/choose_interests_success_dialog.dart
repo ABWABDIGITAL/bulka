@@ -26,17 +26,15 @@ void chooseInterestsSuccessDialog(BuildContext context) {
           AppStrings.exploreTheDealWithOtherPeople.tr(),
           style: TextStyles.rubik14W400MediumGrey4,
         ),
-        vSpace(35),
         Image.asset(
           AssetImages.operationSuccess,
           height: 150.h,
           width: 150.w,
         ),
-        vSpace(35),
         DefaultButton(
           onPressed: () {
             // context.push(const NavbarLayoutScreen());
-            context.push(const HomeScreen());
+            context.pushOffAll(const NavbarLayoutScreen());
           },
           text: AppStrings.letsExplore.tr(),
         )

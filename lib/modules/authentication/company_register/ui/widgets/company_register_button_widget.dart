@@ -30,7 +30,20 @@ class CompanyRegisterButtonWidget extends StatelessWidget {
           Dialogs.errorDialog(context: context, error: state.error);
         }
         if (state is CompanyRegisterSuccess) {
-          Dialogs.successDialog(context);
+          Dialogs.customeToast(
+            text: state.company.message,
+            context: context,
+            isSuccess: true,
+          );
+          context.push(
+            ChooseVerifyMethodScreen(
+              ChooseVerifyMethodParams(
+                email: cubit.emailController.text,
+                phone: cubit.phoneController.text,
+                phoneCode: cubit.phoneCodeController.text,
+              ),
+            ),
+          );
         }
       },
       buildWhen: (previous, current) =>
@@ -60,15 +73,7 @@ class CompanyRegisterButtonWidget extends StatelessWidget {
                 );
               }
               if (isValid && cubit.agreePolicyAndConditions) {
-                // cubit.companyRegisterStatesHandled();
-                // context.push(
-                //   const ChooseVerifyMethodScreen(
-                //     ChooseVerifyMethodParams(
-                //       email: 'test@test.com',
-                //       phone: '1234567890',
-                //     ),
-                //   ),
-                // );
+                cubit.companyRegisterStatesHandled();
               }
             },
             text: AppStrings.signUp.tr(),

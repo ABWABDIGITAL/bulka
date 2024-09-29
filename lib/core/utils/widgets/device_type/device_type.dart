@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:bulka/core/utils/widgets/responsive/responsive.dart';
+import 'package:safe_device/safe_device.dart';
 import 'package:flutter/cupertino.dart';
 
 enum DeviceTypeEnum { phone, phoneTablet, tablet, largeDevice, xLargeDevice }
@@ -42,5 +43,11 @@ class DeviceType {
       return 'linux';
     }
     return 'huawei';
+  }
+
+  static Future<bool> isRealDevice() async {
+    bool isRealDevice = await SafeDevice.isRealDevice;
+
+    return isRealDevice;
   }
 }

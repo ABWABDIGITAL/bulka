@@ -22,7 +22,9 @@ class SendInterestsButtonWidget extends StatelessWidget {
           current is SendInterestsError ||
           current is SendInterestsLoading,
       listener: (context, state) {
-        if (state is SendInterestsSuccess) {}
+        if (state is SendInterestsSuccess) {
+          chooseInterestsSuccessDialog(context);
+        }
         if (state is SendInterestsError) {
           Dialogs.errorDialog(context: context, error: state.error);
         }
@@ -40,7 +42,7 @@ class SendInterestsButtonWidget extends StatelessWidget {
                   isLoading: state is SendInterestsLoading ? true : false,
                   text: AppStrings.Continue.tr(),
                   onPressed: () {
-                    chooseInterestsSuccessDialog(context);
+                    cubit.sendInterestsStatesHandled();
                   },
                 ),
               ).animate().moveY(

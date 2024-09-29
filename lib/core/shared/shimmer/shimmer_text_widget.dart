@@ -9,11 +9,13 @@ class ShimmerTextWidget extends StatelessWidget {
     this.style,
     this.textAlign,
     this.isLoading = false,
+    this.maxLines,
   });
   final String text;
   final TextStyle? style;
   final TextAlign? textAlign;
   final bool isLoading;
+  final int? maxLines;
   @override
   Widget build(BuildContext context) {
     return isLoading
@@ -24,6 +26,7 @@ class ShimmerTextWidget extends StatelessWidget {
               text,
               style: style ?? TextStyles.dummy,
               textAlign: textAlign ?? TextAlign.start,
+              maxLines: maxLines,
             ),
           )
         : Text(

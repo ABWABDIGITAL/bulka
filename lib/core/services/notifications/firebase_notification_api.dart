@@ -49,7 +49,7 @@ class FirebaseNotificationApi {
 
   // Subscribes to a specific topic
   Future<void> _subscribeToTopic() async {
-    await _firebaseMessaging.subscribeToTopic('yelzamni');
+    await _firebaseMessaging.subscribeToTopic('bulka');
   }
 
   // Retrieves the FCM token and prints it

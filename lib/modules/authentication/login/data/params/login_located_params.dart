@@ -8,8 +8,8 @@ class LoginLocationParams extends Equatable {
   });
 
   final String? location;
-  final double? lat;
-  final double? lng;
+  final String? lat;
+  final String? lng;
 
   @override
   List<Object?> get props => [location, lat, lng];

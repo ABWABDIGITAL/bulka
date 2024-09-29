@@ -16,7 +16,7 @@ class ResetPasswordRepo extends Equatable {
       ResetPasswordParams params) async {
     try {
       final response = await DioHelper.post(
-        ApiConstance.login,
+        ApiConstance.resetPassword,
         data: params.returnedMap(),
       );
       return Right(ResetPasswordModel.fromJson(response.data));

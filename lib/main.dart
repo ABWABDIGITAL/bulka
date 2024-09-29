@@ -1,10 +1,13 @@
 import 'dart:io';
 import 'package:bulka/app/my_app.dart';
 import 'package:bulka/core/assets/asset_translations.dart';
+import 'package:bulka/core/services/notifications/firebase_notification_api.dart';
 import 'package:bulka/core/services/servies_locator/service_locator.dart';
 import 'package:bulka/core/utils/constant/strings.dart';
 import 'package:bulka/core/utils/widgets/misc/restart_widget.dart';
+import 'package:bulka/firebase_options.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -14,6 +17,8 @@ Future<void> main() async {
   currentLanguage = await AssetTranslations.getLanguage();
   HttpOverrides.global = MyHttpOverrides();
   EasyLocalization.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  FirebaseNotificationApi().initNotification();
 
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

@@ -17,7 +17,7 @@ class LoginRepo extends Equatable {
         ApiConstance.login,
         data: params.returnedMap(),
       );
-      return Right(LoginModel.fromJson(response.data['data']));
+      return Right(LoginModel.fromJson(response.data));
     } catch (error) {
       return Left(ErrorHandler.handleError(error));
     }

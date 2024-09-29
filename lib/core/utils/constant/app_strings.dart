@@ -101,6 +101,8 @@ class AppStrings {
   static const String seachAboutSomeThingHere = "Search about something here !";
   static const String seeAll = "See all";
   static const String exploreCategories = "Explore Categories";
+  static const String enterCompanySize = "Enter Company Size";
+  static const String companySize = "Company Size";
   static const String categories = "Categories";
   static const String propertiesForSale = "Properties for sale";
   static const String carsForSale = "Cars for sale";
@@ -155,4 +157,10 @@ class AppStrings {
   static const String enterYourDescription = 'Enter your description';
   static const String website = 'Website';
   static const String enterYourWebsiteDomain = 'Enter your website domain';
+  static const String additionalDomain = 'Additional domain';
+  static const String enterYourAdditionalDomain =
+      'Enter your additional domain';
+  static const String companyLogo = 'Company logo';
+  static const String pleaseEnterYourCompanyLogo =
+      'Please enter your company logo';
 }

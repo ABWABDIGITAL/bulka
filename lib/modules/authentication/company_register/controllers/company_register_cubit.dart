@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
 import 'package:bulka/core/services/api_handler/api_response_code.dart';
 import 'package:bulka/core/shared/entity/api_error_entity.dart';
@@ -23,9 +25,12 @@ class CompanyRegisterCubit extends Cubit<CompanyRegisterState> {
   TextEditingController fullNameController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
   TextEditingController websiteController = TextEditingController();
+  TextEditingController additionalWebsiteController = TextEditingController();
+  TextEditingController companySizeController = TextEditingController();
 
   num? _countryId;
   num? _categoryId;
+  File? _companyLogo;
 
   bool _isVisiablePassword = false;
   bool _isVisiableConfirm = false;
@@ -37,7 +42,7 @@ class CompanyRegisterCubit extends Cubit<CompanyRegisterState> {
   bool get agreePolicyAndConditions => _agreePolicyAndConditions;
   num? get countryId => _countryId;
   num? get categoryId => _categoryId;
-
+  File? get companyLogo => _companyLogo;
   void changeAgreePolicyAndConditions() {
     _agreePolicyAndConditions = !_agreePolicyAndConditions;
     emit(ChangeAgreePolicyAndConditions());
@@ -61,6 +66,10 @@ class CompanyRegisterCubit extends Cubit<CompanyRegisterState> {
     _categoryId = value;
   }
 
+  set companyLogo(File? value) {
+    _companyLogo = value;
+  }
+
   void dispose() {
     passwordController.dispose();
     passwordConfirmController.dispose();
@@ -72,6 +81,21 @@ class CompanyRegisterCubit extends Cubit<CompanyRegisterState> {
 
   bool _isValid() {
     bool isValid = true;
+    if (_companyLogo == null) {
+      emit(
+        CompanyRegisterError(
+          ApiErrorEntity(
+            message: AppStrings.pleaseEnterYourCompanyLogo.tr(),
+            code: ResponseCode.validationError,
+            errors: [
+              AppStrings.pleaseEnterYourCompanyLogo.tr(),
+            ],
+            status: false,
+          ),
+        ),
+      );
+      return isValid = false;
+    }
     if (_countryId == null) {
       emit(
         CompanyRegisterError(
@@ -123,9 +147,19 @@ class CompanyRegisterCubit extends Cubit<CompanyRegisterState> {
     emit(CompanyRegisterLoading());
     final response = await _companyRegisterRepo.register(
       CompanyRegisterParams(
-        comfirmPassword: passwordConfirmController.text,
+        fullName: fullNameController.text,
+        phone: phoneController.text,
+        phoneCode: phoneCodeController.text,
         email: emailController.text,
+        categoryId: categoryId.toString(),
+        description: descriptionController.text,
         password: passwordController.text,
+        comfirmPassword: passwordConfirmController.text,
+        websiteUrl: websiteController.text,
+        additionalWebsiteUrl: additionalWebsiteController.text,
+        companySize: companySizeController.text,
+        countryId: countryId.toString(),
+        companyLogo: companyLogo,
       ),
     );
     response.fold((failure) {

@@ -6,8 +6,8 @@ class LoginParams extends Equatable {
   final String email;
   final String deviceType;
   final String? deviceToken;
-  final double? lat;
-  final double? lng;
+  final String? lat;
+  final String? lng;
   final String? location;
 
   const LoginParams({

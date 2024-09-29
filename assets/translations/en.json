@@ -132,5 +132,11 @@
   "Website": "Website",
   "Enter your website domain": "Enter your website domain",
   "Please enter valid url": "Please enter valid url",
-  "Please enter url": "Please enter url"
+  "Please enter url": "Please enter url",
+  "Additional domain": "Additional domain",
+  "Enter your additional domain": "Enter your additional domain",
+  "Enter Company Size": "Enter Company Size",
+  "Company Size": "Company Size",
+  "Company logo": "Company logo",
+  "Please enter your company logo": "Please enter your company logo"
 }

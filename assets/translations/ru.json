@@ -132,5 +132,11 @@
   "Website": "Сайт",
   "Enter your website domain": "Введите домен вашего сайта",
   "Please enter valid url": "Пожалуйста, введите правильный url",
-  "Please enter url": "Пожалуйста, введите url"
+  "Please enter url": "Пожалуйста, введите url",
+  "Additional domain": "Дополнительный домен",
+  "Enter your additional domain": "Введите дополнительный домен",
+  "Enter Company Size": "Введите размер компании",
+  "Company Size": "Размер компании",
+  "Company logo": "Логотип компании",
+  "Please enter your company logo": "Пожалуйста, введите логотип вашей компании"
 }

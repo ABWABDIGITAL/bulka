@@ -1,4 +1,8 @@
+import 'dart:io';
+
+import 'package:bulka/core/services/api_handler/api_response_code.dart';
 import 'package:bulka/core/services/notifications/firebase_notification_api.dart';
+import 'package:bulka/core/shared/entity/api_error_entity.dart';
 import 'package:bulka/core/utils/home_utilites.dart';
 import 'package:bulka/core/utils/widgets/device_type/device_type.dart';
 import 'package:bulka/modules/authentication/login/controllers/login_state.dart';
@@ -46,43 +50,59 @@ class LoginCubit extends Cubit<LoginState> {
     return null;
   }
 
-  Future<LoginLocationParams> _loginLocation() async {
+  Future<LoginLocationParams?> _loginLocation() async {
     Position? position = await _getCurrentPosition();
     if (position == null) {
       return const LoginLocationParams(lat: null, lng: null, location: null);
     }
-    List<Placemark>? placemark = await _placemarkFromCoordinates(
-      latitude: position.latitude,
-      longitude: position.longitude,
-    );
+    try {
+      List<Placemark>? placemark = await _placemarkFromCoordinates(
+        latitude: position.latitude,
+        longitude: position.longitude,
+      );
 
-    return LoginLocationParams(
-      lat: position.latitude,
-      lng: position.longitude,
-      location: placemark!.isNotEmpty ? placemark.first.name : null,
-    );
+      return LoginLocationParams(
+        lat: position.latitude.toString(),
+        lng: position.longitude.toString(),
+        location: placemark!.isNotEmpty ? placemark.first.name : null,
+      );
+    } catch (e) {
+      // emit(
+      //   LoginStateError(ApiErrorEntity(
+      //     message: e.toString(),
+      //     code: ResponseCode.validationError,
+      //     errors: [e.toString()],
+      //     status: false,
+      //   )),
+      // );
+      debugPrint(e.toString());
+      return null;
+    }
   }
 
 //----------------------------------REQUEST-----------------------------------//
   Future<void> loginStatesHandled(BuildContext context) async {
     emit(const LoginStateLoading());
-    final LoginLocationParams locations = await _loginLocation();
+    final isRealDevice = await DeviceType.isRealDevice();
+    final LoginLocationParams? locations =
+        isRealDevice ? await _loginLocation() : null;
 
     final response = await _loginRepo.login(
       LoginParams(
+        //if you change login with email to login with phone it's ready in model just
         phone: emailController.text,
         password: passwordController.text,
         email: emailController.text,
         deviceToken: fcmToken,
         deviceType: DeviceType.getDeviceType(),
-        lat: locations.lat,
-        lng: locations.lng,
-        location: locations.location,
+        lat: locations?.lat,
+        lng: locations?.lng,
+        location: locations?.location,
       ),
     );
     response.fold((failure) {
       return emit(LoginStateError(failure));
-    }, (success) async {
+    }, (success) {
       return emit(LoginStateSuccess(success));
     });
   }

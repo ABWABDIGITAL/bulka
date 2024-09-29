@@ -47,13 +47,8 @@ class ResetPasswordButtonWidget extends StatelessWidget {
             FocusScope.of(context).unfocus();
             if (cubit.resetKey.currentState!.validate()) {
               cubit.resetKey.currentState!.save();
-              Dialogs.successDialog(
-                context,
-                onSuccessFinishedCallback: (p0) {
-                  context.pop();
-                  resetPasswordSuccessBottomWidget(context);
-                },
-              );
+
+              cubit.resetPasswordStatesHandled();
             }
           },
         );
