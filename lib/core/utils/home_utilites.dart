@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:bulka/core/assets/asset_translations.dart';
 import 'package:bulka/core/services/cache/shared_pref.dart';
 import 'package:bulka/core/shared/entity/token_entity.dart';
 import 'package:bulka/core/shared/models/token_model.dart';
@@ -74,6 +75,13 @@ Future<bool> clearAllDataToLogout() async {
     debugPrint(e.toString());
   }
   return false;
+}
+
+String getSuitableNameLanguageForScreen(
+    final Map<String, dynamic> textLanguages) {
+  return textLanguages[currentLanguage?.locale.languageCode] ??
+      textLanguages['en'] ??
+      'field is null';
 }
 
 Future<Position?> getCurrentPosition() async {

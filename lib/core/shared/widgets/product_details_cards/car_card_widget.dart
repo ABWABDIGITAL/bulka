@@ -1,5 +1,8 @@
 import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/shared/components/default_ink_well_widget.dart';
+import 'package:bulka/core/shared/entity/product_entities/product_main_information_entity.dart';
+import 'package:bulka/core/shared/shimmer/shimmer_container_widget.dart';
+import 'package:bulka/core/shared/shimmer/shimmer_text_widget.dart';
 import 'package:bulka/core/shared/widgets/favourite_icon_widget.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
@@ -14,25 +17,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 class CarCardWidget extends StatelessWidget {
   const CarCardWidget({
     super.key,
-    required this.image,
-    required this.title,
-    required this.subtitle,
-    required this.id,
     this.height,
     this.width,
-    this.model,
-    this.location,
-    this.createdAt,
+    required this.info,
+    this.isLoading = false,
   });
-  final String image;
-  final String title;
-  final String subtitle;
-  final String id;
+
   final double? height;
   final double? width;
-  final String? model;
-  final String? location;
-  final String? createdAt;
+  final ProductMainInformationEntity info;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return CustomeInkWellWidget(
@@ -57,7 +51,9 @@ class CarCardWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(5),
               ),
               margin: const EdgeInsets.all(2),
-              child: DefaultNetworkImage(image),
+              child: isLoading
+                  ? const ShimmerContainerWidget()
+                  : DefaultNetworkImage(info.image),
             ),
           ),
           Expanded(
@@ -70,46 +66,55 @@ class CarCardWidget extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: Text(
-                          title,
+                        child: ShimmerTextWidget(
+                          info.name,
                           style: TextStyles.rubik12W400LightPrimary,
                           maxLines: 1,
+                          isLoading: isLoading,
                         ),
                       ),
-                      const FavouriteIconWidget(),
+                      if (!isLoading) const FavouriteIconWidget(),
                     ],
                   ),
-                  Text(
-                    subtitle,
+                  ShimmerTextWidget(
+                    info.description,
                     style: TextStyles.rubik10W400Black100,
                     maxLines: 1,
+                    isLoading: isLoading,
                   ),
-                  if (model != null)
-                    Row(
-                      children: [
+                  Row(
+                    children: [
+                      if (!isLoading)
                         SvgPicture.asset(
                           AssetIcons.speedoMeter2Svg,
                           height: 12.h,
                           width: 12.w,
                         ),
-                        hSpace(4),
-                        Text(
-                          model ?? "",
-                          style: TextStyles.rubik10W400Black100,
-                          maxLines: 1,
+                      if (isLoading)
+                        ShimmerContainerWidget(
+                          width: 12.w,
+                          height: 12.h,
+                          borderRadiusValue: 500,
                         ),
-                      ],
-                    ),
-                  if (location != null)
-                    Text(
-                      location ?? "",
-                      style: TextStyles.rubik6W400Black100,
-                    ),
-                  if (createdAt != null)
-                    Text(
-                      createdAt ?? "",
-                      style: TextStyles.rubik6W400Black100,
-                    )
+                      hSpace(4),
+                      ShimmerTextWidget(
+                        "model",
+                        style: TextStyles.rubik10W400Black100,
+                        maxLines: 1,
+                        isLoading: isLoading,
+                      ),
+                    ],
+                  ),
+                  ShimmerTextWidget(
+                    'location',
+                    style: TextStyles.rubik6W400Black100,
+                    isLoading: isLoading,
+                  ),
+                  ShimmerTextWidget(
+                    'createdAt',
+                    style: TextStyles.rubik6W400Black100,
+                    isLoading: isLoading,
+                  )
                 ],
               ),
             ),

@@ -14,6 +14,7 @@ class ShimmerContainerWidget extends StatelessWidget {
     this.decoration,
     this.child,
     this.isLoading = true,
+    this.clipBehavior = Clip.none,
   });
   final double? height;
   final double? width;
@@ -23,6 +24,7 @@ class ShimmerContainerWidget extends StatelessWidget {
   final Decoration? decoration;
   final Widget? child;
   final bool isLoading;
+  final Clip clipBehavior;
   @override
   Widget build(BuildContext context) {
     return isLoading
@@ -34,6 +36,7 @@ class ShimmerContainerWidget extends StatelessWidget {
               width: width ?? 100.w,
               margin: margin,
               padding: padding,
+              clipBehavior: clipBehavior,
               alignment: Alignment.center,
               decoration: decoration ??
                   BoxDecoration(

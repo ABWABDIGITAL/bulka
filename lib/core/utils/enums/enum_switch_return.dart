@@ -15,6 +15,25 @@ class EnumSwitchReturn {
     }
   }
 
+  static ProductCardWidgetDisplay? getProductCardWidget(String? adType) {
+    switch (adType) {
+      case 'posts':
+        return ProductCardWidgetDisplay.posts;
+      case 'jobs':
+        return ProductCardWidgetDisplay.jobs;
+      case 'properties':
+        return ProductCardWidgetDisplay.properties;
+      case 'cars':
+        return ProductCardWidgetDisplay.cars;
+      case 'general':
+        return ProductCardWidgetDisplay.general;
+      case 'import_export':
+        return ProductCardWidgetDisplay.import_and_export;
+      default:
+        return null;
+    }
+  }
+
   static CategoryTypes? getCategoryType(String? categoryType) {
     switch (categoryType) {
       case 'posts':
@@ -29,6 +48,35 @@ class EnumSwitchReturn {
         return CategoryTypes.general;
       case 'import_and_export':
         return CategoryTypes.import_and_export;
+      default:
+        return null;
+    }
+  }
+
+  static SliderTypes? getSliderType(String? categoryType) {
+    switch (categoryType) {
+      case 'external':
+        return SliderTypes.ex_ternal;
+      case 'internal':
+        return SliderTypes.internal;
+      default:
+        return null;
+    }
+  }
+
+  static AdMediaType? getAdMediaType(String? adMediaType) {
+    switch (adMediaType) {
+      case 'image':
+        return AdMediaType.image;
+      default:
+        return null;
+    }
+  }
+
+  static FieldType? getFieldType(String? fieldType) {
+    switch (fieldType) {
+      case 'field_type':
+        return FieldType.text;
       default:
         return null;
     }

@@ -17,4 +17,6 @@ class ApiConstance {
 //---------------------------------INTERESTS----------------------------------//
   static const String interests = '/app/helpers/interests';
   static const String updateInterests = '/app/update-interests';
+//-----------------------------------HOME----------------------------------//
+  static const String home = '/app/home';
 }

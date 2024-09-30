@@ -1,6 +1,9 @@
 import 'dart:io';
 import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/shared/components/default_ink_well_widget.dart';
+import 'package:bulka/core/shared/entity/product_entities/product_main_information_entity.dart';
+import 'package:bulka/core/shared/shimmer/shimmer_container_widget.dart';
+import 'package:bulka/core/shared/shimmer/shimmer_text_widget.dart';
 import 'package:bulka/core/shared/widgets/favourite_icon_widget.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
@@ -15,19 +18,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 class PropertiesCardWidget extends StatelessWidget {
   const PropertiesCardWidget({
     super.key,
-    required this.image,
-    required this.title,
-    required this.subtitle,
-    required this.id,
+    required this.info,
     this.height,
     this.width,
+    this.isLoading = true,
   });
-  final String image;
-  final String title;
-  final String subtitle;
-  final String id;
+
   final double? height;
   final double? width;
+  final bool isLoading;
+  final ProductMainInformationEntity info;
   @override
   Widget build(BuildContext context) {
     return CustomeInkWellWidget(
@@ -52,7 +52,9 @@ class PropertiesCardWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(5),
               ),
               margin: const EdgeInsets.all(2),
-              child: DefaultNetworkImage(image),
+              child: isLoading
+                  ? const ShimmerContainerWidget()
+                  : DefaultNetworkImage(info.image),
             ),
           ),
           Expanded(
@@ -65,19 +67,21 @@ class PropertiesCardWidget extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: Text(
-                          title,
+                        child: ShimmerTextWidget(
+                          info.name,
                           style: TextStyles.rubik12W400LightPrimary,
                           maxLines: 1,
+                          isLoading: isLoading,
                         ),
                       ),
-                      const FavouriteIconWidget(),
+                      if (!isLoading) const FavouriteIconWidget(),
                     ],
                   ),
-                  Text(
-                    subtitle,
+                  ShimmerTextWidget(
+                    info.description,
                     style: TextStyles.rubik10W400Black100,
                     maxLines: 2,
+                    isLoading: isLoading,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -85,18 +89,22 @@ class PropertiesCardWidget extends StatelessWidget {
                       propretiesRow(
                         icon: AssetIcons.bedSvg,
                         text: '2',
+                        isLoading: isLoading,
                       ),
                       propretiesRow(
                         icon: AssetIcons.shawerSvg,
                         text: '2',
+                        isLoading: isLoading,
                       ),
                       propretiesRow(
                         icon: AssetIcons.carSvg,
                         text: '3',
+                        isLoading: isLoading,
                       ),
                       propretiesRow(
                         icon: AssetIcons.shawerSvg,
                         text: '1200sqt',
+                        isLoading: isLoading,
                       ),
                     ],
                   )
@@ -112,19 +120,28 @@ class PropertiesCardWidget extends StatelessWidget {
   Widget propretiesRow({
     required String icon,
     required String text,
+    required bool isLoading,
   }) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        SvgPicture.asset(
-          icon,
-          height: 11.h,
-          width: 11.w,
-        ),
+        if (!isLoading)
+          SvgPicture.asset(
+            icon,
+            height: 11.h,
+            width: 11.w,
+          ),
+        if (isLoading)
+          ShimmerContainerWidget(
+            height: 11.h,
+            width: 11.w,
+            borderRadiusValue: 500,
+          ),
         hSpace(4),
-        Text(
+        ShimmerTextWidget(
           text,
           style: TextStyles.rubik10W400Black100,
+          isLoading: isLoading,
         ),
       ],
     );

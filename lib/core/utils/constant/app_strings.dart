@@ -163,4 +163,8 @@ class AppStrings {
   static const String companyLogo = 'Company logo';
   static const String pleaseEnterYourCompanyLogo =
       'Please enter your company logo';
+  static const String pageNotFound = 'Page Not Found';
+  static const String weApologizeForTheInconvenicence =
+      'We Apologize For The Inconvenience';
+  static const String reloadAgain = 'Reload Again';
 }

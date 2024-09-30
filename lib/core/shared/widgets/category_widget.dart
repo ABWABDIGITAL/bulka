@@ -1,4 +1,5 @@
 import 'package:bulka/core/services/categories/data/entity/category_entity.dart';
+import 'package:bulka/core/services/categories/data/entity/category_type_entity.dart';
 import 'package:bulka/core/shared/shimmer/shimmer_container_widget.dart';
 import 'package:bulka/core/shared/shimmer/shimmer_text_widget.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
@@ -13,7 +14,7 @@ class CategoryWidget extends StatelessWidget {
     required this.category,
     required this.isLoading,
   });
-  final CategoryEntity? category;
+  final CategoryTypeEntity? category;
   final bool isLoading;
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,7 @@ class CategoryWidget extends StatelessWidget {
                     )
                   : category != null
                       ? DefaultNetworkImage(
-                          category!.image,
+                          category!.icon,
                           height: 38.h,
                           width: 38.w,
                         )

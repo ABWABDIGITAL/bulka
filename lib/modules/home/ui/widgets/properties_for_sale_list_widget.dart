@@ -1,13 +1,20 @@
+import 'package:bulka/core/shared/entity/product_entities/product_main_information_entity.dart';
 import 'package:bulka/core/shared/widgets/product_details_cards/properties_card_widget.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/modules/home/data/entity/home_product_entity.dart';
 import 'package:bulka/modules/home/ui/widgets/home_title_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PropertiesForSaleListWidget extends StatelessWidget {
-  const PropertiesForSaleListWidget({super.key});
-
+  const PropertiesForSaleListWidget({
+    super.key,
+    required this.isLoading,
+    required this.product,
+  });
+  final bool isLoading;
+  final List<HomeProductEntity> product;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,14 +32,11 @@ class PropertiesForSaleListWidget extends StatelessWidget {
               return PropertiesCardWidget(
                 width: 180.w,
                 height: 185.h,
-                image:
-                    'https://s3-alpha-sig.figma.com/img/9cc2/3be7/e02c6b64ddcca7653644881e1ce5cf34?Expires=1726444800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Wd8zgFly7z4GN8zPhlYsr-xa~LC5v2PtwxzMgChUrQbKMBdx1fqVQ6RzjiBTU8A3y30BqlqhmNEtU4evkQzaOEBb8NpcG-uoaoNq5fs0SidJQS6zpsZno37JbQKIfYVU8Qb64JBcvUfklTC~G3Fus81tfatsgWy4ZiVBCtJMKUaONmuHJELYkaYwZi~JfIaAgJTCgNTKhk9v5Ei6Fg96dEcf3wWRPkmF8B6D1ij95u3gztcYxMdlp8b-oDsq-IzI-boLrMcVZT-Lq8QCtXTbfUd4ZVepWcu~RXAvxf7vFng-zoDiq~V1Ztr-xJz~-oNLfShgTq7yCsY4ST5JB4QjEg__',
-                subtitle: '4517 Washington Ave. Manchester, Kentucky 39495',
-                title: 'RUB 26.000.000',
-                id: 'id',
+                info: product[index].mainInformation,
+                isLoading: isLoading,
               );
             },
-            itemCount: 10,
+            itemCount: product.length,
           ),
         ),
       ],

@@ -1,13 +1,19 @@
 import 'package:bulka/core/shared/widgets/product_details_cards/jop_card_widget.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/modules/home/data/entity/home_product_entity.dart';
 import 'package:bulka/modules/home/ui/widgets/home_title_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeJopsSectionWidget extends StatelessWidget {
-  const HomeJopsSectionWidget({super.key});
-
+  const HomeJopsSectionWidget({
+    super.key,
+    required this.isLoading,
+    required this.products,
+  });
+  final bool isLoading;
+  final List<HomeProductEntity> products;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,15 +31,11 @@ class HomeJopsSectionWidget extends StatelessWidget {
               return JopCardWidget(
                 width: 180.w,
                 height: 185.h,
-                image:
-                    'https://img.freepik.com/premium-photo/modern-blue-office-chair-set-against-minimalist-background-ai-photo_1192063-14253.jpg?w=1060',
-                location: 'Balakovo - Russia',
-                createdAt: '5 days ago',
-                title: 'RUB 26.000.000',
-                id: 'id',
+                isLoading: true,
+                info: products[index].mainInformation,
               );
             },
-            itemCount: 10,
+            itemCount: products.length,
           ),
         ),
       ],
