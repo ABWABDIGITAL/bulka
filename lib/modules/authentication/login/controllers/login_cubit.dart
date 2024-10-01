@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:bulka/core/services/api_handler/api_response_code.dart';
 import 'package:bulka/core/services/notifications/firebase_notification_api.dart';
+import 'package:bulka/core/services/profile_info/controller/cubit/my_profile_info_cubit.dart';
+import 'package:bulka/core/services/profile_info/data/model/my_profile_info_model.dart';
 import 'package:bulka/core/shared/entity/api_error_entity.dart';
 import 'package:bulka/core/utils/home_utilites.dart';
 import 'package:bulka/core/utils/widgets/device_type/device_type.dart';
@@ -11,6 +13,7 @@ import 'package:bulka/modules/authentication/login/data/params/login_params.dart
 import 'package:bulka/modules/authentication/login/data/repo/login_repo.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -102,7 +105,10 @@ class LoginCubit extends Cubit<LoginState> {
     );
     response.fold((failure) {
       return emit(LoginStateError(failure));
-    }, (success) {
+    }, (success) async {
+      await context
+          .read<MyProfileInfoCubit>()
+          .saveMyProfileInfo(success.myProfileInfoEntity);
       return emit(LoginStateSuccess(success));
     });
   }

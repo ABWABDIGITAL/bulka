@@ -30,7 +30,10 @@ class _HomeBannerWidgetState extends State<HomeBannerWidget> {
             children: [
               vSpace(10),
               if (cubit.homeEntity == null)
-                const ShimmerContainerWidget(height: 180),
+                ShimmerContainerWidget(
+                  height: 180,
+                  width: MediaQuery.sizeOf(context).width,
+                ),
             ],
           )
         : Column(

@@ -81,4 +81,45 @@ class EnumSwitchReturn {
         return null;
     }
   }
+
+  static UserType getUserType(String? userType) {
+    switch (userType) {
+      case 'company':
+        return UserType.company;
+      default:
+        return UserType.unknown;
+    }
+  }
+
+  static CompanySize? getCompanySize(String? companySize) {
+    switch (companySize) {
+      case 'large':
+        return CompanySize.large;
+      case 'medium':
+        return CompanySize.medium;
+      case 'small':
+        return CompanySize.small;
+      default:
+        return null;
+    }
+  }
+
+  static AdType getAdType(String? adType) {
+    switch (adType) {
+      case 'posts':
+        return AdType.posts;
+      case 'jobs':
+        return AdType.jobs;
+      case 'properties':
+        return AdType.properties;
+      case 'cars':
+        return AdType.cars;
+      case 'general':
+        return AdType.general;
+      case 'import_export':
+        return AdType.import_export;
+      default:
+        return AdType.import_export;
+    }
+  }
 }

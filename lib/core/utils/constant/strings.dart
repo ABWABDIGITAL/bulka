@@ -1,6 +1,6 @@
 import 'dart:io';
-
 import 'package:bulka/core/assets/asset_translations.dart';
+import 'package:bulka/core/services/profile_info/data/entity/my_profile_info_entity.dart';
 import 'package:bulka/core/shared/entity/token_entity.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,3 +11,4 @@ double appbarheight = 56.h;
 bool isScreenSmall = true;
 LanguageConfig? currentLanguage;
 TokenEntity? token;
+// MyProfileInfoEntity? myProfileInfo;

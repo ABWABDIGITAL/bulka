@@ -17,29 +17,31 @@ class PropertiesForSaleListWidget extends StatelessWidget {
   final List<HomeProductEntity> product;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        HomeTitleWidget(
-          AppStrings.propertiesForSale.tr(),
-          onPressed: () {},
-        ),
-        SizedBox(
-          height: 185.h,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return PropertiesCardWidget(
-                width: 180.w,
+    return product.isNotEmpty
+        ? Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              HomeTitleWidget(
+                AppStrings.propertiesForSale.tr(),
+                onPressed: () {},
+              ),
+              SizedBox(
                 height: 185.h,
-                info: product[index].mainInformation,
-                isLoading: isLoading,
-              );
-            },
-            itemCount: product.length,
-          ),
-        ),
-      ],
-    );
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return PropertiesCardWidget(
+                      width: 180.w,
+                      height: 185.h,
+                      info: product[index].mainInformation,
+                      isLoading: isLoading,
+                    );
+                  },
+                  itemCount: product.length,
+                ),
+              ),
+            ],
+          )
+        : const SizedBox();
   }
 }

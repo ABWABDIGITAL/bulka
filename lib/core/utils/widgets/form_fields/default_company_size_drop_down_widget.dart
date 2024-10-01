@@ -1,6 +1,7 @@
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/core/utils/enums/enums.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -51,11 +52,6 @@ class _DefaultCompanySizeDropdownWidgetState
 
   @override
   Widget build(BuildContext context) {
-    final List<String> items = [
-      'large',
-      'medium',
-      'small',
-    ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -144,12 +140,12 @@ class _DefaultCompanySizeDropdownWidgetState
               }
             },
             items: List.generate(
-              items.length,
+              CompanySize.values.length,
               (index) {
                 return DropdownMenuItem<String>(
-                  value: items[index],
+                  value: CompanySize.values[index].name,
                   child: Text(
-                    items[index],
+                    CompanySize.values[index].name,
                     style: const TextStyle(color: AppColors.black),
                   ),
                 );

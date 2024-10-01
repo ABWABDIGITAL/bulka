@@ -3,6 +3,7 @@ import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/utils/widgets/errors/error_full_screen.dart';
 import 'package:bulka/modules/home/controller/cubit/home_cubit.dart';
 import 'package:bulka/modules/home/controller/cubit/home_state.dart';
+import 'package:bulka/modules/home/ui/stats/home_error_widget.dart';
 import 'package:bulka/modules/home/ui/stats/home_loading_widget.dart';
 import 'package:bulka/modules/home/ui/stats/home_success_widget.dart';
 import 'package:bulka/modules/home/ui/widgets/car_for_sale_list_widget.dart';
@@ -39,12 +40,7 @@ class HomeScreen extends StatelessWidget {
               return const HomeSuccessWidget();
             }
             if (state is GetHomeError) {
-              return ErrorFullScreen(
-                error: state.error,
-                onPressed: () {
-                  cubit.homeStatesHandled();
-                },
-              );
+              return HomeErrorWidget(state.error);
             }
             return const Text('no state provided');
           },

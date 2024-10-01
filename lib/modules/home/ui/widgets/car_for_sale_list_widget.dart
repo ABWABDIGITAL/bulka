@@ -16,29 +16,31 @@ class CarForSaleListWidget extends StatelessWidget {
   final List<HomeProductEntity> products;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        HomeTitleWidget(
-          AppStrings.carsForSale.tr(),
-          onPressed: () {},
-        ),
-        SizedBox(
-          height: 185.h,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return CarCardWidget(
-                width: 180.w,
+    return products.isNotEmpty
+        ? Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              HomeTitleWidget(
+                AppStrings.carsForSale.tr(),
+                onPressed: () {},
+              ),
+              SizedBox(
                 height: 185.h,
-                isLoading: isLoading,
-                info: products[index].mainInformation,
-              );
-            },
-            itemCount: products.length,
-          ),
-        ),
-      ],
-    );
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return CarCardWidget(
+                      width: 180.w,
+                      height: 185.h,
+                      isLoading: isLoading,
+                      info: products[index].mainInformation,
+                    );
+                  },
+                  itemCount: products.length,
+                ),
+              ),
+            ],
+          )
+        : const SizedBox();
   }
 }

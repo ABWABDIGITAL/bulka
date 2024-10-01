@@ -86,6 +86,11 @@ class SharedPrefHelper extends Equatable {
     return await _flutterSecureStorage.read(key: key);
   }
 
+  static Future<void> removeSecuredString(String key) async {
+    debugPrint('FlutterSecureStorage : removeSecuredString with key :');
+    return await _flutterSecureStorage.delete(key: key);
+  }
+
   /// Removes all keys and values in the FlutterSecureStorage
   static Future<void> clearAllSecuredData() async {
     debugPrint('FlutterSecureStorage : all data has been cleared');

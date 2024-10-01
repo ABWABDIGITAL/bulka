@@ -22,3 +22,12 @@ enum CategoryTypes { posts, jobs, properties, cars, general, import_and_export }
 enum SliderTypes { ex_ternal, internal }
 
 enum FieldType { text }
+
+enum UserType { company, unknown, visitor }
+
+enum CompanySize { large, medium, small }
+
+// ignore: constant_identifier_names
+enum AdType { posts, jobs, properties, cars, import_export, general }
+
+enum PreferedContact { chat, phone }

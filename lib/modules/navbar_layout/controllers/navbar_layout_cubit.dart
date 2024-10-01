@@ -154,8 +154,8 @@ class NavbarLayoutCubit extends Cubit<NavbarLayoutState> {
     const HomeAppbarWidget(),
     const HomeAppbarWidget(),
     const HomeAppbarWidget(),
-    PreferredSize(
-        preferredSize: Size.fromHeight(0), child: const HomeAppbarWidget()),
+    const PreferredSize(
+        preferredSize: Size.fromHeight(0), child: HomeAppbarWidget()),
     const ProfileAppbarWidget(),
   ];
 

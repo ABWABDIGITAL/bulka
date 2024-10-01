@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:bulka/core/assets/asset_translations.dart';
 import 'package:bulka/core/services/cache/shared_pref.dart';
+import 'package:bulka/core/services/profile_info/data/entity/my_profile_info_entity.dart';
+import 'package:bulka/core/services/profile_info/data/model/my_profile_info_model.dart';
 import 'package:bulka/core/shared/entity/token_entity.dart';
 import 'package:bulka/core/shared/models/token_model.dart';
 import 'package:bulka/core/utils/constant/shared_pref_keys.dart';
@@ -77,11 +79,14 @@ Future<bool> clearAllDataToLogout() async {
   return false;
 }
 
-String getSuitableNameLanguageForScreen(
-    final Map<String, dynamic> textLanguages) {
-  return textLanguages[currentLanguage?.locale.languageCode] ??
-      textLanguages['en'] ??
-      'field is null';
+String getSuitableNameLanguageForScreen(final dynamic textLanguages) {
+  if (textLanguages is Map<String, dynamic>) {
+    return textLanguages[currentLanguage?.locale.languageCode] ??
+        textLanguages['en'] ??
+        'field is null';
+  } else {
+    return textLanguages;
+  }
 }
 
 Future<Position?> getCurrentPosition() async {

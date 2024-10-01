@@ -63,4 +63,5 @@ class AssetIcons {
   static const String uploadSvg = 'assets/icons/upload.svg';
   static const String pdf = 'assets/icons/PDF.png';
   static const String trashFill = 'assets/icons/trash-fill.svg';
+  static const String appIconSvg = 'assets/icons/app_icon.svg';
 }
