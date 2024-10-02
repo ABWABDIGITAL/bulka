@@ -12,21 +12,30 @@ class CreateAdCubit extends Cubit<CreateAdState> {
   final CreateAdRepo _createAdRepo;
   CreateAdCubit(this._createAdRepo) : super(CreateAdInitial());
 //---------------------------------VARIABLES----------------------------------//
-  int? _categoryId;
-  int? _subcategoryId;
-  int? _subSubcategoryId;
+  int? _categoryId, _subcategoryId, _subSubcategoryId;
+  String? _lat, _lng, _location;
   AdType? _adType;
   PreferedContact? _preferedContact;
+
   TextEditingController nameController = TextEditingController();
   TextEditingController priceController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
-  List<CreateAdCategoryField> adCategoriesField = [];
-  List<File> media = [];
-  String? lat;
-  String? lng;
-  String? location;
-//---------------------------------FUNCTIONS----------------------------------//
 
+  List<CreateAdCategoryField> _adCategoriesField = [];
+  List<File> _media = [];
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+//---------------------------------FUNCTIONS----------------------------------//
+  set categoryId(int value) => _categoryId = value;
+  set subcategoryId(int value) => _subcategoryId = value;
+  set subSubcategoryId(int value) => _subSubcategoryId = value;
+  set adType(AdType value) => _adType = value;
+  set preferedContact(PreferedContact value) => _preferedContact = value;
+  set setLat(String value) => _lat = value;
+  set setLng(String value) => _lng = value;
+  set setLocation(String value) => _location = value;
+  set setMedia(List<File> value) => _media = value;
+  set setAdCategoriesField(List<CreateAdCategoryField> value) =>
+      _adCategoriesField = value;
 //----------------------------------REQUEST-----------------------------------//
   Future<void> createAdStatesHandled(CreateAdParams params) async {
     emit(const CreateAdLoading());
@@ -40,11 +49,11 @@ class CreateAdCubit extends Cubit<CreateAdState> {
         preferedContact: _preferedContact,
         name: nameController.text,
         description: descriptionController.text,
-        createAdCategoryField: adCategoriesField,
-        media: media,
-        lat: lat,
-        lng: lng,
-        location: location,
+        createAdCategoryField: _adCategoriesField,
+        media: _media,
+        lat: _lat,
+        lng: _lng,
+        location: _location,
       ),
     );
     response.fold((failure) {

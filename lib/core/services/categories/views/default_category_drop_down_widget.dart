@@ -31,6 +31,7 @@ class DefaultCategoryDropdownWidget extends StatefulWidget {
     this.suffixIcon,
     this.titleStyle,
     this.titleText,
+    this.needTitle = true,
   });
 
   final Function(CategoryEntity? choosenCategory)? onSelected;
@@ -47,6 +48,7 @@ class DefaultCategoryDropdownWidget extends StatefulWidget {
   final String? labelText;
   final String? hintText;
   final double? borderRadious;
+  final bool needTitle;
 
   @override
   State<DefaultCategoryDropdownWidget> createState() =>
@@ -86,13 +88,15 @@ class _DefaultCategoryDropdownWidgetState
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.only(bottom: 12.r),
-                  child: Text(
-                    widget.titleText ?? AppStrings.categories.tr(),
-                    style: widget.titleStyle ?? TextStyles.rubik13W500HardGrey2,
+                if (widget.needTitle)
+                  Padding(
+                    padding: EdgeInsetsDirectional.only(bottom: 12.r),
+                    child: Text(
+                      widget.titleText ?? AppStrings.categories.tr(),
+                      style:
+                          widget.titleStyle ?? TextStyles.rubik13W500HardGrey2,
+                    ),
                   ),
-                ),
                 SizedBox(
                   height: 45,
                   child: FormBuilderDropdown<CategoryEntity>(

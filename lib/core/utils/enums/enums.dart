@@ -31,3 +31,5 @@ enum CompanySize { large, medium, small }
 enum AdType { posts, jobs, properties, cars, import_export, general }
 
 enum PreferedContact { chat, phone }
+
+enum CategoryFieldTypes { text, integer, boolean, dorpdown, multiselect }

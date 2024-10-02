@@ -114,63 +114,6 @@ class _ImageUploadScreenState extends State<ImageUploadScreen> {
           AppStrings.companyLogo.tr(),
           style: TextStyles.rubik14W500Black,
         ),
-        // Display selected image or placeholder
-        // Expanded(
-        //   child: _selectedImage != null
-        //       ? Row(
-        //           mainAxisAlignment: MainAxisAlignment.start,
-        //           children: [
-        //             Container(
-        //               clipBehavior: Clip.antiAliasWithSaveLayer,
-        //               decoration: const BoxDecoration(shape: BoxShape.circle),
-        //               child: Image.file(
-        //                 _selectedImage!,
-        //                 fit: BoxFit.cover,
-        //               ),
-        //             ),
-        //           ],
-        //         )
-        //       : Center(
-        //           child: Text(
-        //             'No image selected',
-        //             style: TextStyle(color: Colors.grey[700], fontSize: 16),
-        //           ),
-        //         ),
-        // ),
-        // // Upload button
-        // ElevatedButton.icon(
-        //   onPressed: _selectedImage == null
-        //       ? _pickImage
-        //       : () {
-        //           setState(() {
-        //             _selectedImage = null;
-        //           });
-        //         },
-        //   icon: Icon(
-        //     _selectedImage == null ? Icons.upload : Icons.close,
-        //   ),
-        //   label: Text(
-        //     _selectedImage == null ? 'Select Image' : 'Remove Image',
-        //   ),
-        //   style: ButtonStyle(
-        //     backgroundColor: WidgetStateProperty.all(
-        //       _selectedImage == null ? AppColors.primary : AppColors.red,
-        //     ),
-        //     elevation: WidgetStateProperty.all(0),
-        //     foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
-        //     shape: WidgetStateProperty.all(
-        //       RoundedRectangleBorder(
-        //         borderRadius: BorderRadius.circular(10),
-        //         side: BorderSide(
-        //           color: _selectedImage == null
-        //               ? AppColors.primary
-        //               : AppColors.red,
-        //           width: 1,
-        //         ),
-        //       ),
-        //     ),
-        //   ),
-        // ),
       ],
     );
   }

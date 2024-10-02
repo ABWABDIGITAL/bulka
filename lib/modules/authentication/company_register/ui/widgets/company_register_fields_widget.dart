@@ -3,7 +3,7 @@ import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/shared/widgets/upload_image_widget.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
-import 'package:bulka/core/utils/widgets/form_fields/default_category_drop_down_widget.dart';
+import 'package:bulka/core/services/categories/views/default_category_drop_down_widget.dart';
 import 'package:bulka/core/utils/widgets/form_fields/default_company_size_drop_down_widget.dart';
 import 'package:bulka/core/utils/widgets/form_fields/default_form_field.dart';
 import 'package:bulka/core/utils/widgets/form_fields/default_phone_form_field.dart';

@@ -1,3 +1,6 @@
+import 'package:bulka/core/services/sub_subcategory/data/params/sub_subcategory_params.dart';
+import 'package:bulka/core/services/subcategory/data/params/subcategory_params.dart';
+
 class ApiConstance {
   static const String baseUrl =
       'https://bulka.thesoftwarecompany.io/public/api/v1';
@@ -19,6 +22,12 @@ class ApiConstance {
   static const String updateInterests = '/app/update-interests';
 //-----------------------------------HOME----------------------------------//
   static const String home = '/app/home';
-//-----------------------------------HOME----------------------------------//
+//-----------------------------------PROFILE----------------------------------//
   static const String profile = '/app/profile';
+//---------------------------------SUBCATEGORY----------------------------------//
+  static String subcategory(SubcategoryParams params) =>
+      '/app/categories/subcategory/${params.categoryId}';
+//--------------------------------SUB SUBCATEGORY----------------------------------//
+  static String subSubcategory(SubSubcategoryParams params) =>
+      '/app/categories/sub-subcategory/${params.subcategoryId}';
 }

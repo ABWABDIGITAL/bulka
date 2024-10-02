@@ -167,4 +167,8 @@ class AppStrings {
   static const String weApologizeForTheInconvenicence =
       'We Apologize For The Inconvenience';
   static const String reloadAgain = 'Reload Again';
+  static const String images = 'Images';
+  static const String name = 'Name';
+  static const String thePrice = 'The Price';
+  static const String createAd = 'Create Ad';
 }

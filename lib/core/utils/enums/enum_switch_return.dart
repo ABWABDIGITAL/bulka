@@ -122,4 +122,22 @@ class EnumSwitchReturn {
         return AdType.import_export;
     }
   }
+
+  static CategoryFieldTypes getCategoryFieldTypes(String? fieldType) {
+    switch (fieldType) {
+      case 'text':
+        return CategoryFieldTypes.text;
+      case 'integer':
+        return CategoryFieldTypes.integer;
+      case 'boolean':
+        return CategoryFieldTypes.boolean;
+      case 'dropdown':
+        return CategoryFieldTypes.dorpdown;
+      case 'multiselect':
+        return CategoryFieldTypes.multiselect;
+
+      default:
+        return CategoryFieldTypes.text;
+    }
+  }
 }

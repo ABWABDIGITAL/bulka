@@ -10,6 +10,7 @@ class CategoryCubit extends Cubit<CategoryState> {
 //---------------------------------VARIABLES----------------------------------//
   List<CategoryEntity>? categories;
 //---------------------------------FUNCTIONS----------------------------------//
+
 //----------------------------------REQUEST-----------------------------------//
   Future<void> catgoriesStatesHandled({CategoryParams? category}) async {
     emit(const GetCategoriesLoading());
