@@ -1,7 +1,5 @@
 import 'package:bulka/core/utils/constant/app_colors.dart';
-import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/widgets/loading/logo_loading.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,12 +8,12 @@ class PagginationLoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
+    return const Padding(
+      padding: EdgeInsets.all(8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -29,7 +27,7 @@ class PagginationLoadingWidget extends StatelessWidget {
           ),
           Text(
             'Loading', //AppStrings.loading.tr(),
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.w400,
               color: AppColors.grey,
             ),

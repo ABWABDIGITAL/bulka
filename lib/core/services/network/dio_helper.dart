@@ -1,4 +1,5 @@
 import 'package:bulka/core/assets/asset_translations.dart';
+import 'package:bulka/core/shared/entity/token_entity.dart';
 import 'package:bulka/core/utils/constant/api_constance.dart';
 import 'package:bulka/core/utils/constant/strings.dart';
 import 'package:bulka/core/utils/home_utilites.dart';
@@ -49,12 +50,13 @@ class DioHelper extends Equatable {
   }
 
   static Future<Map<String, dynamic>> _getHeaders() async {
-    // String? token = await getToken();
+    TokenEntity? token = await getToken();
+    LanguageConfig lang = await AssetTranslations.getLanguage();
     return {
       'Accept': 'application/json',
       "Access-Control-Allow-Origin": "*",
-      // 'Accept-Language': AssetTranslations.getLanguage().locale.languageCode,
-      // "Authorization": token != null ? "Bearer $token" : '',
+      'Accept-Language': lang.locale.languageCode,
+      "Authorization": token != null ? "Bearer ${token.token}" : '',
     };
   }
 

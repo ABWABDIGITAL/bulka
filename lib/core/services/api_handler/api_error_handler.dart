@@ -59,7 +59,7 @@ class ErrorHandler implements Exception {
       if (checkFromMap(response.response?.data)) {
         return ApiErrorModel.fromJson(
           response.response?.data,
-          statusCode: response.response?.statusCode,
+          response.response?.statusCode ?? 1000,
         );
       } else if (response.type == DioExceptionType.connectionError) {
         return ApiErrorModel(

@@ -1,4 +1,9 @@
+import 'dart:convert';
+
 import 'package:bulka/core/assets/asset_flags.dart';
+import 'package:bulka/core/services/cache/shared_pref.dart';
+import 'package:bulka/core/utils/constant/shared_pref_keys.dart';
+import 'package:bulka/core/utils/constant/strings.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
@@ -30,14 +35,29 @@ class AssetTranslations {
     currency: '£',
   );
 
-  // static void saveLanguage(LanguageConfig language) {
-  //   SharedPrefHelper.setData(SharedPrefKeys.savedLang, language);
-  // }
+  static Future<void> saveLanguage(LanguageConfig language) async {
+    String encodedLang = jsonEncode(language.toJson);
+    await SharedPrefHelper.setData(SharedPrefKeys.savedLang, encodedLang);
+  }
 
-  // static LanguageConfig getLanguage() {
-  //   return SharedPrefHelper.getData(SharedPrefKeys.savedLang) ??
-  //       _startedLanguage;
-  // }
+  static Future<LanguageConfig> getLanguage() async {
+    final lang = await SharedPrefHelper.getData(SharedPrefKeys.savedLang);
+
+    if (lang != null) {
+      currentLanguage = LanguageConfig.fromJson(json.decode(lang));
+
+      return LanguageConfig.fromJson(json.decode(lang));
+    } else {
+      currentLanguage = _startedLanguage;
+      return _startedLanguage;
+    }
+  }
+
+  static final List mySupportedLanguages = [
+    emirates,
+    english,
+    russian,
+  ];
 }
 
 class LanguageConfig extends Equatable {
@@ -53,6 +73,24 @@ class LanguageConfig extends Equatable {
   final Locale locale;
   final String flag;
   final String currency;
+
+  Map<String, dynamic> get toJson => {
+        'displayedName': displayedName,
+        'countryName': countryName,
+        'locale': locale.languageCode,
+        'flag': flag,
+        'currency': currency,
+      };
+
+  factory LanguageConfig.fromJson(Map<String, dynamic> json) {
+    return LanguageConfig(
+      displayedName: json['displayedName'],
+      countryName: json['countryName'],
+      locale: Locale(json['locale']),
+      flag: json['flag'],
+      currency: json['currency'],
+    );
+  }
 
   @override
   List<Object?> get props =>

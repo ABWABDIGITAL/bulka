@@ -10,4 +10,10 @@ class AssetImages {
       'assets/images/right_clipper_image.png';
   static const String operationSuccess =
       'assets/images/verify_operation_success.png';
+  static const String map = 'assets/images/map.png';
+  static const String companyLogoJustForTest = 'assets/images/company_logo.png';
+  static const String profileBackground =
+      'assets/images/profile_background.png';
+  static const String error404 = 'assets/images/error_404.png';
+  static const String errorImage = 'assets/images/error_image.png';
 }

@@ -1,11 +1,15 @@
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
+import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/core/utils/constant/strings.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class CustomeAppBarWidget extends StatelessWidget {
-  const CustomeAppBarWidget({
+class CustomAppBarWidget extends StatelessWidget
+    implements PreferredSizeWidget {
+  const CustomAppBarWidget({
     super.key,
     this.backgroundColor,
     this.actions,
@@ -21,7 +25,12 @@ class CustomeAppBarWidget extends StatelessWidget {
     this.shape,
     this.systemOverlayStyle,
     this.leadingWidth,
+    this.iconTheme,
+    this.height,
+    this.statusbarColor,
+    this.statusBarIconBrightness,
   });
+  final double? height;
   final Color? backgroundColor;
   final List<Widget>? actions;
   final String? title;
@@ -36,6 +45,10 @@ class CustomeAppBarWidget extends StatelessWidget {
   final ShapeBorder? shape;
   final SystemUiOverlayStyle? systemOverlayStyle;
   final double? leadingWidth;
+  final IconThemeData? iconTheme;
+  final Color? statusbarColor;
+  final Brightness? statusBarIconBrightness;
+
   @override
   Widget build(BuildContext context) {
     final Color backcolor = backgroundColor ?? AppColors.white;
@@ -43,19 +56,24 @@ class CustomeAppBarWidget extends StatelessWidget {
       elevation: elevation ?? 0,
       systemOverlayStyle: systemOverlayStyle ??
           SystemUiOverlayStyle(
-            statusBarColor: backcolor == AppColors.white
-                ? AppColors.white
-                : AppColors.primary,
-            statusBarIconBrightness: backcolor == AppColors.white
-                ? Brightness.dark
-                : Brightness.light,
+            statusBarColor: statusbarColor ??
+                (backcolor == AppColors.white
+                    ? AppColors.white
+                    : AppColors.primary),
+            statusBarIconBrightness: statusBarIconBrightness ??
+                (backcolor == AppColors.white
+                    ? Brightness.dark
+                    : Brightness.light),
             systemStatusBarContrastEnforced: true,
           ),
-      iconTheme: IconThemeData(
-        color: backcolor == AppColors.white ? AppColors.black : AppColors.white,
-      ),
+      iconTheme: iconTheme ??
+          IconThemeData(
+            color: backcolor == AppColors.white
+                ? AppColors.black
+                : AppColors.white,
+          ),
       backgroundColor: backcolor,
-      centerTitle: centerTitle,
+      centerTitle: centerTitle??true,
       leadingWidth: leadingWidth,
       leading: leading ??
           (needNavigateBack
@@ -70,7 +88,7 @@ class CustomeAppBarWidget extends StatelessWidget {
           (title != null
               ? Text(
                   title!,
-                  style: titleStyle ?? TextStyles.dummy,
+                  style: TextStyles.rubik14W500Black ?? TextStyles.dummy,
                 )
               : null),
       actions: actions,
@@ -79,4 +97,31 @@ class CustomeAppBarWidget extends StatelessWidget {
       shape: shape,
     );
   }
+
+  @override
+  Size get preferredSize => Size.fromHeight(height ?? appbarheight);
+}
+
+class OpacityAppbarWidget extends StatelessWidget
+    implements PreferredSizeWidget {
+  const OpacityAppbarWidget({
+    super.key,
+    this.title,
+  });
+  final String? title;
+  @override
+  Widget build(BuildContext context) {
+    return CustomAppBarWidget(
+      backgroundColor: AppColors.opactiyPrimary,
+      statusbarColor: AppColors.opactiyPrimary,
+      statusBarIconBrightness: Brightness.dark,
+      title: title ?? AppStrings.languages.tr(),
+      centerTitle: true,
+      titleStyle: TextStyles.rubik14W500Black,
+      iconTheme: const IconThemeData(color: AppColors.black),
+    );
+  }
+
+  @override
+  Size get preferredSize => Size.fromHeight(appbarheight);
 }

@@ -2,14 +2,11 @@ import 'package:bulka/core/assets/asset_images.dart';
 import 'package:bulka/core/services/cache/shared_pref.dart';
 import 'package:bulka/core/shared/widgets/appbar_widget.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
-import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/constant/shared_pref_keys.dart';
-import 'package:bulka/core/utils/constant/strings.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
-import 'package:bulka/core/utils/widgets/buttons/default_button.dart';
-import 'package:bulka/modules/login/ui/views/login_screen.dart';
+import 'package:bulka/modules/authentication/login/ui/views/login_screen.dart';
 import 'package:bulka/modules/on_boarding/ui/widgets/onboarding_clip_bottom_widget.dart';
 import 'package:bulka/modules/on_boarding/ui/widgets/onboarding_content_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -43,7 +40,7 @@ class _FirstScreenOnboardingScreenState
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(0),
-        child: CustomeAppBarWidget(
+        child: CustomAppBarWidget(
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarBrightness: Brightness.light,
             statusBarColor: AppColors.white,
@@ -123,6 +120,10 @@ class _FirstScreenOnboardingScreenState
                 ).then(
                   (_) {
                     context.push(const LoginScreen());
+                    // context.push(const ChooseInterestsScreen());
+                    // context.push(const PostsScreen());
+                    // context.push(const HomeScreen());
+                    // context.push(const NavbarLayoutScreen());
                   },
                 );
               } else {

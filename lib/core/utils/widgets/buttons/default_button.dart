@@ -93,8 +93,13 @@ class DefaultButton extends StatelessWidget {
                 ),
               ),
               child: Text(
-                'loading', //AppStrings.loading.tr(),
-                style: textStyle ?? TextStyles.dummy.copyWith(fontSize: 16.sp),
+                AppStrings.loading.tr(),
+                style: textStyle ??
+                    TextStyles.dummy.copyWith(
+                      color: textColor ?? AppColors.white,
+                      fontSize: fontSize,
+                      fontWeight: fontWeight ?? FontWeight.w700,
+                    ),
               ),
             ),
           )

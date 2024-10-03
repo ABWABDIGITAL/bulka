@@ -1,4 +1,11 @@
+import 'dart:developer';
+
+import 'package:bulka/core/assets/asset_flags.dart';
+import 'package:bulka/core/assets/asset_icons.dart';
+import 'package:bulka/core/theme/text_styles/text_styles.dart';
+import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class TestScreen extends StatefulWidget {
   const TestScreen({super.key});
@@ -17,84 +24,107 @@ class _TestScreenState extends State<TestScreen> {
       appBar: AppBar(
         title: const Text('Settings'),
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(16.0),
-        children: [
-          // Notification Switch
-          buildListTile(
-            context,
-            title: 'Notification',
-            trailing: Switch(
-              value: _isNotificationEnabled,
-              onChanged: (value) {
-                setState(() {
-                  _isNotificationEnabled = value;
-                });
-              },
-            ),
-            icon: Icons.notifications,
+      body: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Container(
+          //padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          decoration: BoxDecoration(
+            border: Border.all(color: AppColors.grey),
+            borderRadius: BorderRadius.circular(16.0),
           ),
-          const Divider(),
-          // Country
-          buildListTile(
-            context,
-            title: 'Country',
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Text('Egypt', style: TextStyle(fontSize: 16.0)),
-                const SizedBox(width: 8.0),
-                Image.network(
-                  'https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg',
-                  width: 24,
-                  height: 24,
+          child: Column(
+            children: [
+               ListTile(
+                leading: SvgPicture.asset(AssetIcons.bellSvg),
+                title: Text(
+                  'Notification'
+                  ,
                 ),
-              ],
-            ),
-            icon: Icons.language,
+                trailing: Switch(
+                    activeColor: AppColors.primary,
+                    value: _isNotificationEnabled,
+                    onChanged: (value) {
+                      setState(() {
+                        _isNotificationEnabled = value;
+                      });
+                    }),
+              ),
+              CustomProfileListTile(
+                leading: AssetIcons.bellSvg,
+                title: 'Notifications',
+                trailing: Switch(
+                  value: _isNotificationEnabled,
+                  onChanged: (value) {
+                    setState(() {
+                      log('test');
+                      value = !_isNotificationEnabled;
+                    });
+                  },
+                ),
+              ),
+              // Notification Switch
+              const Divider(),
+              CustomProfileListTile(
+                leading: AssetIcons.country,
+                title: 'Country',
+                trailing: SvgPicture.asset(AssetFlags.emirates),
+              ),
+              // Country
+              const Divider(),
+              CustomProfileListTile(
+                leading: AssetIcons.language2,
+                title: 'Language',
+                trailing:
+                    Text('English', style: TextStyles.rubik12W600MediumGrey12),
+              ),
+              // Language
+
+              const Divider(),
+              CustomProfileListTile(
+                  title: 'Mode',
+                  trailing: Switch(
+                    value: _isDarkMode,
+                    onChanged: (value) {
+                      setState(() {
+                        _isDarkMode = value;
+                      });
+                    },
+                  ),
+                  leading: AssetIcons.mode),
+              // Mode Switch
+
+              const Divider(),
+              const CustomProfileListTile(
+                  title: 'Password',
+                  trailing: Icon(Icons.arrow_forward_ios),
+                  leading: AssetIcons.lock1),
+              // Password
+            ],
           ),
-          const Divider(),
-          // Language
-          buildListTile(
-            context,
-            title: 'Language',
-            trailing: const Text('English', style: TextStyle(fontSize: 16.0)),
-            icon: Icons.translate,
-          ),
-          const Divider(),
-          // Mode Switch
-          buildListTile(
-            context,
-            title: 'Mode',
-            trailing: Switch(
-              value: _isDarkMode,
-              onChanged: (value) {
-                setState(() {
-                  _isDarkMode = value;
-                });
-              },
-            ),
-            icon: Icons.wb_sunny,
-          ),
-          const Divider(),
-          // Password
-          buildListTile(
-            context,
-            title: 'Password',
-            trailing: const Icon(Icons.arrow_forward_ios),
-            icon: Icons.lock,
-          ),
-        ],
+        ),
       ),
     );
   }
+}
 
-  ListTile buildListTile(BuildContext context,
-      {String? title, Widget? trailing, IconData? icon}) {
+class CustomProfileListTile extends StatelessWidget {
+  final String title;
+  final Widget trailing;
+  final String leading;
+
+  const CustomProfileListTile({
+    super.key,
+    required this.title,
+    required this.trailing,
+    required this.leading,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return ListTile(
-      contentPadding: const EdgeInsets.symmetric(horizontal: 0),
-      leading: Icon(icon, color: Theme.of(context).primaryColor),
-      title: Text(title!, style: const TextStyle(fontSize: 18.0)),
+      //   contentPadding: const EdgeInsets.symmetric(horizontal: 0),
+      leading: SvgPicture.asset(leading),
+      title: Text(title, style: TextStyles.rubik13W400Black),
       trailing: trailing,
       onTap: () {
         // Handle tile tap if needed

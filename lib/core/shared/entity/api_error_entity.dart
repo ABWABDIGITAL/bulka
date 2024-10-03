@@ -12,5 +12,10 @@ class ApiErrorEntity extends Equatable {
   final String message;
   final List<String>? errors;
   @override
-  List<Object?> get props => [status, code, message, errors];
+  List<Object?> get props => [
+        status,
+        code,
+        message,
+        errors,
+      ];
 }
