@@ -34,11 +34,10 @@ class _TestScreenState extends State<TestScreen> {
           ),
           child: Column(
             children: [
-               ListTile(
+              ListTile(
                 leading: SvgPicture.asset(AssetIcons.bellSvg),
-                title: Text(
-                  'Notification'
-                  ,
+                title: const Text(
+                  'Notification',
                 ),
                 trailing: Switch(
                     activeColor: AppColors.primary,
@@ -65,7 +64,7 @@ class _TestScreenState extends State<TestScreen> {
               // Notification Switch
               const Divider(),
               CustomProfileListTile(
-                leading: AssetIcons.country,
+                leading: AssetIcons.countrySvg,
                 title: 'Country',
                 trailing: SvgPicture.asset(AssetFlags.emirates),
               ),
@@ -90,7 +89,7 @@ class _TestScreenState extends State<TestScreen> {
                       });
                     },
                   ),
-                  leading: AssetIcons.mode),
+                  leading: AssetIcons.modeSvg),
               // Mode Switch
 
               const Divider(),

@@ -73,7 +73,7 @@ class CustomAppBarWidget extends StatelessWidget
                 : AppColors.white,
           ),
       backgroundColor: backcolor,
-      centerTitle: centerTitle??true,
+      centerTitle: centerTitle,
       leadingWidth: leadingWidth,
       leading: leading ??
           (needNavigateBack
@@ -88,7 +88,7 @@ class CustomAppBarWidget extends StatelessWidget
           (title != null
               ? Text(
                   title!,
-                  style: TextStyles.rubik14W500Black ?? TextStyles.dummy,
+                  style: titleStyle ?? TextStyles.dummy,
                 )
               : null),
       actions: actions,

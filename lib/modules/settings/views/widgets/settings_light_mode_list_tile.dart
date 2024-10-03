@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
-class LightModeListTile extends StatelessWidget {
-  const LightModeListTile({super.key});
+class SettingsLightModeListTile extends StatelessWidget {
+  const SettingsLightModeListTile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class LightModeListTile extends StatelessWidget {
       builder: (context, state) {
         return ListTile(
           //   contentPadding: const EdgeInsets.symmetric(horizontal: 0),
-          leading: SvgPicture.asset(AssetIcons.mode),
+          leading: SvgPicture.asset(AssetIcons.modeSvg),
           title: Text(AppStrings.lightMode.tr(),
               style: TextStyles.rubik13W400Black),
 

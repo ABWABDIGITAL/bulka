@@ -1,13 +1,14 @@
 import 'package:bulka/core/services/servies_locator/service_locator.dart';
 import 'package:bulka/core/shared/widgets/appbar_widget.dart';
+import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/modules/settings/controller/settings_cubit.dart';
-import 'package:bulka/modules/settings/views/widgets/country_list_tile.dart';
-import 'package:bulka/modules/settings/views/widgets/language_list_tile.dart';
-import 'package:bulka/modules/settings/views/widgets/light_mode_list_tile.dart';
-import 'package:bulka/modules/settings/views/widgets/notification_list_tile.dart';
-import 'package:bulka/modules/settings/views/widgets/password_list_tile.dart';
+import 'package:bulka/modules/settings/views/widgets/settings_country_list_tile.dart';
+import 'package:bulka/modules/settings/views/widgets/settings_language_list_tile.dart';
+import 'package:bulka/modules/settings/views/widgets/settings_light_mode_list_tile.dart';
+import 'package:bulka/modules/settings/views/widgets/settings_notification_list_tile.dart';
+import 'package:bulka/modules/settings/views/widgets/settings_password_list_tile.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,9 +19,10 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => sl<SettingsCubit>(),
+      create: (context) => SettingsCubit(sl()),
       child: Scaffold(
         appBar: CustomAppBarWidget(
+          titleStyle: TextStyles.rubik14W500Black,
           title: AppStrings.settings.tr(),
           centerTitle: true,
         ),
@@ -40,15 +42,15 @@ class SettingsScreen extends StatelessWidget {
                   ]),
               child: const Column(
                 children: [
-                  NotifiactionsListTile(),
+                  SettingsNotifiactionsListTile(),
                   Divider(),
-                  CountryListTile(),
+                  SettingsCountryListTile(),
                   Divider(),
-                  LanguageListTile(),
+                  SettingsLanguageListTile(),
                   Divider(),
-                  LightModeListTile(),
+                  SettingsLightModeListTile(),
                   Divider(),
-                  PasswordListTile(),
+                  SettingsPasswordListTile(),
                 ],
               ),
             ),

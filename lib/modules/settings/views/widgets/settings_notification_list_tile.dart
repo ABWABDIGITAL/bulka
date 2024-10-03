@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
-class NotifiactionsListTile extends StatelessWidget {
-  const NotifiactionsListTile({super.key});
+class SettingsNotifiactionsListTile extends StatelessWidget {
+  const SettingsNotifiactionsListTile({super.key});
 
   @override
   Widget build(BuildContext context) {

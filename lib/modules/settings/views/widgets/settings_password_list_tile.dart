@@ -4,8 +4,8 @@ import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-class PasswordListTile extends StatelessWidget {
-  const PasswordListTile({
+class SettingsPasswordListTile extends StatelessWidget {
+  const SettingsPasswordListTile({
     super.key,
   });
 
