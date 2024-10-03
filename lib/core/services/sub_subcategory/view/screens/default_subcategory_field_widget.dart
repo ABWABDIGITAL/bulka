@@ -18,6 +18,7 @@ class DefaultSubSubcategoryFieldWidget extends StatefulWidget {
   const DefaultSubSubcategoryFieldWidget({
     super.key,
     required this.params,
+    required this.subSubCubit,
     this.onSelected,
     this.borderColor,
     this.borderRadious,
@@ -33,9 +34,11 @@ class DefaultSubSubcategoryFieldWidget extends StatefulWidget {
     this.titleStyle,
     this.titleText,
     this.needTitle = true,
+    this.needValidation = false,
   });
-  final SubSubcategoryParams params;
-  final Function(SubSubcategoryEntity? choosenCategory)? onSelected;
+  final SubSubcategoryParams? params;
+  final SubSubcategoryCubit subSubCubit;
+  final Function(SubSubcategoryEntity? choosenSubSubCategory)? onSelected;
   final String? titleText;
   final Color? fillColor;
   final Color? borderColor;
@@ -50,6 +53,7 @@ class DefaultSubSubcategoryFieldWidget extends StatefulWidget {
   final String? hintText;
   final double? borderRadious;
   final bool needTitle;
+  final bool needValidation;
   @override
   State<DefaultSubSubcategoryFieldWidget> createState() =>
       _DefaultSubSubcategoryFieldWidgetState();
@@ -61,16 +65,18 @@ class _DefaultSubSubcategoryFieldWidgetState
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) =>
-          SubSubcategoryCubit(sl())..subSubcategoryStatesHandled(widget.params),
+    return BlocProvider.value(
+      value: widget.subSubCubit,
+      // create: (context) =>
+      //     SubSubcategoryCubit(sl())..subSubcategoryStatesHandled(widget.params),
       child: BlocBuilder<SubSubcategoryCubit, SubSubcategoryState>(
         buildWhen: (previous, current) =>
             current is GetSubSubcategoryLoading ||
             current is GetSubSubcategorySuccess ||
             current is GetSubSubcategoryError,
         builder: (context, state) {
-          final cubit = context.read<SubSubcategoryCubit>();
+          final cubit =
+              widget.subSubCubit; //context.read<SubSubcategoryCubit>();
           if (state is GetSubSubcategoryLoading) {
             return ShimmerContainerWidget(
               height: 45,
@@ -81,12 +87,17 @@ class _DefaultSubSubcategoryFieldWidgetState
             return ErrorScreen(
               error: state.error,
               onPressed: () {
-                cubit.subSubcategoryStatesHandled(widget.params);
+                if (widget.params != null) {
+                  cubit.subSubcategoryStatesHandled(widget.params!);
+                }
               },
             );
           }
           if (cubit.subcategories != null ||
               state is GetSubSubcategorySuccess) {
+            if (cubit.subcategories!.isEmpty) {
+              return const SizedBox();
+            }
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -103,8 +114,11 @@ class _DefaultSubSubcategoryFieldWidgetState
                   height: 45,
                   child: FormBuilderDropdown<SubSubcategoryEntity>(
                     name: 'subcategories',
-                    validator: (value) =>
-                        value == null ? AppStrings.thisFieldIsRequired : null,
+                    validator: widget.needValidation
+                        ? (value) => value == null
+                            ? AppStrings.thisFieldIsRequired.tr()
+                            : null
+                        : null,
                     style: TextStyles.rubik13W600Black4
                         .copyWith(fontWeight: FontWeight.w300),
                     dropdownColor: AppColors.white,
@@ -191,10 +205,11 @@ class _DefaultSubSubcategoryFieldWidgetState
                     }).toList(),
                   ),
                 ),
+                const SizedBox(height: 20),
               ],
             );
           }
-          return const Text('no state provided');
+          return const SizedBox();
         },
       ),
     );

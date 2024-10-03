@@ -17,21 +17,23 @@ class _PreferedContactWidgetState extends State<PreferedContactWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: List.generate(
         PreferedContact.values.length,
         (index) {
-          return RadioListTile<PreferedContact>(
-            title: Text(PreferedContact.values[index].name),
-            value: PreferedContact.values[index],
-            groupValue: _selectedPreferedContact,
-            onChanged: (value) {
-              setState(() {
-                _selectedPreferedContact = value;
-              });
-              widget.onSelected?.call(_selectedPreferedContact);
-            },
+          return Expanded(
+            child: RadioListTile<PreferedContact>(
+              title: Text(PreferedContact.values[index].name),
+              value: PreferedContact.values[index],
+              groupValue: _selectedPreferedContact,
+              onChanged: (value) {
+                setState(() {
+                  _selectedPreferedContact = value;
+                });
+                widget.onSelected?.call(_selectedPreferedContact);
+              },
+            ),
           );
         },
       ),

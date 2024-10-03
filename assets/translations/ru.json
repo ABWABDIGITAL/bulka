@@ -145,5 +145,13 @@
   "Images": "Изображения",
   "Name": "Имя",
   "The Price": "Цена",
-  "Create Ad": "Создать объявление"
+  "Create Ad": "Создать объявление",
+  "The Category": "Категория",
+  "The Sub Category": "Подкатегория",
+  "The Specialize of Sub Category": "Специализация подкатегории",
+  "Ad Images": "Рекламные изображения",
+  "Ad Title": "Название объявления",
+  "Ad Description": "Описание объявления",
+  "Explore Sub Categories": "Просмотреть подкатегории",
+  "Explore Sub Inside The Sub Categories": "Explore Sub Inside The Sub Categories"
 }

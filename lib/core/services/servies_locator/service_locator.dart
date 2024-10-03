@@ -1,4 +1,5 @@
 import 'package:bulka/core/services/servies_locator/modules/authentication_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/category_field_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/category_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/chat_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/country_locator.dart';
@@ -30,6 +31,8 @@ class ServiceLocator {
     countryLocator();
 //-------------------------------CATEGORIES--------------------------------------//
     categoryLocator();
+//-----------------------------CATEGORY FIELDS----------------------------------//
+    categoryFieldLocator();
 //-------------------------------SUBCATEGORIES---------------------------------//
     subcategoryLocator();
 //-----------------------------SUB SUBCATEGORIES--------------------------------//

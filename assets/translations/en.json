@@ -145,5 +145,13 @@
   "Images": "Images",
   "Name": "Name",
   "The Price": "The Price",
-  "Create Ad": "Create Ad"
+  "Create Ad": "Create Ad",
+  "The Category": "The Category",
+  "The Sub Category": "The Sub Category",
+  "The Specialize of Sub Category": "The Specialize of Sub Category",
+  "Ad Images": "Ad Images",
+  "Ad Title": "Ad Title",
+  "Ad Description": "Ad Description",
+  "Explore Sub Categories": "Explore Sub Categories",
+  "Explore Sub Inside The Sub Categories": "Explore Sub Inside The Sub Categories"
 }

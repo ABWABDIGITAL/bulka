@@ -1,12 +1,17 @@
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
+import 'package:bulka/core/services/sub_subcategory/controller/cubit/sub_subcategory_cubit.dart';
+import 'package:bulka/core/services/sub_subcategory/data/params/sub_subcategory_params.dart';
+import 'package:bulka/core/services/subcategory/controller/cubit/subcategory_cubit.dart';
+import 'package:bulka/core/services/subcategory/data/params/subcategory_params.dart';
 import 'package:bulka/core/utils/enums/enums.dart';
 import 'package:bulka/modules/create_ad/controller/cubit/create_ad_state.dart';
 import 'package:bulka/modules/create_ad/data/params/create_ad_params.dart';
 import 'package:bulka/modules/create_ad/data/repo/create_ad_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CreateAdCubit extends Cubit<CreateAdState> {
   final CreateAdRepo _createAdRepo;
@@ -24,6 +29,8 @@ class CreateAdCubit extends Cubit<CreateAdState> {
   List<CreateAdCategoryField> _adCategoriesField = [];
   List<File> _media = [];
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  List<GlobalKey<FormState>> _dynamicKeys = [];
+  List<CreateAdCategoryField> _selectedCategoriesFields = [];
 //---------------------------------FUNCTIONS----------------------------------//
   set categoryId(int value) => _categoryId = value;
   set subcategoryId(int value) => _subcategoryId = value;
@@ -36,6 +43,45 @@ class CreateAdCubit extends Cubit<CreateAdState> {
   set setMedia(List<File> value) => _media = value;
   set setAdCategoriesField(List<CreateAdCategoryField> value) =>
       _adCategoriesField = value;
+  set setDynamicKeys(int length) {
+    _dynamicKeys = [];
+    _dynamicKeys = List.generate(length, (_) => GlobalKey<FormState>());
+  }
+
+  set setSelectedCategoriesFields(CreateAdCategoryField value) =>
+      _selectedCategoriesFields.add(value);
+
+  List<CreateAdCategoryField> get selectedCategoriesFields {
+    return _selectedCategoriesFields.toSet().toList();
+  }
+
+  List<GlobalKey<FormState>> get dynamicKeys => _dynamicKeys;
+
+  void getSubcategoryByCategory(BuildContext context) {
+    if (_categoryId != null) {
+      context
+          .read<SubcategoryCubit>()
+          .subcategoryStatesHandled(SubcategoryParams(categoryId: _categoryId));
+    }
+  }
+
+  SubcategoryParams? getSubcategoryParams() {
+    if (_categoryId == null) return null;
+    return SubcategoryParams(categoryId: _categoryId!);
+  }
+
+  void getSubSubcategoryBySubCategory(BuildContext context) {
+    if (_subcategoryId != null) {
+      context.read<SubSubcategoryCubit>().subSubcategoryStatesHandled(
+          SubSubcategoryParams(subcategoryId: _subcategoryId));
+    }
+  }
+
+  SubSubcategoryParams? getSubSubcategoryParams() {
+    if (_categoryId == null) return null;
+    return SubSubcategoryParams(subcategoryId: _subcategoryId);
+  }
+
 //----------------------------------REQUEST-----------------------------------//
   Future<void> createAdStatesHandled(CreateAdParams params) async {
     emit(const CreateAdLoading());

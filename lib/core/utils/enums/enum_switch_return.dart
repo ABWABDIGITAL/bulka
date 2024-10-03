@@ -129,12 +129,12 @@ class EnumSwitchReturn {
         return CategoryFieldTypes.text;
       case 'integer':
         return CategoryFieldTypes.integer;
+      case 'check':
+        return CategoryFieldTypes.check;
+      case 'select':
+        return CategoryFieldTypes.select;
       case 'boolean':
         return CategoryFieldTypes.boolean;
-      case 'dropdown':
-        return CategoryFieldTypes.dorpdown;
-      case 'multiselect':
-        return CategoryFieldTypes.multiselect;
 
       default:
         return CategoryFieldTypes.text;

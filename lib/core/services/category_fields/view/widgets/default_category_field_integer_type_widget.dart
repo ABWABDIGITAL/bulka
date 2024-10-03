@@ -4,19 +4,18 @@ import 'package:bulka/core/utils/widgets/form_fields/default_form_field.dart';
 import 'package:bulka/modules/create_ad/data/params/create_ad_params.dart';
 import 'package:flutter/cupertino.dart';
 
-class DefaultCategoryFieldTextWidget extends StatelessWidget {
-  const DefaultCategoryFieldTextWidget(
+class DefaultCategoryFieldIntegerWidget extends StatelessWidget {
+  const DefaultCategoryFieldIntegerWidget(
     this.categoryFieldEntity, {
     super.key,
+    required this.formKey,
     this.onChange,
     this.onFinish,
-    required this.formKey,
   });
-  final GlobalKey<FormState> formKey;
   final CategoryFieldEntity categoryFieldEntity;
   final Function(String? onChange)? onChange;
   final Function(CreateAdCategoryField onFinish)? onFinish;
-  // final Function(CreateAdCategoryField onSave)? onSave;
+  final GlobalKey<FormState> formKey;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -41,15 +40,13 @@ class DefaultCategoryFieldTextWidget extends StatelessWidget {
                 ),
               );
             },
-            needValidation: categoryFieldEntity.isRequired,
-            keyboardType: TextInputType.multiline,
-            maxLines: -1,
+            keyboardType: TextInputType.number,
             prefixIcon: const Icon(
-              CupertinoIcons.text_alignleft,
+              CupertinoIcons.number,
               color: AppColors.iconGrey,
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 20)
         ],
       ),
     );

@@ -12,6 +12,7 @@ class CreateAdButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<CreateAdCubit>();
     return BlocConsumer<CreateAdCubit, CreateAdState>(
       listenWhen: (previous, current) =>
           current is CreateAdLoading ||
@@ -31,7 +32,22 @@ class CreateAdButtonWidget extends StatelessWidget {
         return DefaultButton(
           isLoading: state is CreateAdLoading ? true : false,
           text: AppStrings.createAd.tr(),
-          onPressed: () {},
+          onPressed: () {
+            for (var element in cubit.dynamicKeys) {
+              if (element.currentState!.validate()) {
+                element.currentState!.save();
+                print('uuuuu');
+                print(cubit.selectedCategoriesFields.toString());
+                //TODO: DATA REUTNRED JUST CONNECT THE REQUEST
+              }
+            }
+
+            // if (cubit.formKey.currentState!.validate()) {
+            //   cubit.formKey.currentState!.save();
+            //   print('here');
+
+            // }
+          },
         );
       },
     );

@@ -145,5 +145,13 @@
   "Images": "الصور",
   "Name": "الأسم",
   "The Price": "السعر",
-  "Create Ad": "إنشاء إعلان"
+  "Create Ad": "إنشاء إعلان",
+  "The Category": "الفئة",
+  "The Sub Category": "الفئة الفرعية",
+  "The Specialize of Sub Category": "تخصص الفئة الفرعية",
+  "Ad Images": "الصور الإعلانية",
+  "Ad Title": "عنوان الإعلان",
+  "Ad Description": "وصف الإعلان",
+  "Explore Sub Categories": "استكشف الفئات الفرعية",
+  "Explore Sub Inside The Sub Categories": "استكشف الفرعي داخل الفئات الفرعية"
 }

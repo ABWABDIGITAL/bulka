@@ -8,18 +8,23 @@ class CategoryFieldModel extends CategoryFieldEntity {
     required super.fieldName,
     required super.fieldValue,
     required super.fieldType,
+    required super.fieldIcon,
+    required super.isRequired,
   });
 
   factory CategoryFieldModel.fromJson(Map<String, dynamic> json) {
     return CategoryFieldModel(
       id: json['id'],
       fieldName: json['field_name'],
-      fieldValue: checkFromArray(json['CategoryFieldValuesEntity'])
-          ? (json['CategoryFieldValuesEntity'] as List)
+      fieldIcon: json['field_icon'],
+      isRequired: json['is_required'] == 1 ? true : false,
+            fieldType: EnumSwitchReturn.getCategoryFieldTypes(json['input_type']),
+
+      fieldValue: checkFromArray(json['options'])
+          ? (json['options'] as List)
               .map((e) => CategoryFieldValuesModel.fromJson(e))
               .toList()
           : [],
-      fieldType: EnumSwitchReturn.getCategoryFieldTypes(json['field_type']),
     );
   }
 }
@@ -28,12 +33,14 @@ class CategoryFieldValuesModel extends CategoryFieldValuesEntity {
   const CategoryFieldValuesModel({
     required super.id,
     required super.fieldValue,
+    required super.isDefault,
   });
 
   factory CategoryFieldValuesModel.fromJson(Map<String, dynamic> json) {
     return CategoryFieldValuesModel(
       id: json['id'],
-      fieldValue: json['field_value'],
+      fieldValue: json['option_text'],
+      isDefault: json['is_default'] == 1 ? true : false,
     );
   }
 }
