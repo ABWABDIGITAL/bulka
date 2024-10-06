@@ -101,6 +101,9 @@ class AppStrings {
   static const String seachAboutSomeThingHere = "Search about something here !";
   static const String seeAll = "See all";
   static const String exploreCategories = "Explore Categories";
+  static const String exploreSubCategories = "Explore Sub Categories";
+  static const String exploreSubInsideTheSubCategories =
+      "Explore Sub Inside The Sub Categories";
   static const String enterCompanySize = "Enter Company Size";
   static const String companySize = "Company Size";
   static const String categories = "Categories";
@@ -171,10 +174,22 @@ class AppStrings {
   static const String name = 'Name';
   static const String thePrice = 'The Price';
   static const String createAd = 'Create Ad';
+
   static const String notifications = 'Notifications';
   static const String settings = 'Settings';
   static const String lightMode = 'Light Mode';
   static const String country = 'Country';
   static const String language = 'Language';
   static const String ifThisIsDueToAProblem = 'If this is due to a problem, please contact us immediately';
+
+  static const String theCategory = 'The Category';
+  static const String theSubCategory = 'The Sub Category';
+  static const String theSpecializeOfSubCategory =
+      'The Specialize of Sub Category';
+  static const String adImages = 'Ad Images';
+  static const String adTitle = 'Ad Title';
+  static const String adDescription = 'Ad Description';
+  static const String prefedContact = 'Prefered Contact';
+  static const String contact="Contact";
+  static const String yes = 'Yes';
 }

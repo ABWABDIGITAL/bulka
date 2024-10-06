@@ -152,5 +152,15 @@
   "Country": "Country",
   "Language": "Language",
   "Logout": "Logout",
-  "If this is due to a problem, please contact us immediately": "If this is due to a problem, please contact us immediately"
+  "If this is due to a problem, please contact us immediately": "If this is due to a problem, please contact us immediately",
+  "The Category": "The Category",
+  "The Sub Category": "The Sub Category",
+  "The Specialize of Sub Category": "The Specialize of Sub Category",
+  "Ad Images": "Ad Images",
+  "Ad Title": "Ad Title",
+  "Ad Description": "Ad Description",
+  "Explore Sub Categories": "Explore Sub Categories",
+  "Explore Sub Inside The Sub Categories": "Explore Sub Inside The Sub Categories",
+  "Contact": "Contact",
+  "Yes": "Yes"
 }

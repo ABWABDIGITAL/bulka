@@ -4,6 +4,7 @@ import 'package:bulka/core/assets/asset_flags.dart';
 import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
+import 'package:bulka/modules/logout/view/widgets/logout_popup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -26,80 +27,15 @@ class _TestScreenState extends State<TestScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
-        child: Container(
-          //padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          decoration: BoxDecoration(
-            border: Border.all(color: AppColors.grey),
-            borderRadius: BorderRadius.circular(16.0),
+        child: ListTile(
+          onTap: () {
+           showLogoutDialog(context);
+          },
+          leading: SvgPicture.asset(AssetIcons.bellSvg),
+          title: const Text(
+            'Notification',
           ),
-          child: Column(
-            children: [
-              ListTile(
-                leading: SvgPicture.asset(AssetIcons.bellSvg),
-                title: const Text(
-                  'Notification',
-                ),
-                trailing: Switch(
-                    activeColor: AppColors.primary,
-                    value: _isNotificationEnabled,
-                    onChanged: (value) {
-                      setState(() {
-                        _isNotificationEnabled = value;
-                      });
-                    }),
-              ),
-              CustomProfileListTile(
-                leading: AssetIcons.bellSvg,
-                title: 'Notifications',
-                trailing: Switch(
-                  value: _isNotificationEnabled,
-                  onChanged: (value) {
-                    setState(() {
-                      log('test');
-                      value = !_isNotificationEnabled;
-                    });
-                  },
-                ),
-              ),
-              // Notification Switch
-              const Divider(),
-              CustomProfileListTile(
-                leading: AssetIcons.countrySvg,
-                title: 'Country',
-                trailing: SvgPicture.asset(AssetFlags.emirates),
-              ),
-              // Country
-              const Divider(),
-              CustomProfileListTile(
-                leading: AssetIcons.language2,
-                title: 'Language',
-                trailing:
-                    Text('English', style: TextStyles.rubik12W600MediumGrey12),
-              ),
-              // Language
-
-              const Divider(),
-              CustomProfileListTile(
-                  title: 'Mode',
-                  trailing: Switch(
-                    value: _isDarkMode,
-                    onChanged: (value) {
-                      setState(() {
-                        _isDarkMode = value;
-                      });
-                    },
-                  ),
-                  leading: AssetIcons.modeSvg),
-              // Mode Switch
-
-              const Divider(),
-              const CustomProfileListTile(
-                  title: 'Password',
-                  trailing: Icon(Icons.arrow_forward_ios),
-                  leading: AssetIcons.lock1),
-              // Password
-            ],
-          ),
+          trailing: Icon(Icons.arrow_forward_ios),
         ),
       ),
     );

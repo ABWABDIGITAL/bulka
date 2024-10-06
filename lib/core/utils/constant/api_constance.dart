@@ -1,3 +1,4 @@
+import 'package:bulka/core/services/category_fields/data/params/category_field_params.dart';
 import 'package:bulka/core/services/sub_subcategory/data/params/sub_subcategory_params.dart';
 import 'package:bulka/core/services/subcategory/data/params/subcategory_params.dart';
 
@@ -24,10 +25,15 @@ class ApiConstance {
   static const String home = '/app/home';
 //-----------------------------------PROFILE----------------------------------//
   static const String profile = '/app/profile';
+//-------------------------------CATEGORY FIELDS------------------------------//
+  static const String categoryFields = '/app/categories/category-fields';
 //---------------------------------SUBCATEGORY----------------------------------//
   static String subcategory(SubcategoryParams params) =>
       '/app/categories/subcategory/${params.categoryId}';
 //--------------------------------SUB SUBCATEGORY----------------------------------//
   static String subSubcategory(SubSubcategoryParams params) =>
       '/app/categories/sub-subcategory/${params.subcategoryId}';
+
+//---------------------------------LOGOUT----------------------------------//
+  static const String logout = '/app/logout';
 }

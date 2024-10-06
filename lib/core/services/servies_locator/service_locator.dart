@@ -1,4 +1,5 @@
 import 'package:bulka/core/services/servies_locator/modules/authentication_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/category_field_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/category_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/chat_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/country_locator.dart';
@@ -6,6 +7,7 @@ import 'package:bulka/core/services/servies_locator/modules/create_ad_locator.da
 import 'package:bulka/core/services/servies_locator/modules/home_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/init_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/interests_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/logout_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/navbar_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/profile_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/settings_locator.dart';
@@ -31,6 +33,8 @@ class ServiceLocator {
     countryLocator();
 //-------------------------------CATEGORIES--------------------------------------//
     categoryLocator();
+//-----------------------------CATEGORY FIELDS----------------------------------//
+    categoryFieldLocator();
 //-------------------------------SUBCATEGORIES---------------------------------//
     subcategoryLocator();
 //-----------------------------SUB SUBCATEGORIES--------------------------------//
@@ -43,5 +47,8 @@ class ServiceLocator {
     createAdLocator();
     //------------------------------- SETTINGS------------------------------------//
     settingsLocator();
+    //------------------------------- LOGOUT------------------------------------//
+    logoutLocator();
+
   }
 }

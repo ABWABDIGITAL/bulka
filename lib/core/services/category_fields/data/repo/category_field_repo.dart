@@ -15,7 +15,7 @@ class CategoryFieldRepo {
       CategoryFieldParams params) async {
     try {
       final response = await DioHelper.get(
-        ApiConstance.login,
+        ApiConstance.categoryFields,
         queries: params.returnedMap(),
       );
 

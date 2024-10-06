@@ -1,4 +1,5 @@
 import 'package:bulka/core/services/category_fields/data/entity/category_field_entity.dart';
+import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class DefaultCategoryFieldBooleanWidget extends StatefulWidget {
@@ -24,7 +25,10 @@ class _DefaultCategoryFieldBooleanWidgetState
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(widget.categoryFieldEntity.fieldName),
+        Text(
+          widget.categoryFieldEntity.fieldName,
+          style: TextStyles.rubik13W500HardGrey2,
+        ),
         Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: List.generate(
@@ -45,6 +49,7 @@ class _DefaultCategoryFieldBooleanWidgetState
             },
           ),
         ),
+        const SizedBox(height: 20)
       ],
     );
   }

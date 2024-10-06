@@ -2,15 +2,18 @@ import 'package:bulka/core/services/category_fields/data/entity/category_field_e
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/core/utils/widgets/misc/default_network_image.dart';
+import 'package:bulka/modules/create_ad/data/params/create_ad_params.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class DefaultCategoryFieldDropDownWidget extends StatefulWidget {
-  const DefaultCategoryFieldDropDownWidget(
+class DefaultCategoryFieldSelectTypeWidget extends StatefulWidget {
+  const DefaultCategoryFieldSelectTypeWidget(
     this.categoryFieldEntity, {
     super.key,
+    required this.formKey,
     this.titleText,
     this.fillColor,
     this.borderColor,
@@ -25,9 +28,11 @@ class DefaultCategoryFieldDropDownWidget extends StatefulWidget {
     this.hintText,
     this.borderRadious,
     this.onSelected,
+    this.onFinish,
   });
   final CategoryFieldEntity categoryFieldEntity;
-  final Function(CategoryFieldEntity? choosenCategory)? onSelected;
+  final Function(List<CategoryFieldValuesEntity>? choosenFields)? onSelected;
+  final Function(List<CreateAdCategoryField>? onFinish)? onFinish;
   final String? titleText;
   final Color? fillColor;
   final Color? borderColor;
@@ -41,51 +46,63 @@ class DefaultCategoryFieldDropDownWidget extends StatefulWidget {
   final String? labelText;
   final String? hintText;
   final double? borderRadious;
-
+  final GlobalKey<FormState> formKey;
   @override
-  State<DefaultCategoryFieldDropDownWidget> createState() =>
-      _DefaultCategoryFieldDropDownWidgetState();
+  State<DefaultCategoryFieldSelectTypeWidget> createState() =>
+      _DefaultCategoryFieldMultiSelectDropDownWidgetState();
 }
 
-class _DefaultCategoryFieldDropDownWidgetState
-    extends State<DefaultCategoryFieldDropDownWidget> {
-  CategoryFieldEntity? _selectedCategory;
+class _DefaultCategoryFieldMultiSelectDropDownWidgetState
+    extends State<DefaultCategoryFieldSelectTypeWidget> {
+  List<CategoryFieldValuesEntity>? _selectedFields;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: EdgeInsetsDirectional.only(bottom: 12.r),
-          child: Text(
-            widget.categoryFieldEntity.fieldName,
-            style: widget.titleStyle ?? TextStyles.rubik13W500HardGrey2,
+    return Form(
+      key: widget.formKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsetsDirectional.only(bottom: 12.r),
+            child: Text(
+              widget.categoryFieldEntity.fieldName +
+                  (widget.categoryFieldEntity.isRequired ? '*' : ""),
+              style: widget.titleStyle ?? TextStyles.rubik13W500HardGrey2,
+            ),
           ),
-        ),
-        SizedBox(
-          height: 45,
-          child: FormBuilderDropdown<CategoryFieldEntity>(
+          FormBuilderCheckboxGroup<CategoryFieldValuesEntity>(
             name: 'categories',
-            validator: (value) =>
-                value == null ? AppStrings.thisFieldIsRequired : null,
-            style: TextStyles.rubik13W600Black4
-                .copyWith(fontWeight: FontWeight.w300),
-            dropdownColor: AppColors.white,
+            validator: widget.categoryFieldEntity.isRequired
+                ? ((value) =>
+                    value == null ? AppStrings.thisFieldIsRequired.tr() : null)
+                : null,
             decoration: InputDecoration(
               filled: true,
               fillColor: widget.fillColor ?? AppColors.scaffoldBackGround,
               errorMaxLines: widget.errorMaxLines ?? 2,
               suffixIcon: widget.suffixIcon,
               prefixIcon: widget.prefixIcon ??
-                  const Icon(
-                    Icons.category_outlined,
-                    color: AppColors.iconGrey,
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      if (widget.categoryFieldEntity.fieldIcon == null)
+                        const Icon(
+                          Icons.category_outlined,
+                          color: AppColors.iconGrey,
+                        ),
+                      if (widget.categoryFieldEntity.fieldIcon != null)
+                        DefaultNetworkImage(
+                          widget.categoryFieldEntity.fieldIcon!,
+                          width: 20,
+                          height: 20,
+                        )
+                    ],
                   ),
               labelText: widget.labelText,
               labelStyle: const TextStyle(color: AppColors.greyFont),
               hintStyle: TextStyles.rubik13W400IconGrey,
-              hintText: widget.hintText ?? AppStrings.exploreCategories.tr(),
+              hintText: widget.hintText ?? widget.categoryFieldEntity.fieldName,
               disabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   color: widget.borderColor ?? const Color(0xFFDCDCDC),
@@ -126,13 +143,31 @@ class _DefaultCategoryFieldDropDownWidgetState
                 borderRadius: BorderRadius.circular(12.r),
               ),
             ),
-            initialValue: _selectedCategory,
-            onChanged: (CategoryFieldEntity? newValue) {
+            initialValue: _selectedFields,
+            onChanged: (List<CategoryFieldValuesEntity>? newValue) {
               setState(() {
-                _selectedCategory = newValue;
+                _selectedFields = newValue;
               });
               if (widget.onSelected != null) {
                 widget.onSelected!(newValue);
+              }
+              if (_selectedFields != null) {
+                if (_selectedFields!.isEmpty) {
+                  widget.onFinish?.call([]);
+                } else {
+                  List<CreateAdCategoryField> fields = [];
+                  for (CategoryFieldValuesEntity element in _selectedFields!) {
+                    fields.add(
+                      CreateAdCategoryField(
+                        id: widget.categoryFieldEntity.id,
+                        fieldType: widget.categoryFieldEntity.fieldType.name,
+                        fieldName: widget.categoryFieldEntity.fieldName,
+                        fieldValue: element.fieldValue,
+                      ),
+                    );
+                  }
+                  widget.onFinish?.call(fields);
+                }
               }
             },
             onSaved: (newValue) {
@@ -140,20 +175,21 @@ class _DefaultCategoryFieldDropDownWidgetState
                 widget.onSelected!(newValue);
               }
             },
-            items: widget.categoryFieldEntity.fieldValue
+            options: widget.categoryFieldEntity.fieldValue
                 .toSet()
-                .map((dynamic category) {
-              return DropdownMenuItem<CategoryFieldEntity>(
+                .map((CategoryFieldValuesEntity category) {
+              return FormBuilderFieldOption<CategoryFieldValuesEntity>(
                 value: category,
                 child: Text(
-                  category,
+                  category.fieldValue,
                   style: const TextStyle(color: AppColors.black),
                 ),
               );
             }).toList(),
           ),
-        ),
-      ],
+          const SizedBox(height: 20)
+        ],
+      ),
     );
   }
 }
