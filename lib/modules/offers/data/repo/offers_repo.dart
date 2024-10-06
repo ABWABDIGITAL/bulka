@@ -1,0 +1,3 @@
+class OffersRepo {
+  const OffersRepo();
+}
