@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "504672362705",
+    "project_id": "bulka-afc6d",
+    "storage_bucket": "bulka-afc6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504672362705:android:4179bac737eb0e01b625f0",
+        "android_client_info": {
+          "package_name": "abwab.digital.bulka"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYA-VKv9J5O86sexaPdgcYb6RJh-K5sio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

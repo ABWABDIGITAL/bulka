@@ -1,0 +1,6 @@
+- request to change password 
+	- note => without write old password
+
+- "/app/helpers/interests" return without id for each object, although i need it in "/app/update-interests" request. 
+
+- '/api/v1/app/helpers/categories' => 404  "message": "error 404"

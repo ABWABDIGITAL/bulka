@@ -1,4 +1,5 @@
 import 'package:bulka/core/assets/asset_images.dart';
+import 'package:bulka/core/assets/asset_translations.dart';
 import 'package:bulka/core/services/cache/shared_pref.dart';
 import 'package:bulka/core/shared/widgets/appbar_widget.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
@@ -9,9 +10,13 @@ import 'package:bulka/core/utils/constant/shared_pref_keys.dart';
 import 'package:bulka/core/utils/constant/strings.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/core/utils/widgets/buttons/default_button.dart';
-import 'package:bulka/modules/login/ui/views/login_screen.dart';
+import 'package:bulka/modules/authentication/login/ui/views/login_screen.dart';
+import 'package:bulka/modules/choose_interests/ui/views/choose_interests_screen.dart';
+import 'package:bulka/modules/home/ui/views/home_screen.dart';
+import 'package:bulka/modules/navbar_layout/ui/views/navbar_layout_screen.dart';
 import 'package:bulka/modules/on_boarding/ui/widgets/onboarding_clip_bottom_widget.dart';
 import 'package:bulka/modules/on_boarding/ui/widgets/onboarding_content_widget.dart';
+import 'package:bulka/modules/posts_module/posts/ui/views/posts_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -123,6 +128,10 @@ class _FirstScreenOnboardingScreenState
                 ).then(
                   (_) {
                     context.push(const LoginScreen());
+                    // context.push(const ChooseInterestsScreen());
+                    // context.push(const PostsScreen());
+                    // context.push(const HomeScreen());
+                    // context.push(const NavbarLayoutScreen());
                   },
                 );
               } else {

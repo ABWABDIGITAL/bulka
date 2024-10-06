@@ -61,14 +61,15 @@ class SharedPrefHelper extends Equatable {
   }
 
   /// Gets an String value from SharedPreferences with given [key].
-  static getString(String key) async {
+  static Future<String?> getString(String key) async {
     debugPrint('SharedPrefHelper : getString with key : $key');
-    return _sharedPreferences.getString(key) ?? '';
+    return _sharedPreferences.getString(key);
   }
 
   /// Gets an String value from SharedPreferences with given [key].
   static getData(String key) async {
     debugPrint('SharedPrefHelper : getObject with key : $key');
+
     return _sharedPreferences.get(key);
   }
 
@@ -83,6 +84,11 @@ class SharedPrefHelper extends Equatable {
   static Future<String?> getSecuredString(String key) async {
     debugPrint('FlutterSecureStorage : getSecuredString with key :');
     return await _flutterSecureStorage.read(key: key);
+  }
+
+  static Future<void> removeSecuredString(String key) async {
+    debugPrint('FlutterSecureStorage : removeSecuredString with key :');
+    return await _flutterSecureStorage.delete(key: key);
   }
 
   /// Removes all keys and values in the FlutterSecureStorage
