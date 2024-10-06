@@ -1,0 +1,3 @@
+class LogoutRepo {
+  const LogoutRepo();
+}

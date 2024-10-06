@@ -150,5 +150,7 @@
   "Settings": "الاعدادات",
   "Light Mode": "الوضع النهاري",
   "Country": "الدولة",
-  "Language": "اللغة"
+  "Language": "اللغة",
+  "Logout": "تسجيل خروج",
+  "If this is due to a problem, please contact us immediately": "إذا كان هذا بسبب مشكلة، يرجى الاتصال بنا على الفور"
 }

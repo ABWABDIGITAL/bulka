@@ -29,6 +29,10 @@ class ProfilePrivacyTermsWidget extends StatelessWidget {
         svgPath: AssetIcons.workExperienceSvg,
         title: AppStrings.workExperience.tr(),
       ),
+       ProfileTileEntity(
+        svgPath: AssetIcons.logoutSvg,
+        title: AppStrings.logout.tr(),
+      ),
     ];
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 18.r),

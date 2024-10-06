@@ -176,4 +176,5 @@ class AppStrings {
   static const String lightMode = 'Light Mode';
   static const String country = 'Country';
   static const String language = 'Language';
+  static const String ifThisIsDueToAProblem = 'If this is due to a problem, please contact us immediately';
 }

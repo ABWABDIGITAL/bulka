@@ -6,6 +6,7 @@ import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_env.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/modules/create_ad/views/screens/create_ad_screen.dart';
+import 'package:bulka/modules/on_boarding/ui/views/first_screen_onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -46,8 +47,8 @@ class SplashScreen extends StatelessWidget {
               style: TextStyles.rubik20W500White,
             ).animate(
               onComplete: (controller) {
-                // context.pushReplacement(const FirstScreenOnboardingScreen());
-                context.push(const CreateAdScreen());
+                 context.pushReplacement(const FirstScreenOnboardingScreen());
+           //     context.push(const CreateAdScreen());
               },
             ).moveY(begin: 250, duration: 300.ms)
           ],

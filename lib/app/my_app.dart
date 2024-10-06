@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       designSize: const Size(375, 812),
-      child: const SettingsScreen(),
+   //   child: const SettingsScreen(),
       builder: (context, child) => MaterialApp(
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         title: AppEnv.projectName,
         theme: getLightTheme(),
         home: child,
-        // initialRoute: Routes.test,
+         initialRoute: Routes.splash,
         onGenerateRoute: AppRouter.generateRoute,
       ),
     );
