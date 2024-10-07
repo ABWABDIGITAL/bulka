@@ -14,6 +14,7 @@ import 'package:bulka/core/shared/widgets/upload_multiable_images_widget.dart';
 import 'package:bulka/core/services/categories/views/default_category_drop_down_widget.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/core/utils/enums/enums.dart';
 import 'package:bulka/modules/create_ad/controller/cubit/create_ad_cubit.dart';
 import 'package:bulka/modules/create_ad/controller/cubit/create_ad_state.dart';
 import 'package:bulka/modules/create_ad/data/params/create_ad_params.dart';
@@ -28,13 +29,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CreateAdScreen extends StatelessWidget {
-  const CreateAdScreen({super.key});
-
+  const CreateAdScreen({
+    super.key,
+    required this.adType,
+    required this.isPromoted,
+  });
+  final AdType adType;
+  final bool isPromoted;
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<CreateAdCubit>(create: (context) => CreateAdCubit(sl())),
+        BlocProvider<CreateAdCubit>(
+          create: (context) => CreateAdCubit(sl())
+            ..setIsPromoted = isPromoted
+            ..adType = adType,
+        ),
         BlocProvider<SubcategoryCubit>(
             create: (context) => SubcategoryCubit(sl())),
         BlocProvider<SubSubcategoryCubit>(
@@ -54,11 +64,34 @@ class CreateAdScreen extends StatelessWidget {
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18),
               child: SingleChildScrollView(
+                controller: cubit.scrollController,
                 child: Form(
                   key: context.read<CreateAdCubit>().formKey,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      //---------------------//
+                      CreateAdTitleWidget(
+                        title: '${AppStrings.adTitle.tr()}*',
+                      ),
+                      const CreateAdNameFieldWidget(),
+                      const SizedBox(height: 20),
+                      //---------------------//
+                      CreateAdTitleWidget(
+                        title: '${AppStrings.adDescription.tr()}*',
+                      ),
+                      const CreateAdDescriptionFieldWidget(),
+                      const SizedBox(height: 20),
+                      //---------------------//
+                      if (adType != AdType.jobs && adType != AdType.posts)
+                        CreateAdTitleWidget(
+                          title: '${AppStrings.thePrice.tr()}*',
+                        ),
+                      if (adType != AdType.jobs && adType != AdType.posts)
+                        const CreateAdPriceFieldWidget(),
+                      if (adType != AdType.jobs && adType != AdType.posts)
+                        const SizedBox(height: 20),
+                      //---------------------//
                       CreateAdTitleWidget(
                         title: '${AppStrings.theCategory.tr()}*',
                       ),
@@ -101,63 +134,31 @@ class CreateAdScreen extends StatelessWidget {
                         title: '${AppStrings.adImages.tr()}*',
                       ),
                       UploadMultiableImagesWidget(
-                        onSelected: (onSelected) {},
+                        onSelected: (onSelected) {
+                          cubit.setMedia = onSelected;
+                        },
                       ),
                       const SizedBox(height: 20),
                       //---------------------//
-                      BlocConsumer<CategoryFieldsCubit, CategoryFieldsState>(
-                        listenWhen: (previous, current) =>
-                            current is GetCategoryFieldsSuccess,
-                        listener: (context, state) {
-                          if (state is GetCategoryFieldsSuccess) {
-                            cubit.setDynamicKeys = state.categoryFields.length;
-                          }
-                        },
-                        buildWhen: (previous, current) =>
-                            current is GetCategoryFieldsSuccess,
-                        builder: (context, state) =>
-                            DefaultCategoryFieldsWidget(
-                          params: const CategoryFieldParams(categoryId: 10),
-                          categoryFieldsCubit:
-                              context.read<CategoryFieldsCubit>(),
-                          onFinish: (onFinish) {
-                            // print(onFinish.toString());
-                            // for (CreateAdCategoryField element
-                            //     in onFinish ?? []) {
-                            //   print(element.toString());
-                            // }
-                          },
-                          selectedCategoriesFields:
-                              cubit.selectedCategoriesFields,
-                          dynamicKeys: cubit.dynamicKeys,
-                        ),
+                      DefaultCategoryFieldsWidget(
+                        params: const CategoryFieldParams(categoryId: 10),
+                        categoryFieldsCubit:
+                            context.read<CategoryFieldsCubit>(),
                       ),
                       //---------------------//
                       CreateAdTitleWidget(
                         title: '${AppStrings.prefedContact.tr()}*',
                       ),
-                      const PreferedContactWidget(),
-                      const SizedBox(height: 20),
-                      //---------------------//
-                      CreateAdTitleWidget(
-                        title: '${AppStrings.adTitle.tr()}*',
+                      PreferedContactWidget(
+                        onSelected: (choosenPreferedContact) {
+                          cubit.setPreferedContact = choosenPreferedContact!;
+                        },
                       ),
-                      const CreateAdNameFieldWidget(),
                       const SizedBox(height: 20),
                       //---------------------//
-                      CreateAdTitleWidget(
-                        title: '${AppStrings.adDescription.tr()}*',
+                      CreateAdButtonWidget(
+                        categoryFieldCubit: context.read<CategoryFieldsCubit>(),
                       ),
-                      const CreateAdDescriptionFieldWidget(),
-                      const SizedBox(height: 20),
-                      //---------------------//
-                      CreateAdTitleWidget(
-                        title: '${AppStrings.thePrice.tr()}*',
-                      ),
-                      const CreateAdPriceFieldWidget(),
-                      const SizedBox(height: 20),
-                      //---------------------//
-                      const CreateAdButtonWidget(),
                       const SizedBox(height: 20),
                     ],
                   ),

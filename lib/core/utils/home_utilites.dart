@@ -80,12 +80,18 @@ Future<bool> clearAllDataToLogout() async {
 }
 
 String getSuitableNameLanguageForScreen(final dynamic textLanguages) {
+  if (textLanguages == null) return "field is null";
+
+  if (textLanguages is List) {
+    return textLanguages[0] ?? "field is null";
+  }
+
   if (textLanguages is Map<String, dynamic>) {
-    return textLanguages[currentLanguage?.locale.languageCode] ??
-        textLanguages['en'] ??
-        'field is null';
+    return textLanguages['en'] is List
+        ? textLanguages['en'][0]
+        : textLanguages['en'].toString();
   } else {
-    return textLanguages;
+    return textLanguages.toString();
   }
 }
 

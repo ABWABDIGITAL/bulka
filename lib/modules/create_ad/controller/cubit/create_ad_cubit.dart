@@ -17,6 +17,7 @@ class CreateAdCubit extends Cubit<CreateAdState> {
   final CreateAdRepo _createAdRepo;
   CreateAdCubit(this._createAdRepo) : super(CreateAdInitial());
 //---------------------------------VARIABLES----------------------------------//
+  bool? _isPromoted;
   int? _categoryId, _subcategoryId, _subSubcategoryId;
   String? _lat, _lng, _location;
   AdType? _adType;
@@ -29,34 +30,23 @@ class CreateAdCubit extends Cubit<CreateAdState> {
   List<CreateAdCategoryField> _adCategoriesField = [];
   List<File> _media = [];
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  List<GlobalKey<FormState>> _dynamicKeys = [];
-  List<CreateAdCategoryField> _selectedCategoriesFields = [];
+  ScrollController scrollController = ScrollController();
 //---------------------------------FUNCTIONS----------------------------------//
   set categoryId(int value) => _categoryId = value;
   set subcategoryId(int value) => _subcategoryId = value;
   set subSubcategoryId(int value) => _subSubcategoryId = value;
   set adType(AdType value) => _adType = value;
-  set preferedContact(PreferedContact value) => _preferedContact = value;
+  set setPreferedContact(PreferedContact value) => _preferedContact = value;
   set setLat(String value) => _lat = value;
   set setLng(String value) => _lng = value;
   set setLocation(String value) => _location = value;
   set setMedia(List<File> value) => _media = value;
   set setAdCategoriesField(List<CreateAdCategoryField> value) =>
       _adCategoriesField = value;
-  set setDynamicKeys(int length) {
-    _dynamicKeys = [];
-    _dynamicKeys = List.generate(length, (_) => GlobalKey<FormState>());
-  }
-
-  set setSelectedCategoriesFields(CreateAdCategoryField value) =>
-      _selectedCategoriesFields.add(value);
-
-  List<CreateAdCategoryField> get selectedCategoriesFields {
-    return _selectedCategoriesFields.toSet().toList();
-  }
-
-  List<GlobalKey<FormState>> get dynamicKeys => _dynamicKeys;
-
+  set setIsPromoted(bool value) => _isPromoted = value;
+  List<File> get media => _media;
+  List<CreateAdCategoryField> get adCategoriesField => _adCategoriesField;
+  PreferedContact? get preferedContact => _preferedContact;
   void getSubcategoryByCategory(BuildContext context) {
     if (_categoryId != null) {
       context
@@ -83,7 +73,7 @@ class CreateAdCubit extends Cubit<CreateAdState> {
   }
 
 //----------------------------------REQUEST-----------------------------------//
-  Future<void> createAdStatesHandled(CreateAdParams params) async {
+  Future<void> createAdStatesHandled() async {
     emit(const CreateAdLoading());
     final response = await _createAdRepo.createAd(
       CreateAdParams(
@@ -100,12 +90,23 @@ class CreateAdCubit extends Cubit<CreateAdState> {
         lat: _lat,
         lng: _lng,
         location: _location,
+        isPromoted: _isPromoted ?? false,
       ),
     );
     response.fold((failure) {
       return emit(CreateAdError(failure));
     }, (success) async {
       return emit(CreateAdSuccess(success));
+    });
+  }
+
+  Future<void> buyingAdStatesHandled() async {
+    emit(const BuyingAdLoading());
+    final response = await _createAdRepo.buyingAdDetails();
+    response.fold((failure) {
+      return emit(BuyingAdError(failure));
+    }, (success) async {
+      return emit(BuyingAdSuccess(success));
     });
   }
 }

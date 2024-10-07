@@ -182,4 +182,16 @@ class AppStrings {
   static const String adTitle = 'Ad Title';
   static const String adDescription = 'Ad Description';
   static const String prefedContact = 'Prefered Contact';
+  static const String imagesAreRequired = 'Images are required!!!';
+  static const String preferedContact = 'Please choose your prefered contact';
+  static const String selectYourConditions = 'Select your conditions';
+  static const String ad = 'Ad';
+  static const String car = 'Car';
+  static const String properties = 'Properties';
+  static const String jobs = 'Jobs';
+
+  static const String importAndExport = 'Import & Export';
+  static const String createJob = 'Create Job';
+  static const String standard = 'Standard';
+  static const String promoted = 'Promoted';
 }

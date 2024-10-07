@@ -33,4 +33,7 @@ class ApiConstance {
 //--------------------------------SUB SUBCATEGORY----------------------------------//
   static String subSubcategory(SubSubcategoryParams params) =>
       '/app/categories/sub-subcategory/${params.subcategoryId}';
+//----------------------------------CREATE AD------------------------------------//
+  static const String createAd = '/app/ad/store';
+  static const String buyingAd = '/app/subscription/details';
 }

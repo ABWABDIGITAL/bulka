@@ -32,7 +32,7 @@ class DefaultCategoryFieldSelectTypeWidget extends StatefulWidget {
   });
   final CategoryFieldEntity categoryFieldEntity;
   final Function(List<CategoryFieldValuesEntity>? choosenFields)? onSelected;
-  final Function(List<CreateAdCategoryField>? onFinish)? onFinish;
+  final Function(CreateAdCategoryField? onFinish)? onFinish;
   final String? titleText;
   final Color? fillColor;
   final Color? borderColor;
@@ -151,28 +151,44 @@ class _DefaultCategoryFieldMultiSelectDropDownWidgetState
               if (widget.onSelected != null) {
                 widget.onSelected!(newValue);
               }
-              if (_selectedFields != null) {
-                if (_selectedFields!.isEmpty) {
-                  widget.onFinish?.call([]);
-                } else {
-                  List<CreateAdCategoryField> fields = [];
-                  for (CategoryFieldValuesEntity element in _selectedFields!) {
-                    fields.add(
-                      CreateAdCategoryField(
-                        id: widget.categoryFieldEntity.id,
-                        fieldType: widget.categoryFieldEntity.fieldType.name,
-                        fieldName: widget.categoryFieldEntity.fieldName,
-                        fieldValue: element.fieldValue,
-                      ),
-                    );
-                  }
-                  widget.onFinish?.call(fields);
-                }
-              }
+              // if (_selectedFields != null) {
+              //   if (_selectedFields!.isEmpty) {
+              //     widget.onFinish?.call(null);
+              //   } else {
+              //     List<CreateAdCategoryField> fields = [];
+              //     for (CategoryFieldValuesEntity element in _selectedFields!) {
+              //       fields.add(
+              //         CreateAdCategoryField(
+              //           id: widget.categoryFieldEntity.id,
+              //           fieldType: widget.categoryFieldEntity.fieldType.name,
+              //           fieldName: widget.categoryFieldEntity.fieldName,
+              //           fieldValue: element.fieldValue,
+              //         ),
+              //       );
+              //     }
+              //     // widget.onFinish?.call(fields);
+              //   }
+              // }
             },
             onSaved: (newValue) {
               if (widget.onSelected != null) {
                 widget.onSelected!(newValue);
+              }
+              if (_selectedFields != null && _selectedFields!.isEmpty) {
+                widget.onFinish?.call(null);
+              } else {
+                List values = [];
+                for (CategoryFieldValuesEntity element in _selectedFields!) {
+                  values.add(element.fieldValue);
+                }
+                widget.onFinish?.call(
+                  CreateAdCategoryField(
+                    id: widget.categoryFieldEntity.id,
+                    fieldType: widget.categoryFieldEntity.fieldType.name,
+                    fieldName: widget.categoryFieldEntity.fieldName,
+                    fieldValue: values,
+                  ),
+                );
               }
             },
             options: widget.categoryFieldEntity.fieldValue
