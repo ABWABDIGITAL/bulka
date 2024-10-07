@@ -195,4 +195,11 @@ static const String offerDetails = 'Offer Details';
 static const String afterYouComplete3Deals = 'After you complete 3 deals, we will notify you of your gift. What are you waiting for?';
 static const String claimOffer = 'Claim Offer';
 static const String faq = 'FAQ';
+static const String aboutUs = 'About Us';
+static const String privacyOfUse = 'Privacy of use';
+static const String termsAndConditions = 'Terms and Conditions';
+static const String facebook='Facebook';
+static const String instagram='Instagram';
+static const String twitter='Twitter';
+static const String linkedIn='Linked In';
 }

@@ -4,6 +4,7 @@ import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
+import 'package:bulka/modules/about_us/view/screens/about_us_screen.dart';
 import 'package:bulka/modules/faq/ui/screens/faq_screen.dart';
 import 'package:bulka/modules/logout/view/widgets/logout_popup.dart';
 import 'package:bulka/modules/profile/data/entities/profile_entity.dart';
@@ -23,9 +24,11 @@ class ProfilePrivacyTermsWidget extends StatelessWidget {
         title: AppStrings.contactInfo.tr(),
       ),
       ProfileTileEntity(
-        svgPath: AssetIcons.verifySvg,
-        svgColor: AppColors.black4,
-        title: AppStrings.verifyId.tr(),
+        svgPath: AssetIcons.aboutUsSvg,
+        onTap: () {
+          context.push(const AboutUsScreen());
+        },
+        title: AppStrings.aboutUs.tr(),
       ),
       ProfileTileEntity(
           svgPath: AssetIcons.faqSvg,
