@@ -12,7 +12,7 @@ class OwnerDetailsInPostWidget extends StatelessWidget {
     return ListTile(
       leading: const CircleAvatar(
         backgroundImage: NetworkImage(
-          'https://s3-alpha-sig.figma.com/img/a358/0c7c/1e35c5bdb1fdfbc222c05e4e3db5d318?Expires=1726444800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mmrD8xVhT75AxyaglUOe~xCk8FLzA36-GaPX9TkWI9tW-fbe3oBg7fdZqCIb4BaWYpxP7bG24yu12UczFThNisGxGFjiJZ-YziT45tNwV2R9iuPkaBXiBCmuOC1RP1044Pnfyhdzmfck9HQTFuWQ7wpAIHSE8h34lnbqr20VSyo-PzGE3~lMpDOhPsDw~LJaZr9HJfBEUNX8rVPhnOke8yLxhVeEesZtPaXNpdbWYzuEdX-w~HKrfxdm-OCZA5IdjHTwcrScnq~up81CB5J2qPDLJRe9oomfxW-Ayff9Fq6UCLF3dTqyOb1prX6DamDq1UsdzzRmIwwOPtf3dvD0pA__',
+          'https://images.unsplash.com/photo-1677137856456-42251dccf388?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fEclMjBDTEFTU3xlbnwwfHwwfHx8MA%3D%3D',
         ),
       ),
       title: Text(
