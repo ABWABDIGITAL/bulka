@@ -194,4 +194,5 @@ static const String offers = 'Offers';
 static const String offerDetails = 'Offer Details'; 
 static const String afterYouComplete3Deals = 'After you complete 3 deals, we will notify you of your gift. What are you waiting for?';
 static const String claimOffer = 'Claim Offer';
+static const String faq = 'FAQ';
 }

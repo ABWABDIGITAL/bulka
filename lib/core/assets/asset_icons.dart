@@ -67,5 +67,6 @@ class AssetIcons {
   static const String countrySvg = 'assets/icons/country.svg';
   static const String language2 = 'assets/icons/language2.svg';
   static const String modeSvg = 'assets/icons/mode.svg';
+  static const String faqSvg = 'assets/icons/faq_svg.svg';
   static const String logoutSvg = 'assets/icons/logoutSvg.svg';
 }

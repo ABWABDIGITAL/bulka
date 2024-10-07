@@ -3,6 +3,8 @@ import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/core/utils/extensions/extensions.dart';
+import 'package:bulka/modules/faq/ui/screens/faq_screen.dart';
 import 'package:bulka/modules/logout/view/widgets/logout_popup.dart';
 import 'package:bulka/modules/profile/data/entities/profile_entity.dart';
 import 'package:bulka/modules/profile/ui/widgets/profile_list_tile_widget.dart';
@@ -26,9 +28,11 @@ class ProfilePrivacyTermsWidget extends StatelessWidget {
         title: AppStrings.verifyId.tr(),
       ),
       ProfileTileEntity(
-        svgPath: AssetIcons.workExperienceSvg,
-        title: AppStrings.workExperience.tr(),
-      ),
+          svgPath: AssetIcons.faqSvg,
+          title: AppStrings.faq.tr(),
+          onTap: () {
+            context.push(const FAQScreen());
+          }),
       ProfileTileEntity(
         svgPath: AssetIcons.logoutSvg,
         title: AppStrings.logout.tr(),
