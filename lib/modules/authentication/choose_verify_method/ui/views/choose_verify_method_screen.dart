@@ -1,5 +1,3 @@
-import 'package:bulka/core/assets/asset_icons.dart';
-import 'package:bulka/core/assets/asset_images.dart';
 import 'package:bulka/core/shared/widgets/appbar_widget.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
@@ -22,7 +20,7 @@ class ChooseVerifyMethodScreen extends StatelessWidget {
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(0),
-        child: CustomeAppBarWidget(),
+        child: CustomAppBarWidget(),
       ),
       body: BlocProvider(
         create: (context) => ChooseVerifyMethodCubit(),

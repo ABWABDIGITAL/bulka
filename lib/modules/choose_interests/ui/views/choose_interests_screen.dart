@@ -16,7 +16,7 @@ class ChooseInterestsScreen extends StatelessWidget {
       create: (context) =>
           ChooseInterestsCubit(sl())..chooseInterestsStatesHandled(),
       child: Scaffold(
-        appBar: const CustomeAppBarWidget(height: 0),
+        appBar: const CustomAppBarWidget(height: 0),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 18.r),
           child: const Column(

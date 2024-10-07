@@ -8,6 +8,7 @@ import 'package:bulka/modules/certifications/ui/views/add_certifications_screen.
 import 'package:bulka/modules/contact_info/ui/views/contact_info_screen.dart';
 import 'package:bulka/modules/cv/ui/views/add_cv_screen.dart';
 import 'package:bulka/modules/languages/ui/views/choose_languages_screen.dart';
+import 'package:bulka/modules/offers/view/screens/offers_screen.dart';
 import 'package:bulka/modules/profile/data/entities/profile_entity.dart';
 import 'package:bulka/modules/profile/ui/widgets/profile_list_tile_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -62,6 +63,14 @@ class ProfileBasicInfoWidget extends StatelessWidget {
         svgPath: AssetIcons.ticketDiscountSvg,
         title: AppStrings.packages.tr(),
       ),
+       ProfileTileEntity(
+        svgPath: AssetIcons.boxTickActive,
+        svgColor: AppColors.black,
+        onTap: () {
+          context.push(const OffersScreen());
+        },
+        title: AppStrings.offers.tr(),
+      ),
       ProfileTileEntity(
         svgPath: AssetIcons.emptyWalletSvg,
         title: AppStrings.payments.tr(),
@@ -83,9 +92,10 @@ class ProfileBasicInfoWidget extends StatelessWidget {
           ),
           vSpace(10),
           Container(
+            padding: const EdgeInsets.symmetric(vertical: 12),
             decoration: BoxDecoration(
               color: AppColors.white,
-              borderRadius: BorderRadius.circular(10.r),
+              borderRadius: BorderRadius.circular(20.r),
               border: Border.all(color: AppColors.grey),
             ),
             child: Column(

@@ -8,7 +8,7 @@ class ProfileAppbarWidget extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
-    return const CustomeAppBarWidget(
+    return const CustomAppBarWidget(
       height: 0,
       statusbarColor: AppColors.primary300,
     );

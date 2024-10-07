@@ -32,6 +32,7 @@ class ProfilePrivacyTermsWidget extends StatelessWidget {
       ProfileTileEntity(
         svgPath: AssetIcons.logoutSvg,
         title: AppStrings.logout.tr(),
+        svgColor: AppColors.black,
         onTap: () {
           showLogoutDialog(context);
         },
@@ -49,9 +50,10 @@ class ProfilePrivacyTermsWidget extends StatelessWidget {
           ),
           vSpace(10),
           Container(
+            padding: const EdgeInsets.symmetric(vertical: 12),
             decoration: BoxDecoration(
               color: AppColors.white,
-              borderRadius: BorderRadius.circular(10.r),
+              borderRadius: BorderRadius.circular(20.r),
               border: Border.all(color: AppColors.grey),
             ),
             child: Column(

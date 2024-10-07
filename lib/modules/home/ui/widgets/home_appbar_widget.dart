@@ -41,7 +41,7 @@ class _HomeAppbarWidgetState extends State<HomeAppbarWidget> {
           current is MyProfileInfoError,
       builder: (context, state) {
         final cubit = context.read<MyProfileInfoCubit>();
-        return CustomeAppBarWidget(
+        return CustomAppBarWidget(
           height: widget.height ?? 205.h,
           backgroundColor: AppColors.opactiyPrimary,
           systemOverlayStyle: const SystemUiOverlayStyle(

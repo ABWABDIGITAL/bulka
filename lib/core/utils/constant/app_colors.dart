@@ -44,7 +44,7 @@ class AppColors {
   static const Color mediumGrey13 = Color(0xFFE8E8E8);
   static const Color mediumGrey14 = Color(0xFF858585);
   static const Color mediumGrey15 = Color(0xFFEFEFEF);
-  static const Color mediumGrey16 = Color(0xFF777777);  
+  static const Color mediumGrey16 = Color(0xFF777777);
 
   static const Color darkGrey4 = Color(0xFF6A6A6A);
   static const Color darkGrey5 = Color(0xFF545454);
@@ -76,4 +76,6 @@ class AppColors {
   static const Color white = Colors.white;
   static const Color darkText = Color(0xFF494747);
   static const Color gold = Color(0xFFFFC529);
+  static const Color darkGold = Color(0xFFB08F29);
+  static const Color offersBigCardBackground = Color(0xff485DA6);
 }
