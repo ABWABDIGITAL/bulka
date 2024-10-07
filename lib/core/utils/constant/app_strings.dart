@@ -202,4 +202,15 @@ static const String facebook='Facebook';
 static const String instagram='Instagram';
 static const String twitter='Twitter';
 static const String linkedIn='Linked In';
+static const String youtube='Youtube';
+static const String idVerification='ID Verification';
+static const String tapToUploadOrTakeAPhoto='Tap to upload or take a photo';
+static const String importantGuidelinesForYourIdentity='Important guidelines for your identity:';
+static const String governmentIssued='Government-issued.';
+static const String originalFullSizeUneditedDocuments='Original full-size, unedited documents.';
+static const String documentsAgainstASingleColorBackground='Documents against a single-color background.';
+static const String readableWellLitColoredImages='Readable, well-lit, colored images.';
+static const String noBlackAndWhiteImages='No black and white images.';
+static const String noEditedOrExpiredDocuments='No edited or expired documents.';
+static const String selfPhoto='Self Photo';
 }

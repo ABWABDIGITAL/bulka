@@ -174,5 +174,15 @@
   "Facebook": "فيسبوك",
   "Instagram": "انستجرام",
   "Twitter": "تويتر",
-  "Linkedin": "لينكد ان"
+  "Linkedin": "لينكد ان",
+  "ID Verification": "التحقق من الهوية",
+  "Tap to upload or take a photo": "اضغط لتحميل أو التقاط صورة",
+  "Important guidelines for your identity:": "إرشادات هامة لهويتك:",
+  "Government-issued": "صادرة عن الحكومة.",
+  "Original full-size, unedited documents": "المستندات الأصلية كاملة الحجم وغير محررة.",
+  "Documents against a single-color background": "مستندات على خلفية بلون واحد.",
+  "Readable, well-lit, colored images.": "صور ملونة وقابلة للقراءة ومضاءة جيدًا",
+  "No black and white images.": "لا توجد صور بالأبيض والأسود.",
+  "No edited or expired documents": "لا يوجد مستندات محررة أو منتهية الصلاحية.",
+  "Self Photo": "صورة ذاتية"
 }
