@@ -7,8 +7,10 @@ import 'package:bulka/core/services/servies_locator/modules/create_ad_locator.da
 import 'package:bulka/core/services/servies_locator/modules/home_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/init_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/interests_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/logout_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/navbar_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/profile_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/settings_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/sub_subcategory_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/subcategory_locator.dart';
 import 'package:get_it/get_it.dart';
@@ -43,5 +45,9 @@ class ServiceLocator {
     profileLocator();
 //--------------------------------CREATE AD------------------------------------//
     createAdLocator();
+    //--------------------------------LOGOUT------------------------------------//
+    logoutLocator();
+     //--------------------------------SETTINGS------------------------------------//
+    settingsLocator();
   }
 }

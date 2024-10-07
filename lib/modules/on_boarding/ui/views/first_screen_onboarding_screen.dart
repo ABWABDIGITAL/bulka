@@ -48,7 +48,7 @@ class _FirstScreenOnboardingScreenState
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(0),
-        child: CustomeAppBarWidget(
+        child: CustomAppBarWidget(
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarBrightness: Brightness.light,
             statusBarColor: AppColors.white,

@@ -1,5 +1,4 @@
 import 'package:bulka/core/assets/asset_icons.dart';
-import 'package:bulka/core/assets/asset_translations.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
@@ -9,12 +8,14 @@ import 'package:bulka/modules/certifications/ui/views/add_certifications_screen.
 import 'package:bulka/modules/contact_info/ui/views/contact_info_screen.dart';
 import 'package:bulka/modules/cv/ui/views/add_cv_screen.dart';
 import 'package:bulka/modules/languages/ui/views/choose_languages_screen.dart';
+import 'package:bulka/modules/offers/view/screens/offers_screen.dart';
+import 'package:bulka/modules/profile/data/entities/profile_entity.dart';
+import 'package:bulka/modules/profile/ui/widgets/profile_list_tile_widget.dart';
+import 'package:bulka/modules/verify_id/view/screens/verify_id_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfileBasicInfoWidget extends StatelessWidget {
   const ProfileBasicInfoWidget({super.key});
@@ -31,6 +32,9 @@ class ProfileBasicInfoWidget extends StatelessWidget {
       ProfileTileEntity(
         svgPath: AssetIcons.verifySvg,
         svgColor: AppColors.black4,
+        onTap: () {
+          context.push(const VerifyIdScreen());
+        },
         title: AppStrings.verifyId.tr(),
       ),
       ProfileTileEntity(
@@ -64,6 +68,14 @@ class ProfileBasicInfoWidget extends StatelessWidget {
         title: AppStrings.packages.tr(),
       ),
       ProfileTileEntity(
+        svgPath: AssetIcons.boxTickActive,
+        svgColor: AppColors.black,
+        onTap: () {
+          context.push(const OffersScreen());
+        },
+        title: AppStrings.offers.tr(),
+      ),
+      ProfileTileEntity(
         svgPath: AssetIcons.emptyWalletSvg,
         title: AppStrings.payments.tr(),
       ),
@@ -84,9 +96,10 @@ class ProfileBasicInfoWidget extends StatelessWidget {
           ),
           vSpace(10),
           Container(
+            padding: const EdgeInsets.symmetric(vertical: 12),
             decoration: BoxDecoration(
               color: AppColors.white,
-              borderRadius: BorderRadius.circular(10.r),
+              borderRadius: BorderRadius.circular(20.r),
               border: Border.all(color: AppColors.grey),
             ),
             child: Column(
@@ -94,7 +107,7 @@ class ProfileBasicInfoWidget extends StatelessWidget {
               children: List.generate(
                 profileTiles.length,
                 (index) {
-                  return profileTile(profileTiles[index])
+                  return ProfileListTileWidget(tile: profileTiles[index])
                       .animate()
                       .fade(delay: (index * 750).ms);
                 },
@@ -105,52 +118,4 @@ class ProfileBasicInfoWidget extends StatelessWidget {
       ),
     );
   }
-
-  Widget profileTile(ProfileTileEntity tile) {
-    return ListTile(
-      onTap: tile.onTap,
-      leading: Container(
-        height: 48.h,
-        width: 48.w,
-        decoration: BoxDecoration(
-          color: AppColors.opactiyPrimary,
-          borderRadius: BorderRadius.circular(12.r),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgPicture.asset(
-              tile.svgPath,
-              color: tile.svgColor,
-              height: 22,
-              width: 22,
-            ),
-          ],
-        ),
-      ),
-      title: Text(
-        tile.title,
-        style: TextStyles.rubik13W600Black4,
-      ),
-      trailing: AssetTranslations.isRightDirectionality
-          ? const Icon(Icons.arrow_back_ios, size: 16)
-          : const Icon(Icons.arrow_forward_ios, size: 16),
-    );
-  }
-}
-
-class ProfileTileEntity extends Equatable {
-  const ProfileTileEntity({
-    required this.svgPath,
-    required this.title,
-    this.svgColor,
-    this.onTap,
-  });
-  final String svgPath;
-  final Color? svgColor;
-  final String title;
-  final void Function()? onTap;
-
-  @override
-  List<Object?> get props => [svgPath, svgColor, title, onTap];
 }

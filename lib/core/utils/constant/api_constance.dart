@@ -33,4 +33,8 @@ class ApiConstance {
 //--------------------------------SUB SUBCATEGORY----------------------------------//
   static String subSubcategory(SubSubcategoryParams params) =>
       '/app/categories/sub-subcategory/${params.subcategoryId}';
+      //--------------------------------FAQ----------------------------------//
+  static const String faq = '/app/faq';
+//--------------------------------LOGOUT----------------------------------//
+  static const String logout = '/app/logout';
 }

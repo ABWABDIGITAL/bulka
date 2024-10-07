@@ -64,4 +64,10 @@ class AssetIcons {
   static const String pdf = 'assets/icons/PDF.png';
   static const String trashFill = 'assets/icons/trash-fill.svg';
   static const String appIconSvg = 'assets/icons/app_icon.svg';
+  static const String countrySvg = 'assets/icons/country.svg';
+  static const String language2 = 'assets/icons/language2.svg';
+  static const String modeSvg = 'assets/icons/mode.svg';
+  static const String faqSvg = 'assets/icons/faq_svg.svg';
+  static const String logoutSvg = 'assets/icons/logoutSvg.svg';
+  static const String aboutUsSvg = 'assets/icons/about_us.svg';
 }
