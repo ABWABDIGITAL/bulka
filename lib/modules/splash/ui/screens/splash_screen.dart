@@ -47,8 +47,8 @@ class SplashScreen extends StatelessWidget {
               style: TextStyles.rubik20W500White,
             ).animate(
               onComplete: (controller) {
-                // context.pushReplacement(const FirstScreenOnboardingScreen());
-                context.push(const CreateAdScreen());
+                context.pushReplacement(const FirstScreenOnboardingScreen());
+                // context.push(const CreateAdScreen());
               },
             ).moveY(begin: 250, duration: 300.ms)
           ],

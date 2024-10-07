@@ -19,8 +19,7 @@ class SettingsLightModeListTile extends StatelessWidget {
         return ListTile(
           //   contentPadding: const EdgeInsets.symmetric(horizontal: 0),
           leading: SvgPicture.asset(AssetIcons.modeSvg),
-          title: Text(AppStrings.lightMode.tr(),
-              style: TextStyles.rubik13W400Black),
+          title: Text('lightmode', style: TextStyles.rubik13W400Black),
 
           trailing: Switch.adaptive(
             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,

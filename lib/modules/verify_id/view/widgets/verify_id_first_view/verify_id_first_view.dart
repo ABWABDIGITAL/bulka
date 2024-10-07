@@ -36,11 +36,11 @@ class VerifyIdFirstView extends StatelessWidget {
                 children: [
                   Image.asset(AssetImages.veridyId),
                   vSpace(10),
-                  Text(AppStrings.idVerification.tr(),
+                  Text('Id Verifications',
                       style: TextStyles.rubik14W500DarkGrey),
                   vSpace(10),
                   Text(
-                    AppStrings.tapToUploadOrTakeAPhoto.tr(),
+                    'Tap to Upload or take image',
                     style: TextStyles.rubik14W400MediumGrey5,
                   ),
                 ],
@@ -51,7 +51,7 @@ class VerifyIdFirstView extends StatelessWidget {
         vSpace(20),
         // Important guidelines
         Text(
-          AppStrings.importantGuidelinesForYourIdentity.tr(),
+          'important guidlines for id verification',
           style: TextStyles.rubik14W400Black2,
         ),
         vSpace(10),

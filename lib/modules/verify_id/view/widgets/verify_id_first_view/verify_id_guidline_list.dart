@@ -9,12 +9,19 @@ class VerifyIdGuidlineList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> text = [
-      AppStrings.governmentIssued.tr(),
-      AppStrings.originalFullSizeUneditedDocuments.tr(),
-      AppStrings.documentsAgainstASingleColorBackground.tr(),
-      AppStrings.readableWellLitColoredImages.tr(),
-      AppStrings.noBlackAndWhiteImages.tr(),
-      AppStrings.noEditedOrExpiredDocuments.tr(),
+      'Government issued',
+      'Original full size unedited documents',
+      'Documents against a single color background',
+      'Readable well lit colored images',
+      'No black and white images',
+      'No edited or expired documents',
+
+      // AppStrings.governmentIssued.tr(),
+      // AppStrings.originalFullSizeUneditedDocuments.tr(),
+      // AppStrings.documentsAgainstASingleColorBackground.tr(),
+      // AppStrings.readableWellLitColoredImages.tr(),
+      // AppStrings.noBlackAndWhiteImages.tr(),
+      // AppStrings.noEditedOrExpiredDocuments.tr(),
     ];
     return Column(
       children: List.generate(

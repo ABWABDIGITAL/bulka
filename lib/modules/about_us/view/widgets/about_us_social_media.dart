@@ -1,5 +1,3 @@
-
-
 import 'dart:io';
 
 import 'package:bulka/core/utils/constant/app_colors.dart';
@@ -22,32 +20,29 @@ class AboutUsSocialMedia extends StatelessWidget {
       child: Column(
         children: [
           ListTile(
-            title:  Text(AppStrings.facebook.tr()),
+            title: const Text('Facebook'),
             trailing: const Icon(Icons.arrow_forward_ios),
             onTap: () {},
           ),
           const Divider(height: 1, color: AppColors.darkGrey3),
           ListTile(
             title: const Text('Instagram'),
-            trailing: Icon(Platform.isIOS
-                ? Icons.arrow_forward_ios
-                : Icons.arrow_forward),
+            trailing: Icon(
+                Platform.isIOS ? Icons.arrow_forward_ios : Icons.arrow_forward),
             onTap: () {},
           ),
           const Divider(height: 1),
           ListTile(
-            title:  Text(AppStrings.twitter.tr()),
-            trailing: Icon(Platform.isIOS
-                ? Icons.arrow_forward_ios
-                : Icons.arrow_forward),
+            title: const Text('Twitter'),
+            trailing: Icon(
+                Platform.isIOS ? Icons.arrow_forward_ios : Icons.arrow_forward),
             onTap: () {},
           ),
           const Divider(height: 1, color: AppColors.darkGrey3),
           ListTile(
-            title:  Text(AppStrings.linkedIn.tr()),
-            trailing: Icon(Platform.isIOS
-                ? Icons.arrow_forward_ios
-                : Icons.arrow_forward),
+            title: const Text('Linkedin'),
+            trailing: Icon(
+                Platform.isIOS ? Icons.arrow_forward_ios : Icons.arrow_forward),
             onTap: () {},
           ),
         ],

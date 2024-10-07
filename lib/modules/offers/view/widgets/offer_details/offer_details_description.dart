@@ -10,7 +10,7 @@ class OfferDetailsDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(AppStrings.afterYouComplete3Deals.tr(),
+    return Text('AppStrings.afterYouComplete3Deals.tr()',
         style: TextStyles.rubik14W400DarkGrey2);
   }
 }

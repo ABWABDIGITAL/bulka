@@ -35,11 +35,10 @@ class VerifyIdSecondView extends StatelessWidget {
                 children: [
                   Image.asset(AssetImages.selfPhoto),
                   vSpace(10),
-                  Text(AppStrings.selfPhoto.tr(),
-                      style: TextStyles.rubik14W500DarkGrey),
+                  Text('self photo', style: TextStyles.rubik14W500DarkGrey),
                   vSpace(10),
                   Text(
-                    AppStrings.tapToUploadOrTakeAPhoto.tr(),
+                    'Tap to upload image',
                     style: TextStyles.rubik14W400MediumGrey5,
                   ),
                 ],
@@ -47,11 +46,8 @@ class VerifyIdSecondView extends StatelessWidget {
             ),
           ),
         ),
-        
-        
         const Spacer(),
       ],
     );
-
   }
 }

@@ -194,4 +194,16 @@ class AppStrings {
   static const String createJob = 'Create Job';
   static const String standard = 'Standard';
   static const String promoted = 'Promoted';
+  static const String privacyOfUse = 'Privacy of use';
+  static const String aboutUs = 'About us';
+
+  static const String facebook = 'Facebook';
+  static const String faqs = 'Faqs';
+
+  static const String ifThisIsDueToAProblem = 'if This Is Due To A Problem';
+  static const String contact = 'Contact';
+  static const String yes = 'Yes';
+  static const String offerDetails = 'Offer Details';
+  static const String offers = 'Offers';
+  static const String claimOffers = 'Claim Offer';
 }
