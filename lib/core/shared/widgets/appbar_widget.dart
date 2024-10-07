@@ -7,9 +7,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class CustomeAppBarWidget extends StatelessWidget
+class CustomAppBarWidget extends StatelessWidget
     implements PreferredSizeWidget {
-  const CustomeAppBarWidget({
+  const CustomAppBarWidget({
     super.key,
     this.backgroundColor,
     this.actions,
@@ -111,7 +111,7 @@ class OpacityAppbarWidget extends StatelessWidget
   final String? title;
   @override
   Widget build(BuildContext context) {
-    return CustomeAppBarWidget(
+    return CustomAppBarWidget(
       backgroundColor: AppColors.opactiyPrimary,
       statusbarColor: AppColors.opactiyPrimary,
       statusBarIconBrightness: Brightness.dark,

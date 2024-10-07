@@ -21,7 +21,7 @@ class SettingsScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => SettingsCubit(sl()),
       child: Scaffold(
-        appBar: CustomeAppBarWidget(
+        appBar: CustomAppBarWidget(
           titleStyle: TextStyles.rubik14W500Black,
           title: AppStrings.settings.tr(),
           centerTitle: true,
