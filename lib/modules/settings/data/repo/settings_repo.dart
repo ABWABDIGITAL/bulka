@@ -1,0 +1,3 @@
+class SettingsRepo {
+  const SettingsRepo();
+}

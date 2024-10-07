@@ -1,23 +1,20 @@
+import 'package:bulka/core/services/categories/views/default_category_drop_down_widget.dart';
 import 'package:bulka/core/services/category_fields/controller/cubit/category_fields_cubit.dart';
 import 'package:bulka/core/services/category_fields/controller/cubit/category_fields_state.dart';
 import 'package:bulka/core/services/category_fields/data/params/category_field_params.dart';
 import 'package:bulka/core/services/category_fields/view/screens/default_category_fields_widget.dart';
 import 'package:bulka/core/services/servies_locator/service_locator.dart';
 import 'package:bulka/core/services/sub_subcategory/controller/cubit/sub_subcategory_cubit.dart';
-import 'package:bulka/core/services/sub_subcategory/data/params/sub_subcategory_params.dart';
 import 'package:bulka/core/services/sub_subcategory/view/screens/default_subcategory_field_widget.dart';
 import 'package:bulka/core/services/subcategory/controller/cubit/subcategory_cubit.dart';
-import 'package:bulka/core/services/subcategory/data/params/subcategory_params.dart';
 import 'package:bulka/core/services/subcategory/view/screens/default_subcategory_field_widget.dart';
 import 'package:bulka/core/shared/widgets/appbar_widget.dart';
 import 'package:bulka/core/shared/widgets/upload_multiable_images_widget.dart';
-import 'package:bulka/core/services/categories/views/default_category_drop_down_widget.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/enums/enums.dart';
 import 'package:bulka/modules/create_ad/controller/cubit/create_ad_cubit.dart';
 import 'package:bulka/modules/create_ad/controller/cubit/create_ad_state.dart';
-import 'package:bulka/modules/create_ad/data/params/create_ad_params.dart';
 import 'package:bulka/modules/create_ad/views/widgets/create_ad_button_widget.dart';
 import 'package:bulka/modules/create_ad/views/widgets/create_ad_description_field_widget.dart';
 import 'package:bulka/modules/create_ad/views/widgets/create_ad_name_field_widget.dart';
@@ -57,7 +54,7 @@ class CreateAdScreen extends StatelessWidget {
         ),
       ],
       child: Scaffold(
-        appBar: const CustomeAppBarWidget(),
+        appBar: const CustomAppBarWidget(),
         body: BlocBuilder<CreateAdCubit, CreateAdState>(
           builder: (context, state) {
             final cubit = context.read<CreateAdCubit>();

@@ -21,7 +21,7 @@ class VerifyPhoneScreen extends StatelessWidget {
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(0),
-        child: CustomeAppBarWidget(),
+        child: CustomAppBarWidget(),
       ),
       body: BlocProvider(
         create: (context) => VerifyPhoneCubit(

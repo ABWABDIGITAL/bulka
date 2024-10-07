@@ -1,14 +1,17 @@
 import 'package:bulka/core/assets/asset_icons.dart';
-import 'package:bulka/core/assets/asset_translations.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
-import 'package:bulka/modules/profile/ui/widgets/profile_basic_info_widget.dart';
+import 'package:bulka/core/utils/extensions/extensions.dart';
+import 'package:bulka/modules/about_us/view/screens/about_us_screen.dart';
+import 'package:bulka/modules/faq/ui/screens/faq_screen.dart';
+import 'package:bulka/modules/logout/view/widgets/logout_popup.dart';
+import 'package:bulka/modules/profile/data/entities/profile_entity.dart';
+import 'package:bulka/modules/profile/ui/widgets/profile_list_tile_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfilePrivacyTermsWidget extends StatelessWidget {
   const ProfilePrivacyTermsWidget({super.key});
@@ -21,13 +24,25 @@ class ProfilePrivacyTermsWidget extends StatelessWidget {
         title: AppStrings.contactInfo.tr(),
       ),
       ProfileTileEntity(
-        svgPath: AssetIcons.verifySvg,
-        svgColor: AppColors.black4,
-        title: AppStrings.verifyId.tr(),
+        svgPath: AssetIcons.aboutUsSvg,
+        onTap: () {
+          context.push(const AboutUsScreen());
+        },
+        title: AppStrings.aboutUs.tr(),
       ),
       ProfileTileEntity(
-        svgPath: AssetIcons.workExperienceSvg,
-        title: AppStrings.workExperience.tr(),
+          svgPath: AssetIcons.faqSvg,
+          title: AppStrings.faq.tr(),
+          onTap: () {
+            context.push(const FAQScreen());
+          }),
+      ProfileTileEntity(
+        svgPath: AssetIcons.logoutSvg,
+        title: AppStrings.logout.tr(),
+        svgColor: AppColors.black,
+        onTap: () {
+          showLogoutDialog(context);
+        },
       ),
     ];
     return Padding(
@@ -42,9 +57,10 @@ class ProfilePrivacyTermsWidget extends StatelessWidget {
           ),
           vSpace(10),
           Container(
+            padding: const EdgeInsets.symmetric(vertical: 12),
             decoration: BoxDecoration(
               color: AppColors.white,
-              borderRadius: BorderRadius.circular(10.r),
+              borderRadius: BorderRadius.circular(20.r),
               border: Border.all(color: AppColors.grey),
             ),
             child: Column(
@@ -52,44 +68,13 @@ class ProfilePrivacyTermsWidget extends StatelessWidget {
               children: List.generate(
                 profileTiles.length,
                 (index) {
-                  return profileTile(profileTiles[index]);
+                  return ProfileListTileWidget(tile: profileTiles[index]);
                 },
               ),
             ),
           )
         ],
       ),
-    );
-  }
-
-  Widget profileTile(ProfileTileEntity tile) {
-    return ListTile(
-      leading: Container(
-        height: 48.h,
-        width: 48.w,
-        decoration: BoxDecoration(
-          color: AppColors.opactiyPrimary,
-          borderRadius: BorderRadius.circular(12.r),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgPicture.asset(
-              tile.svgPath,
-              color: tile.svgColor,
-              height: 22,
-              width: 22,
-            ),
-          ],
-        ),
-      ),
-      title: Text(
-        tile.title,
-        style: TextStyles.rubik13W600Black4,
-      ),
-      trailing: AssetTranslations.isRightDirectionality
-          ? const Icon(Icons.arrow_back_ios, size: 16)
-          : const Icon(Icons.arrow_forward_ios, size: 16),
     );
   }
 }

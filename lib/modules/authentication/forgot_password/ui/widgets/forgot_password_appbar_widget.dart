@@ -13,7 +13,7 @@ class ForgotPasswordAppbarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomeAppBarWidget(
+    return CustomAppBarWidget(
       backgroundColor: const Color(0xFFF6F8FF),
       systemOverlayStyle: const SystemUiOverlayStyle(
         statusBarColor: Color(0xFFF6F8FF),
