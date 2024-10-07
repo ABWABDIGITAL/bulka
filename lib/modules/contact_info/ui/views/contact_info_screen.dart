@@ -12,11 +12,14 @@ class ContactInfoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: OpacityAppbarWidget(title: AppStrings.contactInfo.tr()),
-      body: Column(
-        children: [
-          DefaultPhoneFormField(),
-          DefaultEmailFormFieldWidget(),
-        ],
+      body: const Padding(
+        padding: EdgeInsets.all(24.0),
+        child: Column(
+          children: [
+            DefaultPhoneFormField(),
+            DefaultEmailFormFieldWidget(),
+          ],
+        ),
       ),
     );
   }
