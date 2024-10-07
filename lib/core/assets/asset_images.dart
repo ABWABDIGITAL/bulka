@@ -20,5 +20,7 @@ class AssetImages {
       'assets/images/offers_small_card_background.png';
        static const String offersBigCardImage =
       'assets/images/offers_card_image.png';
+      static const String veridyId = 'assets/images/verify_id.png';
+      static const String selfPhoto = 'assets/images/self_photo.png';
 
 }

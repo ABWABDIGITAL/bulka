@@ -174,5 +174,15 @@
   "Facebook": "Фейсбук",
   "Instagram": "Инстаграм",
   "Twitter": "Твиттер",
-  "Linkedin": "Линкедин"
+  "Linkedin": "Линкедин",
+  "ID Verification": "Проверка личности",
+  "Tap to upload or take a photo": "Нажмите, чтобы загрузить или сделать фотографию",
+  "Important guidelines for your identity:": "Важные рекомендации для вашей идентичности:",
+  "Government-issued": "Выпущено правительством.",
+  "Original full-size, unedited documents": "Оригинальные полноразмерные, неотредактированные документы.",
+  "Documents against a single-color background": "Документы на одноцветном фоне.",
+  "Readable, well-lit, colored images.": "Читаемые, хорошо освещенные, цветные изображения",
+  "No black and white images.": "Никаких черно-белых изображений.",
+  "No edited or expired documents": "Никаких отредактированных или просроченных документов.",
+  "Self Photo": "Фото себя"
 }
