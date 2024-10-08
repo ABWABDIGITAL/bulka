@@ -206,4 +206,8 @@ class AppStrings {
   static const String offerDetails = 'Offer Details';
   static const String offers = 'Offers';
   static const String claimOffers = 'Claim Offer';
+  static const String subscribe = 'Subscribe';
+  static const String adsStandard = 'ads standard';
+  static const String valid = 'valid';
+  static const String days = 'days';
 }

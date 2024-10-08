@@ -33,3 +33,5 @@ enum AdType { posts, jobs, properties, cars, import_export, general }
 enum PreferedContact { chat, phone }
 
 enum CategoryFieldTypes { text, integer, check, select, boolean }
+
+enum SubscribtionStatusTypes { pending,unkown }

@@ -140,4 +140,14 @@ class EnumSwitchReturn {
         return CategoryFieldTypes.text;
     }
   }
+
+  static SubscribtionStatusTypes getSubscribtionStatusType(
+      String? subscribtionStatus) {
+    switch (subscribtionStatus) {
+      case 'pending':
+        return SubscribtionStatusTypes.pending;
+      default:
+        return SubscribtionStatusTypes.unkown;
+    }
+  }
 }

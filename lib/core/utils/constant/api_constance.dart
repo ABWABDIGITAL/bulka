@@ -36,4 +36,9 @@ class ApiConstance {
 //----------------------------------CREATE AD------------------------------------//
   static const String createAd = '/app/ad/store';
   static const String buyingAd = '/app/subscription/details';
+//----------------------------------PACKAGES------------------------------------//
+  static const String getPackages = '/app/subscription/packages';
+  static const String getSubscribtions = '/app/subscription';
+  static const String subscribe = '/app/subscription/store';
+  static const String paySubscribtion = '/app/subscription/confirm-payment';
 }

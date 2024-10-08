@@ -9,6 +9,7 @@ import 'package:bulka/modules/contact_info/ui/views/contact_info_screen.dart';
 import 'package:bulka/modules/cv/ui/views/add_cv_screen.dart';
 import 'package:bulka/modules/languages/ui/views/choose_languages_screen.dart';
 import 'package:bulka/modules/offers/view/screens/offers_screen.dart';
+import 'package:bulka/modules/packages/views/screens/packages_screen.dart';
 import 'package:bulka/modules/profile/data/entities/profile_entity.dart';
 import 'package:bulka/modules/profile/ui/widgets/profile_list_tile_widget.dart';
 import 'package:bulka/modules/verify_id/view/screens/verify_id_screen.dart';
@@ -66,6 +67,9 @@ class ProfileBasicInfoWidget extends StatelessWidget {
       ProfileTileEntity(
         svgPath: AssetIcons.ticketDiscountSvg,
         title: AppStrings.packages.tr(),
+        onTap: () {
+          context.push(const PackagesScreen());
+        },
       ),
       ProfileTileEntity(
         svgPath: AssetIcons.boxTickActive,
