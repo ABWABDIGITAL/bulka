@@ -1,3 +1,4 @@
+import 'package:bulka/core/services/ad_details/data/params/ad_details_params.dart';
 import 'package:bulka/core/services/category_fields/data/params/category_field_params.dart';
 import 'package:bulka/core/services/sub_subcategory/data/params/sub_subcategory_params.dart';
 import 'package:bulka/core/services/subcategory/data/params/subcategory_params.dart';
@@ -41,4 +42,6 @@ class ApiConstance {
   static const String getSubscribtions = '/app/subscription';
   static const String subscribe = '/app/subscription/store';
   static const String paySubscribtion = '/app/subscription/confirm-payment';
+//----------------------------------Ad Details------------------------------------//
+  static String adDetails(AdDetailsParams params) => '/app/ad/${params.id}';
 }

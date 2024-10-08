@@ -1,3 +1,4 @@
+import 'package:bulka/core/services/servies_locator/modules/ad_details_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/authentication_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/category_field_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/category_locator.dart';
@@ -44,9 +45,10 @@ class ServiceLocator {
     homeLocator();
 //---------------------------------PROFILE--------------------------------------//
     profileLocator();
-//--------------------------------CREATE AD------------------------------------//
+//-----------------------------------AD------------------------------------//
     createAdLocator();
-    //--------------------------------LOGOUT------------------------------------//
+    adDetailsLocator();
+//----------------------------------LOGOUT------------------------------------//
     logoutLocator();
     //--------------------------------SETTINGS------------------------------------//
     settingsLocator();
