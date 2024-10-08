@@ -223,5 +223,19 @@ class AppStrings {
   static const String avoidWearingHats = 'Avoid wearing hats';
   static const String avoidWearingGlasses = 'Avoid wearing glasses';
   static const String avoidUsingFilters = 'Avoid using filters';
-  static const String useEnoughLightings='Use enough lightings';
+  static const String useEnoughLightings = 'Use enough lightings';
+  static const String yourIdProofHasBeenSubmitted =
+      'Your ID Proof has been submitted';
+  static const String weWillReviewAndLetYouKnow =
+      'We will review and let you know within 48 hours working days.';
+  static const String done = 'Done';
+  static const String location = 'Location';
+  static const String save = 'Save';
+  static const String locationName = 'Location Name';
+  static const String addLocationName =
+      'Add location name like (Home, work, branch)';
+  static const String chooseCity = 'Choose City';
+  static const String addLocation = 'Add Location';
+  static const String describeYourLocation='Describe your location';
+  static const editProfile='Edit Profile';
 }

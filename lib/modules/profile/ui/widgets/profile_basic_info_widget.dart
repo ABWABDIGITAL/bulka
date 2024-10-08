@@ -11,6 +11,7 @@ import 'package:bulka/modules/languages/ui/views/choose_languages_screen.dart';
 import 'package:bulka/modules/offers/view/screens/offers_screen.dart';
 import 'package:bulka/modules/profile/data/entities/profile_entity.dart';
 import 'package:bulka/modules/profile/ui/widgets/profile_list_tile_widget.dart';
+import 'package:bulka/modules/profile_location/view/screens/profile_add_location_screen.dart';
 import 'package:bulka/modules/verify_id/view/screens/verify_id_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -62,6 +63,12 @@ class ProfileBasicInfoWidget extends StatelessWidget {
           title: AppStrings.cv.tr(),
           onTap: () {
             context.push(const AddCvScreen());
+          }),
+      ProfileTileEntity(
+          svgPath: AssetIcons.locationOutlineSvg,
+          title: AppStrings.location.tr(),
+          onTap: () {
+            context.push(const ProfileAddLocationScreen());
           }),
       ProfileTileEntity(
         svgPath: AssetIcons.ticketDiscountSvg,

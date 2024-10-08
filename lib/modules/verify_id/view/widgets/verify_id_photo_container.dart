@@ -22,7 +22,7 @@ class VerifyIdPhotoContainer extends StatelessWidget {
       borderType: BorderType.RRect,
       radius: Radius.circular(16.r),
       dashPattern: const [8, 4],
-      strokeWidth: 1,
+      strokeWidth: .5,
       child: Container(
         // height: 200.h,
         width: double.infinity,

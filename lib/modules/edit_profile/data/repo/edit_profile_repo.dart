@@ -1,0 +1,3 @@
+class EditProfileRepo {
+  const EditProfileRepo();
+}

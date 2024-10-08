@@ -7,8 +7,6 @@ import 'package:bulka/core/utils/widgets/form_fields/default_phone_form_field.da
 import 'package:bulka/core/utils/widgets/validation/validation.dart';
 import 'package:bulka/modules/authentication/user_register/controllers/user_register_cubit.dart';
 import 'package:bulka/modules/authentication/user_register/controllers/user_register_state.dart';
-import 'package:bulka/modules/authentication/user_register/ui/widgets/user_phone_form_field_widget.dart';
-import 'package:bulka/core/services/countries/controllers/cubit/country_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

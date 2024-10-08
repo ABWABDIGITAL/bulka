@@ -2,7 +2,9 @@ import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/assets/asset_images.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
+import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/modules/edit_profile/view/screens/edit_profile_dialog.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -67,9 +69,36 @@ class _ProfileTitleWidgetState extends State<ProfileTitleWidget>
                       'https://th.bing.com/th/id/OIP.7TXIEeCyh4kc8wYrXrHWIgHaEK?w=1920&h=1080&rs=1&pid=ImgDetMain'),
                 ),
                 vSpace(16),
-                Text(
-                  'Abdullah Ezz',
-                  style: TextStyles.rubik16W500Black2,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Abdullah Ezz',
+                      style: TextStyles.rubik16W500Black2,
+                    ),
+                    hSpace(8),
+                    InkWell(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          
+                          builder: (BuildContext context) {
+                            return const EditProfileDialog();
+                          },
+                        );
+                      },
+                      borderRadius: BorderRadius.circular(30),
+                      child: CircleAvatar(
+                        radius: 15.r,
+                        backgroundColor: AppColors.primary,
+                        child: const Icon(
+                          Icons.edit_outlined,
+                          color: Colors.white,
+                          size: 15,
+                        ),
+                      ),
+                    )
+                  ],
                 ),
                 vSpace(16),
                 Row(
