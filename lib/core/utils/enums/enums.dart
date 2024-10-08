@@ -21,7 +21,7 @@ enum CategoryTypes { posts, jobs, properties, cars, general, import_and_export }
 // ignore: constant_identifier_names
 enum SliderTypes { ex_ternal, internal }
 
-enum FieldType { text }
+// enum FieldType { text, integer }
 
 enum UserType { company, unknown, visitor }
 
@@ -34,4 +34,4 @@ enum PreferedContact { chat, phone }
 
 enum CategoryFieldTypes { text, integer, check, select, boolean }
 
-enum SubscribtionStatusTypes { pending,unkown }
+enum SubscribtionStatusTypes { pending, unkown }

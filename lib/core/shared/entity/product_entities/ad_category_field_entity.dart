@@ -6,18 +6,18 @@ class AdCategoryFieldEntity extends Equatable {
     required this.id,
     required this.fieldName,
     required this.fieldValues,
-    required this.fieldType,
+    required this.categoryFieldType,
     required this.categoryFieldData,
   });
   final int id;
   final String fieldName;
-  final String fieldValues;
-  final FieldType? fieldType;
+  final dynamic fieldValues;
+  final CategoryFieldTypes? categoryFieldType;
   final CategoryFieldDataEntity categoryFieldData;
 
   @override
   List<Object?> get props =>
-      [id, fieldName, fieldValues, fieldType, categoryFieldData];
+      [id, fieldName, fieldValues, categoryFieldType, categoryFieldData];
 }
 
 class CategoryFieldDataEntity extends Equatable {
@@ -31,7 +31,7 @@ class CategoryFieldDataEntity extends Equatable {
   final int id;
   final String fieldName;
   final String fieldDescription;
-  final FieldType? inputType;
+  final CategoryFieldTypes? inputType;
   final String? fieldIcon;
 
   @override

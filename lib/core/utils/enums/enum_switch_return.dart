@@ -73,15 +73,6 @@ class EnumSwitchReturn {
     }
   }
 
-  static FieldType? getFieldType(String? fieldType) {
-    switch (fieldType) {
-      case 'field_type':
-        return FieldType.text;
-      default:
-        return null;
-    }
-  }
-
   static UserType getUserType(String? userType) {
     switch (userType) {
       case 'company':

@@ -7,7 +7,7 @@ class AdCategoryFieldModel extends AdCategoryFieldEntity {
     required super.id,
     required super.fieldName,
     required super.fieldValues,
-    required super.fieldType,
+    required super.categoryFieldType,
     required super.categoryFieldData,
   });
 
@@ -16,7 +16,8 @@ class AdCategoryFieldModel extends AdCategoryFieldEntity {
       id: json['id'],
       fieldName: getSuitableNameLanguageForScreen(json['field_name']),
       fieldValues: getSuitableNameLanguageForScreen(json['field_values']),
-      fieldType: EnumSwitchReturn.getFieldType(json['field_type']),
+      categoryFieldType:
+          EnumSwitchReturn.getCategoryFieldTypes(json['field_type']),
       categoryFieldData:
           CategoryFieldDataModel.fromJson(json['category_field_data']),
     );
@@ -38,7 +39,7 @@ class CategoryFieldDataModel extends CategoryFieldDataEntity {
       fieldName: getSuitableNameLanguageForScreen(json['field_name']),
       fieldDescription:
           getSuitableNameLanguageForScreen(json['field_description']),
-      inputType: EnumSwitchReturn.getFieldType(json['input_type']),
+      inputType: EnumSwitchReturn.getCategoryFieldTypes(json['input_type']),
       fieldIcon: json['field_icon'],
     );
   }
