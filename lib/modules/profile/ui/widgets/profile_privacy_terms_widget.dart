@@ -32,7 +32,7 @@ class ProfilePrivacyTermsWidget extends StatelessWidget {
       ),
       ProfileTileEntity(
           svgPath: AssetIcons.faqSvg,
-          title: AppStrings.faq.tr(),
+          title: AppStrings.faqs.tr(),
           onTap: () {
             context.push(const FAQScreen());
           }),

@@ -49,7 +49,7 @@ class Dialogs {
         context: context,
         animation: StyledToastAnimation.fadeScale,
         reverseAnimation: StyledToastAnimation.sizeFade,
-        position: position ?? StyledToastPosition.bottom,
+        position: position ?? StyledToastPosition.center,
         // animDuration: const Duration(milliseconds: 500),
         duration: const Duration(seconds: 3),
         textPadding: const EdgeInsets.all(8),

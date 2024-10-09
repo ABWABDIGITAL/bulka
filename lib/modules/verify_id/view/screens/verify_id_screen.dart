@@ -32,6 +32,8 @@ class _VerifyIdScreenState extends State<VerifyIdScreen> {
         title: AppStrings.verifyId.tr(),
         titleStyle: TextStyles.rubik14W500Black,
         centerTitle: true,
+        iconTheme: const IconThemeData(color: AppColors.black),
+        backgroundColor: AppColors.opactiyPrimary,
       ),
       body: Padding(
         padding: const EdgeInsets.all(24.0),

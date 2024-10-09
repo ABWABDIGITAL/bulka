@@ -82,9 +82,25 @@ class DioHelper extends Equatable {
     final bool isFormData = false,
   }) async {
     _dio.options.headers = await _getHeaders();
+
     return await _dio.post(
       url,
       data: isFormData ? FormData.fromMap(data ?? {}) : data,
+      queryParameters: queryParameters,
+    );
+  }
+
+  static Future<Response> postFormData(
+    final String url, {
+    final FormData? data,
+    final Map<String, dynamic>? queryParameters,
+    final String? token,
+  }) async {
+    _dio.options.headers = await _getHeaders();
+
+    return await _dio.post(
+      url,
+      data: data,
       queryParameters: queryParameters,
     );
   }

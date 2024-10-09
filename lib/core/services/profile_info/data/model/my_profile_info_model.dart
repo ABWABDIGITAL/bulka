@@ -28,7 +28,9 @@ class MyProfileInfoModel extends MyProfileInfoEntity {
       isBan: json['is_ban'],
       isNotified: json['is_notified'],
       avatar: json['avatar'],
-      companyData: CompanyDataModel.fromJson(json['company_data']),
+      companyData: json['company_data'] != null
+          ? CompanyDataModel.fromJson(json['company_data'])
+          : null,
     );
   }
   static Map<String, dynamic> toJson(MyProfileInfoEntity info) {

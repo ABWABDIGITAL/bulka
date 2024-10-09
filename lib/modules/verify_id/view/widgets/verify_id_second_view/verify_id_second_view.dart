@@ -24,7 +24,7 @@ class VerifyIdSecondView extends StatelessWidget {
           ),
         ),
         vSpace(16),
-        VerifyIdGuidelineListSecondView(),
+        const VerifyIdGuidelineListSecondView(),
         const Spacer(),
       ],
     );

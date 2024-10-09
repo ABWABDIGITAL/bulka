@@ -223,5 +223,40 @@ class AppStrings {
   static const String avoidWearingHats = 'Avoid wearing hats';
   static const String avoidWearingGlasses = 'Avoid wearing glasses';
   static const String avoidUsingFilters = 'Avoid using filters';
-  static const String useEnoughLightings='Use enough lightings';
+  static const String useEnoughLightings = 'Use enough lightings';
+  static const String yourIdProofHasBeenSubmitted =
+      'Your ID Proof has been submitted';
+  static const String weWillReviewAndLetYouKnow =
+      'We will review and let you know within 48 hours working days.';
+  static const String done = 'Done';
+  static const String location = 'Location';
+  static const String save = 'Save';
+  static const String locationName = 'Location Name';
+  static const String addLocationName =
+      'Add location name like (Home, work, branch)';
+  static const String chooseCity = 'Choose City';
+  static const String addLocation = 'Add Location';
+  static const String describeYourLocation='Describe your location';
+  static const editProfile='Edit Profile';
+
+  static const String imagesAreRequired = 'Images are required!!!';
+  static const String preferedContact = 'Please choose your prefered contact';
+  static const String selectYourConditions = 'Select your conditions';
+  static const String ad = 'Ad';
+  static const String car = 'Car';
+  static const String properties = 'Properties';
+  static const String jobs = 'Jobs';
+  static const String importAndExport = 'Import & Export';
+  static const String createJob = 'Create Job';
+  static const String standard = 'Standard';
+  static const String promoted = 'Promoted';
+
+  static const String faqs = 'Faqs';
+  
+  static const String claimOffers = 'Claim Offer';
+  static const String subscribe = 'Subscribe';
+  static const String adsStandard = 'ads standard';
+  static const String valid = 'valid';
+  static const String days = 'days';
+
 }

@@ -18,14 +18,15 @@ class VerifyIdFirstView extends StatelessWidget {
       children: [
         InkWell(
           onTap: () {},
+
           borderRadius: BorderRadius.circular(16.r),
           child: VerifyIdPhotoContainer(
             image: AssetImages.veridyId,
             title: AppStrings.idVerification.tr(),
+
           ),
         ),
         vSpace(20),
-        // Important guidelines
         Text(
           AppStrings.importantGuidelinesForYourIdentity.tr(),
           style: TextStyles.rubik14W400Black2,

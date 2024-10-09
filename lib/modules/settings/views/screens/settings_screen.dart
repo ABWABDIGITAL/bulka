@@ -23,7 +23,7 @@ class SettingsScreen extends StatelessWidget {
       child: Scaffold(
         appBar: CustomAppBarWidget(
           titleStyle: TextStyles.rubik14W500Black,
-          title: AppStrings.settings.tr(),
+          title: 'Settings',
           centerTitle: true,
         ),
         body: Padding(

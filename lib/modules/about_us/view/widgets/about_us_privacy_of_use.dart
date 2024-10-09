@@ -1,4 +1,3 @@
-
 import 'dart:io';
 
 import 'package:bulka/core/utils/constant/app_colors.dart';
@@ -22,20 +21,16 @@ class AboutUsPrivacyOfUse extends StatelessWidget {
         children: [
           ListTile(
             title: Text(AppStrings.privacyOfUse.tr()),
-            trailing:  Icon(Platform.isIOS ? Icons.arrow_forward_ios :
-              Icons.arrow_forward),
-            onTap: () {
-        
-            },
+            trailing: Icon(
+                Platform.isIOS ? Icons.arrow_forward_ios : Icons.arrow_forward),
+            onTap: () {},
           ),
           const Divider(height: 1, color: AppColors.darkGrey3),
           ListTile(
-            title:  Text(AppStrings.termsAndConditions.tr()),
-            trailing: Icon(Platform.isIOS ? Icons.arrow_forward_ios :
-              Icons.arrow_forward),
-            onTap: () {
-             
-            },
+            title: Text(AppStrings.privacyAndTerms.tr()),
+            trailing: Icon(
+                Platform.isIOS ? Icons.arrow_forward_ios : Icons.arrow_forward),
+            onTap: () {},
           ),
         ],
       ),

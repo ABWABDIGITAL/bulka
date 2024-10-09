@@ -32,7 +32,7 @@ class AssetTranslations {
     countryName: 'United Kingdom',
     locale: Locale('en'),
     flag: AssetFlags.unitedKingdom,
-    currency: '£',
+    currency: '\$',
   );
 
   static Future<void> saveLanguage(LanguageConfig language) async {

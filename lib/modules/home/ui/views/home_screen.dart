@@ -1,17 +1,9 @@
 import 'package:bulka/core/services/servies_locator/service_locator.dart';
-import 'package:bulka/core/shared/widgets/spacing.dart';
-import 'package:bulka/core/utils/widgets/errors/error_full_screen.dart';
 import 'package:bulka/modules/home/controller/cubit/home_cubit.dart';
 import 'package:bulka/modules/home/controller/cubit/home_state.dart';
 import 'package:bulka/modules/home/ui/stats/home_error_widget.dart';
 import 'package:bulka/modules/home/ui/stats/home_loading_widget.dart';
 import 'package:bulka/modules/home/ui/stats/home_success_widget.dart';
-import 'package:bulka/modules/home/ui/widgets/car_for_sale_list_widget.dart';
-import 'package:bulka/modules/home/ui/widgets/home_appbar_widget.dart';
-import 'package:bulka/modules/home/ui/widgets/home_banner_widget.dart';
-import 'package:bulka/modules/home/ui/widgets/home_categories_widget.dart';
-import 'package:bulka/modules/home/ui/widgets/home_jops_section_widget.dart';
-import 'package:bulka/modules/home/ui/widgets/properties_for_sale_list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

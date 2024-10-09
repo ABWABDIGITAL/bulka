@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/services/profile_info/controller/cubit/my_profile_info_cubit.dart';
 import 'package:bulka/core/services/profile_info/controller/cubit/my_profile_info_state.dart';
@@ -67,8 +69,9 @@ class _HomeAppbarWidgetState extends State<HomeAppbarWidget> {
                           ),
                         )
                       : CircleAvatar(
-                          backgroundImage:
-                              NetworkImage(cubit.profileEntity!.avatar!),
+                          backgroundImage: MemoryImage(
+                            base64Decode(cubit.profileEntity!.avatar!),
+                          ),
                         ),
                   title: Text(
                     'Welcome ,${cubit.profileEntity?.fullName} 👋',
