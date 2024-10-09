@@ -1,11 +1,11 @@
-
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class VerifyIdGuidlineCheckFirstView extends StatelessWidget {
+class VerifyIdGuidelineCheckFirstView extends StatelessWidget {
   final String text;
-  const VerifyIdGuidlineCheckFirstView({
-    super.key, required this.text,
+  const VerifyIdGuidelineCheckFirstView({
+    super.key,
+    required this.text,
   });
 
   @override
@@ -19,7 +19,7 @@ class VerifyIdGuidlineCheckFirstView extends StatelessWidget {
           Expanded(
             child: Text(
               text,
-              style: TextStyle(color: AppColors.darkGrey6),
+              style: const TextStyle(color: AppColors.darkGrey6),
             ),
           ),
         ],

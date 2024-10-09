@@ -18,9 +18,13 @@ class AssetImages {
   static const String errorImage = 'assets/images/error_image.png';
   static const String offersSmallCardBackground =
       'assets/images/offers_small_card_background.png';
-       static const String offersBigCardImage =
+  static const String offersBigCardImage =
       'assets/images/offers_card_image.png';
-      static const String veridyId = 'assets/images/verify_id.png';
-      static const String selfPhoto = 'assets/images/self_photo.png';
-
-}
+  static const String veridyId = 'assets/images/verify_id.png';
+  static const String selfPhoto = 'assets/images/self_photo.png';
+  static const String blueHeadphone =
+      'assets/images/blue_headphones.png';
+      static const String map2='assets/images/maps.png';
+      static const String addLocationMarker='assets/images/add_location_marker.png';
+      static const String saveLocationPointer='assets/images/save_location_pointer.png';
+      }

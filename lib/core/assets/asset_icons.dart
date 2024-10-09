@@ -70,5 +70,7 @@ class AssetIcons {
   static const String faqSvg = 'assets/icons/faq_svg.svg';
   static const String logoutSvg = 'assets/icons/logoutSvg.svg';
   static const String aboutUsSvg = 'assets/icons/about_us.svg';
+  static const String locationOutlineSvg= 'assets/icons/location_outline.svg';
   static const String degree45ArrowSvg = 'assets/icons/45degree_arrow.svg';
+
 }

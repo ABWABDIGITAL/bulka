@@ -6,6 +6,7 @@ import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/widgets/buttons/default_button.dart';
 import 'package:bulka/modules/verify_id/view/widgets/verify_id_first_view/verify_id_first_view.dart';
 import 'package:bulka/modules/verify_id/view/widgets/verify_id_second_view/verify_id_second_view.dart';
+import 'package:bulka/modules/verify_id/view/widgets/verify_id_third_view/verify_id_third_view_bottom_sheet.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,6 +22,7 @@ class _VerifyIdScreenState extends State<VerifyIdScreen> {
   final List<Widget> _pages = [
     const VerifyIdFirstView(),
     const VerifyIdSecondView(),
+    const VerifyIdSecondView(),
   ];
   int currnetContectindex = 0;
   @override
@@ -30,6 +32,8 @@ class _VerifyIdScreenState extends State<VerifyIdScreen> {
         title: AppStrings.verifyId.tr(),
         titleStyle: TextStyles.rubik14W500Black,
         centerTitle: true,
+        iconTheme: const IconThemeData(color: AppColors.black),
+        backgroundColor: AppColors.opactiyPrimary,
       ),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
@@ -54,21 +58,29 @@ class _VerifyIdScreenState extends State<VerifyIdScreen> {
                 ),
               ),
             ),
-           vSpace(20),
+            vSpace(20),
 
             Expanded(child: _pages[currnetContectindex]), // Next button
             DefaultButton(
-              text: currnetContectindex == 0
-                  ? 'Next'
-                  : currnetContectindex == 1
-                      ? 'Check'
-                      : '',
+              text: currnetContectindex == 0 ? 'Next' : 'Check',
               onPressed: () {
                 setState(() {
                   if (currnetContectindex < 2) {
                     currnetContectindex++;
                   }
                 });
+                if (currnetContectindex == 2) {
+                  showModalBottomSheet(
+                    context: context,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(25.0)),
+                    ),
+                    builder: (BuildContext _) {
+                      return const VerifyIdThirdViewBottomSheet();
+                    },
+                  );
+                }
               },
             ),
           ],

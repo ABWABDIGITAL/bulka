@@ -170,6 +170,34 @@
   "Privacy of use": "خصوصية الاستخدام",
   "About us": "معلومات عنا",
   "Facebook": "فيسبوك",
+  "Instagram": "انستجرام",
+  "Twitter": "تويتر",
+  "Linkedin": "لينكد ان",
+  "ID Verification": "التحقق من الهوية",
+  "Tap to upload or take a photo": "اضغط لتحميل أو التقاط صورة",
+  "Important guidelines for your identity:": "إرشادات هامة لهويتك:",
+  "Government-issued": "صادرة عن الحكومة.",
+  "Original full-size, unedited documents": "المستندات الأصلية كاملة الحجم وغير محررة.",
+  "Documents against a single-color background": "مستندات على خلفية بلون واحد.",
+  "Readable, well-lit, colored images.": "صور ملونة وقابلة للقراءة ومضاءة جيدًا",
+  "No black and white images.": "لا توجد صور بالأبيض والأسود.",
+  "No edited or expired documents": "لا يوجد مستندات محررة أو منتهية الصلاحية.",
+  "Self Photo": "صورة ذاتية",
+  "Avoid wearing hats": "تجنب ارتداء القبعات",
+  "Avoid wearing glasses": "تجنب ارتداء النظارات",
+  "Avoid using filters": "تجنب استخدام الفلترات",
+  "Use enough lightings": "استخدم إضاءات كافية",
+  "Your ID Proof has been submitted": "لقد تم تقديم إثبات هويتك 👍",
+  "We will review and let you know within 48 hours working days.": "سنقوم بالمراجعة وإعلامك خلال 48 ساعة عمل.",
+  "Done": "تم",
+  "Location": "موقع",
+  "Save": "حفظ",
+  "Location Name": "اسم الموقع",
+  "Add location name like (Home, work, branch)": "أضف اسم الموقع مثل (المنزل، العمل، الفرع)",
+  "Choose City": "اختر مدينة",
+  "Add Location": "اضف الموقع",
+  "Describe your location": "قم بوصف موقعك",
+  "Edit profile": "تعديل الحساب",
   "Faqs": "الأسئلة الشائعة",
   "if This Is Due To A Problem": "إذا كان هذا بسبب مشكلة",
   "Contact": "اتصال",
@@ -182,4 +210,5 @@
   "valid": "صالح",
   "days": "يوم",
   "What’s included": "ما هو المشمول"
+
 }

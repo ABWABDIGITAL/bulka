@@ -182,6 +182,63 @@ class AppStrings {
   static const String adTitle = 'Ad Title';
   static const String adDescription = 'Ad Description';
   static const String prefedContact = 'Prefered Contact';
+  static const String contact = "Contact";
+  static const String yes = 'Yes';
+  static const String notifications = 'Notifications';
+  static const String settings = 'Settings';
+  static const String lightMode = 'Light Mode';
+  static const String country = 'Country';
+  static const String language = 'Language';
+  static const String ifThisIsDueToAProblem =
+      'If this is due to a problem, please contact us immediately';
+  static const String offers = 'Offers';
+  static const String offerDetails = 'Offer Details';
+  static const String afterYouComplete3Deals =
+      'After you complete 3 deals, we will notify you of your gift. What are you waiting for?';
+  static const String claimOffer = 'Claim Offer';
+  static const String faq = 'FAQ';
+  static const String aboutUs = 'About Us';
+  static const String privacyOfUse = 'Privacy of use';
+  static const String termsAndConditions = 'Terms and Conditions';
+  static const String facebook = 'Facebook';
+  static const String instagram = 'Instagram';
+  static const String twitter = 'Twitter';
+  static const String linkedIn = 'Linked In';
+  static const String youtube = 'Youtube';
+  static const String idVerification = 'ID Verification';
+  static const String tapToUploadOrTakeAPhoto = 'Tap to upload or take a photo';
+  static const String importantGuidelinesForYourIdentity =
+      'Important guidelines for your identity:';
+  static const String governmentIssued = 'Government-issued.';
+  static const String originalFullSizeUneditedDocuments =
+      'Original full-size, unedited documents.';
+  static const String documentsAgainstASingleColorBackground =
+      'Documents against a single-color background.';
+  static const String readableWellLitColoredImages =
+      'Readable, well-lit, colored images.';
+  static const String noBlackAndWhiteImages = 'No black and white images.';
+  static const String noEditedOrExpiredDocuments =
+      'No edited or expired documents.';
+  static const String selfPhoto = 'Self Photo';
+  static const String avoidWearingHats = 'Avoid wearing hats';
+  static const String avoidWearingGlasses = 'Avoid wearing glasses';
+  static const String avoidUsingFilters = 'Avoid using filters';
+  static const String useEnoughLightings = 'Use enough lightings';
+  static const String yourIdProofHasBeenSubmitted =
+      'Your ID Proof has been submitted';
+  static const String weWillReviewAndLetYouKnow =
+      'We will review and let you know within 48 hours working days.';
+  static const String done = 'Done';
+  static const String location = 'Location';
+  static const String save = 'Save';
+  static const String locationName = 'Location Name';
+  static const String addLocationName =
+      'Add location name like (Home, work, branch)';
+  static const String chooseCity = 'Choose City';
+  static const String addLocation = 'Add Location';
+  static const String describeYourLocation='Describe your location';
+  static const editProfile='Edit Profile';
+
   static const String imagesAreRequired = 'Images are required!!!';
   static const String preferedContact = 'Please choose your prefered contact';
   static const String selectYourConditions = 'Select your conditions';
@@ -189,25 +246,17 @@ class AppStrings {
   static const String car = 'Car';
   static const String properties = 'Properties';
   static const String jobs = 'Jobs';
-
   static const String importAndExport = 'Import & Export';
   static const String createJob = 'Create Job';
   static const String standard = 'Standard';
   static const String promoted = 'Promoted';
-  static const String privacyOfUse = 'Privacy of use';
-  static const String aboutUs = 'About us';
 
-  static const String facebook = 'Facebook';
   static const String faqs = 'Faqs';
-
-  static const String ifThisIsDueToAProblem = 'if This Is Due To A Problem';
-  static const String contact = 'Contact';
-  static const String yes = 'Yes';
-  static const String offerDetails = 'Offer Details';
-  static const String offers = 'Offers';
+  
   static const String claimOffers = 'Claim Offer';
   static const String subscribe = 'Subscribe';
   static const String adsStandard = 'ads standard';
   static const String valid = 'valid';
   static const String days = 'days';
+
 }
