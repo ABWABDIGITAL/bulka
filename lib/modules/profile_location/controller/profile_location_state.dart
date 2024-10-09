@@ -1,10 +1,9 @@
 part of 'profile_location_cubit.dart';
 
-sealed class ProfileLocationState extends Equatable {
+sealed class ProfileLocationState  {
   const ProfileLocationState();
 
-  @override
-  List<Object> get props => [];
+
 }
 
 final class ProfileLocationInitial extends ProfileLocationState {}

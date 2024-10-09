@@ -73,4 +73,7 @@ class AssetIcons {
   static const String locationOutlineSvg = 'assets/icons/location_outline.svg';
   static const String degree45ArrowSvg = 'assets/icons/45degree_arrow.svg';
   static const String deleteLocationSvg = 'assets/icons/delete_location.svg';
+  static const String addSvg = 'assets/icons/add.svg';
+  static const String editSvg = 'assets/icons/edit.svg';
+
 }

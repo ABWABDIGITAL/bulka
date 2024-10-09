@@ -265,5 +265,12 @@ class AppStrings {
   static const String deleteLocation = 'Delete Location';
   static const String doYouWantReallyToDeleteThisLocation =
       'Do you really want to delete this location?';
-      static const String no='No';
+  static const String no = 'No';
+  static const String editWorkExperience = 'Edit work experience';
+  static const String addWorkExperience = 'Add work experience';
+  static const String isCurrentPosition = 'This is my position now';
+  static const String remove = 'Remove';
+  static const String removeWorkExperience = 'Remove Work Experience';
+  static const String areYouSureYouWantToDeleteThisWorkExperience =
+      'Are you sure you want to delete this work experience?';
 }
