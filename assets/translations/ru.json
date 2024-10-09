@@ -217,5 +217,11 @@
   "Delete": "Удалить",
   "Delete Location": "Удалить местоположение",
   "Do you really want to delete this location?": "Вы действительно хотите удалить это местоположение?",
-  "No": "нет"
+  "No": "нет",
+  "Edit work experience": "Изменить опыт работы",
+  "This is my position now": "Теперь это моя работа.",
+  "Add work experience": "Добавить опыт работы",
+  "Remove": "Удалять",
+  "Remove Work Experience": "Удалить опыт работы?",
+  "Are you sure you want to delete this work experience?": "Вы уверены, что хотите удалить этот опыт работы?"
 }

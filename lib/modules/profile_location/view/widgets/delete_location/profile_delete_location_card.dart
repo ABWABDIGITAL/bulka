@@ -16,7 +16,8 @@ class ProfileDeleteLocationRow extends StatelessWidget {
           buildWhen: (previous, current) =>
               current is ProfileLocationLoading ||
               current is ProfileLocationLoaded ||
-              current is ProfileLocationError,
+              current is ProfileLocationError||
+            current is DeleteCheckedLocaiton  ,
           builder: (context, state) {
             return Checkbox.adaptive(
                 value: cubit.isChecked,
