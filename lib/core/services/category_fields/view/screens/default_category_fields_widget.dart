@@ -20,8 +20,6 @@ class DefaultCategoryFieldsWidget extends StatefulWidget {
     super.key,
     required this.params,
     required this.categoryFieldsCubit,
-    required this.dynamicKeys,
-    required this.selectedCategoriesFields,
     this.onFinish,
     this.borderColor,
     this.borderRadious,
@@ -53,8 +51,6 @@ class DefaultCategoryFieldsWidget extends StatefulWidget {
   final String? hintText;
   final double? borderRadious;
   final CategoryFieldsCubit categoryFieldsCubit;
-  final List<GlobalKey<FormState>> dynamicKeys;
-  final List<CreateAdCategoryField> selectedCategoriesFields;
   @override
   State<DefaultCategoryFieldsWidget> createState() =>
       _DefaultCategoryFieldsWidgetState();
@@ -99,35 +95,35 @@ class _DefaultCategoryFieldsWidgetState
                       return DefaultCategoryFieldTextWidget(
                         cubit.categoryFields![index],
                         onFinish: (onFinish) {
-                          widget.selectedCategoriesFields.add(onFinish);
+                          cubit.setSelectedCategoriesFields = onFinish;
                         },
-                        formKey: widget.dynamicKeys[index],
+                        formKey: cubit.dynamicKeys[index],
                       );
                     case CategoryFieldTypes.integer:
                       return DefaultCategoryFieldIntegerWidget(
                         cubit.categoryFields![index],
                         onFinish: (onFinish) {
-                          widget.selectedCategoriesFields.add(onFinish);
+                          cubit.setSelectedCategoriesFields = onFinish;
                         },
-                        formKey: widget.dynamicKeys[index],
+                        formKey: cubit.dynamicKeys[index],
                       );
                     case CategoryFieldTypes.check:
                       return DefaultCategoryFieldCheckTypeDropDownWidget(
                         cubit.categoryFields![index],
                         onFinish: (onFinish) {
-                          widget.selectedCategoriesFields.add(onFinish);
+                          cubit.setSelectedCategoriesFields = onFinish;
                         },
-                        fromKey: widget.dynamicKeys[index],
+                        fromKey: cubit.dynamicKeys[index],
                       );
                     case CategoryFieldTypes.select:
                       return DefaultCategoryFieldSelectTypeWidget(
                         cubit.categoryFields![index],
                         onFinish: (onFinish) {
-                          for (CreateAdCategoryField element in onFinish!) {
-                            widget.selectedCategoriesFields.add(element);
+                          if (onFinish != null) {
+                            cubit.setSelectedCategoriesFields = onFinish;
                           }
                         },
-                        formKey: widget.dynamicKeys[index],
+                        formKey: cubit.dynamicKeys[index],
                       );
                     case CategoryFieldTypes.boolean:
                       return DefaultCategoryFieldBooleanWidget(

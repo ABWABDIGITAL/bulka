@@ -38,7 +38,7 @@ class FAQScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: CustomAppBarWidget(
-        title: AppStrings.faq.tr(),
+        title: AppStrings.faqs.tr(),
         titleStyle: TextStyles.rubik14W500Black,
         centerTitle: true,
       ),

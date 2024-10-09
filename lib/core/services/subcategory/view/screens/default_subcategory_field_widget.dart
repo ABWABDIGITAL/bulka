@@ -106,100 +106,96 @@ class _DefaultSubcategoryFieldWidgetState
                           widget.titleStyle ?? TextStyles.rubik13W500HardGrey2,
                     ),
                   ),
-                SizedBox(
-                  height: 45,
-                  child: FormBuilderDropdown<SubcategoryEntity>(
-                    name: 'subcategories',
-                    validator: widget.needValidation
-                        ? (value) => value == null
-                            ? AppStrings.thisFieldIsRequired.tr()
-                            : null
-                        : null,
-                    style: TextStyles.rubik13W600Black4
-                        .copyWith(fontWeight: FontWeight.w300),
-                    dropdownColor: AppColors.white,
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor:
-                          widget.fillColor ?? AppColors.scaffoldBackGround,
-                      errorMaxLines: widget.errorMaxLines ?? 2,
-                      suffixIcon: widget.suffixIcon,
-                      prefixIcon: widget.prefixIcon ??
-                          const Icon(
-                            Icons.category_outlined,
-                            color: AppColors.iconGrey,
-                          ),
-                      labelText: widget.labelText,
-                      labelStyle: const TextStyle(color: AppColors.greyFont),
-                      hintStyle: TextStyles.rubik13W400IconGrey,
-                      hintText:
-                          widget.hintText ?? AppStrings.exploreCategories.tr(),
-                      disabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: widget.borderColor ?? const Color(0xFFDCDCDC),
-                          width: 1.0,
+                FormBuilderDropdown<SubcategoryEntity>(
+                  name: 'subcategories',
+                  validator: widget.needValidation
+                      ? (value) => value == null
+                          ? AppStrings.thisFieldIsRequired.tr()
+                          : null
+                      : null,
+                  style: TextStyles.rubik13W600Black4
+                      .copyWith(fontWeight: FontWeight.w300),
+                  dropdownColor: AppColors.white,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: widget.fillColor ?? AppColors.scaffoldBackGround,
+                    errorMaxLines: widget.errorMaxLines ?? 2,
+                    suffixIcon: widget.suffixIcon,
+                    prefixIcon: widget.prefixIcon ??
+                        const Icon(
+                          Icons.category_outlined,
+                          color: AppColors.iconGrey,
                         ),
-                        borderRadius:
-                            BorderRadius.circular(widget.borderRadious ?? 12.r),
+                    labelText: widget.labelText,
+                    labelStyle: const TextStyle(color: AppColors.greyFont),
+                    hintStyle: TextStyles.rubik13W400IconGrey,
+                    hintText:
+                        widget.hintText ?? AppStrings.exploreCategories.tr(),
+                    disabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: widget.borderColor ?? const Color(0xFFDCDCDC),
+                        width: 1.0,
                       ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: widget.borderColor ?? const Color(0xFFDCDCDC),
-                          width: 1.0,
-                        ),
-                        borderRadius:
-                            BorderRadius.circular(widget.borderRadious ?? 12.r),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Color(0xFFFF0000),
-                          width: 1.0,
-                        ),
-                        borderRadius:
-                            BorderRadius.circular(widget.borderRadious ?? 12.r),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius:
-                            BorderRadius.circular(widget.borderRadious ?? 12.r),
-                        borderSide: BorderSide(
-                            color: widget.borderColor ?? AppColors.primary),
-                      ),
-                      contentPadding:
-                          const EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: widget.borderColor ?? AppColors.red,
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(12.r),
-                      ),
+                      borderRadius:
+                          BorderRadius.circular(widget.borderRadious ?? 12.r),
                     ),
-                    initialValue: _selectedSubCategory,
-                    onChanged: (SubcategoryEntity? newValue) {
-                      setState(() {
-                        _selectedSubCategory = newValue;
-                      });
-                      if (widget.onSelected != null) {
-                        widget.onSelected!(newValue);
-                      }
-                    },
-                    onSaved: (newValue) {
-                      if (widget.onSelected != null) {
-                        widget.onSelected!(newValue);
-                      }
-                    },
-                    items: cubit.subcategories!
-                        .toSet()
-                        .map((SubcategoryEntity subcategory) {
-                      return DropdownMenuItem<SubcategoryEntity>(
-                        value: subcategory,
-                        child: Text(
-                          subcategory.name,
-                          style: const TextStyle(color: AppColors.black),
-                        ),
-                      );
-                    }).toList(),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: widget.borderColor ?? const Color(0xFFDCDCDC),
+                        width: 1.0,
+                      ),
+                      borderRadius:
+                          BorderRadius.circular(widget.borderRadious ?? 12.r),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                        color: Color(0xFFFF0000),
+                        width: 1.0,
+                      ),
+                      borderRadius:
+                          BorderRadius.circular(widget.borderRadious ?? 12.r),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius:
+                          BorderRadius.circular(widget.borderRadious ?? 12.r),
+                      borderSide: BorderSide(
+                          color: widget.borderColor ?? AppColors.primary),
+                    ),
+                    contentPadding:
+                        const EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                    errorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: widget.borderColor ?? AppColors.red,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
                   ),
+                  initialValue: _selectedSubCategory,
+                  onChanged: (SubcategoryEntity? newValue) {
+                    setState(() {
+                      _selectedSubCategory = newValue;
+                    });
+                    if (widget.onSelected != null) {
+                      widget.onSelected!(newValue);
+                    }
+                  },
+                  onSaved: (newValue) {
+                    if (widget.onSelected != null) {
+                      widget.onSelected!(newValue);
+                    }
+                  },
+                  items: cubit.subcategories!
+                      .toSet()
+                      .map((SubcategoryEntity subcategory) {
+                    return DropdownMenuItem<SubcategoryEntity>(
+                      value: subcategory,
+                      child: Text(
+                        subcategory.name,
+                        style: const TextStyle(color: AppColors.black),
+                      ),
+                    );
+                  }).toList(),
                 ),
                 const SizedBox(height: 20),
               ],

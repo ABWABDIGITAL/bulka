@@ -16,7 +16,8 @@ class SettingsLanguageListTile extends StatelessWidget {
     return ListTile(
       //   contentPadding: const EdgeInsets.symmetric(horizontal: 0),
       leading: SvgPicture.asset(AssetIcons.language2),
-      title: Text(AppStrings.language.tr(), style: TextStyles.rubik13W400Black),
+      title:
+          Text(AppStrings.languages.tr(), style: TextStyles.rubik13W400Black),
 
       trailing: Text(currentLanguage!.displayedName,
           style: TextStyles.rubik12W600MediumGrey12),

@@ -1,6 +1,8 @@
+import 'package:dio/dio.dart';
+
 class EditProfileParams {
   final String fullName;
-  final String avatar;
+  final MultipartFile avatar;
 
   EditProfileParams({
     required this.fullName,

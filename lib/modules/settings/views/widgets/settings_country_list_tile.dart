@@ -15,7 +15,7 @@ class SettingsCountryListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: SvgPicture.asset(AssetIcons.countrySvg),
-      title: Text(AppStrings.country.tr(), style: TextStyles.rubik13W400Black),
+      title: Text('country', style: TextStyles.rubik13W400Black),
       trailing: SvgPicture.asset(currentLanguage!.flag),
       onTap: () {
         // Handle tile tap if needed

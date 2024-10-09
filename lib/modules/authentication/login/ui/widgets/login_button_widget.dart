@@ -3,7 +3,6 @@ import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/core/utils/home_utilites.dart';
 import 'package:bulka/core/utils/widgets/buttons/default_button.dart';
 import 'package:bulka/core/utils/widgets/dialogs/dialogs.dart';
-import 'package:bulka/modules/authentication/choose_registration_type/ui/views/choose_registeration_type_screen.dart';
 import 'package:bulka/modules/authentication/login/controllers/login_cubit.dart';
 import 'package:bulka/modules/authentication/login/controllers/login_state.dart';
 import 'package:bulka/modules/choose_interests/ui/views/choose_interests_screen.dart';

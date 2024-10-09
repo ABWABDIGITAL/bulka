@@ -6,6 +6,7 @@ import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/modules/chats/specific_chat/data/params/get_specific_chat_params.dart';
 import 'package:bulka/modules/chats/specific_chat/view/screens/specific_chat_screen.dart';
+import 'package:bulka/modules/create_ad/views/screens/choose_ad_type_dialog_widget.dart';
 import 'package:bulka/modules/home/ui/views/home_screen.dart';
 import 'package:bulka/modules/home/ui/widgets/home_appbar_widget.dart';
 import 'package:bulka/modules/navbar_layout/controllers/navbar_layout_state.dart';
@@ -24,124 +25,6 @@ class NavbarLayoutCubit extends Cubit<NavbarLayoutState> {
   int currentIndex = 0;
   final bottomPad = 6.r;
 
-  List<BottomNavigationBarItem> items = [
-    BottomNavigationBarItem(
-      activeIcon: Padding(
-        padding: EdgeInsetsDirectional.only(bottom: 8.r),
-        child: SvgPicture.asset(
-          AssetIcons.homeSvg,
-          color: AppColors.primary,
-          height: 20.h,
-          width: 20.w,
-        ),
-      ),
-      icon: Padding(
-        padding: EdgeInsetsDirectional.only(bottom: 8.r),
-        child: SvgPicture.asset(
-          AssetIcons.homeSvg,
-          color: AppColors.mediumGrey5,
-          height: 20.h,
-          width: 20.w,
-        ),
-      ),
-      label: AppStrings.home.tr(),
-      tooltip: AppStrings.home.tr(),
-    ),
-    BottomNavigationBarItem(
-      activeIcon: Padding(
-        padding: EdgeInsetsDirectional.only(bottom: 8.r),
-        child: SvgPicture.asset(
-          AssetIcons.postSvg,
-          color: AppColors.primary,
-          height: 20.h,
-          width: 20.w,
-        ),
-      ),
-      icon: Padding(
-        padding: EdgeInsetsDirectional.only(bottom: 8.r),
-        child: SvgPicture.asset(
-          AssetIcons.postSvg,
-          color: AppColors.mediumGrey5,
-          height: 20.h,
-          width: 20.w,
-        ),
-      ),
-      label: AppStrings.posts.tr(),
-      tooltip: AppStrings.posts.tr(),
-    ),
-    BottomNavigationBarItem(
-      activeIcon: FloatingActionButton(
-        onPressed: () {},
-        mini: true,
-        elevation: 0,
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(300.r)),
-        backgroundColor: AppColors.primary.withOpacity(.3),
-        child: const Icon(
-          CupertinoIcons.add,
-          color: AppColors.primary2,
-        ),
-      ),
-      icon: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: AppColors.primary.withOpacity(.3),
-        mini: true,
-        elevation: 0,
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(300.r)),
-        child: const Icon(
-          CupertinoIcons.add,
-          color: AppColors.primary2,
-        ),
-      ),
-      label: '',
-      tooltip: '',
-    ),
-    BottomNavigationBarItem(
-      activeIcon: Padding(
-        padding: EdgeInsetsDirectional.only(bottom: 8.r),
-        child: SvgPicture.asset(
-          AssetIcons.messagesSvg,
-          color: AppColors.primary,
-          height: 20.h,
-          width: 20.w,
-        ),
-      ),
-      icon: Padding(
-        padding: EdgeInsetsDirectional.only(bottom: 8.r),
-        child: SvgPicture.asset(
-          AssetIcons.messagesSvg,
-          color: AppColors.mediumGrey5,
-          height: 20.h,
-          width: 20.w,
-        ),
-      ),
-      label: AppStrings.chat.tr(),
-      tooltip: AppStrings.chat.tr(),
-    ),
-    BottomNavigationBarItem(
-      activeIcon: Padding(
-        padding: EdgeInsetsDirectional.only(bottom: 8.r),
-        child: SvgPicture.asset(
-          AssetIcons.profileeSvg,
-          color: AppColors.primary,
-          height: 20.h,
-          width: 20.w,
-        ),
-      ),
-      icon: Padding(
-        padding: EdgeInsetsDirectional.only(bottom: 8.r),
-        child: SvgPicture.asset(
-          AssetIcons.profileeSvg,
-          color: AppColors.mediumGrey5,
-          height: 20.h,
-          width: 20.w,
-        ),
-      ),
-      label: AppStrings.profile.tr(),
-      tooltip: AppStrings.profile.tr(),
-    ),
-  ];
   List<Widget> navbarScreens = [
     const HomeScreen(),
     const PostsScreen(),

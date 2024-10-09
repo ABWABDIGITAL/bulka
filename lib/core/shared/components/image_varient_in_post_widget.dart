@@ -19,7 +19,7 @@ class ImageVarientInPostWidget extends StatelessWidget {
         alignment: AlignmentDirectional.bottomCenter,
         children: [
           DefaultNetworkImage(
-            'https://s3-alpha-sig.figma.com/img/641e/cf2d/21a295503e6558162eb7df97e7ba0a23?Expires=1726444800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ln4zB1-sIalmUQg8tlyWAFoDSgmfOpATT4tx~FLXFUGjr4fmZ5dUzJrDbu4QWgYWhGAAkRpPooH8G-QZOUKADFX7AH-50NLO~QZN~4axsCI78dBJpC3s~F2jWntVOMoZuCrA~VHIqfOk~Muk0OOYuVoSC7SZ7hTvYQrh2nTnEQ4rxydWk1hXm9M~-KoMTg2bOIiGSR4SGtHAaP2wko9W1oWrjupSo-dRM8RtwS~BbVLhiPyYORcnYUY0voQ3ils9HM2M7MJ2lEWFAkcc4AErXu~jjwjQSNYBm7IIW2MhMKkvmbD~dlRF5svZ-jPnkz2oQOZq1do4w9kuDpADrbzDlw__',
+            'https://images.unsplash.com/photo-1624187376425-623defd09ce0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fEclMjBDTEFTU3xlbnwwfHwwfHx8MA%3D%3D',
             height: 268.h,
             width: MediaQuery.sizeOf(context).width,
             fit: BoxFit.cover,

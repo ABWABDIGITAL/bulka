@@ -22,8 +22,7 @@ class SettingsNotifiactionsListTile extends StatelessWidget {
             AssetIcons.bellSvg,
             color: AppColors.darkGrey2,
           ),
-          title: Text(AppStrings.notifications.tr(),
-              style: TextStyles.rubik13W400Black),
+          title: Text('notifications', style: TextStyles.rubik13W400Black),
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
           ),

@@ -8,6 +8,8 @@ class OfferDetailsButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultButton(text: AppStrings.claimOffer.tr(),);
+    return DefaultButton(
+      text: AppStrings.claimOffers.tr(),
+    );
   }
 }

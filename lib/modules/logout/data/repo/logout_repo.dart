@@ -8,7 +8,7 @@ class LogoutRepo {
   const LogoutRepo();
   Future<Either<ApiErrorEntity, String>> logout() async {
     try {
-      final response = await DioHelper.post(ApiConstance.logout);
+      final response = await DioHelper.post("ApiConstance.logout");
 
       return Right(response.data['message']);
     } catch (error) {

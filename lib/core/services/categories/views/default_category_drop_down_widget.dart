@@ -97,97 +97,92 @@ class _DefaultCategoryDropdownWidgetState
                           widget.titleStyle ?? TextStyles.rubik13W500HardGrey2,
                     ),
                   ),
-                SizedBox(
-                  height: 45,
-                  child: FormBuilderDropdown<CategoryEntity>(
-                    name: 'categories',
-                    validator: (value) =>
-                        value == null ? AppStrings.thisFieldIsRequired : null,
-                    style: TextStyles.rubik13W600Black4
-                        .copyWith(fontWeight: FontWeight.w300),
-                    dropdownColor: AppColors.white,
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor:
-                          widget.fillColor ?? AppColors.scaffoldBackGround,
-                      errorMaxLines: widget.errorMaxLines ?? 2,
-                      suffixIcon: widget.suffixIcon,
-                      prefixIcon: widget.prefixIcon ??
-                          const Icon(
-                            Icons.category_outlined,
-                            color: AppColors.iconGrey,
-                          ),
-                      labelText: widget.labelText,
-                      labelStyle: const TextStyle(color: AppColors.greyFont),
-                      hintStyle: TextStyles.rubik13W400IconGrey,
-                      hintText:
-                          widget.hintText ?? AppStrings.exploreCategories.tr(),
-                      disabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: widget.borderColor ?? const Color(0xFFDCDCDC),
-                          width: 1.0,
+                FormBuilderDropdown<CategoryEntity>(
+                  name: 'categories',
+                  validator: (value) =>
+                      value == null ? AppStrings.thisFieldIsRequired : null,
+                  style: TextStyles.rubik13W600Black4
+                      .copyWith(fontWeight: FontWeight.w300),
+                  dropdownColor: AppColors.white,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: widget.fillColor ?? AppColors.scaffoldBackGround,
+                    errorMaxLines: widget.errorMaxLines ?? 2,
+                    suffixIcon: widget.suffixIcon,
+                    prefixIcon: widget.prefixIcon ??
+                        const Icon(
+                          Icons.category_outlined,
+                          color: AppColors.iconGrey,
                         ),
-                        borderRadius:
-                            BorderRadius.circular(widget.borderRadious ?? 12.r),
+                    labelText: widget.labelText,
+                    labelStyle: const TextStyle(color: AppColors.greyFont),
+                    hintStyle: TextStyles.rubik13W400IconGrey,
+                    hintText:
+                        widget.hintText ?? AppStrings.exploreCategories.tr(),
+                    disabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: widget.borderColor ?? const Color(0xFFDCDCDC),
+                        width: 1.0,
                       ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: widget.borderColor ?? const Color(0xFFDCDCDC),
-                          width: 1.0,
-                        ),
-                        borderRadius:
-                            BorderRadius.circular(widget.borderRadious ?? 12.r),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Color(0xFFFF0000),
-                          width: 1.0,
-                        ),
-                        borderRadius:
-                            BorderRadius.circular(widget.borderRadious ?? 12.r),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius:
-                            BorderRadius.circular(widget.borderRadious ?? 12.r),
-                        borderSide: BorderSide(
-                            color: widget.borderColor ?? AppColors.primary),
-                      ),
-                      contentPadding:
-                          const EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: widget.borderColor ?? AppColors.red,
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(12.r),
-                      ),
+                      borderRadius:
+                          BorderRadius.circular(widget.borderRadious ?? 12.r),
                     ),
-                    initialValue: _selectedCategory,
-                    onChanged: (CategoryEntity? newValue) {
-                      setState(() {
-                        _selectedCategory = newValue;
-                      });
-                      if (widget.onSelected != null) {
-                        widget.onSelected!(newValue);
-                      }
-                    },
-                    onSaved: (newValue) {
-                      if (widget.onSelected != null) {
-                        widget.onSelected!(newValue);
-                      }
-                    },
-                    items: cubit.categories!
-                        .toSet()
-                        .map((CategoryEntity category) {
-                      return DropdownMenuItem<CategoryEntity>(
-                        value: category,
-                        child: Text(
-                          category.name,
-                          style: const TextStyle(color: AppColors.black),
-                        ),
-                      );
-                    }).toList(),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: widget.borderColor ?? const Color(0xFFDCDCDC),
+                        width: 1.0,
+                      ),
+                      borderRadius:
+                          BorderRadius.circular(widget.borderRadious ?? 12.r),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                        color: Color(0xFFFF0000),
+                        width: 1.0,
+                      ),
+                      borderRadius:
+                          BorderRadius.circular(widget.borderRadious ?? 12.r),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius:
+                          BorderRadius.circular(widget.borderRadious ?? 12.r),
+                      borderSide: BorderSide(
+                          color: widget.borderColor ?? AppColors.primary),
+                    ),
+                    contentPadding:
+                        const EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                    errorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: widget.borderColor ?? AppColors.red,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
                   ),
+                  initialValue: _selectedCategory,
+                  onChanged: (CategoryEntity? newValue) {
+                    setState(() {
+                      _selectedCategory = newValue;
+                    });
+                    if (widget.onSelected != null) {
+                      widget.onSelected!(newValue);
+                    }
+                  },
+                  onSaved: (newValue) {
+                    if (widget.onSelected != null) {
+                      widget.onSelected!(newValue);
+                    }
+                  },
+                  items:
+                      cubit.categories!.toSet().map((CategoryEntity category) {
+                    return DropdownMenuItem<CategoryEntity>(
+                      value: category,
+                      child: Text(
+                        category.name,
+                        style: const TextStyle(color: AppColors.black),
+                      ),
+                    );
+                  }).toList(),
                 ),
               ],
             );

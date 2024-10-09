@@ -18,7 +18,7 @@ class ProductMainInformationEntity extends Equatable {
   final String name;
   final String description;
   final String? price;
-  final String location;
+  final String? location;
   final bool isFav;
   final ProductCardWidgetDisplay? adType;
   final CategoryEntity category;
