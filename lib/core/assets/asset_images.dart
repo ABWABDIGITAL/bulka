@@ -27,4 +27,5 @@ class AssetImages {
       static const String map2='assets/images/maps.png';
       static const String addLocationMarker='assets/images/add_location_marker.png';
       static const String saveLocationPointer='assets/images/save_location_pointer.png';
+      static const String emptyLocation='assets/images/empty_location.png';
       }
