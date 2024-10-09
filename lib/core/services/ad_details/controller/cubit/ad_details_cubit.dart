@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:bulka/core/services/ad_details/controller/cubit/ad_details_state.dart';
+import 'package:bulka/core/services/ad_details/data/entity/ad_details_entity.dart';
 import 'package:bulka/core/services/ad_details/data/params/ad_details_params.dart';
 import 'package:bulka/core/services/ad_details/data/repo/ad_details_repo.dart';
 
@@ -7,7 +8,7 @@ class AdDetailsCubit extends Cubit<AdDetailsState> {
   final AdDetailsRepo _adDetailsRepo;
   AdDetailsCubit(this._adDetailsRepo) : super(AdDetailsInitial());
 //---------------------------------VARIABLES----------------------------------//
-
+  AdDetailsEntity? adDetails;
 //---------------------------------FUNCTIONS----------------------------------//
 
 //----------------------------------REQUEST-----------------------------------//
@@ -17,6 +18,7 @@ class AdDetailsCubit extends Cubit<AdDetailsState> {
     response.fold((failure) {
       return emit(AdDetailsError(failure));
     }, (success) async {
+      adDetails = success;
       return emit(AdDetailsSuccess(success));
     });
   }

@@ -8,7 +8,9 @@ import 'package:bulka/core/shared/widgets/badge_icon_widget.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/core/utils/widgets/form_fields/default_form_field.dart';
+import 'package:bulka/modules/search/views/screens/search_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -89,31 +91,36 @@ class _HomeAppbarWidgetState extends State<HomeAppbarWidget> {
                 ),
                 Padding(
                   padding: EdgeInsets.all(18.r),
-                  child: DefaultFormField(
-                    needValidation: false,
-                    enabled: false,
-                    borderColor: AppColors.white,
-                    borderRadious: 12.r,
-                    prefixIcon: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SvgPicture.asset(
-                          AssetIcons.searchSvg,
-                          height: 18.h,
-                          width: 18.w,
-                        ),
-                      ],
-                    ),
-                    hintText: AppStrings.seachAboutSomeThingHere.tr(),
-                    suffixIcon: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SvgPicture.asset(
-                          AssetIcons.filterSvg,
-                          height: 18.h,
-                          width: 18.w,
-                        ),
-                      ],
+                  child: GestureDetector(
+                    onTap: () {
+                      context.push(const SearchScreen());
+                    },
+                    child: DefaultFormField(
+                      needValidation: false,
+                      enabled: false,
+                      borderColor: AppColors.white,
+                      borderRadious: 12.r,
+                      prefixIcon: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SvgPicture.asset(
+                            AssetIcons.searchSvg,
+                            height: 18.h,
+                            width: 18.w,
+                          ),
+                        ],
+                      ),
+                      hintText: AppStrings.seachAboutSomeThingHere.tr(),
+                      suffixIcon: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SvgPicture.asset(
+                            AssetIcons.filterSvg,
+                            height: 18.h,
+                            width: 18.w,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 )

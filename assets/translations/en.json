@@ -167,7 +167,6 @@
   "Use promoted ads to reach more customers": "Use promoted ads to reach more customers",
   "Car": "Car",
   "Properties": "Properties",
- 
   "Faqs": "Faqs",
   "if This Is Due To A Problem": "If This Is Due To A Problem",
   "Contact": "Contact",
@@ -175,7 +174,6 @@
   "Offer Details": "Offer Details",
   "Offers": "Offers",
   "Claim Offer": "Claim Offer",
-
   "FAQ": "FAQ",
   "About us": "About us",
   "Privacy of use": "Privacy of use",
@@ -213,6 +211,8 @@
   "ads standard": "ads standard",
   "valid": "valid",
   "days": "days",
-  "What’s included": "What’s included"
-
+  "What’s included": "What’s included",
+  "No results found": "No results found",
+  "No results found 🥲": "No results found 🥲",
+  "no results for what you are looking for. Try again with another word or contact support.": "no results for what you are looking for. Try again with another word or contact support."
 }

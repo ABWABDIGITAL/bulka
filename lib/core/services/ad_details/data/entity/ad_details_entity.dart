@@ -4,9 +4,16 @@ import 'package:bulka/core/shared/entity/product_entities/product_main_informati
 import 'package:equatable/equatable.dart';
 
 class AdDetailsEntity extends Equatable {
-  final int id;
-  const AdDetailsEntity({required this.id});
+  final ProductMainInformationEntity mainInfo;
+  final List<AdMediaEntity> adMedia;
+  final List<AdCategoryFieldEntity> adCategoryField;
+
+  const AdDetailsEntity({
+    required this.mainInfo,
+    required this.adMedia,
+    required this.adCategoryField,
+  });
 
   @override
-  List<Object?> get props => [id];
+  List<Object?> get props => [mainInfo, adMedia, adCategoryField];
 }

@@ -24,6 +24,8 @@ class ApiConstance {
   static const String updateInterests = '/app/update-interests';
 //-----------------------------------HOME----------------------------------//
   static const String home = '/app/home';
+  static const String seeAllAds = '/app/ads-by-type';
+  static const String search = '/app/ads/search';
 //-----------------------------------PROFILE----------------------------------//
   static const String profile = '/app/profile';
 //-------------------------------CATEGORY FIELDS------------------------------//

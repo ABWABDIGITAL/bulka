@@ -258,5 +258,5 @@ class AppStrings {
   static const String adsStandard = 'ads standard';
   static const String valid = 'valid';
   static const String days = 'days';
-
+  static const String noResultsFound = 'No results found';
 }
