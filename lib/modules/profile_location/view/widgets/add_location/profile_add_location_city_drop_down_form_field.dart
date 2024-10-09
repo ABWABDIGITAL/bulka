@@ -6,18 +6,20 @@ import 'package:bulka/modules/profile_location/view/widgets/custom_drop_down_for
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-class CityDropDownFormField extends StatefulWidget {
+class ProfileAddLocationCityDropDownFormField extends StatefulWidget {
   //final List<AllVaccinationEntity> allVaccination;
-  const CityDropDownFormField({
+  const ProfileAddLocationCityDropDownFormField({
     super.key,
     //  required this.allVaccination,
   });
 
   @override
-  State<CityDropDownFormField> createState() => _CityDropDownFormFieldState();
+  State<ProfileAddLocationCityDropDownFormField> createState() =>
+      _ProfileAddLocationCityDropDownFormFieldState();
 }
 
-class _CityDropDownFormFieldState extends State<CityDropDownFormField> {
+class _ProfileAddLocationCityDropDownFormFieldState
+    extends State<ProfileAddLocationCityDropDownFormField> {
   String selectedCity = 'Cairo';
   @override
   Widget build(BuildContext context) {

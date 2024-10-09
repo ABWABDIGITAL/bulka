@@ -209,6 +209,11 @@
   "ads standard": "إعلانات اعتياديه",
   "valid": "صالح",
   "days": "يوم",
-  "What’s included": "ما هو المشمول"
-
+  "What’s included": "ما هو المشمول",
+  "No location added": "لم تتم إضافة الموقع",
+  "Add an address now and discover  the best deals": "أضف عنوانًا الآن واكتشف أفضل العروض",
+  "Delete": "مسح",
+  "Delete Location": "حذف الموقع",
+  "Do you really want to delete this location?": "هل تريد حقًا حذف هذا الموقع؟",
+  "No": "لا"
 }

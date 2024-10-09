@@ -20,41 +20,38 @@ class EditProfileButton extends StatelessWidget {
     final cubit = context.read<EditProfileCubit>();
     final profileCubit = context.read<MyProfileInfoCubit>();
 
-    return BlocProvider(
-      create: (context) => EditProfileCubit(sl()),
-      child: BlocConsumer<EditProfileCubit, EditProfileState>(
-          listenWhen: (previous, current) =>
-              current is EditProfileLoading ||
-              current is EditProfileLoaded ||
-              current is EditProfileError,
-          listener: (context, state) {
-            if (state is EditProfileError) {
-              Dialogs.errorDialog(context: context, error: state.error);
-            }
-            if (state is EditProfileLoaded) {
-              Dialogs.successDialog(
-                context,
-                onSuccessFinishedCallback: (_) {
-                  profileCubit.profileStatesHandled();
-                  context.pop();
-                },
-              );
-            }
-          },
-          buildWhen: (previous, current) =>
-              current is EditProfileLoading ||
-              current is EditProfileLoaded ||
-              current is EditProfileError,
-          builder: (context, state) {
-            return DefaultButton(
-              borderRadiusValue: 12.r,
-              onPressed: () async {
-                cubit.editUserProfile();
+    return BlocConsumer<EditProfileCubit, EditProfileState>(
+        listenWhen: (previous, current) =>
+            current is EditProfileLoading ||
+            current is EditProfileLoaded ||
+            current is EditProfileError,
+        listener: (context, state) {
+          if (state is EditProfileError) {
+            Dialogs.errorDialog(context: context, error: state.error);
+          }
+          if (state is EditProfileLoaded) {
+            Dialogs.successDialog(
+              context,
+              onSuccessFinishedCallback: (_) {
+                profileCubit.profileStatesHandled();
+                context.pop();
               },
-              text: AppStrings.save.tr(),
-              isLoading: state is EditProfileLoading ? true : false,
             );
-          }),
-    );
+          }
+        },
+        buildWhen: (previous, current) =>
+            current is EditProfileLoading ||
+            current is EditProfileLoaded ||
+            current is EditProfileError,
+        builder: (context, state) {
+          return DefaultButton(
+            borderRadiusValue: 12.r,
+            onPressed: () async {
+              cubit.editUserProfile();
+            },
+            text: AppStrings.save.tr(),
+            isLoading: state is EditProfileLoading ? true : false,
+          );
+        });
   }
 }

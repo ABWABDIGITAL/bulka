@@ -174,7 +174,6 @@
   "Offer Details": "Подробности предложения",
   "Offers": "Предложения",
   "Claim Offer": "Предложение о праве требования",
-
   "FAQ": "Часто задаваемые вопросы",
   "About us": "О нас",
   "Privacy of use": "Конфиденциальность использования",
@@ -212,6 +211,11 @@
   "ads standard": "стандарт объявлений",
   "valid": "действительный",
   "days": "дней",
-  "What’s included": "Что включено"
-
+  "What’s included": "Что включено",
+  "No location added": "Местоположение не добавлено",
+  "Add an address now and discover  the best deals": "Добавьте адрес сейчас и узнайте о лучших предложениях",
+  "Delete": "Удалить",
+  "Delete Location": "Удалить местоположение",
+  "Do you really want to delete this location?": "Вы действительно хотите удалить это местоположение?",
+  "No": "нет"
 }

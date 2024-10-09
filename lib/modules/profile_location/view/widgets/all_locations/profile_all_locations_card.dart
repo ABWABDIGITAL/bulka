@@ -1,4 +1,3 @@
-
 import 'package:bulka/core/assets/asset_images.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
@@ -6,8 +5,8 @@ import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AddLocationCard extends StatelessWidget {
-  const AddLocationCard({
+class ProfileAllLocationsCard extends StatelessWidget {
+  const ProfileAllLocationsCard({
     super.key,
   });
 
@@ -15,7 +14,6 @@ class AddLocationCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 115.h,
-      margin: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 0),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
@@ -33,8 +31,8 @@ class AddLocationCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
             child: Image.asset(
-              AssetImages.saveLocationPointer,
-              height: 50,
+              AssetImages.addLocationMarker,
+              height: 15,
             ),
           ),
           hSpace(8),
