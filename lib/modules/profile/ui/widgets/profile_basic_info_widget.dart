@@ -7,6 +7,7 @@ import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/modules/certifications/ui/views/add_certifications_screen.dart';
 import 'package:bulka/modules/contact_info/ui/views/contact_info_screen.dart';
 import 'package:bulka/modules/cv/ui/views/add_cv_screen.dart';
+import 'package:bulka/modules/education/view/widgets/education_bottom_sheet.dart';
 import 'package:bulka/modules/languages/ui/views/choose_languages_screen.dart';
 import 'package:bulka/modules/offers/view/screens/offers_screen.dart';
 import 'package:bulka/modules/packages/views/screens/packages_screen.dart';
@@ -60,6 +61,19 @@ class ProfileBasicInfoWidget extends StatelessWidget {
       ProfileTileEntity(
         svgPath: AssetIcons.educationSvg,
         title: AppStrings.education.tr(),
+        onTap: (){
+          showModalBottomSheet(
+                context: context,
+                isScrollControlled: true,
+                shape: const RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadius.vertical(top: Radius.circular(25.0)),
+                ),
+                builder: (BuildContext context) {
+                  return const EducationBottomSheet();
+                },
+              );
+        }
       ),
       ProfileTileEntity(
           svgPath: AssetIcons.certificationSvg,

@@ -237,6 +237,9 @@ class AppStrings {
   static const String chooseCity = 'Choose City';
   static const String addLocation = 'Add Location';
   static const String describeYourLocation = 'Describe your location';
+  static const String describeYourEducation = 'Describe your education';
+  static const String describeYourWorkExperience =
+      'Describe your work experience';
   static const editProfile = 'Edit Profile';
 
   static const String imagesAreRequired = 'Images are required!!!';
@@ -273,4 +276,9 @@ class AppStrings {
   static const String removeWorkExperience = 'Remove Work Experience';
   static const String areYouSureYouWantToDeleteThisWorkExperience =
       'Are you sure you want to delete this work experience?';
+      static const String areYouSureYouWantToDeleteThisEducation =
+      'Are you sure you want to delete this education?';
+  static const String addEducation = 'Add education';
+  static const String editEducation = 'Edit education';
+  static const String removeEducation = 'Remove Education';
 }

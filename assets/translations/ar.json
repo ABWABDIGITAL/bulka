@@ -221,5 +221,11 @@
   "Add work experience": "أضف خبرة العمل",
   "Remove": "ازالة",
   "Remove Work Experience": "إزالة الخبرة العملية؟",
-  "Are you sure you want to delete this work experience?": "هل أنت متأكد أنك تريد حذف تجربة العمل هذه؟"
+  "Are you sure you want to delete this work experience?": "هل أنت متأكد أنك تريد حذف تجربة العمل هذه؟",
+  "Add education": "أضف التعليم",
+  "Edit education": "تعديل التعليم",
+  "Describe your education": "وصف تعليمك",
+  "Describe your work experience": "وصف تجربتك في العمل",
+  "Remove Education": "إزالة التعليم",
+  "Are you sure you want to delete this education?": "هل أنت متأكد أنك تريد حذف هذا التعليم؟"
 }

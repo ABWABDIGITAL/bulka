@@ -18,7 +18,7 @@ class AddWorkExperienceDescription extends StatelessWidget {
         TextField(
           maxLines: 4,
           decoration: InputDecoration(
-            hintText: AppStrings.describeYourLocation.tr(),
+            hintText: AppStrings.describeYourWorkExperience.tr(),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
                 borderSide: const BorderSide(color: AppColors.darkGrey3)),

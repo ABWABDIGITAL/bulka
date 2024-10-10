@@ -5,8 +5,8 @@ import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-class EditWorkExperienceDescription extends StatelessWidget {
-  const EditWorkExperienceDescription({super.key});
+class EditEducationDescription extends StatelessWidget {
+  const EditEducationDescription({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class EditWorkExperienceDescription extends StatelessWidget {
         TextField(
           maxLines: 4,
           decoration: InputDecoration(
-            hintText: AppStrings.describeYourWorkExperience.tr(),
+            hintText: AppStrings.describeYourEducation.tr(),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
                 borderSide: const BorderSide(color: AppColors.darkGrey3)),
