@@ -210,6 +210,9 @@
   "valid": "صالح",
   "days": "يوم",
   "What’s included": "ما هو المشمول",
+  "No results found": "لم يتم العثور على نتائج",
+  "No results found 🥲": "لم يتم العثور على نتائج 🥲",
+  "no results for what you are looking for. Try again with another word or contact support.": "لا توجد نتائج لما تبحث عنه. حاول مرة أخرى باستخدام كلمة أخرى أو اتصل بالدعم.",
   "No location added": "لم تتم إضافة الموقع",
   "Add an address now and discover  the best deals": "أضف عنوانًا الآن واكتشف أفضل العروض",
   "Delete": "مسح",

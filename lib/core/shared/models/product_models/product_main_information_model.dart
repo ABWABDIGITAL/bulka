@@ -24,7 +24,7 @@ class ProductMainInformationModel extends ProductMainInformationEntity {
       price: json['price'],
       location: json['location'],
       isFav: json['is_fav'],
-      adType: EnumSwitchReturn.getProductCardWidget(json['adType']),
+      adType: EnumSwitchReturn.getProductCardWidget(json['ad_type']),
       category: CategoryModel.fromJson(json['category']),
       image:
           checkFromArray(json['ad_media']) ? json['ad_media'][0]['media'] : '',

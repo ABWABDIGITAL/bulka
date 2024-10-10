@@ -10,7 +10,7 @@ import 'package:bulka/modules/create_ad/views/screens/choose_ad_type_dialog_widg
 import 'package:bulka/modules/home/ui/views/home_screen.dart';
 import 'package:bulka/modules/home/ui/widgets/home_appbar_widget.dart';
 import 'package:bulka/modules/navbar_layout/controllers/navbar_layout_state.dart';
-import 'package:bulka/modules/posts_module/posts/ui/views/posts_screen.dart';
+import 'package:bulka/modules/posts/ui/views/posts_screen.dart';
 import 'package:bulka/modules/profile/ui/views/profile_screen.dart';
 import 'package:bulka/modules/profile/ui/widgets/profile_appbar_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
