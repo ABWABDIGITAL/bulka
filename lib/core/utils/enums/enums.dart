@@ -35,3 +35,5 @@ enum PreferedContact { chat, phone }
 enum CategoryFieldTypes { text, integer, check, select, boolean }
 
 enum SubscribtionStatusTypes { pending, unkown }
+
+enum CategoryProductsDisplayTypes { list, grid }

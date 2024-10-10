@@ -4,7 +4,9 @@ import 'package:bulka/core/shared/shimmer/shimmer_container_widget.dart';
 import 'package:bulka/core/shared/shimmer/shimmer_text_widget.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
+import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/core/utils/widgets/misc/default_network_image.dart';
+import 'package:bulka/modules/category_products/views/screens/category_products_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -23,7 +25,9 @@ class CategoryWidget extends StatelessWidget {
       children: [
         InkWell(
           onTap: () {
-            if (category != null) {}
+            if (category != null) {
+              context.push(CategoryProductsScreen(categoryId: category!.id));
+            }
           },
           borderRadius: BorderRadius.circular(8.r),
           child: Card(

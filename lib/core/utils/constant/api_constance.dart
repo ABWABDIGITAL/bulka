@@ -2,6 +2,7 @@ import 'package:bulka/core/services/ad_details/data/params/ad_details_params.dar
 import 'package:bulka/core/services/category_fields/data/params/category_field_params.dart';
 import 'package:bulka/core/services/sub_subcategory/data/params/sub_subcategory_params.dart';
 import 'package:bulka/core/services/subcategory/data/params/subcategory_params.dart';
+import 'package:bulka/modules/favourites/data/params/toggle_favourite_params.dart';
 
 class ApiConstance {
   static const String baseUrl =
@@ -19,6 +20,10 @@ class ApiConstance {
   static const String resetPassword = '/app/reset-password';
 //---------------------------------CATEGORY----------------------------------//
   static const String categories = '/app/categories';
+  static const String categoriesProducts = '/app/ads/search';
+//---------------------------------FAVOURITE----------------------------------//
+  static String toggleFavourite(ToggleFavouriteParams params) =>
+      '/app/fav-ad/${params.adId}';
 //---------------------------------INTERESTS----------------------------------//
   static const String interests = '/app/helpers/interests';
   static const String updateInterests = '/app/update-interests';
@@ -26,6 +31,7 @@ class ApiConstance {
   static const String home = '/app/home';
   static const String seeAllAds = '/app/ads-by-type';
   static const String search = '/app/ads/search';
+  static const String searchHistory = '/app/ads/search-history';
 //-----------------------------------PROFILE----------------------------------//
   static const String profile = '/app/profile';
 //-------------------------------CATEGORY FIELDS------------------------------//
