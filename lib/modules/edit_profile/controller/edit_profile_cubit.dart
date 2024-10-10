@@ -11,9 +11,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 part 'edit_profile_state.dart';
 
 class EditProfileCubit extends Cubit<EditProfileState> {
+    final EditProfileRepo _editProfileRepo;
+
   EditProfileCubit(this._editProfileRepo) : super(EditProfileInitial());
   //--------------------------------------variables--------------------------------------//
-  final EditProfileRepo _editProfileRepo;
   TextEditingController nameController = TextEditingController();
   File? image;
 

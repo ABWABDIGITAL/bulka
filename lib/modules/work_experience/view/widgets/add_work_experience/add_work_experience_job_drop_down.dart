@@ -6,22 +6,24 @@ import 'package:bulka/modules/profile_location/view/widgets/custom_drop_down_for
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-class CityDropDownFormField extends StatefulWidget {
+class AddWorkExperienceJobDropDownFormField extends StatefulWidget {
   //final List<AllVaccinationEntity> allVaccination;
-  const CityDropDownFormField({
+  const AddWorkExperienceJobDropDownFormField({
     super.key,
     //  required this.allVaccination,
   });
 
   @override
-  State<CityDropDownFormField> createState() => _CityDropDownFormFieldState();
+  State<AddWorkExperienceJobDropDownFormField> createState() =>
+      _AddWorkExperienceJobDropDownFormFieldState();
 }
 
-class _CityDropDownFormFieldState extends State<CityDropDownFormField> {
-  String selectedCity = 'Cairo';
+class _AddWorkExperienceJobDropDownFormFieldState
+    extends State<AddWorkExperienceJobDropDownFormField> {
+  String selectedJob = 'Developer';
   @override
   Widget build(BuildContext context) {
-    List<String> cities = ['Cairo', 'Alex'];
+    List<String> cities = ['UI/UX', 'Developer'];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -31,10 +33,10 @@ class _CityDropDownFormFieldState extends State<CityDropDownFormField> {
           items: cities,
           onChanged: (value) {
             setState(() {
-              selectedCity = value!;
+              selectedJob = value!;
             });
           },
-          value: selectedCity,
+          value: selectedJob,
         ),
       ],
     );

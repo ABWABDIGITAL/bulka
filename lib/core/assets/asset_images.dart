@@ -29,4 +29,5 @@ class AssetImages {
   static const String saveLocationPointer =
       'assets/images/save_location_pointer.png';
   static const String noResultFound = 'assets/images/no_result_found.png';
+  static const String emptyLocation = 'assets/images/empty_location.png';
 }

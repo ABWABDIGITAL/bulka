@@ -5,23 +5,25 @@ import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-class AddLocationDescriptionFormField extends StatelessWidget {
-  const AddLocationDescriptionFormField({
+class ProfileAddLocationDescriptionFormField extends StatelessWidget {
+  const ProfileAddLocationDescriptionFormField({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return  Column(crossAxisAlignment: CrossAxisAlignment.start,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(AppStrings.description.tr(), style:  TextStyles.rubik14W500Black),
+        Text(AppStrings.description.tr(), style: TextStyles.rubik14W500Black),
         vSpace(8),
         TextField(
           maxLines: 4,
           decoration: InputDecoration(
             hintText: AppStrings.describeYourLocation.tr(),
-            border: OutlineInputBorder(  borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: AppColors.darkGrey3)),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: const BorderSide(color: AppColors.darkGrey3)),
           ),
         ),
       ],

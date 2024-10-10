@@ -1,27 +1,33 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:bulka/core/shared/widgets/spacing.dart';
+import 'package:bulka/core/theme/text_styles/text_styles.dart';
+import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/modules/profile_location/view/widgets/custom_drop_down_form_field.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-class CityDropDownFormField extends StatefulWidget {
+class ProfileAddLocationCityDropDownFormField extends StatefulWidget {
   //final List<AllVaccinationEntity> allVaccination;
-  const CityDropDownFormField({
+  const ProfileAddLocationCityDropDownFormField({
     super.key,
     //  required this.allVaccination,
   });
 
   @override
-  State<CityDropDownFormField> createState() => _CityDropDownFormFieldState();
+  State<ProfileAddLocationCityDropDownFormField> createState() =>
+      _ProfileAddLocationCityDropDownFormFieldState();
 }
 
-class _CityDropDownFormFieldState extends State<CityDropDownFormField> {
-  String selectedCity = '';
+class _ProfileAddLocationCityDropDownFormFieldState
+    extends State<ProfileAddLocationCityDropDownFormField> {
+  String selectedCity = 'Cairo';
   @override
   Widget build(BuildContext context) {
     List<String> cities = ['Cairo', 'Alex'];
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text("Choose City", style: TextStyle(fontSize: 16)),
+        Text(AppStrings.chooseCity.tr(), style: TextStyles.rubik14W500Black),
         vSpace(8),
         CustomDropDownFormField(
           items: cities,
