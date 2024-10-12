@@ -4,7 +4,6 @@ import 'package:bulka/core/utils/widgets/empty/empty_widget.dart';
 import 'package:bulka/modules/splash/ui/screens/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
   const AppRouter._();

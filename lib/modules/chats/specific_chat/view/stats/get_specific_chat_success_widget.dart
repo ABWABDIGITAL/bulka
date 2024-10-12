@@ -1,19 +1,13 @@
-import 'dart:io';
 
 import 'package:bulka/core/utils/constant/app_colors.dart';
-import 'package:bulka/core/utils/widgets/form_fields/default_form_field.dart';
 import 'package:bulka/modules/chats/specific_chat/controllers/specific/specific_chat_cubit.dart';
 import 'package:bulka/modules/chats/specific_chat/controllers/specific/specific_chat_state.dart';
 import 'package:bulka/modules/chats/specific_chat/view/widgets/chat_form_field_widget.dart';
 import 'package:bulka/modules/chats/specific_chat/view/widgets/specific_chat_appbar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
-import 'package:social_media_recorder/audio_encoder_type.dart';
-import 'package:social_media_recorder/screen/social_media_recorder.dart';
 import 'package:voice_message_package/voice_message_package.dart';
-import 'package:record/record.dart' as rec;
 
 class GetSpecificChatSuccessWidget extends StatelessWidget {
   const GetSpecificChatSuccessWidget({super.key});

@@ -10,7 +10,7 @@ class AddCertificationsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: OpacityAppbarWidget(title: AppStrings.certification.tr()),
-      body: Column(
+      body: const Column(
         children: [],
       ),
     );

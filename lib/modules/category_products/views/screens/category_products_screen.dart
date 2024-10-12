@@ -1,11 +1,9 @@
 import 'package:bulka/core/services/servies_locator/service_locator.dart';
 import 'package:bulka/core/shared/components/pagination_loading.dart';
-import 'package:bulka/core/shared/widgets/appbar_widget.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/widgets/responsive/responsive.dart';
 import 'package:bulka/modules/category_products/controller/cubit/category_products_cubit.dart';
 import 'package:bulka/modules/category_products/controller/cubit/category_products_state.dart';
-import 'package:bulka/modules/category_products/data/params/category_products_params.dart';
 import 'package:bulka/modules/category_products/views/stats/category_products_error_state_widget.dart';
 import 'package:bulka/modules/category_products/views/stats/category_products_loading_state_widget.dart';
 import 'package:bulka/modules/category_products/views/stats/category_products_success_state_widget.dart';

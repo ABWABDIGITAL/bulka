@@ -1,9 +1,5 @@
 import 'package:bulka/core/services/servies_locator/service_locator.dart';
 import 'package:bulka/core/shared/components/pagination_loading.dart';
-import 'package:bulka/core/utils/enums/enums.dart';
-import 'package:bulka/core/utils/home_utilites.dart';
-import 'package:bulka/core/utils/widgets/errors/error_full_screen.dart';
-import 'package:bulka/core/utils/widgets/errors/error_screen.dart';
 import 'package:bulka/modules/home/ui/widgets/home_appbar_widget.dart';
 import 'package:bulka/modules/see_all_ad/controller/see_all_ad_cubit.dart';
 import 'package:bulka/modules/see_all_ad/controller/see_all_ad_state.dart';

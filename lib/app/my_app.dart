@@ -1,8 +1,6 @@
 import 'package:bulka/app/providers_list.dart';
 import 'package:bulka/core/route/app_router.dart';
 import 'package:bulka/core/route/routes.dart';
-import 'package:bulka/core/services/profile_info/controller/cubit/my_profile_info_cubit.dart';
-import 'package:bulka/core/services/servies_locator/service_locator.dart';
 import 'package:bulka/core/theme/theme_data/light_theme.dart';
 import 'package:bulka/core/utils/constant/app_env.dart';
 import 'package:flutter/material.dart';

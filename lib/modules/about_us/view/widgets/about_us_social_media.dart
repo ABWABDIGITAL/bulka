@@ -1,8 +1,6 @@
 import 'dart:io';
 
 import 'package:bulka/core/utils/constant/app_colors.dart';
-import 'package:bulka/core/utils/constant/app_strings.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class AboutUsSocialMedia extends StatelessWidget {

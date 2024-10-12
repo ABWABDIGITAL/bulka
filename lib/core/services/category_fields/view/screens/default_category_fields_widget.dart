@@ -1,13 +1,11 @@
 import 'package:bulka/core/services/category_fields/controller/cubit/category_fields_cubit.dart';
 import 'package:bulka/core/services/category_fields/controller/cubit/category_fields_state.dart';
-import 'package:bulka/core/services/category_fields/data/entity/category_field_entity.dart';
 import 'package:bulka/core/services/category_fields/data/params/category_field_params.dart';
 import 'package:bulka/core/services/category_fields/view/widgets/default_category_field_boolean_widget.dart';
 import 'package:bulka/core/services/category_fields/view/widgets/default_category_field_check_type_drop_down_widget.dart';
 import 'package:bulka/core/services/category_fields/view/widgets/default_category_field_select_type_drop_down_widget.dart';
 import 'package:bulka/core/services/category_fields/view/widgets/default_category_field_integer_type_widget.dart';
 import 'package:bulka/core/services/category_fields/view/widgets/default_category_field_text_widget.dart';
-import 'package:bulka/core/services/servies_locator/service_locator.dart';
 import 'package:bulka/core/shared/shimmer/shimmer_container_widget.dart';
 import 'package:bulka/core/utils/enums/enums.dart';
 import 'package:bulka/core/utils/widgets/errors/error_screen.dart';

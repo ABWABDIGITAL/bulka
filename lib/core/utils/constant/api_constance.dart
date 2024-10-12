@@ -1,5 +1,4 @@
 import 'package:bulka/core/services/ad_details/data/params/ad_details_params.dart';
-import 'package:bulka/core/services/category_fields/data/params/category_field_params.dart';
 import 'package:bulka/core/services/sub_subcategory/data/params/sub_subcategory_params.dart';
 import 'package:bulka/core/services/subcategory/data/params/subcategory_params.dart';
 import 'package:bulka/modules/favourites/data/params/toggle_favourite_params.dart';

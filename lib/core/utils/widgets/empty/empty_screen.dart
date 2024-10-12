@@ -1,4 +1,3 @@
-import 'package:bulka/core/utils/widgets/misc/customer_scroll_behaviour.dart';
 import 'package:flutter/material.dart';
 
 ///MAKE YOU EMPTY SCREEN IMPLEMENT THIS WIDGET

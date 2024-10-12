@@ -1,4 +1,3 @@
-import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/assets/asset_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

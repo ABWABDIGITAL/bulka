@@ -1,14 +1,11 @@
-import 'dart:convert';
 import 'dart:io';
 import 'package:bloc/bloc.dart';
-import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/modules/chats/specific_chat/controllers/specific/specific_chat_state.dart';
 import 'package:bulka/modules/chats/specific_chat/data/entity/chat_entity.dart';
 import 'package:bulka/modules/chats/specific_chat/data/params/get_specific_chat_params.dart';
 import 'package:bulka/modules/chats/specific_chat/data/repo/specific_chat_repo.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:image_picker/image_picker.dart';
 import 'package:mime/mime.dart';
@@ -23,7 +20,7 @@ class SpecificChatCubit extends Cubit<SpecificChatState> {
 //---------------------------------VARIABLES----------------------------------//
   late ChatEntity _chatEntity;
   bool _isRec = false;
-  TextEditingController _messageController = TextEditingController();
+  final TextEditingController _messageController = TextEditingController();
 //---------------------------------FUNCTIONS----------------------------------//
   List<types.Message> get messages => _chatEntity.messages;
   types.User get user => _chatEntity.mySideInChatEntity.user;

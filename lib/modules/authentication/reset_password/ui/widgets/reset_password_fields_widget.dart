@@ -1,6 +1,5 @@
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
-import 'package:bulka/core/utils/widgets/form_fields/default_form_field.dart';
 import 'package:bulka/core/utils/widgets/form_fields/default_password_form_field_widget.dart';
 import 'package:bulka/modules/authentication/reset_password/controllers/reset_password_cubit.dart';
 import 'package:bulka/modules/authentication/reset_password/controllers/reset_password_state.dart';

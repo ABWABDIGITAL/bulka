@@ -1,4 +1,3 @@
-import 'package:bulka/core/shared/entity/product_entities/product_main_information_entity.dart';
 import 'package:bulka/core/shared/widgets/product_details_cards/properties_card_widget.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/enums/enums.dart';

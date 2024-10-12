@@ -6,7 +6,7 @@ part 'settings_state.dart';
 class SettingsCubit extends Cubit<SettingsState> {
   SettingsCubit(this._settingsRepo) : super(SettingsInitial());
   //----------------------------------variables-----------------------------------------//
-  SettingsRepo _settingsRepo;
+  final SettingsRepo _settingsRepo;
   bool _isNotificationEnabled = true;
   bool _isLightMode = false;
 

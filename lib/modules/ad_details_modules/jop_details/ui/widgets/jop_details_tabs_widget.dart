@@ -51,7 +51,7 @@ class _JopDetailsTabsWidgetState extends State<JopDetailsTabsWidget>
                 child: TabBarView(
                   controller: context.read<JopDetailsCubit>().tabController,
                   children: [
-                    JopDetailsOverviewWidget(),
+                    const JopDetailsOverviewWidget(),
                     Container(color: AppColors.red),
                     Container(color: AppColors.black),
                   ],

@@ -9,7 +9,7 @@ part 'faq_state.dart';
 class FaqCubit extends Cubit<FaqState> {
   FaqCubit( this._faqRepo) : super(FaqInitial());
 //-----------------------------------variables-----------------------------------//
-FaqRepo _faqRepo;
+final FaqRepo _faqRepo;
 //-----------------------------------functions-----------------------------------//
 //-----------------------------------requests-----------------------------------//
 

@@ -5,7 +5,7 @@ class OtherSideInChatModel extends OtherSideInChatEntity {
   const OtherSideInChatModel({required super.user});
 
   factory OtherSideInChatModel.fromJson(Map<String, dynamic> json) {
-    return OtherSideInChatModel(
+    return const OtherSideInChatModel(
         user: chat.User(
       id: 'doctor-id',
       firstName: 'Ahmed',

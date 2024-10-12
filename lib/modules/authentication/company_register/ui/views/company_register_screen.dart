@@ -9,7 +9,6 @@ import 'package:bulka/modules/authentication/company_register/ui/widgets/company
 import 'package:bulka/modules/authentication/company_register/ui/widgets/company_privacy_and_conditions_widget.dart';
 import 'package:bulka/modules/authentication/login/ui/widgets/auth_divider_widget.dart';
 import 'package:bulka/modules/authentication/login/ui/widgets/auth_title_widget.dart';
-import 'package:bulka/modules/authentication/login/ui/widgets/dont_have_account_widget.dart';
 import 'package:bulka/modules/authentication/login/ui/widgets/oauth_login_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';

@@ -11,7 +11,7 @@ class CategoryFieldsCubit extends Cubit<CategoryFieldsState> {
   CategoryFieldsCubit(this._categoryFieldRepo) : super(CategoryFieldsInitial());
 //---------------------------------VARIABLES----------------------------------//
   List<CategoryFieldEntity>? categoryFields;
-  List<CreateAdCategoryField> _selectedCategoriesFields = [];
+  final List<CreateAdCategoryField> _selectedCategoriesFields = [];
   List<GlobalKey<FormState>> _dynamicKeys = [];
 
 //---------------------------------FUNCTIONS----------------------------------//

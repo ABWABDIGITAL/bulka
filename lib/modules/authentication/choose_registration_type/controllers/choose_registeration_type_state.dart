@@ -1,4 +1,3 @@
-import 'package:equatable/equatable.dart';
 
 sealed class ChooseRegisterationTypeState {
   const ChooseRegisterationTypeState();

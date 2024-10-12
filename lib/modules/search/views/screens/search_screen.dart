@@ -1,16 +1,9 @@
-import 'package:bulka/core/assets/asset_icons.dart';
-import 'package:bulka/core/assets/asset_images.dart';
 import 'package:bulka/core/assets/asset_translations.dart';
 import 'package:bulka/core/services/servies_locator/service_locator.dart';
 import 'package:bulka/core/shared/components/pagination_loading.dart';
 import 'package:bulka/core/shared/widgets/appbar_widget.dart';
-import 'package:bulka/core/shared/widgets/custom_linear_progress_widget.dart';
-import 'package:bulka/core/shared/widgets/spacing.dart';
-import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
-import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
-import 'package:bulka/core/utils/widgets/form_fields/default_form_field.dart';
 import 'package:bulka/core/utils/widgets/responsive/responsive.dart';
 import 'package:bulka/modules/search/controller/cubit/search_cubit.dart';
 import 'package:bulka/modules/search/controller/cubit/search_state.dart';

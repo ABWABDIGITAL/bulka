@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:bulka/core/shared/entity/api_error_entity.dart';
-import 'package:equatable/equatable.dart';
 
 part 'profile_location_state.dart';
 

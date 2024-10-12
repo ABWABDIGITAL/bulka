@@ -8,7 +8,6 @@ import 'package:bulka/core/services/profile_info/data/model/my_profile_info_mode
 import 'package:bulka/core/services/profile_info/data/repo/my_profile_info_repo.dart';
 import 'package:bulka/core/utils/constant/shared_pref_keys.dart';
 import 'package:bulka/core/utils/enums/enums.dart';
-import 'package:bulka/core/utils/home_utilites.dart';
 import 'package:flutter/material.dart';
 
 class MyProfileInfoCubit extends Cubit<MyProfileInfoState> {

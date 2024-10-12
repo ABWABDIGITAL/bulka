@@ -1,4 +1,3 @@
-import 'package:bulka/core/assets/asset_translations.dart';
 import 'package:intl/intl.dart';
 
 /// IF YOU WANT TO USE THIS CLASS, YOU NEED TO ADD THE FOLLOWING DEPENDENCY

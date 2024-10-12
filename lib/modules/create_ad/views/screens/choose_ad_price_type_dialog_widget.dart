@@ -7,7 +7,6 @@ import 'package:bulka/core/utils/enums/enums.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/core/utils/widgets/buttons/default_button.dart';
 import 'package:bulka/core/utils/widgets/dialogs/app_bottom_sheet.dart';
-import 'package:bulka/core/utils/widgets/errors/error_screen.dart';
 import 'package:bulka/modules/create_ad/controller/cubit/create_ad_cubit.dart';
 import 'package:bulka/modules/create_ad/controller/cubit/create_ad_state.dart';
 import 'package:bulka/modules/create_ad/views/screens/create_ad_screen.dart';
@@ -183,7 +182,7 @@ void chooseAdPriceTypeDialogWidget({
             });
           }
           if (state is BuyingAdError) {
-            return SizedBox();
+            return const SizedBox();
             // return ErrorScreen(
             //   error: state.error,
             //   onPressed: () {
