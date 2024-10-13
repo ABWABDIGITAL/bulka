@@ -66,6 +66,11 @@ class DateFormats {
   static String getDayName(DateTime date, {String? locale}) =>
       DateFormat('EEEE', locale ?? 'en').format(date);
 
+      
+  //ex=> 25-7-2024
+static String formatDateDayMonthYear(DateTime date) {
+    return "${date.year.toString().padLeft(4, '0')}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}";
+  }
   /// Checks if the provided string is a valid date.
   static bool isDateValid(String str) {
     try {

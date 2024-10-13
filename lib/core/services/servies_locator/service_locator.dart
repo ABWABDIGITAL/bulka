@@ -6,6 +6,7 @@ import 'package:bulka/core/services/servies_locator/modules/chat_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/country_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/create_ad_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/edit_profile_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/education_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/home_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/init_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/interests_locator.dart';
@@ -17,6 +18,7 @@ import 'package:bulka/core/services/servies_locator/modules/see_all_locator.dart
 import 'package:bulka/core/services/servies_locator/modules/settings_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/sub_subcategory_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/subcategory_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/work_experience_locator.dart';
 import 'package:get_it/get_it.dart';
 
 final sl = GetIt.instance;
@@ -60,5 +62,9 @@ class ServiceLocator {
     packagesLocator();
     //--------------------------------EDIT PROFILE------------------------------------//
     editProfileLocator();
+    //--------------------------------WORK EXPERIENCE------------------------------------//
+    workExperienceLocator();
+    //--------------------------------EDUCATION------------------------------------//
+    educationLocator();
   }
 }

@@ -45,20 +45,7 @@ class WorkExperienceBottomSheet extends StatelessWidget {
           ),
           vSpace(16),
           const Divider(),
-          ListTile(
-            onTap: () {
-              context.push(const EditWorkExperienceScreen());
-            },
-            title: Text('Manager', style: TextStyles.rubik14W500Black),
-            trailing: SvgPicture.asset(AssetIcons.editSvg),
-            subtitle: const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Amazon Inc'),
-                Text('Jan 2015 - Feb 2022 • 5 Years'),
-              ],
-            ),
-          ),
+          WorkExperienceListTile(),
         ],
       ),
     );

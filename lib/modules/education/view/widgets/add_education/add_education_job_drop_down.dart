@@ -2,6 +2,10 @@
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/modules/education/controller/education_cubit.dart';
+import 'package:bulka/modules/education/view/states/education_degree/education_degree_loading_view.dart';
+import 'package:bulka/modules/education/view/states/education_degree/education_degree_success_view.dart';
+import 'package:bulka/modules/education/view/states/education_degree/job_titles_error_view.dart';
 import 'package:bulka/modules/profile_location/view/widgets/custom_drop_down_form_field.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -20,25 +24,26 @@ class AddEducationJobDropDownFormField extends StatefulWidget {
 
 class _AddEducationJobDropDownFormFieldState
     extends State<AddEducationJobDropDownFormField> {
-  String selectedJob = 'Developer';
+  
   @override
   Widget build(BuildContext context) {
-    List<String> cities = ['UI/UX', 'Developer'];
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(AppStrings.chooseCity.tr(), style: TextStyles.rubik14W500Black),
-        vSpace(8),
-        CustomDropDownFormField(
-          items: cities,
-          onChanged: (value) {
-            setState(() {
-              selectedJob = value!;
-            });
-          },
-          value: selectedJob,
-        ),
-      ],
-    );
+    
+    return BlocBuilder<EducationCubit, EducationState>(
+        buildWhen: (previous, current) =>
+            current is GetEducationDegreeError ||
+            current is GetEducationDegreeLoaded ||
+            current is GetEducationDegreeLoading,
+        builder: (context, state) {
+          if (state is GetEducationDegreeLoading) {
+            return const GetEducationDegreeLoadingView();
+          }
+          if (state is GetEducationDegreeLoaded) {
+            return GetEducationDegreeSuccessView(allEducationDegrees: state.educationDegree);
+          }
+          if (state is GetEducationDegreeError) {
+            return GetEducationDegreeErrorView(error: state.error);
+          }
+          return const GetEducationDegreeLoadingView();
+        });
   }
 }

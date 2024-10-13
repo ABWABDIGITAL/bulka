@@ -277,9 +277,12 @@ class AppStrings {
   static const String removeWorkExperience = 'Remove Work Experience';
   static const String areYouSureYouWantToDeleteThisWorkExperience =
       'Are you sure you want to delete this work experience?';
-      static const String areYouSureYouWantToDeleteThisEducation =
+  static const String areYouSureYouWantToDeleteThisEducation =
       'Are you sure you want to delete this education?';
   static const String addEducation = 'Add education';
   static const String editEducation = 'Edit education';
   static const String removeEducation = 'Remove Education';
+  static const String select = 'Select';
+
+  static const String jobTitle = 'Job Title';
 }

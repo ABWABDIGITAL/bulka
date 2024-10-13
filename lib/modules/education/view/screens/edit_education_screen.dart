@@ -1,3 +1,4 @@
+import 'package:bulka/core/services/servies_locator/service_locator.dart';
 import 'package:bulka/modules/education/controller/education_cubit.dart';
 import 'package:bulka/modules/education/view/widgets/edit_education/edit_education_company_form_field.dart';
 import 'package:bulka/modules/education/view/widgets/edit_education/edit_education_date_time.dart';
@@ -30,7 +31,7 @@ class EditEducationScreen extends StatelessWidget {
         backgroundColor: AppColors.opactiyPrimary,
       ),
       body: BlocProvider(
-        create: (context) => EducationCubit(),
+        create: (context) => EducationCubit(sl()),
         child: SingleChildScrollView(
           padding: EdgeInsets.all(24.0.r),
           child: Column(

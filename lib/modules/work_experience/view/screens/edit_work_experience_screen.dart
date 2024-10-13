@@ -1,3 +1,4 @@
+import 'package:bulka/core/services/servies_locator/service_locator.dart';
 import 'package:bulka/core/shared/widgets/appbar_widget.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
@@ -30,7 +31,7 @@ class EditWorkExperienceScreen extends StatelessWidget {
         backgroundColor: AppColors.opactiyPrimary,
       ),
       body: BlocProvider(
-        create: (context) => WorkExperienceCubit(),
+        create: (context) => WorkExperienceCubit(sl())..getJobTitles(),
         child: SingleChildScrollView(
           padding: EdgeInsets.all(24.0.r),
           child: Column(
