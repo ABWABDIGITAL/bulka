@@ -1,14 +1,22 @@
 import 'dart:convert';
-
-import 'package:bulka/core/assets/asset_translations.dart';
+import 'package:bulka/core/services/ad_details/data/params/ad_details_params.dart';
 import 'package:bulka/core/services/cache/shared_pref.dart';
-import 'package:bulka/core/services/profile_info/data/entity/my_profile_info_entity.dart';
-import 'package:bulka/core/services/profile_info/data/model/my_profile_info_model.dart';
+import 'package:bulka/core/shared/entity/product_entities/product_main_information_entity.dart';
 import 'package:bulka/core/shared/entity/token_entity.dart';
 import 'package:bulka/core/shared/models/token_model.dart';
+import 'package:bulka/core/shared/widgets/post_card_widget.dart';
+import 'package:bulka/core/shared/widgets/product_details_cards/car_card_widget.dart';
+import 'package:bulka/core/shared/widgets/product_details_cards/jop_card_widget.dart';
+import 'package:bulka/core/shared/widgets/product_details_cards/properties_card_widget.dart';
 import 'package:bulka/core/utils/constant/shared_pref_keys.dart';
 import 'package:bulka/core/utils/constant/strings.dart';
+import 'package:bulka/core/utils/enums/enums.dart';
+import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/core/utils/widgets/responsive/responsive.dart';
+import 'package:bulka/modules/ad_details_modules/car_product_details/ui/views/car_product_details_screen.dart';
+import 'package:bulka/modules/ad_details_modules/jop_details/ui/views/jop_details_screen.dart';
+import 'package:bulka/modules/ad_details_modules/post_details/ui/views/post_details_screen.dart';
+import 'package:bulka/modules/ad_details_modules/properity_product_details/ui/views/properity_product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -129,4 +137,41 @@ Future<Position?> getCurrentPosition() async {
   );
 
   return position;
+}
+
+dynamic goToSuitableProductDetails({
+  required ProductMainInformationEntity mainInfo,
+  required BuildContext context,
+}) {
+  switch (mainInfo.adType) {
+    case ProductCardWidgetDisplay.cars:
+      return context.push(
+          CarProductDetailsScreen(params: AdDetailsParams(id: mainInfo.id)));
+    case ProductCardWidgetDisplay.jobs:
+      return context.push(const JopDetailsScreen());
+    case ProductCardWidgetDisplay.properties:
+      return context.push(const ProperityProductDetailsScreen());
+    case ProductCardWidgetDisplay.posts:
+      return context.push(const PostDetailsScreen());
+    default:
+      return context.push(const ProperityProductDetailsScreen());
+  }
+}
+
+Widget getSuitableProductDetailsByType({
+  required ProductMainInformationEntity mainInfo,
+  required BuildContext context,
+}) {
+  switch (mainInfo.adType) {
+    case ProductCardWidgetDisplay.cars:
+      return CarCardWidget(info: mainInfo);
+    case ProductCardWidgetDisplay.jobs:
+      return JopCardWidget(info: mainInfo);
+    case ProductCardWidgetDisplay.properties:
+      return PropertiesCardWidget(info: mainInfo);
+    case ProductCardWidgetDisplay.posts:
+      return const PostCardWidget();
+    default:
+      return const Text('unkown ad type');
+  }
 }

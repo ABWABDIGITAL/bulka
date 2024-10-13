@@ -1,44 +1,33 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:bulka/core/shared/widgets/spacing.dart';
-import 'package:bulka/core/theme/text_styles/text_styles.dart';
-import 'package:bulka/core/utils/constant/app_strings.dart';
-import 'package:bulka/modules/profile_location/view/widgets/custom_drop_down_form_field.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:bulka/modules/work_experience/controller/work_experience_cubit.dart';
+import 'package:bulka/modules/work_experience/view/states/job_titles/job_titles_error_view.dart';
+import 'package:bulka/modules/work_experience/view/states/job_titles/job_titles_loading_view.dart';
+import 'package:bulka/modules/work_experience/view/states/job_titles/job_titles_success_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class EditWorkExperienceJobDropDownFormField extends StatefulWidget {
-  //final List<AllVaccinationEntity> allVaccination;
-  const EditWorkExperienceJobDropDownFormField({
-    super.key,
-    //  required this.allVaccination,
-  });
+class EditWorkExperienceJobDropDownFormField extends StatelessWidget {
+  final WorkExperienceCubit cubit;
+  const EditWorkExperienceJobDropDownFormField({super.key, required this.cubit});
 
-  @override
-  State<EditWorkExperienceJobDropDownFormField> createState() =>
-      _EditWorkExperienceJobDropDownFormFieldState();
-}
-
-class _EditWorkExperienceJobDropDownFormFieldState
-    extends State<EditWorkExperienceJobDropDownFormField> {
-  String selectedJob = 'Developer';
   @override
   Widget build(BuildContext context) {
-    List<String> cities = ['UI/UX', 'Developer'];
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(AppStrings.chooseCity.tr(), style: TextStyles.rubik14W500Black),
-        vSpace(8),
-        CustomDropDownFormField(
-          items: cities,
-          onChanged: (value) {
-            setState(() {
-              selectedJob = value!;
-            });
-          },
-          value: selectedJob,
-        ),
-      ],
-    );
+    return BlocBuilder<WorkExperienceCubit, WorkExperienceState>(
+        buildWhen: (previous, current) =>
+            current is GetJobTitlesError ||
+            current is GetJobTitlesLoaded ||
+            current is GetJobTitlesLoading,
+        builder: (context, state) {
+          if (state is GetJobTitlesLoading) {
+            return const GetJobTitlesLoadingView();
+          }
+          if (state is GetJobTitlesLoaded) {
+            return GetJobTitlesSuccessView(allJobTitles: state.jobTitles,cubit: cubit,);
+          }
+          if (state is GetJobTitlesError) {
+            return GetJobTitlesErrorView(error: state.error);
+          }
+          return const GetJobTitlesLoadingView();
+        });
   }
 }

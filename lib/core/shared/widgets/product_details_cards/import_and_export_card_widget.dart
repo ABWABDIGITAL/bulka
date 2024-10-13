@@ -4,7 +4,7 @@ import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/core/utils/widgets/misc/default_network_image.dart';
-import 'package:bulka/modules/jop_details/ui/views/jop_details_screen.dart';
+import 'package:bulka/modules/ad_details_modules/jop_details/ui/views/jop_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

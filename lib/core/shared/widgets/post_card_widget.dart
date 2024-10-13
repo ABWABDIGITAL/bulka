@@ -4,7 +4,7 @@ import 'package:bulka/core/shared/components/info_details_in_post_widget.dart';
 import 'package:bulka/core/shared/components/owner_details_in_post_widget.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
-import 'package:bulka/modules/posts_module/post_details/ui/views/post_details_screen.dart';
+import 'package:bulka/modules/ad_details_modules/post_details/ui/views/post_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

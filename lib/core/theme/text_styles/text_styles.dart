@@ -359,14 +359,21 @@ class TextStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.mediumGrey3,
   );
+  
   static TextStyle rubik20W600Black = GoogleFonts.rubik(
     fontSize: 20.sp,
     fontWeight: FontWeight.w600,
     color: AppColors.black,
   );
+
   static TextStyle rubik20W500Black = GoogleFonts.rubik(
     fontSize: 20.sp,
     fontWeight: FontWeight.w500,
+    color: AppColors.black,
+  );
+  static TextStyle rubik18W600Black = GoogleFonts.rubik(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w600,
     color: AppColors.black,
   );
   static TextStyle rubik18W300HardGrey = GoogleFonts.rubik(

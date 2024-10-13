@@ -7,11 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddExperiencePositionCheckbox extends StatelessWidget {
-  const AddExperiencePositionCheckbox({super.key});
+  final WorkExperienceCubit cubit ;
+  const AddExperiencePositionCheckbox({super.key, required this.cubit});
 
   @override
   Widget build(BuildContext context) {
-    final cubit = context.read<WorkExperienceCubit>();
+    
     return BlocBuilder<WorkExperienceCubit, WorkExperienceState>(
       buildWhen: (previous, current) =>
           current is WorkExperienceCurrentPosition,
