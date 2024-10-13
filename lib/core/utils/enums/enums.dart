@@ -37,3 +37,5 @@ enum CategoryFieldTypes { text, integer, check, select, boolean }
 enum SubscribtionStatusTypes { pending, unkown }
 
 enum CategoryProductsDisplayTypes { list, grid }
+
+enum CommentType { text, image, video, file, unkown }

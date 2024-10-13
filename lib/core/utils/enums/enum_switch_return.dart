@@ -141,4 +141,19 @@ class EnumSwitchReturn {
         return SubscribtionStatusTypes.unkown;
     }
   }
+
+  static CommentType getCommentType(String? commentType) {
+    switch (commentType) {
+      case 'text':
+        return CommentType.text;
+      case 'image':
+        return CommentType.image;
+      case 'video':
+        return CommentType.video;
+      case 'file':
+        return CommentType.file;
+      default:
+        return CommentType.unkown;
+    }
+  }
 }

@@ -14,6 +14,7 @@ class ProductMainInformationModel extends ProductMainInformationEntity {
     required super.image,
     required super.price,
     required super.adType,
+    required super.user,
   });
 
   factory ProductMainInformationModel.fromJson(Map<String, dynamic> json) {
@@ -23,11 +24,36 @@ class ProductMainInformationModel extends ProductMainInformationEntity {
       description: json['description'],
       price: json['price'],
       location: json['location'],
-      isFav: json['is_fav'],
+      isFav: json['is_fav'] ?? false,
       adType: EnumSwitchReturn.getProductCardWidget(json['ad_type']),
       category: CategoryModel.fromJson(json['category']),
       image:
           checkFromArray(json['ad_media']) ? json['ad_media'][0]['media'] : '',
+      user: AdUserInfoModel.fromJson(json['user']),
+    );
+  }
+}
+
+class AdUserInfoModel extends AdUserInfoEntity {
+  const AdUserInfoModel({
+    required super.id,
+    required super.fullName,
+    required super.userType,
+    required super.email,
+    required super.phoneCode,
+    required super.phone,
+    required super.avatar,
+  });
+
+  factory AdUserInfoModel.fromJson(Map<String, dynamic> json) {
+    return AdUserInfoModel(
+      id: json['id'],
+      fullName: json['full_name'],
+      userType: EnumSwitchReturn.getUserType(json['user_type']),
+      email: json['email'],
+      phoneCode: json['phone_code'],
+      phone: json['phone'],
+      avatar: json['avatar'],
     );
   }
 }

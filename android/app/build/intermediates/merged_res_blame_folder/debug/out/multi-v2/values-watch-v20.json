@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "abwab.digital.bulka.app-mergeDebugResources-74:/values-watch-v20/values-watch-v20.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Adel\\.gradle\\caches\\8.10\\transforms\\77a39ebe9140b51cda5830f91d7585de\\transformed\\appcompat-1.6.1\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "from": {
+                        "startLines": "2,5,8",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,214,385",
+                        "endLines": "4,7,10",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "209,380,553"
+                    }
+                }
+            ]
+        }
+    ]
+}

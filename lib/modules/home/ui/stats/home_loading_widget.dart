@@ -33,6 +33,15 @@ class HomeLoadingWidget extends StatelessWidget {
                   description: AppStrings.loading.tr(),
                   location: AppStrings.loading.tr(),
                   isFav: false,
+                  user: AdUserInfoEntity(
+                    id: 0,
+                    fullName: AppStrings.loading.tr(),
+                    userType: UserType.visitor,
+                    email: AppStrings.loading.tr(),
+                    phoneCode: '000',
+                    phone: '000',
+                    avatar: '',
+                  ),
                   category: CategoryEntity(
                     id: 0,
                     image: '',
@@ -59,6 +68,15 @@ class HomeLoadingWidget extends StatelessWidget {
                   description: AppStrings.loading.tr(),
                   location: AppStrings.loading.tr(),
                   isFav: false,
+                  user: AdUserInfoEntity(
+                    id: 0,
+                    fullName: AppStrings.loading.tr(),
+                    userType: UserType.visitor,
+                    email: AppStrings.loading.tr(),
+                    phoneCode: '000',
+                    phone: '000',
+                    avatar: '',
+                  ),
                   category: CategoryEntity(
                     id: 0,
                     image: '',
@@ -85,6 +103,15 @@ class HomeLoadingWidget extends StatelessWidget {
                   description: AppStrings.loading.tr(),
                   location: AppStrings.loading.tr(),
                   isFav: false,
+                  user: AdUserInfoEntity(
+                    id: 0,
+                    fullName: AppStrings.loading.tr(),
+                    userType: UserType.visitor,
+                    email: AppStrings.loading.tr(),
+                    phoneCode: '000',
+                    phone: '000',
+                    avatar: '',
+                  ),
                   category: CategoryEntity(
                     id: 0,
                     image: '',

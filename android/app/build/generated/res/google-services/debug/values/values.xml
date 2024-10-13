@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">504672362705</string>
+    <string name="google_api_key" translatable="false">AIzaSyBYA-VKv9J5O86sexaPdgcYb6RJh-K5sio</string>
+    <string name="google_app_id" translatable="false">1:504672362705:android:4179bac737eb0e01b625f0</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBYA-VKv9J5O86sexaPdgcYb6RJh-K5sio</string>
+    <string name="google_storage_bucket" translatable="false">bulka-afc6d.appspot.com</string>
+    <string name="project_id" translatable="false">bulka-afc6d</string>
+</resources>

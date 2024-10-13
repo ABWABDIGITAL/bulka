@@ -17,6 +17,7 @@ import 'package:bulka/modules/ad_details_modules/car_product_details/ui/views/ca
 import 'package:bulka/modules/ad_details_modules/jop_details/ui/views/jop_details_screen.dart';
 import 'package:bulka/modules/ad_details_modules/post_details/ui/views/post_details_screen.dart';
 import 'package:bulka/modules/ad_details_modules/properity_product_details/ui/views/properity_product_details_screen.dart';
+import 'package:bulka/modules/posts/data/entity/post_details_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -161,6 +162,7 @@ dynamic goToSuitableProductDetails({
 Widget getSuitableProductDetailsByType({
   required ProductMainInformationEntity mainInfo,
   required BuildContext context,
+  PostDetailsEntity? postDetailsEntity,
 }) {
   switch (mainInfo.adType) {
     case ProductCardWidgetDisplay.cars:
@@ -170,7 +172,12 @@ Widget getSuitableProductDetailsByType({
     case ProductCardWidgetDisplay.properties:
       return PropertiesCardWidget(info: mainInfo);
     case ProductCardWidgetDisplay.posts:
-      return const PostCardWidget();
+      if (postDetailsEntity == null) {
+        return const Text(
+          'provide us with post details entity please',
+        );
+      }
+      return PostCardWidget(post: postDetailsEntity);
     default:
       return const Text('unkown ad type');
   }

@@ -13,6 +13,7 @@ import 'package:bulka/core/services/servies_locator/modules/interests_locator.da
 import 'package:bulka/core/services/servies_locator/modules/logout_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/navbar_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/packages_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/posts_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/profile_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/search_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/see_all_locator.dart';
@@ -48,6 +49,8 @@ class ServiceLocator {
     subSubcategoryLocator();
 //----------------------------------HOME--------------------------------------//
     homeLocator();
+//----------------------------------POSTS--------------------------------------//
+    postsLocator();
 //---------------------------------PROFILE--------------------------------------//
     profileLocator();
 //------------------------------------AD------------------------------------//

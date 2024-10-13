@@ -32,6 +32,8 @@ class ApiConstance {
   static const String seeAllAds = '/app/ads-by-type';
   static const String search = '/app/ads/search';
   static const String searchHistory = '/app/ads/search-history';
+//------------------------------------POSTS----------------------------------//
+  static const String posts = '/app/posts';
 //-----------------------------------PROFILE----------------------------------//
   static const String profile = '/app/profile';
 //-------------------------------CATEGORY FIELDS------------------------------//
