@@ -50,6 +50,6 @@ class ApiConstance {
   static const String jobTitles = '/app/helpers/job-titles';
   static const String workExperience = '/app/cv/work-experience';
   //-------------------------------EDUCATION--------------------------------//
-  static const String educationDegree = '/app/helpers/education-degree';
+  static const String educationDegree = '/app/helpers/education-degrees';
   static const String education = '/app/cv/education';
 }

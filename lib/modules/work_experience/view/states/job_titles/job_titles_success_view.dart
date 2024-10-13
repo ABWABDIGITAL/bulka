@@ -7,23 +7,24 @@ import 'package:bulka/modules/work_experience/controller/work_experience_cubit.d
 import 'package:bulka/modules/work_experience/data/entities/job_titles_entity.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class GetJobTitlesSuccessView extends StatefulWidget {
+  final WorkExperienceCubit cubit;
   final List<JobTitlesEntity> allJobTitles;
   const GetJobTitlesSuccessView({
     super.key,
     required this.allJobTitles,
+    required this.cubit,
   });
 
   @override
-  State<GetJobTitlesSuccessView> createState() => _GetJobTitlesSuccessViewState();
+  State<GetJobTitlesSuccessView> createState() =>
+      _GetJobTitlesSuccessViewState();
 }
 
 class _GetJobTitlesSuccessViewState extends State<GetJobTitlesSuccessView> {
   @override
   Widget build(BuildContext context) {
-    final cubit = context.read<WorkExperienceCubit>();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -37,13 +38,17 @@ class _GetJobTitlesSuccessViewState extends State<GetJobTitlesSuccessView> {
               .toList(),
           onChanged: (value) {
             setState(() {
-              cubit.selectedJobId = widget.allJobTitles
-              .firstWhere((element) => element.name == value)
-              .id;
-              cubit.selectedJob = value!;
+              widget.cubit.selectedJobId = widget.allJobTitles
+                  .firstWhere((element) => element.name == value)
+                  .id;
+              widget.cubit.editSelectedJob = value!;
+              widget.cubit.selectedJob = value;
             });
           },
-          value: cubit.selectedJob,
+          value: widget.cubit.editSelectedJob != null &&
+                  widget.cubit.editSelectedJob!.isNotEmpty
+              ? widget.cubit.editSelectedJob
+              : widget.cubit.selectedJob,
         ),
       ],
     );

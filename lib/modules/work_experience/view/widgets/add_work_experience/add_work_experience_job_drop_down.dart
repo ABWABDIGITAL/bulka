@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddWorkExperienceJobDropDownFormField extends StatelessWidget {
-  const AddWorkExperienceJobDropDownFormField({super.key});
+  final WorkExperienceCubit cubit;  
+  const AddWorkExperienceJobDropDownFormField({super.key, required this.cubit});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,8 @@ class AddWorkExperienceJobDropDownFormField extends StatelessWidget {
             return const GetJobTitlesLoadingView();
           }
           if (state is GetJobTitlesLoaded) {
-            return GetJobTitlesSuccessView(allJobTitles: state.jobTitles);
+            return GetJobTitlesSuccessView(cubit: cubit,
+              allJobTitles: state.jobTitles);
           }
           if (state is GetJobTitlesError) {
             return GetJobTitlesErrorView(error: state.error);

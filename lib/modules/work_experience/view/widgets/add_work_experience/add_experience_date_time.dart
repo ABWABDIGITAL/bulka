@@ -6,11 +6,11 @@ import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/modules/work_experience/controller/work_experience_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AddExperienceDateTime extends StatefulWidget {
-  const AddExperienceDateTime({super.key});
+  final WorkExperienceCubit cubit;
+  const AddExperienceDateTime({super.key, required this.cubit});
 
   @override
   State<AddExperienceDateTime> createState() => _AddExperienceDateTimeState();
@@ -20,7 +20,6 @@ class _AddExperienceDateTimeState extends State<AddExperienceDateTime> {
   int difference = 0;
 
   startDateMethod() async {
-    final cubit = context.read<WorkExperienceCubit>();
     await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
@@ -28,8 +27,8 @@ class _AddExperienceDateTimeState extends State<AddExperienceDateTime> {
       lastDate: DateTime(2025, 12, 30),
     ).then((value) {
       setState(() {
-        cubit.selectedStartDate = value;
-        log('start :${cubit.selectedStartDate.toString()}');
+        widget.cubit.selectedStartDate = value;
+        log('start :${widget.cubit.selectedStartDate.toString()}');
       });
       if (value == null) {
         return;
@@ -38,7 +37,6 @@ class _AddExperienceDateTimeState extends State<AddExperienceDateTime> {
   }
 
   endDateMethod() async {
-    final cubit = context.read<WorkExperienceCubit>();
     await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
@@ -46,8 +44,8 @@ class _AddExperienceDateTimeState extends State<AddExperienceDateTime> {
       lastDate: DateTime(2025, 12, 30),
     ).then((value) {
       setState(() {
-        cubit.selectedEndDate = value;
-        log('end :${cubit.selectedEndDate.toString()}');
+        widget.cubit.selectedEndDate = value;
+        log('end :${widget.cubit.selectedEndDate.toString()}');
       });
       if (value == null) {
         return;
@@ -57,7 +55,6 @@ class _AddExperienceDateTimeState extends State<AddExperienceDateTime> {
 
   @override
   Widget build(BuildContext context) {
-    final cubit = context.read<WorkExperienceCubit>();
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
       Expanded(
         child: Column(
@@ -85,13 +82,13 @@ class _AddExperienceDateTimeState extends State<AddExperienceDateTime> {
               ),
               onPressed: () async {
                 await startDateMethod();
-                log(cubit.selectedStartDate.toString());
+                log(widget.cubit.selectedStartDate.toString());
               },
-              label: cubit.selectedStartDate == null
+              label: widget.cubit.selectedStartDate == null
                   ? const Text('dd/mm/yy',
                       style: TextStyle(color: AppColors.darkGrey2))
                   : Text(
-                      '${cubit.selectedStartDate!.day}/${cubit.selectedStartDate!.month}/${cubit.selectedStartDate!.year}',
+                      '${widget.cubit.selectedStartDate!.day}/${widget.cubit.selectedStartDate!.month}/${widget.cubit.selectedStartDate!.year}',
                       style: const TextStyle(color: AppColors.black)),
             ),
           ],
@@ -122,16 +119,19 @@ class _AddExperienceDateTimeState extends State<AddExperienceDateTime> {
               ),
               onPressed: () async {
                 await endDateMethod();
-                log(cubit.selectedStartDate.toString());
+                log(widget.cubit.selectedStartDate.toString());
                 setState(() {
-                  difference = cubit.selectedStartDate!.difference(cubit.selectedStartDate!).inDays;
+                  difference = widget.cubit.selectedStartDate!
+                      .difference(widget.cubit.selectedStartDate!)
+                      .inDays;
                 });
                 log(difference.toString());
               },
-              label: cubit.selectedEndDate  == null
+              label: widget.cubit.selectedEndDate == null
                   ? const Text('dd/mm/yy',
                       style: TextStyle(color: AppColors.darkGrey2))
-                  : Text('${cubit.selectedEndDate !.day}/${cubit.selectedEndDate !.month}/${cubit.selectedEndDate !.year}',
+                  : Text(
+                      '${widget.cubit.selectedEndDate!.day}/${widget.cubit.selectedEndDate!.month}/${widget.cubit.selectedEndDate!.year}',
                       style: const TextStyle(color: AppColors.black)),
             ),
           ],

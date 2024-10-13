@@ -234,5 +234,8 @@
   "Remove Education": "Remove Education",
   "Are you sure you want to delete this education?": "Are you sure you want to delete this education?",
   "Select": "Select",
-  "Job title": "Job title"
+  "Job title": "Job title",
+  "Education degree": "Education degree",
+  "Ok": "Ok",
+  "University": "University"
 }

@@ -285,4 +285,7 @@ class AppStrings {
   static const String select = 'Select';
 
   static const String jobTitle = 'Job Title';
+  static const String educationDegree = 'Education degree';
+  static const String ok = 'Ok';
+  static const String university = 'University';
 }

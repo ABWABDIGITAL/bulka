@@ -4,7 +4,7 @@ class WorkExperienceParams extends Equatable {
   final int jobTitleId;
   final String startDate;
   final String endDate;
-  final String stillWorking;
+  final int stillWorking;
   final String companyName;
   final String description;
 

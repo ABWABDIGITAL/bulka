@@ -24,7 +24,7 @@ class EditExperiencePositionCheckbox extends StatelessWidget {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
             activeColor: AppColors.primary,
             hoverColor: Colors.transparent,
-            value: cubit.isCurrentPosition,
+            value: cubit.editIsCurrentPosition,
             contentPadding: EdgeInsets.zero,
             checkboxShape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),

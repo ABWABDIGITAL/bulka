@@ -36,6 +36,21 @@ final class GetJobTitlesLoaded extends WorkExperienceState {
   const GetJobTitlesLoaded(this.jobTitles);
 }
 
+//--------------------------------get Work Experiences--------------------------//
+
+final class GetWorkExperienceLoading extends WorkExperienceState {}
+
+final class GetWorkExperienceError extends WorkExperienceState {
+  final ApiErrorEntity error;
+
+  const GetWorkExperienceError(this.error);
+}
+
+final class GetWorkExperienceLoaded extends WorkExperienceState {
+  final List<WorkExperienceEntity> workExperience;
+
+  const GetWorkExperienceLoaded(this.workExperience);
+}
 //--------------------------------Post Work Experience--------------------------//
 
 final class PostWorkExperienceLoading extends WorkExperienceState {}

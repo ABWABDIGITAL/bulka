@@ -3,7 +3,9 @@ import 'package:bulka/core/services/network/dio_helper.dart';
 import 'package:bulka/core/shared/entity/api_error_entity.dart';
 import 'package:bulka/core/utils/constant/api_constance.dart';
 import 'package:bulka/modules/work_experience/data/entities/job_titles_entity.dart';
+import 'package:bulka/modules/work_experience/data/entities/work_experience_entity.dart';
 import 'package:bulka/modules/work_experience/data/models/job_title_model.dart';
+import 'package:bulka/modules/work_experience/data/models/work_experience_model.dart';
 import 'package:bulka/modules/work_experience/data/params/work_experience_params.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
@@ -24,10 +26,39 @@ class WorkExperienceRepo extends Equatable {
     }
   }
 
-  Future<Either<ApiErrorEntity, String>> postWorkExperience(WorkExperienceParams body) async {
+  Future<Either<ApiErrorEntity, String>> postWorkExperience(
+      WorkExperienceParams body) async {
     try {
-      final response = await DioHelper.post(ApiConstance.workExperience,data: body.toMap());
+      final response =
+          await DioHelper.post(ApiConstance.workExperience, data: body.toMap());
       return Right(response.data['message']);
+    } on Exception catch (e) {
+      return Left(ErrorHandler.handleError(e.toString()));
+    }
+  }
+
+  Future<Either<ApiErrorEntity, String>> removeWorkExperience(int id) async {
+    try {
+      final response = await DioHelper.delet(
+        '${ApiConstance.workExperience}/$id',
+      );
+      return Right(response.data['message']);
+    } on Exception catch (e) {
+      return Left(ErrorHandler.handleError(e.toString()));
+    }
+  }
+
+  Future<Either<ApiErrorEntity, List<WorkExperienceEntity>>>
+      getAllWorkExperience() async {
+    try {
+      final response = await DioHelper.get(
+        ApiConstance.workExperience,
+      );
+      final List<WorkExperienceEntity> workExperiences =
+          (response.data['data'] as List)
+              .map((e) => WorkExperienceModel.fromJson(e))
+              .toList();
+      return Right(workExperiences);
     } on Exception catch (e) {
       return Left(ErrorHandler.handleError(e.toString()));
     }

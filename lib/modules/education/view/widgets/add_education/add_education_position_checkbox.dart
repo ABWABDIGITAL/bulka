@@ -7,11 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddEducationPositionCheckbox extends StatelessWidget {
-  const AddEducationPositionCheckbox({super.key});
+  final EducationCubit cubit;
+  const AddEducationPositionCheckbox({super.key, required this.cubit});
 
   @override
   Widget build(BuildContext context) {
-    final cubit = context.read<EducationCubit>();
+   
     return BlocBuilder<EducationCubit, EducationState>(
       buildWhen: (previous, current) => current is EducationCurrentPosition,
       builder: (context, state) {

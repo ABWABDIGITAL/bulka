@@ -4,16 +4,16 @@ import 'package:bulka/modules/education/controller/education_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class GetEducationDegreeErrorView extends StatelessWidget {
+class GetEducationUniversityErrorView extends StatelessWidget {
   final ApiErrorEntity error;
-  const GetEducationDegreeErrorView({super.key, required this.error});
+  const GetEducationUniversityErrorView({super.key, required this.error});
 
   @override
   Widget build(BuildContext context) {
     return ErrorScreen(
       error: error,
       onPressed: () {
-        context.read<EducationCubit>().getEducationDegree();
+        context.read<EducationCubit>().getEducationUniversity();
       },
     );
   }

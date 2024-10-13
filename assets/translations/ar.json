@@ -232,5 +232,8 @@
   "Remove Education": "إزالة التعليم",
   "Are you sure you want to delete this education?": "هل أنت متأكد أنك تريد حذف هذا التعليم؟",
   "Select": "اختار",
-  "Job title": "اسم الوظيفة"
+  "Job title": "اسم الوظيفة",
+  "Education degree": "درجة التعليم",
+  "Ok": "حسنا",
+  "University": "جامعة"
 }

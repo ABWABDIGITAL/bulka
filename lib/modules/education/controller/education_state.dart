@@ -38,8 +38,23 @@ final class GetEducationDegreeLoaded extends EducationState {
 
   const GetEducationDegreeLoaded(this.educationDegree);
 }
+//--------------------------------get education university--------------------------//
 
-//--------------------------------Post Work Experience--------------------------//
+final class GetEducationUniversityLoading extends EducationState {}
+
+final class GetEducationUniversityError extends EducationState {
+  final ApiErrorEntity error;
+
+  const GetEducationUniversityError(this.error);
+}
+
+final class GetEducationUniversityLoaded extends EducationState {
+  final List<EducationUniversityEntity> educationUniversity;
+
+  const GetEducationUniversityLoaded(this.educationUniversity);
+}
+
+//--------------------------------Post Education--------------------------//
 
 final class PostEducationLoading extends EducationState {}
 
@@ -53,6 +68,21 @@ final class PostEducationLoaded extends EducationState {
   final String message;
 
   const PostEducationLoaded(this.message);
+}
+//--------------------------------get Work Experiences--------------------------//
+
+final class GetEducationLoading extends EducationState {}
+
+final class GetEducationError extends EducationState {
+  final ApiErrorEntity error;
+
+  const GetEducationError(this.error);
+}
+
+final class GetEducationLoaded extends EducationState {
+  final List<EducationEntity> education;
+
+  const GetEducationLoaded(this.education);
 }
 
 

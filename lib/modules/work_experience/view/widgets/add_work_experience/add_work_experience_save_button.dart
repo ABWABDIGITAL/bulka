@@ -9,13 +9,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddWorkExperienceSaveButton extends StatelessWidget {
+  final WorkExperienceCubit cubit;
   const AddWorkExperienceSaveButton({
-    super.key,
+    super.key, required this.cubit,
   });
 
   @override
   Widget build(BuildContext context) {
-     var cubit = context.read<WorkExperienceCubit>();
     return BlocConsumer<WorkExperienceCubit, WorkExperienceState>(
       listenWhen: (previous, current) =>
           current is PostWorkExperienceLoading ||
@@ -37,7 +37,7 @@ class AddWorkExperienceSaveButton extends StatelessWidget {
                    
                     Navigator.of(context).pop();
                   },
-                  child: Text('OK'.tr()),
+                  child: Text(AppStrings.ok.tr()),
                 ),
               ],
             ),
