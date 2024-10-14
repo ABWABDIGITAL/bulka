@@ -2,11 +2,8 @@ import 'package:bulka/core/services/servies_locator/modules/ad_details_locator.d
 import 'package:bulka/core/services/servies_locator/modules/authentication_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/category_field_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/category_locator.dart';
-<<<<<<< HEAD
 import 'package:bulka/core/services/servies_locator/modules/certification_locator.dart';
-=======
 import 'package:bulka/core/services/servies_locator/modules/category_products_locator.dart';
->>>>>>> 298436aeed6d6723155c5f346113a996f7f09ada
 import 'package:bulka/core/services/servies_locator/modules/chat_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/country_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/create_ad_locator.dart';
