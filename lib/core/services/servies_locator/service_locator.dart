@@ -2,7 +2,11 @@ import 'package:bulka/core/services/servies_locator/modules/ad_details_locator.d
 import 'package:bulka/core/services/servies_locator/modules/authentication_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/category_field_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/category_locator.dart';
+<<<<<<< HEAD
 import 'package:bulka/core/services/servies_locator/modules/certification_locator.dart';
+=======
+import 'package:bulka/core/services/servies_locator/modules/category_products_locator.dart';
+>>>>>>> 298436aeed6d6723155c5f346113a996f7f09ada
 import 'package:bulka/core/services/servies_locator/modules/chat_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/country_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/create_ad_locator.dart';
@@ -15,7 +19,9 @@ import 'package:bulka/core/services/servies_locator/modules/interests_locator.da
 import 'package:bulka/core/services/servies_locator/modules/logout_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/navbar_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/packages_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/posts_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/profile_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/search_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/see_all_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/settings_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/sub_subcategory_locator.dart';
@@ -41,6 +47,7 @@ class ServiceLocator {
     countryLocator();
 //-------------------------------CATEGORIES--------------------------------------//
     categoryLocator();
+    categoryProductsLocator();
 //-----------------------------CATEGORY FIELDS----------------------------------//
     categoryFieldLocator();
 //-------------------------------SUBCATEGORIES---------------------------------//
@@ -49,11 +56,15 @@ class ServiceLocator {
     subSubcategoryLocator();
 //----------------------------------HOME--------------------------------------//
     homeLocator();
+//----------------------------------POSTS--------------------------------------//
+    postsLocator();
 //---------------------------------PROFILE--------------------------------------//
     profileLocator();
-//-----------------------------------AD------------------------------------//
+//------------------------------------AD------------------------------------//
     createAdLocator();
     adDetailsLocator();
+//----------------------------------SEARCH------------------------------------//
+    searchLocator();
 //----------------------------------SEE ALL------------------------------------//
     seeAllLocator();
 //----------------------------------LOGOUT------------------------------------//

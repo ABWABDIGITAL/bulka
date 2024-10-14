@@ -48,6 +48,7 @@ class DefaultFormField extends StatelessWidget {
     this.titleStyle,
     this.style,
     this.hintStyle,
+    this.onTap,
   });
 
   final String? labelText;
@@ -89,6 +90,7 @@ class DefaultFormField extends StatelessWidget {
   final AutovalidateMode? autovalidateMode;
   final TextStyle? titleStyle;
   final TextStyle? style;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -111,6 +113,7 @@ class DefaultFormField extends StatelessWidget {
                   ? const EdgeInsetsDirectional.only(bottom: 0)
                   : EdgeInsets.zero,
               child: TextFormField(
+                onTap: onTap,
                 onTapOutside: onTapOutside ??
                     (pointer) {
                       FocusScope.of(context).unfocus();

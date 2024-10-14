@@ -1,0 +1,228 @@
+{
+  "Hello": "مرحباً بكم",
+  "Welcome to Balka": "مرحباً بك في بالكا",
+  "connects sellers and buyers for seamless trading experiences": "تربط بين البائعين والمشترين للحصول على تجارب تداول سلسة",
+  "Discover exciting opportunities": "اكتشف الفرص المثيرة",
+  "explore listings from trusted sellers. discover a world of possibilities.": "استكشف قوائم البائعين الموثوق بهم. اكتشف عالماً من الإمكانيات.",
+  "Safe and Secure Transactions": "معاملات آمنة ومضمونة",
+  "Our trusted payment gateways protection mechanisms provide peace of mind": "توفر آليات حماية بوابات الدفع الموثوق بها لدينا راحة البال",
+  "Login to us": "تسجيل الدخول إلينا",
+  "We make it easy to buy and sell real estate": "نحن نجعل من السهل شراء العقارات وبيعها",
+  "Email": "البريد الإلكتروني",
+  "Password": "كلمة المرور",
+  "Enter your email": "أدخل بريدك الإلكتروني",
+  "Enter a valid email address": "أدخل عنوان بريد إلكتروني صالح",
+  "At Least 8 characters must contains[1-Uppercase 1-lowercase 1-Numeric 1-Special Character]": "يجب أن تحتوي 8 أحرف على الأقل على [1-أحرف كبيرة 1-أحرف صغيرة 1-أحرف رقمية 1-أحرف خاصة]",
+  "Enter your password": "أدخل كلمة المرور الخاصة بك",
+  "Remember me": "تذكّرني",
+  "Forget Password": "نسيت كلمة المرور",
+  "Login": "تسجيل الدخول",
+  "Got it!": "فهمت!",
+  "Continue with": "او يمكنك الاستمرار من خلال",
+  "Google": "جوجل",
+  "Don't have an account ?": "ليس لديك حساب؟",
+  "Sign up": "التسجيل",
+  "Register to us": "التسجيل لدينا",
+  "Continue": "المتابعة",
+  "Company": "شركة",
+  "User": "المستخدم",
+  "Confirm Password": "تأكيد كلمة المرور",
+  "Sign in": "تسجيل الدخول",
+  "Already have an account ?": "هل لديك حساب بالفعل؟",
+  "Verify your email 🚨": "تحقق من بريدك الإلكتروني 🚨",
+  "Verify your phone 🚨": "تحقق من هاتفك 🚨",
+  "Check your email and enter the verification number": "تحقق من بريدك الإلكتروني وأدخل رقم التحقق",
+  "Check your phone and enter the verification number": "تحقق من هاتفك وأدخل رقم التحقق",
+  "Didn't receive a code": "لم تتلق رمزاً",
+  "s": "ث",
+  "Resend code?": "إعادة إرسال الرمز؟",
+  "Verify": "تحقق",
+  "Verify contact details! 🧐": "تحقق من تفاصيل الاتصال! 🧐",
+  "Please verify your contact information": "يرجى التحقق من معلومات الاتصال الخاصة بك",
+  "SMS": "الرسائل النصية القصيرة",
+  "Phone number": "رقم الهاتف",
+  "Verified successfully! 😀": "تم التحقق بنجاح 😀",
+  "You have verified your email successfully": "لقد قمت بالتحقق من بريدك الإلكتروني بنجاح",
+  "Home": "الرئيسية",
+  "Reset Password": "إعادة تعيين كلمة المرور",
+  "Forgot password ?": "هل نسيت كلمة المرور؟",
+  "Choose one way to reset your password!": "اختر طريقة واحدة لإعادة تعيين كلمة المرور الخاصة بك!",
+  "Invalid phone number": "رقم هاتف غير صالح",
+  "Search": "بحث",
+  "Confirm": "تأكيد",
+  "Verification code": "رمز التحقق",
+  "Enter the incoming code.": "أدخل الرمز الوارد.",
+  "Enter your code": "أدخل الرمز الخاص بك",
+  "Create New Password": "إنشاء كلمة مرور جديدة",
+  "Strong password include A,a@#4": "تتضمن كلمة المرور القوية A,a@#4 ",
+  "New Password": "كلمة مرور جديدة",
+  "Password Successfully Created 👍": "تم إنشاء كلمة المرور بنجاح 👍",
+  "Your new password has been created successfully!": "تم إنشاء كلمة المرور الجديدة بنجاح!",
+  "No Data Found": "لا توجد بيانات",
+  "Agree to the terms and conditions": "الموافقة على الشروط والأحكام",
+  "Please agree our terms and conditions first": "يرجى الموافقة على الشروط والأحكام أولاً",
+  "Go deep as a visitor": "تعمّق كزائر",
+  "Skip": "تخطي",
+  "What are your interests in buying and selling?": "ما هي اهتماماتك في البيع والشراء؟",
+  "loading": "برجاء الإنتظار",
+  "successfully Become Explorer ! 😀": "أصبحت مستكشفًا بنجاح! 😀",
+  "Explore the deal with other people": "استكشف الصفقة مع أشخاص آخرين",
+  "Let's Explore": "لنستكشف",
+  "Posts": "المنشورات",
+  "Chat": "الدردشة",
+  "Profile": "الملف الشخصي",
+  "Search about something here !": "ابحث عن شيء ما هنا !",
+  "See all": "شاهد الكل",
+  "Explore Categories": "استكشف الفئات",
+  "Properties for sale": "عقارات للبيع",
+  "Cars for sale": "سيارات للبيع",
+  "Jobs": "الوظائف",
+  "Read more...": "اقرأ المزيد...",
+  "Read less...": "اقرأ أقل...",
+  "Comment here !": "علق هنا !",
+  "Phone": "الهاتف",
+  "Message": "الرسالة",
+  "Verified": "موثق",
+  "Payment Details": "تفاصيل الدفع",
+  "Total Product Price": "إجمالي سعر المنتج",
+  "Real Fees": "الرسوم الحقيقية",
+  "Taxes": "الضرائب",
+  "Total Amount": "المبلغ الإجمالي",
+  "property details": "تفاصيل العقار",
+  "About Property": "نبذة عن العقار",
+  "Contact Seller": "اتصل بالبائع",
+  "Specification": "المواصفات",
+  "What’s included?": "ما الذي يتضمنه؟",
+  "Over View": "نظرة عامة",
+  "Reviews": "المراجعات",
+  "Job Description": "تفاصيل الوظيفه",
+  "Requirements": "المتطلبات",
+  "Completed": "مكتمل",
+  "Active": "نشط",
+  "Pending": "قيد الانتظار",
+  "Cancelled": "تم الإلغاء",
+  "Contact info": "معلومات الاتصال",
+  "Basic info": "معلومات أساسية",
+  "Verify id": "التحقق من الهوية",
+  "Work experience": "الخبره العملية",
+  "Education": "الدرجه العلميه",
+  "Skills": "المهارات",
+  "Languages": "اللغات",
+  "Certification": "الشهادات",
+  "CV": "السيره الذاتيه",
+  "Packeges": "الحزم",
+  "Payments": "المدفوعات",
+  "Support": "الدعم",
+  "Privacy & Terms": "الخصوصية والشروط",
+  "Upload CV/Resume": "تحميل السيرة الذاتية",
+  "Upload files in PDF format up to 5 MB. Just upload it once and you can use it in your next application.": "قم بتحميل الملفات بصيغة PDF حتى 5 ميغابايت. فقط قم بتحميلها مرة واحدة ويمكنك استخدامها في طلبك التالي.",
+  "Upload": "التحميل",
+  "Remove file": "إزالة الملف",
+  "Add CV": "إضافة سيرة ذاتية",
+  "Type your message": "اكتب رسالتك",
+  "Mismatched Password": "كلمة السر غير متطابقة",
+  "Language not selected": "اللغة غير محددة",
+  "Full Name": "الاسم الكامل",
+  "Enter your full name": "أدخل اسمك بالكامل",
+  "a smoothly running business": "أعمال تسير بسلاسة",
+  "successfull operation": "عملية ناجحة",
+  "Categories": "الفئات",
+  "Description": "الوصف",
+  "Enter your description": "أدخل الوصف الخاص بك",
+  "Website": "الموقع الإلكتروني",
+  "Enter your website domain": "أدخل نطاق موقع الويب الخاص بك",
+  "Please enter valid url": "يُرجى إدخال عنوان URL صالح",
+  "Please enter url": "الرجاء إدخال الرابط",
+  "Additional domain": "نطاق إضافي",
+  "Enter your additional domain": "أدخل نطاقك الإضافي",
+  "Enter Company Size": "أدخل حجم الشركة",
+  "Company Size": "حجم الشركة",
+  "Company logo": "شعار الشركة",
+  "Please enter your company logo": "يُرجى إدخال شعار شركتك",
+  "Page Not Found": "لم يتم العثور على الصفحة",
+  "We Apologize For The Inconvenience": "نحن نعتذر عن الإزعاج",
+  "Reload Again": "إعادة التحميل مرة أخرى",
+  "Images": "الصور",
+  "Name": "الأسم",
+  "The Price": "السعر",
+  "Create Ad": "إنشاء إعلان",
+  "The Category": "الفئة",
+  "The Sub Category": "الفئة الفرعية",
+  "The Specialize of Sub Category": "تخصص الفئة الفرعية",
+  "Ad Images": "الصور الإعلانية",
+  "Ad Title": "عنوان الإعلان",
+  "Ad Description": "وصف الإعلان",
+  "Explore Sub Categories": "استكشف الفئات الفرعية",
+  "Explore Sub Inside The Sub Categories": "استكشف الفرعي داخل الفئات الفرعية",
+  "Images are required!!!": " الصور مطلوبة!!!",
+  "Please choose your prefered contact": "يُرجى اختيار جهة الاتصال المفضلة لديك",
+  "Select your conditions": "حدد شروطك",
+  "Ad": "إعلان",
+  "Import & Export": "الاستيراد والتصدير",
+  "Create Job": "إنشاء وظيفة",
+  "Standard": "العادي",
+  "ads for free/ month": "إعلانات مجانية / شهريا",
+  "Promoted": "تمت ترقيته",
+  "Left": "متبقي",
+  "Use promoted ads to reach more customers": "استخدم الإعلانات الترويجية للوصول إلى المزيد من العملاء",
+  "Car": "سيارة",
+  "Properties": "عقارات",
+  "Privacy of use": "خصوصية الاستخدام",
+  "About us": "معلومات عنا",
+  "Facebook": "فيسبوك",
+  "Instagram": "انستجرام",
+  "Twitter": "تويتر",
+  "Linkedin": "لينكد ان",
+  "ID Verification": "التحقق من الهوية",
+  "Tap to upload or take a photo": "اضغط لتحميل أو التقاط صورة",
+  "Important guidelines for your identity:": "إرشادات هامة لهويتك:",
+  "Government-issued": "صادرة عن الحكومة.",
+  "Original full-size, unedited documents": "المستندات الأصلية كاملة الحجم وغير محررة.",
+  "Documents against a single-color background": "مستندات على خلفية بلون واحد.",
+  "Readable, well-lit, colored images.": "صور ملونة وقابلة للقراءة ومضاءة جيدًا",
+  "No black and white images.": "لا توجد صور بالأبيض والأسود.",
+  "No edited or expired documents": "لا يوجد مستندات محررة أو منتهية الصلاحية.",
+  "Self Photo": "صورة ذاتية",
+  "Avoid wearing hats": "تجنب ارتداء القبعات",
+  "Avoid wearing glasses": "تجنب ارتداء النظارات",
+  "Avoid using filters": "تجنب استخدام الفلترات",
+  "Use enough lightings": "استخدم إضاءات كافية",
+  "Your ID Proof has been submitted": "لقد تم تقديم إثبات هويتك 👍",
+  "We will review and let you know within 48 hours working days.": "سنقوم بالمراجعة وإعلامك خلال 48 ساعة عمل.",
+  "Done": "تم",
+  "Location": "موقع",
+  "Save": "حفظ",
+  "Location Name": "اسم الموقع",
+  "Add location name like (Home, work, branch)": "أضف اسم الموقع مثل (المنزل، العمل، الفرع)",
+  "Choose City": "اختر مدينة",
+  "Add Location": "اضف الموقع",
+  "Describe your location": "قم بوصف موقعك",
+  "Edit profile": "تعديل الحساب",
+  "Faqs": "الأسئلة الشائعة",
+  "if This Is Due To A Problem": "إذا كان هذا بسبب مشكلة",
+  "Contact": "اتصال",
+  "Yes": "نعم",
+  "Offer Details": "تفاصيل العرض",
+  "Offers": "العروض",
+  "Claim Offer": "المطالبة بالعرض",
+  "Subscribe": "يشترك",
+  "ads standard": "إعلانات اعتياديه",
+  "valid": "صالح",
+  "days": "يوم",
+  "What’s included": "ما هو المشمول",
+  "No results found": "لم يتم العثور على نتائج",
+  "No results found 🥲": "لم يتم العثور على نتائج 🥲",
+  "no results for what you are looking for. Try again with another word or contact support.": "لا توجد نتائج لما تبحث عنه. حاول مرة أخرى باستخدام كلمة أخرى أو اتصل بالدعم.",
+  "No location added": "لم تتم إضافة الموقع",
+  "Add an address now and discover  the best deals": "أضف عنوانًا الآن واكتشف أفضل العروض",
+  "Delete": "مسح",
+  "Delete Location": "حذف الموقع",
+  "Do you really want to delete this location?": "هل تريد حقًا حذف هذا الموقع؟",
+  "No": "لا",
+  "Edit work experience": "تعديل تجربة العمل",
+  "This is my position now": "هذه وظيفتي الان",
+  "Add work experience": "أضف خبرة العمل",
+  "Remove": "ازالة",
+  "Remove Work Experience": "إزالة الخبرة العملية؟",
+  "Are you sure you want to delete this work experience?": "هل أنت متأكد أنك تريد حذف تجربة العمل هذه؟"
+}

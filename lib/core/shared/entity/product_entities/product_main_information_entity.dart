@@ -13,6 +13,7 @@ class ProductMainInformationEntity extends Equatable {
     required this.image,
     required this.price,
     required this.adType,
+    required this.user,
   });
   final int id;
   final String name;
@@ -23,8 +24,49 @@ class ProductMainInformationEntity extends Equatable {
   final ProductCardWidgetDisplay? adType;
   final CategoryEntity category;
   final String image;
+  final AdUserInfoEntity user;
 
   @override
-  List<Object?> get props =>
-      [id, name, description, price, location, isFav, adType, category, image];
+  List<Object?> get props => [
+        id,
+        name,
+        description,
+        price,
+        location,
+        isFav,
+        adType,
+        category,
+        image,
+        user
+      ];
+}
+
+class AdUserInfoEntity extends Equatable {
+  const AdUserInfoEntity({
+    required this.id,
+    required this.fullName,
+    required this.userType,
+    required this.email,
+    required this.phoneCode,
+    required this.phone,
+    required this.avatar,
+  });
+  final int id;
+  final String fullName;
+  final UserType userType;
+  final String email;
+  final String? avatar;
+  final String phoneCode;
+  final String phone;
+
+  @override
+  List<Object?> get props => [
+        id,
+        fullName,
+        userType,
+        email,
+        avatar,
+        phoneCode,
+        phone,
+      ];
 }
