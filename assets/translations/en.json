@@ -237,5 +237,9 @@
   "Job title": "Job title",
   "Education degree": "Education degree",
   "Ok": "Ok",
-  "University": "University"
+  "University": "University",
+  "Certification Name": "Certification Name",
+  "Certification Link": "Certification Link",
+  "End date": "End date",
+  "Describe your certification": "Describe your certification"
 }

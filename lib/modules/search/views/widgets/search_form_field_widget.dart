@@ -27,43 +27,44 @@ class SearchFormFieldWidget extends StatelessWidget {
         return SafeArea(
           child: Column(
             children: [
-              Padding(
-                padding: EdgeInsets.all(18.r),
-                child: DefaultFormField(
-                  needValidation: false,
-                  enabled: false,
-                  borderColor: AppColors.white,
-                  borderRadious: 12.r,
-                  prefixIcon: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        AssetIcons.searchSvg,
-                        height: 18.h,
-                        width: 18.w,
-                      ),
-                    ],
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.all(18.r),
+                  child: DefaultFormField(
+                    needValidation: false,
+                    borderColor: AppColors.white,
+                    borderRadious: 12.r,
+                    prefixIcon: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          AssetIcons.searchSvg,
+                          height: 18.h,
+                          width: 18.w,
+                        ),
+                      ],
+                    ),
+                    hintText: AppStrings.seachAboutSomeThingHere.tr(),
+                    suffixIcon: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          AssetIcons.filterSvg,
+                          height: 18.h,
+                          width: 18.w,
+                        ),
+                      ],
+                    ),
+                    controller: cubit.search,
+                    onChanged: (value) {
+                      cubit.debounce.run(() {
+                        cubit.addSearchText();
+                        if (value.isNotEmpty) {
+                          cubit.searchStatesHandled();
+                        }
+                      });
+                    },
                   ),
-                  hintText: AppStrings.seachAboutSomeThingHere.tr(),
-                  suffixIcon: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        AssetIcons.filterSvg,
-                        height: 18.h,
-                        width: 18.w,
-                      ),
-                    ],
-                  ),
-                  controller: cubit.search,
-                  onChanged: (value) {
-                    cubit.debounce.run(() {
-                      cubit.addSearchText();
-                      if (value.isNotEmpty) {
-                        cubit.searchStatesHandled();
-                      }
-                    });
-                  },
                 ),
               ),
               if (state is SearchLoading) const CustomLinearProgressWidget()

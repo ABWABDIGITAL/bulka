@@ -1,4 +1,3 @@
-import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/services/categories/controller/category_cubit.dart';
 import 'package:bulka/core/services/categories/controller/category_state.dart';
 import 'package:bulka/core/services/categories/data/entity/category_entity.dart';

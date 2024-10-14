@@ -1,8 +1,6 @@
-import 'package:bulka/core/services/categories/data/entity/category_entity.dart';
 import 'package:bulka/core/shared/entity/product_entities/ad_category_field_entity.dart';
 import 'package:bulka/core/shared/entity/product_entities/ad_media_entity.dart';
 import 'package:bulka/core/shared/entity/product_entities/product_main_information_entity.dart';
-import 'package:bulka/core/utils/enums/enums.dart';
 import 'package:equatable/equatable.dart';
 
 class HomeProductEntity extends Equatable {

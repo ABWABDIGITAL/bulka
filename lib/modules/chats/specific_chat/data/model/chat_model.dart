@@ -1,10 +1,8 @@
 // ignore_for_file: depend_on_referenced_packages
-import 'package:bulka/core/utils/home_utilites.dart';
 import 'package:bulka/modules/chats/specific_chat/data/entity/chat_entity.dart';
 import 'package:bulka/modules/chats/specific_chat/data/model/my_side_in_chat_model.dart';
 import 'package:bulka/modules/chats/specific_chat/data/model/other_side_in_chat_model.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as chat;
-import 'package:uuid/uuid.dart';
 
 class ChatModel extends ChatEntity {
   ChatModel({
@@ -12,7 +10,6 @@ class ChatModel extends ChatEntity {
     required super.otherSideInChatEntity,
     required super.messages,
   });
-
   factory ChatModel.fromJson(Map<String, dynamic> json) {
     List<chat.Message> messages = [];
 

@@ -4,7 +4,7 @@ import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
-import 'package:bulka/modules/certifications/ui/views/add_certifications_screen.dart';
+import 'package:bulka/modules/certifications/ui/screens/add_certifications_screen.dart';
 import 'package:bulka/modules/contact_info/ui/views/contact_info_screen.dart';
 import 'package:bulka/modules/cv/ui/views/add_cv_screen.dart';
 import 'package:bulka/modules/education/view/widgets/education_bottom_sheet.dart';

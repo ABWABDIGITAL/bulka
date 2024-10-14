@@ -1,7 +1,6 @@
 import 'package:bulka/core/assets/asset_translations.dart';
 import 'package:bulka/core/shared/entity/token_entity.dart';
 import 'package:bulka/core/utils/constant/api_constance.dart';
-import 'package:bulka/core/utils/constant/strings.dart';
 import 'package:bulka/core/utils/home_utilites.dart';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';

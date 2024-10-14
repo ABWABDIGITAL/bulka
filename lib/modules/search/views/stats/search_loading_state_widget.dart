@@ -10,12 +10,15 @@ class SearchLoadingStateWidget extends StatelessWidget {
   final SliverGridDelegate gridDelegate;
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: gridDelegate,
-      itemBuilder: (context, index) {
-        return ShimmerContainerWidget(height: 220.h, width: 150.w);
-      },
-      itemCount: 3,
+    return Padding(
+      padding: const EdgeInsets.all(12),
+      child: GridView.builder(
+        gridDelegate: gridDelegate,
+        itemBuilder: (context, index) {
+          return ShimmerContainerWidget(height: 220.h, width: 150.w);
+        },
+        itemCount: 12,
+      ),
     );
   }
 }

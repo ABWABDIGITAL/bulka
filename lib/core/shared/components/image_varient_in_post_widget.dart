@@ -3,12 +3,14 @@ import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/widgets/misc/default_network_image.dart';
+import 'package:bulka/modules/posts/data/entity/post_details_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ImageVarientInPostWidget extends StatelessWidget {
-  const ImageVarientInPostWidget({super.key});
+  const ImageVarientInPostWidget(this.post, {super.key});
+  final PostDetailsEntity post;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class ImageVarientInPostWidget extends StatelessWidget {
         alignment: AlignmentDirectional.bottomCenter,
         children: [
           DefaultNetworkImage(
-            'https://images.unsplash.com/photo-1624187376425-623defd09ce0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fEclMjBDTEFTU3xlbnwwfHwwfHx8MA%3D%3D',
+            post.adDetailsEntity.mainInfo.image,
             height: 268.h,
             width: MediaQuery.sizeOf(context).width,
             fit: BoxFit.cover,

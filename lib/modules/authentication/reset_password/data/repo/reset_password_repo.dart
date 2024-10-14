@@ -2,7 +2,6 @@ import 'package:bulka/core/services/api_handler/api_error_handler.dart';
 import 'package:bulka/core/services/network/dio_helper.dart';
 import 'package:bulka/core/shared/entity/api_error_entity.dart';
 import 'package:bulka/core/utils/constant/api_constance.dart';
-import 'package:bulka/modules/authentication/login/data/model/login_model.dart';
 import 'package:bulka/modules/authentication/reset_password/data/entity/reset_password_entity.dart';
 import 'package:bulka/modules/authentication/reset_password/data/model/reset_password_model.dart';
 import 'package:bulka/modules/authentication/reset_password/data/params/reset_password_params.dart';

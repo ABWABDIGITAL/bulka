@@ -1,7 +1,5 @@
 import 'package:bulka/core/services/api_handler/api_error_handler.dart';
-import 'package:bulka/core/services/network/dio_helper.dart';
 import 'package:bulka/core/shared/entity/api_error_entity.dart';
-import 'package:bulka/core/utils/constant/api_constance.dart';
 import 'package:bulka/modules/chats/specific_chat/data/entity/chat_entity.dart';
 import 'package:bulka/modules/chats/specific_chat/data/entity/my_side_in_chat_entity.dart';
 import 'package:bulka/modules/chats/specific_chat/data/entity/other_side_in_chat_entity.dart';
