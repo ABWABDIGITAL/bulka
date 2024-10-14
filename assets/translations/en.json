@@ -226,5 +226,16 @@
   "Add work experience": "Add work experience",
   "Remove": "Remove",
   "Remove Work Experience": "Remove Work Experience ?",
-  "Are you sure you want to delete this work experience?": "Are you sure you want to delete this work experience?"
+  "Are you sure you want to delete this work experience?": "Are you sure you want to delete this work experience?",
+  "Add education": "Add education",
+  "Edit education": "Edit education",
+  "Describe your education": "Describe your education",
+  "Describe your work experience": "Describe your work experience",
+  "Remove Education": "Remove Education",
+  "Are you sure you want to delete this education?": "Are you sure you want to delete this education?",
+  "Select": "Select",
+  "Job title": "Job title",
+  "Education degree": "Education degree",
+  "Ok": "Ok",
+  "University": "University"
 }

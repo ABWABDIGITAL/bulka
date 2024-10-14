@@ -226,5 +226,16 @@
   "Add work experience": "Добавить опыт работы",
   "Remove": "Удалять",
   "Remove Work Experience": "Удалить опыт работы?",
-  "Are you sure you want to delete this work experience?": "Вы уверены, что хотите удалить этот опыт работы?"
+  "Are you sure you want to delete this work experience?": "Вы уверены, что хотите удалить этот опыт работы?",
+  "Add education": "Добавить образование",
+  "Edit education": "Редактировать образование",
+  "Describe your education": "Опишите свое образование",
+  "Describe your work experience": "Опишите свой опыт работы",
+  "Remove Education": "Удалить образование",
+  "Are you sure you want to delete this education?": "Вы уверены, что хотите удалить это образование?",
+  "Select": "Выбирать",
+  "Job title": "Должность",
+  "Education degree": "Образование, степень",
+  "Ok": "Хорошо",
+  "University": "Университет"
 }

@@ -16,34 +16,40 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddWorkExperienceScreen extends StatelessWidget {
-  const AddWorkExperienceScreen({super.key});
+  final WorkExperienceCubit cubit;
+  const AddWorkExperienceScreen({
+    super.key,
+    required this.cubit,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CustomAppBarWidget(
-        title: AppStrings.addWorkExperience.tr(),
-        centerTitle: true,
-        titleStyle: TextStyles.rubik14W500Black,
-        iconTheme: const IconThemeData(color: AppColors.black),
-        backgroundColor: AppColors.opactiyPrimary,
-      ),
-      body: BlocProvider(
-        create: (context) => WorkExperienceCubit(),
-        child: SingleChildScrollView(
+    return BlocProvider.value(
+      value: cubit..getJobTitles(),
+      child: Scaffold(
+        appBar: CustomAppBarWidget(
+          title: AppStrings.addWorkExperience.tr(),
+          centerTitle: true,
+          titleStyle: TextStyles.rubik14W500Black,
+          iconTheme: const IconThemeData(color: AppColors.black),
+          backgroundColor: AppColors.opactiyPrimary,
+        ),
+        body: SingleChildScrollView(
           padding: EdgeInsets.all(24.0.r),
           child: Column(
             children: [
-              const AddWorkExperienceJobDropDownFormField(),
+               AddWorkExperienceJobDropDownFormField(
+                 cubit: cubit
+               ),
               vSpace(20),
-              const AddWorkExperienceCompanyFormField(),
+               AddWorkExperienceCompanyFormField(cubit: cubit,),
               vSpace(20),
-              const AddExperienceDateTime(),
+               AddExperienceDateTime(cubit: cubit,),
               vSpace(8),
-              const AddExperiencePositionCheckbox(),
-              const AddWorkExperienceDescription(),
+                AddExperiencePositionCheckbox(cubit: cubit,),
+                AddWorkExperienceDescription(cubit: cubit,),
               vSpace(80),
-              const AddWorkExperienceSaveButton(),
+                AddWorkExperienceSaveButton(cubit: cubit,),
             ],
           ),
         ),

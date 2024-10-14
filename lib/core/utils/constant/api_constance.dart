@@ -54,4 +54,10 @@ class ApiConstance {
   static const String paySubscribtion = '/app/subscription/confirm-payment';
 //----------------------------------Ad Details------------------------------------//
   static String adDetails(AdDetailsParams params) => '/app/ad/${params.id}';
+  //-------------------------------WORK EXPERIENCE--------------------------------//
+  static const String jobTitles = '/app/helpers/job-titles';
+  static const String workExperience = '/app/cv/work-experience';
+  //-------------------------------EDUCATION--------------------------------//
+  static const String educationDegree = '/app/helpers/education-degrees';
+  static const String education = '/app/cv/education';
 }

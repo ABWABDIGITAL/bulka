@@ -4,20 +4,19 @@ import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
+import 'package:bulka/modules/work_experience/controller/work_experience_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AddExperienceDateTime extends StatefulWidget {
-  const AddExperienceDateTime({super.key});
+  final WorkExperienceCubit cubit;
+  const AddExperienceDateTime({super.key, required this.cubit});
 
   @override
   State<AddExperienceDateTime> createState() => _AddExperienceDateTimeState();
 }
 
 class _AddExperienceDateTimeState extends State<AddExperienceDateTime> {
-  DateTime? startDate;
-  DateTime? endDate;
-
   int difference = 0;
 
   startDateMethod() async {
@@ -28,8 +27,8 @@ class _AddExperienceDateTimeState extends State<AddExperienceDateTime> {
       lastDate: DateTime(2025, 12, 30),
     ).then((value) {
       setState(() {
-        startDate = value;
-        log('start :${startDate.toString()}');
+        widget.cubit.selectedStartDate = value;
+        log('start :${widget.cubit.selectedStartDate.toString()}');
       });
       if (value == null) {
         return;
@@ -45,8 +44,8 @@ class _AddExperienceDateTimeState extends State<AddExperienceDateTime> {
       lastDate: DateTime(2025, 12, 30),
     ).then((value) {
       setState(() {
-        endDate = value;
-        log('end :${endDate.toString()}');
+        widget.cubit.selectedEndDate = value;
+        log('end :${widget.cubit.selectedEndDate.toString()}');
       });
       if (value == null) {
         return;
@@ -83,13 +82,13 @@ class _AddExperienceDateTimeState extends State<AddExperienceDateTime> {
               ),
               onPressed: () async {
                 await startDateMethod();
-                log(startDate.toString());
+                log(widget.cubit.selectedStartDate.toString());
               },
-              label: startDate == null
+              label: widget.cubit.selectedStartDate == null
                   ? const Text('dd/mm/yy',
                       style: TextStyle(color: AppColors.darkGrey2))
                   : Text(
-                      '${startDate!.day}/${startDate!.month}/${startDate!.year}',
+                      '${widget.cubit.selectedStartDate!.day}/${widget.cubit.selectedStartDate!.month}/${widget.cubit.selectedStartDate!.year}',
                       style: const TextStyle(color: AppColors.black)),
             ),
           ],
@@ -120,16 +119,19 @@ class _AddExperienceDateTimeState extends State<AddExperienceDateTime> {
               ),
               onPressed: () async {
                 await endDateMethod();
-                log(endDate.toString());
+                log(widget.cubit.selectedStartDate.toString());
                 setState(() {
-                  difference = endDate!.difference(startDate!).inDays;
+                  difference = widget.cubit.selectedStartDate!
+                      .difference(widget.cubit.selectedStartDate!)
+                      .inDays;
                 });
                 log(difference.toString());
               },
-              label: endDate == null
+              label: widget.cubit.selectedEndDate == null
                   ? const Text('dd/mm/yy',
                       style: TextStyle(color: AppColors.darkGrey2))
-                  : Text('${endDate!.day}/${endDate!.month}/${endDate!.year}',
+                  : Text(
+                      '${widget.cubit.selectedEndDate!.day}/${widget.cubit.selectedEndDate!.month}/${widget.cubit.selectedEndDate!.year}',
                       style: const TextStyle(color: AppColors.black)),
             ),
           ],

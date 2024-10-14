@@ -1,4 +1,3 @@
-import 'package:bulka/core/assets/asset_translations.dart';
 import 'package:intl/intl.dart';
 
 /// IF YOU WANT TO USE THIS CLASS, YOU NEED TO ADD THE FOLLOWING DEPENDENCY
@@ -66,6 +65,11 @@ class DateFormats {
   static String getDayName(DateTime date, {String? locale}) =>
       DateFormat('EEEE', locale ?? 'en').format(date);
 
+  //ex=> 25-7-2024
+  static String formatDateDayMonthYear(DateTime date) {
+    return "${date.year.toString().padLeft(4, '0')}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}";
+  }
+
   /// Checks if the provided string is a valid date.
   static bool isDateValid(String str) {
     try {
@@ -74,5 +78,30 @@ class DateFormats {
     } catch (e) {
       return false;
     }
+  }
+
+  /// Formats the date and time using a custom format string and return DateTime.
+  static DateTime convertStringToDateTime(String date) {
+    var re = RegExp(
+      r'^'
+      r'(?<year>[0-9]{4,})'
+      r'-'
+      r'(?<month>[0-9]{1,2})'
+      r'-'
+      r'(?<day>[0-9]{1,2})'
+      r'$',
+    );
+
+    var match = re.firstMatch(date);
+    if (match == null) {
+      throw const FormatException('Unrecognized date format');
+    }
+
+    var dateTime4 = DateTime(
+      int.parse(match.namedGroup('day')!),
+      int.parse(match.namedGroup('month')!),
+      int.parse(match.namedGroup('year')!),
+    );
+    return dateTime4;
   }
 }
