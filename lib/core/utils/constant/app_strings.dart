@@ -288,4 +288,6 @@ class AppStrings {
   static const String educationDegree = 'Education degree';
   static const String ok = 'Ok';
   static const String university = 'University';
+  static const String postComments = 'Post Comments';
+  static const String writeComment = 'Write Comment';
 }

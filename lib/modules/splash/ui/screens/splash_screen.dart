@@ -8,6 +8,7 @@ import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/modules/authentication/login/ui/views/login_screen.dart';
 import 'package:bulka/modules/on_boarding/ui/views/first_screen_onboarding_screen.dart';
+import 'package:bulka/modules/posts_comments/views/screens/posts_comments_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';

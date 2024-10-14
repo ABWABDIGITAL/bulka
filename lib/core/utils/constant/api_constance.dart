@@ -3,6 +3,8 @@ import 'package:bulka/core/services/category_fields/data/params/category_field_p
 import 'package:bulka/core/services/sub_subcategory/data/params/sub_subcategory_params.dart';
 import 'package:bulka/core/services/subcategory/data/params/subcategory_params.dart';
 import 'package:bulka/modules/favourites/data/params/toggle_favourite_params.dart';
+import 'package:bulka/modules/posts_comments/data/params/post_comments_params.dart';
+import 'package:bulka/modules/posts_comments/data/params/send_comments_params.dart';
 
 class ApiConstance {
   static const String baseUrl =
@@ -34,6 +36,10 @@ class ApiConstance {
   static const String searchHistory = '/app/ads/search-history';
 //------------------------------------POSTS----------------------------------//
   static const String posts = '/app/posts';
+  static String postComments(PostCommentsParams params) =>
+      '/app/posts/comment/${params.postId}';
+  static const String sendComment = '/app/posts/comment';
+
 //-----------------------------------PROFILE----------------------------------//
   static const String profile = '/app/profile';
 //-------------------------------CATEGORY FIELDS------------------------------//

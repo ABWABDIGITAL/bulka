@@ -5,10 +5,4 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-Future<void> initLocator() async {
-  DioHelper.init();
-  await SharedPrefHelper.init();
-  await ScreenUtil.ensureScreenSize();
-
-  Bloc.observer = MyBlocObserver();
-}
+// Future<void> initLocator() async {}

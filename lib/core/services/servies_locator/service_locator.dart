@@ -28,8 +28,8 @@ final sl = GetIt.instance;
 
 class ServiceLocator {
   Future<void> init() async {
-//-------------------------------INIT LOCATOR---------------------------------//
-    await initLocator();
+// //-------------------------------INIT LOCATOR---------------------------------//
+//     await initLocator();
 //--------------------------AUTHENTICATION LOCATOR----------------------------//
     authenticationLocator();
 //-----------------------------INTERSTS LOCATOR-------------------------------//
