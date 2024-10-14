@@ -1,7 +1,3 @@
-import 'package:bulka/core/shared/widgets/spacing.dart';
-import 'package:bulka/core/theme/text_styles/text_styles.dart';
-import 'package:bulka/core/utils/constant/app_colors.dart';
-import 'package:bulka/core/utils/widgets/misc/default_network_image.dart';
 import 'package:bulka/modules/choose_interests/controllers/choose_interests_cubit.dart';
 import 'package:bulka/modules/choose_interests/data/entity/interests_entity.dart';
 import 'package:bulka/modules/choose_interests/ui/widgets/interests_container_widget.dart';

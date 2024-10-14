@@ -1,9 +1,15 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:bulka/modules/cv/controllers/add/add_cv_state.dart';
+import 'package:bulka/modules/cv/data/params/cv_params.dart';
+import 'package:bulka/modules/cv/data/repo/cv_repo.dart';
+import 'package:dio/dio.dart';
 import 'package:file_picker/file_picker.dart';
 
 class AddCvCubit extends Cubit<AddCvState> {
-  AddCvCubit() : super(AddCvInitial());
+  CvRepo _cvRepo;
+  AddCvCubit(this._cvRepo) : super(AddCvInitial());
 //---------------------------------VARIABLES----------------------------------//
   FilePickerResult? _pdfPickerResult;
 //---------------------------------FUNCTIONS----------------------------------//
@@ -34,4 +40,23 @@ class AddCvCubit extends Cubit<AddCvState> {
   }
 
 //----------------------------------REQUEST-----------------------------------//
+  void postCv() async {
+    emit(PostCvLoading());
+    Map<String, dynamic> data = _pdfPickerResult == null
+        ? {}
+        : {
+            'cvFile': MultipartFile.fromFileSync(
+              _pdfPickerResult!.xFiles.first.path,
+              filename: _pdfPickerResult!.xFiles.first.path.split("/").last,
+            )
+          };
+    log(_pdfPickerResult!.xFiles.first.path);
+    final params = CvParams(cvFile: data.isEmpty ? null : data['cvFile']);
+    //log('params : ${params.toMap()}');
+    final response = await _cvRepo.postCv(FormData.fromMap(params.toMap()));
+    response.fold(
+      (error) => emit(PostCvError(error)),
+      (jobTitles) => emit(PostCvLoaded(jobTitles)),
+    );
+  }
 }

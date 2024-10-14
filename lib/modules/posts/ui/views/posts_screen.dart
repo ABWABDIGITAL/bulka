@@ -1,5 +1,4 @@
 import 'package:bulka/core/shared/widgets/post_card_widget.dart';
-import 'package:bulka/modules/home/ui/widgets/home_appbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 

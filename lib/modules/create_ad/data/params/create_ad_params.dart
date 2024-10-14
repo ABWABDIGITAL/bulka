@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:bulka/core/utils/enums/enums.dart';
-import 'package:collection/collection.dart';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 

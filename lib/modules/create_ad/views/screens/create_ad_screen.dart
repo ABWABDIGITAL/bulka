@@ -1,6 +1,5 @@
 import 'package:bulka/core/services/categories/views/default_category_drop_down_widget.dart';
 import 'package:bulka/core/services/category_fields/controller/cubit/category_fields_cubit.dart';
-import 'package:bulka/core/services/category_fields/controller/cubit/category_fields_state.dart';
 import 'package:bulka/core/services/category_fields/data/params/category_field_params.dart';
 import 'package:bulka/core/services/category_fields/view/screens/default_category_fields_widget.dart';
 import 'package:bulka/core/services/servies_locator/service_locator.dart';

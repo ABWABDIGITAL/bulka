@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:bulka/core/shared/entity/api_error_entity.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
@@ -102,14 +100,14 @@ class EducationCubit extends Cubit<EducationState> {
   void postEducation() async {
     emit(PostEducationLoading());
     final params = EducationParams(
-      universityName: selectedUniversity,
+        universityName: selectedUniversity,
         universityId: selectedUniversityId!,
         description: descriptionController.text,
         educationId: selectedDegreeId!,
         endDate: DateFormats.formatDateDayMonthYear(selectedEndDate!),
         startDate: DateFormats.formatDateDayMonthYear(selectedStartDate!),
         stillStudy: stillStudy!);
-        //log('params : ${params.toMap()}');
+    //log('params : ${params.toMap()}');
     final response = await _educationRepo.postEducation(params);
     response.fold(
       (error) => emit(PostEducationError(error)),
@@ -120,7 +118,7 @@ class EducationCubit extends Cubit<EducationState> {
   void postEditEducation() async {
     emit(PostEducationLoading());
     final params = EducationParams(
-      universityName: editSelectedUniversity!,
+        universityName: editSelectedUniversity!,
         universityId: editSelectedUniversityId!,
         description: editDescriptionController.text,
         educationId: editSelectedEducationDegreeId!,

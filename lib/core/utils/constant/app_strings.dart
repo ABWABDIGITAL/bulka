@@ -288,4 +288,8 @@ class AppStrings {
   static const String educationDegree = 'Education degree';
   static const String ok = 'Ok';
   static const String university = 'University';
+  static const String certificationName = 'Certification Name';
+  static const String certificationLink = 'Certification Link';
+  static const String endDate = 'End date';
+  static const String describeYourCertification = 'Describe your certification';
 }

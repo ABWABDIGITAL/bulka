@@ -235,5 +235,9 @@
   "Job title": "اسم الوظيفة",
   "Education degree": "درجة التعليم",
   "Ok": "حسنا",
-  "University": "جامعة"
+  "University": "جامعة",
+  "Certification Name": "اسم الشهادة",
+  "Certification Link": "رابط الشهادة",
+  "End date": "تاريخ الانتهاء",
+  "Describe your certification": "وصف شهادتك"
 }

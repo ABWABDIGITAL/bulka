@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:bulka/core/assets/asset_translations.dart';
 import 'package:bulka/core/services/api_handler/api_response_code.dart';
 import 'package:bulka/core/shared/entity/api_error_entity.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
@@ -7,7 +6,6 @@ import 'package:bulka/core/utils/constant/strings.dart';
 import 'package:bulka/modules/authentication/user_register/controllers/user_register_state.dart';
 import 'package:bulka/modules/authentication/user_register/data/params/user_register_params.dart';
 import 'package:bulka/modules/authentication/user_register/data/repo/user_register_repo.dart';
-import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 

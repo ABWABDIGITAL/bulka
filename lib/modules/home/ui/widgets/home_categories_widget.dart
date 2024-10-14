@@ -1,12 +1,8 @@
-import 'package:bulka/core/services/categories/controller/category_cubit.dart';
-import 'package:bulka/core/services/categories/controller/category_state.dart';
-import 'package:bulka/core/services/categories/data/entity/category_type_entity.dart';
-import 'package:bulka/core/services/servies_locator/service_locator.dart';
+
 import 'package:bulka/core/shared/widgets/category_widget.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/widgets/empty/empty_widget.dart';
-import 'package:bulka/core/utils/widgets/errors/error_screen.dart';
 import 'package:bulka/modules/home/controller/cubit/home_cubit.dart';
 import 'package:bulka/modules/home/ui/widgets/home_title_widget.dart';
 import 'package:easy_localization/easy_localization.dart';

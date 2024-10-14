@@ -1,4 +1,3 @@
-import 'package:bulka/core/services/categories/data/entity/category_entity.dart';
 import 'package:bulka/core/services/categories/data/entity/category_type_entity.dart';
 import 'package:bulka/core/shared/shimmer/shimmer_container_widget.dart';
 import 'package:bulka/core/shared/shimmer/shimmer_text_widget.dart';

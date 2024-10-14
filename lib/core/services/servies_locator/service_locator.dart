@@ -2,9 +2,11 @@ import 'package:bulka/core/services/servies_locator/modules/ad_details_locator.d
 import 'package:bulka/core/services/servies_locator/modules/authentication_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/category_field_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/category_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/certification_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/chat_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/country_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/create_ad_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/cv_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/edit_profile_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/education_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/home_locator.dart';
@@ -66,5 +68,11 @@ class ServiceLocator {
     workExperienceLocator();
     //--------------------------------EDUCATION------------------------------------//
     educationLocator();
+    //--------------------------------CERTIFICATION------------------------------------//
+    certificationLocator();
+    //--------------------------------CV------------------------------------//
+    cvLocator();
+  
   }
 }
+

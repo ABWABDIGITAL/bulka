@@ -237,5 +237,9 @@
   "Job title": "Должность",
   "Education degree": "Образование, степень",
   "Ok": "Хорошо",
-  "University": "Университет"
+  "University": "Университет",
+  "Certification Name": "Название сертификации",
+  "Certification Link": "Ссылка на сертификацию",
+  "End date": "Дата окончания",
+  "Describe your certification": "Опишите вашу сертификацию"
 }

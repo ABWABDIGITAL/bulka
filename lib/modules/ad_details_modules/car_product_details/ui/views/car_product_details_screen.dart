@@ -2,15 +2,9 @@ import 'package:bulka/core/services/ad_details/controller/cubit/ad_details_cubit
 import 'package:bulka/core/services/ad_details/controller/cubit/ad_details_state.dart';
 import 'package:bulka/core/services/ad_details/data/params/ad_details_params.dart';
 import 'package:bulka/core/services/servies_locator/service_locator.dart';
-import 'package:bulka/core/shared/widgets/spacing.dart';
-import 'package:bulka/core/utils/widgets/errors/error_full_screen.dart';
 import 'package:bulka/modules/ad_details_modules/car_product_details/ui/stats/car_product_details_error_state_widget.dart';
 import 'package:bulka/modules/ad_details_modules/car_product_details/ui/stats/car_product_details_loading_state_widget.dart';
 import 'package:bulka/modules/ad_details_modules/car_product_details/ui/stats/car_product_details_success_state_widget.dart';
-import 'package:bulka/modules/ad_details_modules/car_product_details/ui/widgets/car_product_details_images_widget.dart';
-import 'package:bulka/modules/ad_details_modules/car_product_details/ui/widgets/car_product_details_included_widget.dart';
-import 'package:bulka/modules/ad_details_modules/car_product_details/ui/widgets/car_product_details_main_info_widget.dart';
-import 'package:bulka/modules/ad_details_modules/car_product_details/ui/widgets/car_product_details_specification_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

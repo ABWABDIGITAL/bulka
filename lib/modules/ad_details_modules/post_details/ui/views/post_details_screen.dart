@@ -1,20 +1,11 @@
-import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
-import 'package:bulka/core/theme/text_styles/text_styles.dart';
-import 'package:bulka/core/utils/constant/app_colors.dart';
-import 'package:bulka/core/utils/constant/app_strings.dart';
-import 'package:bulka/core/utils/widgets/format_date/date_format.dart';
-import 'package:bulka/core/utils/widgets/text/expandable_text.dart';
 import 'package:bulka/modules/ad_details_modules/post_details/ui/widgets/post_details_buttons_widget.dart';
 import 'package:bulka/modules/ad_details_modules/post_details/ui/widgets/post_details_divider_widget.dart';
 import 'package:bulka/modules/ad_details_modules/post_details/ui/widgets/post_details_info_widget.dart';
 import 'package:bulka/modules/ad_details_modules/post_details/ui/widgets/post_details_owner_widget.dart';
 import 'package:bulka/modules/ad_details_modules/post_details/ui/widgets/post_details_payment_details_widget.dart';
 import 'package:bulka/modules/ad_details_modules/post_details/ui/widgets/post_image_widget.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 class PostDetailsScreen extends StatefulWidget {
   const PostDetailsScreen({super.key});
