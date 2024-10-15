@@ -20,28 +20,23 @@ class PostCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        context.push(const PostDetailsScreen());
-      },
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          OwnerDetailsInPostWidget(post),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.r),
-            child: Column(
-              children: [
-                InfoDetailsInPostWidget(post),
-                vSpace(16),
-                ImageVarientInPostWidget(post),
-                vSpace(16),
-                CommentRowInPostsWidget(post),
-              ],
-            ),
-          )
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        OwnerDetailsInPostWidget(post),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.r),
+          child: Column(
+            children: [
+              InfoDetailsInPostWidget(post),
+              vSpace(16),
+              ImageVarientInPostWidget(post),
+              vSpace(16),
+              CommentRowInPostsWidget(post),
+            ],
+          ),
+        )
+      ],
     );
   }
 }

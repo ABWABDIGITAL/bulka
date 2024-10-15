@@ -47,42 +47,5 @@ class _GetPostsSuccessStateWidgetState
       },
       itemCount: cubit.postsEntity!.posts.length,
     );
-    // return CustomScrollView(
-    //   controller: scrollController,
-    //   slivers: [
-    //     SliverGrid.builder(
-    //       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-    //         crossAxisCount: 2,
-    //         childAspectRatio: 1,
-    //         mainAxisSpacing: 15,
-    //         crossAxisSpacing: 15,
-    //       ),
-    //       itemCount: cubit.postsEntity!.posts.length,
-    //       itemBuilder: (context, index) {
-    //         return getSuitableProductDetailsByType(
-    //           context: context,
-    //           mainInfo:
-    //               cubit.postsEntity!.posts[index].adDetailsEntity.mainInfo,
-    //           postDetailsEntity: cubit.postsEntity!.posts[index],
-    //         );
-    //       },
-    //     ),
-    //   ],
-    // );
   }
 }
-
-
-// class GetPostsSuccessStateWidget extends StatelessWidget {
-//   const GetPostsSuccessStateWidget({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return ListView.builder(
-//       itemBuilder: (context, index) {
-//         return const PostCardWidget();
-//       },
-//       itemCount: 10,
-//     );
-//   }
-// }
