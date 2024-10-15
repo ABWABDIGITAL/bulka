@@ -237,5 +237,9 @@
   "Ok": "حسنا",
   "University": "جامعة",
   "Post Comments": "نشر التعليقات",
-  "Write Comment": "اكتب تعليق"
+  "Write Comment": "اكتب تعليق",
+  "Certification Name": "اسم الشهادة",
+  "Certification Link": "رابط الشهادة",
+  "End date": "تاريخ الانتهاء",
+  "Describe your certification": "وصف شهادتك"
 }

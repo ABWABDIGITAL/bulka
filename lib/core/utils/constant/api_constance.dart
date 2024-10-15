@@ -1,5 +1,4 @@
 import 'package:bulka/core/services/ad_details/data/params/ad_details_params.dart';
-import 'package:bulka/core/services/category_fields/data/params/category_field_params.dart';
 import 'package:bulka/core/services/sub_subcategory/data/params/sub_subcategory_params.dart';
 import 'package:bulka/core/services/subcategory/data/params/subcategory_params.dart';
 import 'package:bulka/modules/favourites/data/params/toggle_favourite_params.dart';
@@ -66,4 +65,13 @@ class ApiConstance {
   //-------------------------------EDUCATION--------------------------------//
   static const String educationDegree = '/app/helpers/education-degrees';
   static const String education = '/app/cv/education';
+  static const String educationUniversity = '/app/helpers/universities';
+  //-------------------------------CERTIFICATION------------------------------------//
+  static const String certification = '/app/cv/certificate';
+  //-------------------------------CV------------------------------------//
+  static const String uploadCv = '/app/cv/cv/upload';
+  //---------------------------------SKILLS-----------------------------------------//
+  static const String skills = '/app/cv/skill';
+  //---------------------------------LOGOUT------------------------------------//
+  static const String logout = '/app/logout';
 }

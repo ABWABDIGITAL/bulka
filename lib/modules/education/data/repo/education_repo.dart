@@ -32,7 +32,7 @@ class EducationRepo extends Equatable {
  Future<Either<ApiErrorEntity, List<EducationUniversityEntity>>>
       getEducationUniversity() async {
     try {
-      final response = await DioHelper.get(ApiConstance.educationDegree);
+      final response = await DioHelper.get(ApiConstance.educationUniversity);
 
       final List<EducationUniversityEntity> educationUniversity =
           (response.data['data'] as List)

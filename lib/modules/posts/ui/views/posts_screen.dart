@@ -1,7 +1,5 @@
 import 'package:bulka/core/services/servies_locator/service_locator.dart';
 import 'package:bulka/core/shared/components/pagination_loading.dart';
-import 'package:bulka/core/shared/widgets/post_card_widget.dart';
-import 'package:bulka/core/utils/widgets/errors/error_screen.dart';
 import 'package:bulka/modules/posts/controller/cubit/posts_cubit.dart';
 import 'package:bulka/modules/posts/controller/cubit/posts_state.dart';
 import 'package:bulka/modules/posts/ui/stats/get_posts_error_state_widget.dart';

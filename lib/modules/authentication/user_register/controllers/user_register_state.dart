@@ -1,5 +1,4 @@
 import 'package:bulka/core/shared/entity/api_error_entity.dart';
-import 'package:bulka/core/services/countries/data/entity/country_entity.dart';
 import 'package:bulka/modules/authentication/user_register/data/entity/user_reigster_entity.dart';
 
 sealed class UserRegisterState {

@@ -1,7 +1,5 @@
 import 'package:bulka/core/shared/widgets/appbar_widget.dart';
-import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
-import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/modules/faq/data/entities/faq_entity.dart';
 import 'package:bulka/modules/faq/ui/widgets/faq_list_view.dart';

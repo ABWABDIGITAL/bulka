@@ -4,7 +4,7 @@ import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
-import 'package:bulka/modules/certifications/ui/views/add_certifications_screen.dart';
+import 'package:bulka/modules/certifications/ui/screens/add_certifications_screen.dart';
 import 'package:bulka/modules/contact_info/ui/views/contact_info_screen.dart';
 import 'package:bulka/modules/cv/ui/views/add_cv_screen.dart';
 import 'package:bulka/modules/education/view/widgets/education_bottom_sheet.dart';
@@ -14,6 +14,7 @@ import 'package:bulka/modules/packages/views/screens/packages_screen.dart';
 import 'package:bulka/modules/profile/data/entities/profile_entity.dart';
 import 'package:bulka/modules/profile/ui/widgets/profile_list_tile_widget.dart';
 import 'package:bulka/modules/profile_location/view/screens/profile_empty_location_screen.dart';
+import 'package:bulka/modules/skills/view/screens/add_skills_screen.dart';
 import 'package:bulka/modules/verify_id/view/screens/verify_id_screen.dart';
 import 'package:bulka/modules/work_experience/view/widgets/work_experience_bottom_sheet.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -40,6 +41,14 @@ class ProfileBasicInfoWidget extends StatelessWidget {
           context.push(const VerifyIdScreen());
         },
         title: AppStrings.verifyId.tr(),
+      ),
+       ProfileTileEntity(
+        svgPath: AssetIcons.skillSvg,
+        svgColor: AppColors.black4,
+        onTap: () {
+          context.push(const AddSkillsScreen());
+        },
+        title: AppStrings.skills.tr(),
       ),
       ProfileTileEntity(
         svgPath: AssetIcons.workExperienceSvg,

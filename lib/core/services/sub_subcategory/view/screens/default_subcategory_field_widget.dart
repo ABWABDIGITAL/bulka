@@ -1,4 +1,3 @@
-import 'package:bulka/core/services/servies_locator/service_locator.dart';
 import 'package:bulka/core/services/sub_subcategory/controller/cubit/sub_subcategory_cubit.dart';
 import 'package:bulka/core/services/sub_subcategory/controller/cubit/sub_subcategory_state.dart';
 import 'package:bulka/core/services/sub_subcategory/data/entity/sub_subcategory_entity.dart';

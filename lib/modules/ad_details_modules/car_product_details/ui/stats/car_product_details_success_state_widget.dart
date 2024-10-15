@@ -1,4 +1,3 @@
-import 'package:bulka/core/services/ad_details/data/entity/ad_details_entity.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/modules/ad_details_modules/car_product_details/ui/widgets/car_product_details_images_widget.dart';
 import 'package:bulka/modules/ad_details_modules/car_product_details/ui/widgets/car_product_details_included_widget.dart';

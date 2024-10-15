@@ -1,4 +1,3 @@
-import 'package:bulka/core/shared/shimmer/shimmer_container_widget.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/modules/choose_interests/data/entity/interests_entity.dart';
 import 'package:bulka/modules/choose_interests/ui/widgets/interests_container_widget.dart';

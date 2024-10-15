@@ -1,4 +1,3 @@
-import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/services/servies_locator/service_locator.dart';
 import 'package:bulka/core/shared/widgets/carousal_widget.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
@@ -6,7 +5,6 @@ import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/constant/strings.dart';
-import 'package:bulka/core/utils/widgets/buttons/default_button.dart';
 import 'package:bulka/core/utils/widgets/errors/error_full_screen.dart';
 import 'package:bulka/modules/packages/controller/cubit/packages_cubit.dart';
 import 'package:bulka/modules/packages/controller/cubit/packages_state.dart';
@@ -15,7 +13,6 @@ import 'package:bulka/modules/packages/views/widgets/subscribe_button_widget.dar
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class PackagesScreen extends StatefulWidget {
   const PackagesScreen({super.key});

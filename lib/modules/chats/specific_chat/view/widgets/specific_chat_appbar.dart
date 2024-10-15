@@ -1,8 +1,8 @@
 import 'dart:io';
+
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class SpecificChatAppbar extends StatelessWidget
     implements PreferredSizeWidget {
@@ -18,13 +18,13 @@ class SpecificChatAppbar extends StatelessWidget
             : const Icon(Icons.arrow_back),
         onPressed: () {},
       ),
-      title: Row(
+      title: const Row(
         children: [
           // const CircleAvatar(
           //   backgroundImage: AssetImage(AppImages.patientSelect),
           //   radius: 20,
           // ),
-          const SizedBox(width: 10),
+          SizedBox(width: 10),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -33,7 +33,7 @@ class SpecificChatAppbar extends StatelessWidget
                 // style:
                 //     TextStyleHelper.medium16.copyWith(color: AppColors.white),
               ),
-              const Text(
+              Text(
                 'Online',
                 style: TextStyle(fontSize: 14, color: AppColors.lightGreen),
               ),
@@ -44,7 +44,7 @@ class SpecificChatAppbar extends StatelessWidget
       actions: [
         IconButton(
           style: IconButton.styleFrom(backgroundColor: AppColors.grey),
-          icon: Icon(Icons.usb_rounded),
+          icon: const Icon(Icons.usb_rounded),
           //  SvgPicture.asset(
           //   AppIcons.call,
           //   color: AppColors.white,

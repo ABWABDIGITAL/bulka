@@ -1,7 +1,5 @@
 import 'package:bulka/core/assets/asset_icons.dart';
-import 'package:bulka/core/assets/asset_images.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
-import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
