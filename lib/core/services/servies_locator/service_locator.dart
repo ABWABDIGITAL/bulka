@@ -2,8 +2,9 @@ import 'package:bulka/core/services/servies_locator/modules/ad_details_locator.d
 import 'package:bulka/core/services/servies_locator/modules/authentication_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/category_field_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/category_locator.dart';
-import 'package:bulka/core/services/servies_locator/modules/certification_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/category_products_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/certification_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/change_password_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/chat_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/country_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/create_ad_locator.dart';
@@ -11,10 +12,10 @@ import 'package:bulka/core/services/servies_locator/modules/cv_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/edit_profile_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/education_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/home_locator.dart';
-import 'package:bulka/core/services/servies_locator/modules/init_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/interests_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/logout_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/navbar_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/offers_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/packages_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/posts_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/profile_locator.dart';
@@ -31,8 +32,8 @@ final sl = GetIt.instance;
 
 class ServiceLocator {
   Future<void> init() async {
-//-------------------------------INIT LOCATOR---------------------------------//
-    await initLocator();
+// //-------------------------------INIT LOCATOR---------------------------------//
+//     await initLocator();
 //--------------------------AUTHENTICATION LOCATOR----------------------------//
     authenticationLocator();
 //-----------------------------INTERSTS LOCATOR-------------------------------//
@@ -83,7 +84,10 @@ class ServiceLocator {
     cvLocator();
     //--------------------------------SKILLS------------------------------------//
     skillsLocator();
-  
+    //--------------------------------OFFERS------------------------------------//
+    offersLocator();
+    //--------------------------------CHANGE PASSWORD------------------------------------//
+    changePasswordLocator();
+
   }
 }
-

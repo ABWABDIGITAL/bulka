@@ -1,7 +1,10 @@
 import 'dart:io';
 import 'package:bulka/app/my_app.dart';
 import 'package:bulka/core/assets/asset_translations.dart';
+import 'package:bulka/core/services/cache/shared_pref.dart';
+import 'package:bulka/core/services/network/dio_helper.dart';
 import 'package:bulka/core/services/notifications/firebase_notification_api.dart';
+import 'package:bulka/core/services/ob_servable/ob_server.dart';
 import 'package:bulka/core/services/servies_locator/service_locator.dart';
 import 'package:bulka/core/utils/constant/strings.dart';
 import 'package:bulka/core/utils/widgets/misc/restart_widget.dart';
@@ -10,14 +13,20 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  DioHelper.init();
   await ServiceLocator().init();
+  await SharedPrefHelper.init();
+  await ScreenUtil.ensureScreenSize();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   currentLanguage = await AssetTranslations.getLanguage();
+  Bloc.observer = MyBlocObserver();
   HttpOverrides.global = MyHttpOverrides();
   EasyLocalization.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   FirebaseNotificationApi().initNotification();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

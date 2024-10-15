@@ -2,13 +2,15 @@ import 'package:bulka/core/assets/asset_images.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
+import 'package:bulka/modules/offers/data/entities/offers_entity.dart';
 import 'package:bulka/modules/offers/view/screens/offer_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ForYouOffersListView extends StatelessWidget {
-  const ForYouOffersListView({
-    super.key,
+class AllOffersSuccessView extends StatelessWidget {
+  final List<OffersEntity> offers;
+  const AllOffersSuccessView({
+    super.key, required this.offers,
   });
 
   @override
@@ -18,13 +20,12 @@ class ForYouOffersListView extends StatelessWidget {
       separatorBuilder: (context, index) => vSpace(20),
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: 5,
+      itemCount:offers.length,
       itemBuilder: (context, index) {
         return InkWell(
           borderRadius: BorderRadius.circular(16.0),
-          
           onTap: () {
-            context.push(const OfferDetailsScreen());
+            context.push( OfferDetailsScreen(offer: offers[index],));
           },
           child: Container(
             height: 104.h,
@@ -42,12 +43,12 @@ class ForYouOffersListView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     vSpace(10),
-                    Text('5% Off', style: TextStyles.rubik19W600White),
+                    Text( offers[index].title, style: TextStyles.rubik19W600White),
                     vSpace(10),
-                    Text('Deal = 5,000\$', style: TextStyles.rubik13W500White),
+                    Text( offers[index].description, style: TextStyles.rubik13W500White),
                   ],
                 ),
-                Image.asset(AssetImages.offersBigCardImage),
+                Image.network(offers[index].image, width: 72.w, height: 72.h),
               ],
             ),
           ),

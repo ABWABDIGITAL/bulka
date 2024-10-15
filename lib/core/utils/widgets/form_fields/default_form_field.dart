@@ -49,6 +49,7 @@ class DefaultFormField extends StatelessWidget {
     this.style,
     this.hintStyle,
     this.onTap,
+    this.minLines,
   });
 
   final String? labelText;
@@ -91,6 +92,7 @@ class DefaultFormField extends StatelessWidget {
   final TextStyle? titleStyle;
   final TextStyle? style;
   final void Function()? onTap;
+  final int? minLines;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -140,6 +142,7 @@ class DefaultFormField extends StatelessWidget {
                 initialValue: initialValue,
                 onSaved: onSaved,
                 maxLines: maxLines == -1 ? null : maxLines ?? 1,
+                minLines: minLines,
                 onChanged: onChanged,
                 style: style ?? TextStyle(color: textColor ?? AppColors.black),
                 decoration: decoration ??
