@@ -5,6 +5,7 @@ import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
+import 'package:bulka/core/utils/widgets/buttons/default_button.dart';
 import 'package:bulka/core/utils/widgets/dialogs/dialogs.dart';
 import 'package:bulka/modules/authentication/login/ui/views/login_screen.dart';
 import 'package:bulka/modules/logout/controller/logout_cubit.dart';
@@ -20,6 +21,10 @@ void showLogoutDialog(BuildContext context) {
       return BlocProvider(
         create: (context) => LogoutCubit(sl()),
         child: BlocConsumer<LogoutCubit, LogoutState>(
+          listenWhen: (previous, current) =>
+              current is LogoutLoading ||
+              current is LogoutLoaded ||
+              current is LogoutError,
           listener: (context, state) {
             if (state is LogoutLoaded) {
               showDialog(
@@ -47,8 +52,12 @@ void showLogoutDialog(BuildContext context) {
  */
             }
           },
+          buildWhen: (previous, current) =>
+              current is LogoutLoading ||
+              current is LogoutLoaded ||
+              current is LogoutError,
           builder: (context, state) {
-            var cubit = context.read<LogoutCubit>();
+            final cubit = context.read<LogoutCubit>();
             return AlertDialog(
               icon: CircleAvatar(
                   backgroundColor: AppColors.primary500.withOpacity(.15),
@@ -67,45 +76,25 @@ void showLogoutDialog(BuildContext context) {
                 Row(
                   children: [
                     Expanded(
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          textStyle: TextStyles.rubik14W500White,
-                          backgroundColor: AppColors.primary,
-                        ),
-                        onPressed: () {
-                          // Close the dialog
-                          // Perform logout action here
-                        },
-                        child: Text(
-                          AppStrings.contact.tr(),
-                          style: TextStyles.rubik14W500White,
-                        ),
-                      ),
-                    ),
+                        child: DefaultButton(
+                      text: AppStrings.contact.tr(),
+                      onPressed: () {
+                        context.pop();
+                      },
+                    )),
                     hSpace(8),
                     Expanded(
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          textStyle: TextStyles.rubik14W500MediumGrey8,
-                          backgroundColor: AppColors.mediumGrey15,
-                        ),
-                        onPressed: () {
-                          //  cubit.logout();
-                        },
-                        child: Text(
-                          AppStrings.yes.tr(),
-                          style: TextStyles.rubik14W500MediumGrey8,
-                        ),
-                      ),
-                    ),
+                        child: DefaultButton(
+                      text: AppStrings.yes.tr(),
+                      textStyle: TextStyles.rubik14W500MediumGrey8,
+                      backgroundColor: AppColors.mediumGrey15,
+                      onPressed: () {
+                        cubit.logout();
+                      },
+                      isLoading: state is LogoutLoading ? true : false,
+
+                      //  isLoading: state is LoginStateLoading ? true : false,
+                    )),
                   ],
                 ),
               ],
