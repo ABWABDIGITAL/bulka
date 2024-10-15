@@ -21,6 +21,7 @@ import 'package:bulka/core/services/servies_locator/modules/profile_locator.dart
 import 'package:bulka/core/services/servies_locator/modules/search_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/see_all_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/settings_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/skills_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/sub_subcategory_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/subcategory_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/work_experience_locator.dart';
@@ -80,6 +81,8 @@ class ServiceLocator {
     certificationLocator();
     //--------------------------------CV------------------------------------//
     cvLocator();
+    //--------------------------------SKILLS------------------------------------//
+    skillsLocator();
   
   }
 }

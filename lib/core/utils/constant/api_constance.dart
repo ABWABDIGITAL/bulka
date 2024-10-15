@@ -64,4 +64,8 @@ class ApiConstance {
   static const String certification = '/app/cv/certificate';
   //-------------------------------CV------------------------------------//
   static const String uploadCv = '/app/cv/cv/upload';
+  //---------------------------------SKILLS-----------------------------------------//
+  static const String skills = '/app/cv/skill';
+  //---------------------------------LOGOUT------------------------------------//
+  static const String logout = '/app/logout';
 }
