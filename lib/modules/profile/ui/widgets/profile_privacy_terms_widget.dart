@@ -9,6 +9,7 @@ import 'package:bulka/modules/faq/ui/screens/faq_screen.dart';
 import 'package:bulka/modules/logout/view/widgets/logout_popup.dart';
 import 'package:bulka/modules/profile/data/entities/profile_entity.dart';
 import 'package:bulka/modules/profile/ui/widgets/profile_list_tile_widget.dart';
+import 'package:bulka/modules/settings/views/screens/settings_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,8 +21,11 @@ class ProfilePrivacyTermsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final profileTiles = [
       ProfileTileEntity(
-        svgPath: AssetIcons.profileCircleSvg,
-        title: AppStrings.contactInfo.tr(),
+        svgPath: AssetIcons.settingsSvg,
+        title: AppStrings.settings.tr(),
+        onTap: () {
+          context.push(const SettingsScreen());
+        },  
       ),
       ProfileTileEntity(
         svgPath: AssetIcons.aboutUsSvg,

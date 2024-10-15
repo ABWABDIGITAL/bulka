@@ -15,6 +15,7 @@ import 'package:bulka/modules/profile/data/entities/profile_entity.dart';
 import 'package:bulka/modules/profile/ui/widgets/profile_list_tile_widget.dart';
 import 'package:bulka/modules/profile_location/view/screens/profile_empty_location_screen.dart';
 import 'package:bulka/modules/skills/view/screens/add_skills_screen.dart';
+import 'package:bulka/modules/support/view/screens/support_screen.dart';
 import 'package:bulka/modules/verify_id/view/screens/verify_id_screen.dart';
 import 'package:bulka/modules/work_experience/view/widgets/work_experience_bottom_sheet.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -130,6 +131,9 @@ class ProfileBasicInfoWidget extends StatelessWidget {
       ProfileTileEntity(
         svgPath: AssetIcons.callSvg,
         svgColor: AppColors.black,
+        onTap: () {
+          context.push(const SupportScreen());
+        },
         title: AppStrings.support.tr(),
       ),
     ];

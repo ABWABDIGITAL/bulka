@@ -1,4 +1,3 @@
-import 'package:bulka/core/services/ad_details/data/entity/ad_details_entity.dart';
 import 'package:bulka/core/shared/components/comment_row_in_posts_widget.dart';
 import 'package:bulka/core/shared/components/image_varient_in_post_widget.dart';
 import 'package:bulka/core/shared/components/info_details_in_post_widget.dart';

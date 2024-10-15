@@ -2,6 +2,7 @@ import 'package:bulka/core/services/ad_details/data/params/ad_details_params.dar
 import 'package:bulka/core/services/sub_subcategory/data/params/sub_subcategory_params.dart';
 import 'package:bulka/core/services/subcategory/data/params/subcategory_params.dart';
 import 'package:bulka/modules/favourites/data/params/toggle_favourite_params.dart';
+import 'package:bulka/modules/posts_comments/data/params/post_comments_params.dart';
 
 class ApiConstance {
   static const String baseUrl =
@@ -33,6 +34,10 @@ class ApiConstance {
   static const String searchHistory = '/app/ads/search-history';
 //------------------------------------POSTS----------------------------------//
   static const String posts = '/app/posts';
+  static String postComments(PostCommentsParams params) =>
+      '/app/posts/comment/${params.postId}';
+  static const String sendComment = '/app/posts/comment';
+
 //-----------------------------------PROFILE----------------------------------//
   static const String profile = '/app/profile';
 //-------------------------------CATEGORY FIELDS------------------------------//
@@ -60,12 +65,17 @@ class ApiConstance {
   static const String educationDegree = '/app/helpers/education-degrees';
   static const String education = '/app/cv/education';
   static const String educationUniversity = '/app/helpers/universities';
+  //-------------------------------OFFERS------------------------------------//
+  static const String offersBanner = '/app/profile/offer-banners';
+  static const String offers = '/app/profile/offers';
   //-------------------------------CERTIFICATION------------------------------------//
   static const String certification = '/app/cv/certificate';
   //-------------------------------CV------------------------------------//
   static const String uploadCv = '/app/cv/cv/upload';
   //---------------------------------SKILLS-----------------------------------------//
   static const String skills = '/app/cv/skill';
+  //---------------------------------CHANGE PASSWORD-----------------------------------------//
+  static const String changePassword = '/app/profile/edit-password';
   //---------------------------------LOGOUT------------------------------------//
   static const String logout = '/app/logout';
 }

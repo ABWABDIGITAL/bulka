@@ -91,7 +91,12 @@ class DefaultNetworkImage extends StatelessWidget {
             memCacheWidth: needResizeImage ? width?.toInt() : null,
             useOldImageOnUrlChange: true,
             filterQuality: filterQuality ?? FilterQuality.low,
-            errorWidget: (context, url, error) => const Icon(Icons.error),
+            errorWidget: (context, url, error) => Image.asset(
+              AssetIcons.appTransparentIconX4,
+              height: loadingImageSize ?? 12,
+              width: loadingImageSize ?? 12,
+              fit: BoxFit.contain,
+            ),
             height: height ?? MediaQuery.of(context).size.height,
             width: width ?? MediaQuery.of(context).size.width,
             fit: fit ?? BoxFit.cover,
