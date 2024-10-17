@@ -107,8 +107,8 @@ class CreateAdParams extends Equatable {
           idx++;
         }
       } else {
-        formData.fields.add(MapEntry(
-            "ad_category_fields[$index][field_values]", item.toString()));
+        formData.fields.add(MapEntry("ad_category_fields[$index][field_values]",
+            item.fieldValue.toString()));
       }
 
       index++;

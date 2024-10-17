@@ -26,7 +26,7 @@ class HomeAppbarWidget extends StatefulWidget implements PreferredSizeWidget {
   State<HomeAppbarWidget> createState() => _HomeAppbarWidgetState();
 
   @override
-  Size get preferredSize => Size.fromHeight(height ?? 205.h);
+  Size get preferredSize => Size.fromHeight(height ?? 165.h);
 }
 
 class _HomeAppbarWidgetState extends State<HomeAppbarWidget> {
@@ -46,7 +46,7 @@ class _HomeAppbarWidgetState extends State<HomeAppbarWidget> {
       builder: (context, state) {
         final cubit = context.read<MyProfileInfoCubit>();
         return CustomAppBarWidget(
-          height: widget.height ?? 205.h,
+          height: widget.height ?? 195.h,
           backgroundColor: AppColors.opactiyPrimary,
           systemOverlayStyle: const SystemUiOverlayStyle(
             statusBarColor: AppColors.opactiyPrimary,

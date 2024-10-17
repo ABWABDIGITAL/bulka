@@ -24,18 +24,19 @@ class InfoDetailsInPostWidget extends StatelessWidget {
                 style: TextStyles.roboto14W600Black2,
               ),
             ),
-            Container(
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                border: Border.all(color: AppColors.grey),
-                borderRadius: BorderRadius.circular(8.r),
-              ),
-              padding: EdgeInsets.symmetric(vertical: 7.r, horizontal: 12.r),
-              child: Text(
-                '${post.adDetailsEntity.mainInfo.price} ${currentLanguage?.currency}',
-                style: TextStyles.roboto14W600Black2,
-              ),
-            )
+            if (post.adDetailsEntity.mainInfo.price != null)
+              Container(
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  border: Border.all(color: AppColors.grey),
+                  borderRadius: BorderRadius.circular(8.r),
+                ),
+                padding: EdgeInsets.symmetric(vertical: 7.r, horizontal: 12.r),
+                child: Text(
+                  '${post.adDetailsEntity.mainInfo.price} ${currentLanguage?.currency}',
+                  style: TextStyles.roboto14W600Black2,
+                ),
+              )
           ],
         ),
         vSpace(16),

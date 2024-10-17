@@ -1,7 +1,10 @@
 import 'package:bulka/core/services/servies_locator/service_locator.dart';
 import 'package:bulka/core/shared/widgets/appbar_widget.dart';
+import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/modules/skills/cubit/skills_cubit.dart';
+import 'package:bulka/modules/skills/view/widgets/add_skills_button.dart';
+import 'package:bulka/modules/skills/view/widgets/chosen_skills_list.dart';
 import 'package:bulka/modules/skills/view/widgets/custom_skill_search_bar.dart';
 import 'package:bulka/modules/skills/view/widgets/skills_list_view.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -13,19 +16,22 @@ class AddSkillsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cubit = context.read<SkillsCubit>();
     return Scaffold(
       appBar: OpacityAppbarWidget(title: AppStrings.skills.tr()),
       body: Padding(
-        padding: EdgeInsets.all(24),
+        padding: const EdgeInsets.all(24),
         child: BlocProvider(
-          create: (context) => SkillsCubit(sl())..getSkills(),
+          create: (context) => SkillsCubit(sl())..getSkills()..getUserSkills(),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomSkillSearchBar(),
-              cubit.searchController.text.isNotEmpty
-                  ? SkillsListView()
-                  : SizedBox()
+              const CustomSkillSearchBar(),
+              vSpace(16),
+              const Stack(
+                children: [ChosenSkillsList(), SkillsListView()],
+              ),
+              const Spacer(),
+              const AddSkillsButton()
             ],
           ),
         ),

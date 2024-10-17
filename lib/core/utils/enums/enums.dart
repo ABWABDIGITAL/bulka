@@ -39,3 +39,5 @@ enum SubscribtionStatusTypes { pending, unkown }
 enum CategoryProductsDisplayTypes { list, grid }
 
 enum CommentType { text, image, video, file, unkown }
+
+enum ReactionTypes { like, love, sad, idea, angry, none }

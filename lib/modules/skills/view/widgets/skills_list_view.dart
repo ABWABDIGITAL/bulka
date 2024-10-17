@@ -12,17 +12,21 @@ class SkillsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cubit= context.read<SkillsCubit>();
     return BlocBuilder<SkillsCubit, SkillsState>(
         buildWhen: (previous, current) =>
             current is GetSkillsError ||
             current is GetSkillsLoaded ||
             current is GetSkillsLoading,
+
         builder: (context, state) {
           if (state is GetSkillsLoading) {
             return const AllSkillsLoadingView();
           }
-          if (state is GetSkillsLoaded) {
-            return AllSkillsSuccessView(skills: state.skills);
+          if (state is GetSkillsLoaded
+             ||cubit.skills!=null
+              ) {
+            return AllSkillsSuccessView(skills: cubit.skills!);
           }
           if (state is GetSkillsError) {
             return AllSkillsErrorView(
