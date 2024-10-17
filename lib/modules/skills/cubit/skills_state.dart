@@ -1,10 +1,7 @@
 part of 'skills_cubit.dart';
 
-sealed class SkillsState extends Equatable {
+sealed class SkillsState {
   const SkillsState();
-
-  @override
-  List<Object> get props => [];
 }
 
 final class SkillsInitial extends SkillsState {}
@@ -23,6 +20,21 @@ final class GetSkillsLoaded extends SkillsState {
 
   const GetSkillsLoaded(this.skills);
 }
+//--------------------------------get user skills--------------------------//
+
+final class GetUserSkillsLoading extends SkillsState {}
+
+final class GetUserSkillsError extends SkillsState {
+  final ApiErrorEntity error;
+
+  const GetUserSkillsError(this.error);
+}
+
+final class GetUserSkillsLoaded extends SkillsState {
+  final List<SkillsEntity> skills;
+
+  const GetUserSkillsLoaded(this.skills);
+}
 //--------------------------------post skills--------------------------//
 
 final class PostSkillsLoading extends SkillsState {}
@@ -34,9 +46,33 @@ final class PostSkillsError extends SkillsState {
 }
 
 final class PostSkillsLoaded extends SkillsState {
-  final List<SkillsEntity> skills;
+  final String message;
 
-  const PostSkillsLoaded(this.skills);
+  const PostSkillsLoaded(this.message);
 }
 
-final class ChosenSkillsList extends SkillsState{}
+//--------------------------------post skills--------------------------//
+
+final class DeleteSkillsLoading extends SkillsState {}
+
+final class DeleteSkillsError extends SkillsState {
+  final ApiErrorEntity error;
+
+  const DeleteSkillsError(this.error);
+}
+
+final class DeleteSkillsLoaded extends SkillsState {
+  final String message;
+
+  const DeleteSkillsLoaded(this.message);
+}
+//----------------------------------------------------------//
+final class AddChosenSkillsList extends SkillsState {}
+
+final class RemoveChosenSkillsList extends SkillsState {}
+
+final class AddSearchList extends SkillsState {
+  final List<SkillsEntity> skills;
+
+  const AddSearchList(this.skills);
+}

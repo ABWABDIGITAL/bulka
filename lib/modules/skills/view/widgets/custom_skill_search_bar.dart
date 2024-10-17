@@ -11,23 +11,41 @@ class CustomSkillSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<SkillsCubit>();
-    return DefaultFormField(
-      hintText: 'Search for a skill',
-      prefixIcon: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: SvgPicture.asset(
-          AssetIcons.searchSvg,
-          color: Colors.grey,
-          height: 10,
-          width: 10,
-        ),
-      ),
-      onChanged: (value) {
-        cubit.getSearchedSkills(value);
+    return BlocBuilder<SkillsCubit, SkillsState>(
+      builder: (context, state) {
+        return DefaultFormField(
+          controller: cubit.searchController,
+          needValidation: false,
+          hintText: 'Search for a skill',
+          prefixIcon: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: SvgPicture.asset(
+              AssetIcons.searchSvg,
+              color: Colors.grey,
+              height: 10,
+              width: 10,
+            ),
+          ),
+          suffixIcon: cubit.searchController.text.isNotEmpty
+              ? IconButton(
+                  onPressed: () {
+                    cubit.searchController.clear();
+                    
+                    cubit.getSearchedSkills();
+                  },
+                  icon: const Icon(
+                    Icons.close,
+                    color: Colors.grey,
+                  ))
+              : null,
+          onChanged: (_) {
+            cubit.getSearchedSkills();
 
-        /*  debouncer.run(() {
-          cubit.getSkills();
-        }); */
+            /*  debouncer.run(() {
+              cubit.getSkills();
+            }); */
+          },
+        );
       },
     );
   }

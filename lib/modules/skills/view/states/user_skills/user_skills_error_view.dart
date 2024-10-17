@@ -4,9 +4,9 @@ import 'package:bulka/modules/skills/cubit/skills_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class AllSkillsErrorView extends StatelessWidget {
+class UserSkillsErrorView extends StatelessWidget {
   final ApiErrorEntity error;
-  const AllSkillsErrorView({super.key, required this.error});
+  const UserSkillsErrorView({super.key, required this.error});
 
   @override
   Widget build(BuildContext context) {

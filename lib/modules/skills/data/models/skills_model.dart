@@ -3,12 +3,18 @@ import 'package:bulka/modules/skills/data/entities/skills_entity.dart';
 
 class SkillsModel extends SkillsEntity {
   const SkillsModel(
-      {required super.skillId, required super.name, required super.id});
+      {required super.name, required super.skillId, required super.id});
 
-  factory SkillsModel.fromJson(Map<String, dynamic> json) {
+  factory SkillsModel.fromUserSkillsJson(Map<String, dynamic> json) {
     return SkillsModel(
-        id: json['id'],
+        id: json['id'] ?? 0,
         skillId: checkFromMap(json['skill']) ? json['skill']['id'] : 0,
-        name: checkFromMap(json['skill']) ? json['skill']['name'] : 0);
+        name: checkFromMap(json['skill']) ? json['skill']['name'] : 'no name');
+  }
+  factory SkillsModel.fromSkillsJson(Map<String, dynamic> json) {
+    return SkillsModel(
+        id: json['id'] ?? 0,
+        name: json['name'] ?? 'no name',
+        skillId: json['id'] ?? 0);
   }
 }

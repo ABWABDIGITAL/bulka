@@ -1,8 +1,10 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:bulka/core/shared/entity/api_error_entity.dart';
 import 'package:bulka/modules/skills/data/entities/skills_entity.dart';
+import 'package:bulka/modules/skills/data/params/skills_params.dart';
 import 'package:bulka/modules/skills/data/repo/skills_repo.dart';
-import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
 part 'skills_state.dart';
@@ -12,30 +14,38 @@ class SkillsCubit extends Cubit<SkillsState> {
   SkillsCubit(this._skillsRepo) : super(SkillsInitial());
   //-----------------------------------------------variables--------------------------------------//
   TextEditingController searchController = TextEditingController();
-  List<SkillsEntity> skills = [];
-  List<SkillsEntity> chosenSkills=[];
+  List<SkillsEntity>? _skills;
+  List<SkillsEntity>? _chosenSkills;
   //-----------------------------------------------functions--------------------------------------//
-   void getSearchedSkills(
-    String searchedSkill,
-  ) {
-    List<SkillsEntity> searchResult = skills
-        .where((skill) =>
-            skill.name.toLowerCase().startsWith(searchedSkill))
+  List<SkillsEntity>? get skills => _skills;
+  List<SkillsEntity>? get chosenSkills => _chosenSkills;
+  void getSearchedSkills() {
+    List<SkillsEntity> searchResult = _skills!
+        .where((skill) => skill.name
+            .toLowerCase()
+            .startsWith(searchController.text.toLowerCase()))
         .toList();
-    emit(GetSkillsLoaded(searchResult));
+    emit(AddSearchList(searchResult));
   }
 
-  
-  void checkAndToggleInterest(SkillsEntity interest) {
-    if (chosenSkills.contains(interest)) {
-      chosenSkills.remove(interest);
+  void checkAndToggleInterest(int skillIndex) {
+    if (_chosenSkills!.contains(_skills![skillIndex])) {
+      log('remove');
+      searchController.clear();
+      _chosenSkills!.remove(_skills![skillIndex]);
     } else {
-      chosenSkills.add(interest);
+      log('add');
+      _chosenSkills!.add(_skills![skillIndex]);
+      searchController.clear();
     }
-    emit(ChosenSkillsList());
+    emit(AddChosenSkillsList());
   }
 
-  
+  void removeChosenSkill(int skill) {
+    _chosenSkills!.removeAt(skill);
+    emit(RemoveChosenSkillsList());
+  }
+
   //-----------------------------------------------requests---------------------------------------//
   void getSkills() async {
     emit(GetSkillsLoading());
@@ -43,22 +53,45 @@ class SkillsCubit extends Cubit<SkillsState> {
     response.fold(
       (error) => emit(GetSkillsError(error)),
       (skills) {
-        this.skills = skills;
+        _skills = skills;
         emit(GetSkillsLoaded(skills));
       },
     );
   }
- 
-  /* void postSkills() async {
+
+  void getUserSkills() async {
+    emit(GetUserSkillsLoading());
+    final response = await _skillsRepo.getUserSkills();
+    response.fold(
+      (error) => emit(GetUserSkillsError(error)),
+      (skills) {
+        _chosenSkills = skills;
+        emit(GetUserSkillsLoaded(skills));
+      },
+    );
+  }
+
+  void postSkills() async {
     emit(PostSkillsLoading());
-    final params = chosenSkills.map((skill) => {''}).toList();
-    final response = await _skillsRepo.postSkills(chosenSkills);
+    final params = SkillsParams(skillsIds: _chosenSkills!);
+    final response = await _skillsRepo.postSkills(params);
     response.fold(
       (error) => emit(PostSkillsError(error)),
       (skills) {
-        this.skills = skills;
         emit(PostSkillsLoaded(skills));
       },
     );
-  } */
+  }
+
+  void deleteSkills(int id) async {
+    emit(DeleteSkillsLoading());
+    
+    final response = await _skillsRepo.deleteSkills(id);
+    response.fold(
+      (error) => emit(DeleteSkillsError(error)),
+      (skills) {
+        emit(DeleteSkillsLoaded(skills));
+      },
+    );
+  }
 }
