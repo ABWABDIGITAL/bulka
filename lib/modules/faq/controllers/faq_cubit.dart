@@ -7,20 +7,21 @@ import 'package:equatable/equatable.dart';
 part 'faq_state.dart';
 
 class FaqCubit extends Cubit<FaqState> {
-  FaqCubit( this._faqRepo) : super(FaqInitial());
+  final FaqRepo _faqRepo;
+  FaqCubit(this._faqRepo) : super(FaqInitial());
 //-----------------------------------variables-----------------------------------//
-FaqRepo _faqRepo;
+
 //-----------------------------------functions-----------------------------------//
 //-----------------------------------requests-----------------------------------//
 
   void getFaqs() async {
     emit(FaqLoading());
-     final response = await _faqRepo.getFaqs();
-     response.fold(
-       (error) => emit(FaqError(error)),
-       (faqs) {
-         emit(FaqLoaded(faqs));
-       },
-     );
+    final response = await _faqRepo.getFaqs();
+    response.fold(
+      (error) => emit(FaqError(error)),
+      (faqs) {
+        emit(FaqLoaded(faqs));
+      },
+    );
   }
 }

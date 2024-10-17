@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bulka/core/services/notifications/firebase_notification_api.dart';
 import 'package:bulka/core/services/profile_info/controller/cubit/my_profile_info_cubit.dart';
 import 'package:bulka/core/utils/home_utilites.dart';
@@ -82,7 +84,8 @@ class LoginCubit extends Cubit<LoginState> {
     final isRealDevice = await DeviceType.isRealDevice();
     final LoginLocationParams? locations =
         isRealDevice ? await _loginLocation() : null;
-
+    log(fcmToken.toString());
+    
     final response = await _loginRepo.login(
       LoginParams(
         //if you change login with email to login with phone it's ready in model just

@@ -11,7 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 part 'edit_profile_state.dart';
 
 class EditProfileCubit extends Cubit<EditProfileState> {
-    final EditProfileRepo _editProfileRepo;
+  final EditProfileRepo _editProfileRepo;
 
   EditProfileCubit(this._editProfileRepo) : super(EditProfileInitial());
   //--------------------------------------variables--------------------------------------//
@@ -22,6 +22,7 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   void initValues(
     BuildContext context,
   ) {
+    //image!.path=context.read<MyProfileInfoCubit>().profileEntity?.avatar ?? '';
     nameController.text =
         context.read<MyProfileInfoCubit>().profileEntity?.fullName ?? '';
   }
@@ -29,7 +30,7 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   //--------------------------------------requests--------------------------------------//
   Future<void> editUserProfile() async {
     emit(EditProfileLoading());
-   
+
     Map<String, dynamic> data = image == null
         ? {}
         : {
@@ -44,9 +45,7 @@ class EditProfileCubit extends Cubit<EditProfileState> {
       avatar: data.isEmpty ? null : data['image'],
     );
 
-    await _editProfileRepo
-        .editProfile(FormData.fromMap(params.toMap()))
-        .then((value) {
+    await _editProfileRepo.editProfile(params).then((value) {
       value.fold(
         (error) => emit(EditProfileError(error)),
         (success) {

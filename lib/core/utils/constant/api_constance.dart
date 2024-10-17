@@ -82,9 +82,13 @@ class ApiConstance {
   //-------------------------------CV------------------------------------//
   static const String uploadCv = '/app/cv/cv/upload';
   //---------------------------------SKILLS-----------------------------------------//
-  static const String skills = '/app/cv/skill';
+  static const String userSkills = '/app/cv/skill';
+  static const String skills = '/app/helpers/skills';
+  static const String deleteSkills = '/app/cv/skill/remove'; 
   //---------------------------------CHANGE PASSWORD-----------------------------------------//
   static const String changePassword = '/app/profile/edit-password';
+  //---------------------------------FAQ-----------------------------------------//
+  static const String faq = '/app/faq';
   //---------------------------------LOGOUT------------------------------------//
   static const String logout = '/app/logout';
 }

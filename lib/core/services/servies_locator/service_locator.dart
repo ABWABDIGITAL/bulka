@@ -11,6 +11,7 @@ import 'package:bulka/core/services/servies_locator/modules/create_ad_locator.da
 import 'package:bulka/core/services/servies_locator/modules/cv_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/edit_profile_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/education_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/faq_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/home_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/interests_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/logout_locator.dart';
@@ -88,6 +89,8 @@ class ServiceLocator {
     offersLocator();
     //--------------------------------CHANGE PASSWORD------------------------------------//
     changePasswordLocator();
+     //--------------------------------FAQ------------------------------------//
+    faqLocator();
 
   }
 }
