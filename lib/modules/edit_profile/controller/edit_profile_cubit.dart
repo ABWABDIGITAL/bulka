@@ -22,6 +22,7 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   void initValues(
     BuildContext context,
   ) {
+    //image!.path=context.read<MyProfileInfoCubit>().profileEntity?.avatar ?? '';
     nameController.text =
         context.read<MyProfileInfoCubit>().profileEntity?.fullName ?? '';
   }

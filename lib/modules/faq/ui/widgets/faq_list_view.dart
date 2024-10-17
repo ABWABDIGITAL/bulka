@@ -1,62 +1,37 @@
-
-import 'package:bulka/core/shared/widgets/spacing.dart';
-import 'package:bulka/core/theme/text_styles/text_styles.dart';
-import 'package:bulka/core/utils/constant/app_colors.dart';
-import 'package:bulka/modules/faq/data/entities/faq_entity.dart';
+import 'package:bulka/modules/faq/controllers/faq_cubit.dart';
+import 'package:bulka/modules/faq/ui/states/faq/faq_error_view.dart';
+import 'package:bulka/modules/faq/ui/states/faq/faq_loading_view.dart';
+import 'package:bulka/modules/faq/ui/states/faq/faq_success_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FaqListView extends StatelessWidget {
   const FaqListView({
     super.key,
-    required this.faqItems,
   });
-
-  final List<FaqEntity> faqItems;
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      separatorBuilder: (context, index) => vSpace(16),
-      padding: const EdgeInsets.all(16.0),
-      itemCount: faqItems.length,
-      itemBuilder: (context, index) {
-        return Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16.0),
-            color: Colors.white,
-            border: Border.all(color: AppColors.darkGrey2),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.1),
-                spreadRadius: 1,
-                blurRadius: 1,
-                offset: const Offset(0, 1), // changes position of shadow
-              ),
-            ],
-          ),
-          child: ExpansionTile(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16.0),
-            ),
-            childrenPadding: const EdgeInsets.all(16),
-            title: Text(
-              faqItems[index].question,
-              style: TextStyles.rubik14W500LigtBlack,
-            ),
-            trailing: const Icon(
-              Icons.keyboard_arrow_down,
-              color: AppColors.darkGrey2,
-            ),
-            children: [
-              Text(
-                faqItems[index].answer,
-                style: TextStyles.rubik13W400IconGrey,
-              )
-            ],
-          ),
-        );
-      },
-    );
+    return BlocBuilder<FaqCubit, FaqState>(
+        buildWhen: (previous, current) =>
+            current is FaqError ||
+            current is FaqLoaded ||
+            current is FaqLoading,
+        builder: (context, state) {
+          if (state is FaqLoading) {
+            return const FaqLoadingView();
+          }
+          if (state is FaqLoaded) {
+            return FaqSuccessView(
+              faqItems: state.faqs,
+            );
+          }
+          if (state is FaqError) {
+            return FaqErrorView(
+              error: state.error,
+            );
+          }
+          return const FaqLoadingView();
+        });
   }
 }
-

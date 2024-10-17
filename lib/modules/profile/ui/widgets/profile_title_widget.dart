@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/assets/asset_images.dart';
+import 'package:bulka/core/services/profile_info/controller/cubit/my_profile_info_cubit.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
@@ -7,6 +10,7 @@ import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/modules/edit_profile/view/screens/edit_profile_dialog.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -47,6 +51,8 @@ class _ProfileTitleWidgetState extends State<ProfileTitleWidget>
 
   @override
   Widget build(BuildContext context) {
+        final cubit = context.read<MyProfileInfoCubit>();
+
     return SizedBox(
       height: 260.h,
       child: Stack(
@@ -63,32 +69,45 @@ class _ProfileTitleWidgetState extends State<ProfileTitleWidget>
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                CircleAvatar(
-                  radius: 60.r,
-                  backgroundImage: const NetworkImage(
-                      'https://th.bing.com/th/id/OIP.7TXIEeCyh4kc8wYrXrHWIgHaEK?w=1920&h=1080&rs=1&pid=ImgDetMain'),
+                   cubit.profileEntity == null || cubit.profileEntity?.avatar == null
+            ? CircleAvatar(
+                backgroundColor: AppColors.white,
+                radius: 50.r,
+                child: SvgPicture.asset(
+                  AssetIcons.appIconSvg,
+                  height: 18.h,
+                  width: 18.w,
+                  // placeholderBuilder: (context) =>
+                  //     const CircularProgressIndicator(),
                 ),
+              )
+            : CircleAvatar(
+                radius: 50.r,
+                backgroundImage: MemoryImage(
+                  base64Decode(cubit.profileEntity!.avatar!),
+                ),
+              ),
                 vSpace(16),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Abdullah Ezz',
-                      style: TextStyles.rubik16W500Black2,
-                    ),
-                    hSpace(8),
-                    InkWell(
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          
-                          builder: (BuildContext context) {
-                            return const EditProfileDialog();
-                          },
-                        );
-                      },
-                      borderRadius: BorderRadius.circular(30),
-                      child: CircleAvatar(
+                InkWell(
+                  onTap: () {
+                          showDialog(
+                            context: context,
+                            
+                            builder: (BuildContext context) {
+                              return const EditProfileDialog();
+                            },
+                          );
+                        },
+                        borderRadius: BorderRadius.circular(30),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        cubit.profileEntity?.fullName ?? 'no name',
+                        style: TextStyles.rubik16W500Black2,
+                      ),
+                      hSpace(8),
+                      CircleAvatar(
                         radius: 15.r,
                         backgroundColor: AppColors.primary,
                         child: const Icon(
@@ -96,9 +115,9 @@ class _ProfileTitleWidgetState extends State<ProfileTitleWidget>
                           color: Colors.white,
                           size: 15,
                         ),
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
                 vSpace(16),
                 Row(
