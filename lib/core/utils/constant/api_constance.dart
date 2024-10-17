@@ -4,6 +4,7 @@ import 'package:bulka/core/services/subcategory/data/params/subcategory_params.d
 import 'package:bulka/modules/favourites/data/params/toggle_favourite_params.dart';
 import 'package:bulka/modules/posts/data/params/post_details_params.dart';
 import 'package:bulka/modules/posts/data/params/post_save_params.dart';
+import 'package:bulka/modules/posts/data/params/post_share_params.dart';
 import 'package:bulka/modules/posts_comments/data/params/post_comments_params.dart';
 import 'package:bulka/modules/posts_comments/data/params/send_comments_params.dart';
 
@@ -45,6 +46,8 @@ class ApiConstance {
   static String postDetails(PostDetailsParams params) =>
       '/app/posts/show/${params.adId}';
   static const String reactOnPost = '/app/posts/react';
+  static String postShare(PostShareParams params) =>
+      '/app/posts/share/${params.adId}';
 //-----------------------------------PROFILE----------------------------------//
   static const String profile = '/app/profile';
 //-------------------------------CATEGORY FIELDS------------------------------//

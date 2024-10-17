@@ -1,4 +1,4 @@
-import 'package:bulka/core/shared/widgets/like_animated_react_widget.dart';
+import 'package:bulka/core/utils/enums/enums.dart';
 import 'package:equatable/equatable.dart';
 
 class PostReactParams extends Equatable {
@@ -7,7 +7,7 @@ class PostReactParams extends Equatable {
     required this.react,
   });
   final int adId;
-  final Reaction react;
+  final ReactionTypes react;
 
   Map<String, dynamic> returnedMap() {
     Map<String, dynamic> map = {

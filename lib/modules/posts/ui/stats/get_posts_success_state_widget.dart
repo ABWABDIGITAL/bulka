@@ -1,6 +1,7 @@
 import 'package:bulka/core/shared/widgets/post_card_widget.dart';
 import 'package:bulka/core/utils/home_utilites.dart';
 import 'package:bulka/modules/posts/controller/cubit/posts_cubit.dart';
+import 'package:bulka/modules/posts/controller/cubit/posts_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -41,11 +42,20 @@ class _GetPostsSuccessStateWidgetState
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<PostsCubit>();
-    return ListView.builder(
-      itemBuilder: (context, index) {
-        return PostCardWidget(post: cubit.postsEntity!.posts[index]);
+    return BlocBuilder<PostsCubit, PostsState>(
+      buildWhen: (previous, current) =>
+          current is SavePostSuccess ||
+          current is ToggleReactSuccess ||
+          current is SharePostSuccess ||
+          current is GetPostsSuccess,
+      builder: (context, state) {
+        return ListView.builder(
+          itemBuilder: (context, index) {
+            return PostCardWidget(post: cubit.postsEntity!.posts[index]);
+          },
+          itemCount: cubit.postsEntity!.posts.length,
+        );
       },
-      itemCount: cubit.postsEntity!.posts.length,
     );
   }
 }

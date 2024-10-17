@@ -156,4 +156,21 @@ class EnumSwitchReturn {
         return CommentType.unkown;
     }
   }
+
+  static ReactionTypes getReactionType(String? reactionType) {
+    switch (reactionType) {
+      case 'love':
+        return ReactionTypes.love;
+      case 'like':
+        return ReactionTypes.like;
+      case 'sad':
+        return ReactionTypes.sad;
+      case 'idea':
+        return ReactionTypes.idea;
+      case 'angry':
+        return ReactionTypes.angry;
+      default:
+        return ReactionTypes.none;
+    }
+  }
 }

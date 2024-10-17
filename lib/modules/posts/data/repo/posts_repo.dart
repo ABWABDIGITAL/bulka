@@ -5,14 +5,17 @@ import 'package:bulka/core/utils/constant/api_constance.dart';
 import 'package:bulka/modules/posts/data/entity/post_details_entity.dart';
 import 'package:bulka/modules/posts/data/entity/post_react_entity.dart';
 import 'package:bulka/modules/posts/data/entity/post_save_entity.dart';
+import 'package:bulka/modules/posts/data/entity/post_share_entity.dart';
 import 'package:bulka/modules/posts/data/entity/posts_entity.dart';
 import 'package:bulka/modules/posts/data/models/post_details_model.dart';
 import 'package:bulka/modules/posts/data/models/post_react_model.dart';
 import 'package:bulka/modules/posts/data/models/post_save_model.dart';
+import 'package:bulka/modules/posts/data/models/post_share_model.dart';
 import 'package:bulka/modules/posts/data/models/posts_model.dart';
 import 'package:bulka/modules/posts/data/params/post_details_params.dart';
 import 'package:bulka/modules/posts/data/params/post_react_params.dart';
 import 'package:bulka/modules/posts/data/params/post_save_params.dart';
+import 'package:bulka/modules/posts/data/params/post_share_params.dart';
 import 'package:bulka/modules/posts/data/params/posts_params.dart';
 import 'package:dartz/dartz.dart';
 
@@ -63,6 +66,17 @@ class PostsRepo {
       );
 
       return Right(PostReactModel.fromJson(response.data));
+    } catch (error) {
+      return Left(ErrorHandler.handleError(error));
+    }
+  }
+
+  Future<Either<ApiErrorEntity, PostShareEntity>> sharePost(
+      PostShareParams params) async {
+    try {
+      final response = await DioHelper.post(ApiConstance.postShare(params));
+
+      return Right(PostShareModel.fromJson(response.data));
     } catch (error) {
       return Left(ErrorHandler.handleError(error));
     }

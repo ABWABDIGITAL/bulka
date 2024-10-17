@@ -1,5 +1,6 @@
 import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/shared/widgets/debouncer_widget.dart';
+import 'package:bulka/core/utils/enums/enums.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,13 +15,13 @@ class LikeAnimatedReactWidget extends StatefulWidget {
     this.onReactionChanged,
     this.overlayColor = Colors.white70,
     this.overlayHeight = 40,
-    this.overlayWidth = 200,
+    this.overlayWidth = 250,
     this.overlayDecoration,
     this.borderRadiusValue = 50,
     this.borderRadius,
   });
 
-  final Reaction? initialReaction;
+  final ReactionTypes? initialReaction;
   final OnButtonPressedCallback? onReactionChanged;
   final Color overlayColor;
   final double overlayWidth;
@@ -35,42 +36,42 @@ class LikeAnimatedReactWidget extends StatefulWidget {
 }
 
 class _LikeAnimatedReactWidgetState extends State<LikeAnimatedReactWidget> {
-  Reaction _reaction = Reaction.none;
+  ReactionTypes _reaction = ReactionTypes.none;
   bool _reactionView = false;
   final debouncer = Debouncer(milliseconds: 2500);
 
   GlobalKey btnKey = GlobalKey();
   final List<ReactionElement> reactions = [
     ReactionElement(
-      Reaction.like,
+      ReactionTypes.like,
       const Icon(
         Icons.thumb_up_off_alt_rounded,
         color: Colors.blue,
       ),
     ),
     ReactionElement(
-      Reaction.love,
+      ReactionTypes.love,
       const Icon(
         CupertinoIcons.heart_fill,
         color: Colors.red,
       ),
     ),
     ReactionElement(
-      Reaction.sad,
+      ReactionTypes.sad,
       Icon(
         Icons.sentiment_very_dissatisfied_rounded,
         color: Colors.yellow.shade800,
       ),
     ),
     ReactionElement(
-      Reaction.idea,
+      ReactionTypes.idea,
       Icon(
         Icons.lightbulb_outline_rounded,
         color: Colors.green.shade800,
       ),
     ),
     ReactionElement(
-      Reaction.angery,
+      ReactionTypes.angry,
       Icon(
         FontAwesomeIcons.faceAngry,
         color: Colors.red.shade800,
@@ -82,7 +83,7 @@ class _LikeAnimatedReactWidgetState extends State<LikeAnimatedReactWidget> {
   @override
   void initState() {
     super.initState();
-    _reaction = widget.initialReaction ?? Reaction.none;
+    _reaction = widget.initialReaction ?? ReactionTypes.none;
     setState(() {});
   }
 
@@ -92,7 +93,10 @@ class _LikeAnimatedReactWidgetState extends State<LikeAnimatedReactWidget> {
 
   @override
   void dispose() {
-    onCloseOverlay();
+    if (_reactionView && mounted) {
+      onCloseOverlay();
+    }
+
     super.dispose();
   }
 
@@ -186,13 +190,13 @@ class _LikeAnimatedReactWidgetState extends State<LikeAnimatedReactWidget> {
           onCloseOverlay();
           _reactionView = false;
         } else {
-          if (_reaction == Reaction.none) {
-            _reaction = Reaction.like;
+          if (_reaction == ReactionTypes.none) {
+            _reaction = ReactionTypes.like;
             if (widget.onReactionChanged != null) {
               widget.onReactionChanged!(_reaction);
             }
           } else {
-            _reaction = Reaction.none;
+            _reaction = ReactionTypes.none;
             if (widget.onReactionChanged != null) {
               widget.onReactionChanged!(_reaction);
             }
@@ -205,44 +209,42 @@ class _LikeAnimatedReactWidgetState extends State<LikeAnimatedReactWidget> {
   }
 }
 
-enum Reaction { like, love, sad, idea, angery, none }
-
-typedef OnButtonPressedCallback = void Function(Reaction newReaction);
+typedef OnButtonPressedCallback = void Function(ReactionTypes newReaction);
 
 class ReactionIcon extends StatelessWidget {
   const ReactionIcon({super.key, required this.reaction});
-  final Reaction reaction;
+  final ReactionTypes reaction;
 
   @override
   Widget build(BuildContext context) {
     switch (reaction) {
-      case Reaction.like:
+      case ReactionTypes.like:
         return const Icon(
           Icons.thumb_up_off_alt_rounded,
           color: Colors.blue,
         );
-      case Reaction.love:
+      case ReactionTypes.love:
         return SvgPicture.asset(
           AssetIcons.heartSvg,
           height: 20.h,
           width: 20.w,
         );
-      case Reaction.sad:
+      case ReactionTypes.sad:
         return Icon(
           FontAwesomeIcons.faceSadCry,
           color: Colors.yellow.shade800,
         );
-      case Reaction.idea:
+      case ReactionTypes.idea:
         return Icon(
           FontAwesomeIcons.lightbulb,
           color: Colors.green.shade800,
         );
-      case Reaction.angery:
+      case ReactionTypes.angry:
         return Icon(
           FontAwesomeIcons.faceAngry,
           color: Colors.red.shade800,
         );
-      case Reaction.none:
+      case ReactionTypes.none:
         return const Icon(
           Icons.thumb_up_off_alt_rounded,
           color: Colors.grey,
@@ -252,7 +254,7 @@ class ReactionIcon extends StatelessWidget {
 }
 
 class ReactionElement {
-  final Reaction reaction;
+  final ReactionTypes reaction;
   final Widget icon;
 
   ReactionElement(this.reaction, this.icon);

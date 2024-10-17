@@ -1,6 +1,7 @@
 import 'package:bulka/core/shared/entity/api_error_entity.dart';
 import 'package:bulka/modules/posts/data/entity/post_react_entity.dart';
 import 'package:bulka/modules/posts/data/entity/post_save_entity.dart';
+import 'package:bulka/modules/posts/data/entity/post_share_entity.dart';
 import 'package:bulka/modules/posts/data/entity/posts_entity.dart';
 
 sealed class PostsState {
@@ -49,4 +50,18 @@ final class ToggleReactSuccess extends PostsState {
 final class ToggleReactError extends PostsState {
   final ApiErrorEntity error;
   const ToggleReactError(this.error);
+}
+
+final class SharePostLoading extends PostsState {
+  const SharePostLoading();
+}
+
+final class SharePostSuccess extends PostsState {
+  final PostShareEntity postShareEntity;
+  const SharePostSuccess(this.postShareEntity);
+}
+
+final class SharePostError extends PostsState {
+  final ApiErrorEntity error;
+  const SharePostError(this.error);
 }

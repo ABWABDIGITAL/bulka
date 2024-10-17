@@ -294,4 +294,7 @@ class AppStrings {
   static const String describeYourCertification = 'Describe your certification';
   static const String postComments = 'Post Comments';
   static const String writeComment = 'Write Comment';
+  static const String likes = 'Likes';
+  static const String comments = 'Comments';
+  static const String share = 'Share';
 }

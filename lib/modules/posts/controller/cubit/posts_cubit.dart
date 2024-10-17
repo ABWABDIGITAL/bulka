@@ -4,6 +4,7 @@ import 'package:bulka/modules/posts/data/entity/post_details_entity.dart';
 import 'package:bulka/modules/posts/data/entity/posts_entity.dart';
 import 'package:bulka/modules/posts/data/params/post_react_params.dart';
 import 'package:bulka/modules/posts/data/params/post_save_params.dart';
+import 'package:bulka/modules/posts/data/params/post_share_params.dart';
 import 'package:bulka/modules/posts/data/params/posts_params.dart';
 import 'package:bulka/modules/posts/data/repo/posts_repo.dart';
 
@@ -48,6 +49,8 @@ class PostsCubit extends Cubit<PostsState> {
     response.fold((failure) {
       return emit(SavePostError(failure));
     }, (success) async {
+      changeElementInEntity(success.post);
+
       return emit(SavePostSuccess(success));
     });
   }
@@ -70,6 +73,17 @@ class PostsCubit extends Cubit<PostsState> {
     }, (success) async {
       changeElementInEntity(success.post);
       return emit(ToggleReactSuccess(success));
+    });
+  }
+
+  Future<void> sharePostStatesHandled(PostShareParams params) async {
+    emit(const SharePostLoading());
+    final response = await _postsRepo.sharePost(params);
+    response.fold((failure) {
+      return emit(SharePostError(failure));
+    }, (success) async {
+      changeElementInEntity(success.post);
+      return emit(SharePostSuccess(success));
     });
   }
 }
