@@ -1,6 +1,4 @@
 import 'package:bulka/core/shared/widgets/spacing.dart';
-import 'package:bulka/core/utils/constant/app_colors.dart';
-import 'package:bulka/core/utils/enums/enums.dart';
 import 'package:bulka/core/utils/home_utilites.dart';
 import 'package:bulka/modules/category_products/controller/cubit/category_products_cubit.dart';
 import 'package:bulka/modules/category_products/controller/cubit/category_products_state.dart';

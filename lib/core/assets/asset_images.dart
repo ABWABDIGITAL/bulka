@@ -30,4 +30,5 @@ class AssetImages {
       'assets/images/save_location_pointer.png';
   static const String noResultFound = 'assets/images/no_result_found.png';
   static const String emptyLocation = 'assets/images/empty_location.png';
+  static const String changePassword = 'assets/images/change_password.png';
 }

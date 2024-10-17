@@ -6,7 +6,6 @@ import 'package:bulka/modules/posts/data/params/post_details_params.dart';
 import 'package:bulka/modules/posts/data/params/post_save_params.dart';
 import 'package:bulka/modules/posts/data/params/post_share_params.dart';
 import 'package:bulka/modules/posts_comments/data/params/post_comments_params.dart';
-import 'package:bulka/modules/posts_comments/data/params/send_comments_params.dart';
 
 class ApiConstance {
   static const String baseUrl =
@@ -75,12 +74,17 @@ class ApiConstance {
   static const String educationDegree = '/app/helpers/education-degrees';
   static const String education = '/app/cv/education';
   static const String educationUniversity = '/app/helpers/universities';
+  //-------------------------------OFFERS------------------------------------//
+  static const String offersBanner = '/app/profile/offer-banners';
+  static const String offers = '/app/profile/offers';
   //-------------------------------CERTIFICATION------------------------------------//
   static const String certification = '/app/cv/certificate';
   //-------------------------------CV------------------------------------//
   static const String uploadCv = '/app/cv/cv/upload';
   //---------------------------------SKILLS-----------------------------------------//
   static const String skills = '/app/cv/skill';
+  //---------------------------------CHANGE PASSWORD-----------------------------------------//
+  static const String changePassword = '/app/profile/edit-password';
   //---------------------------------LOGOUT------------------------------------//
   static const String logout = '/app/logout';
 }

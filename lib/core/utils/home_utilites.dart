@@ -17,6 +17,8 @@ import 'package:bulka/modules/ad_details_modules/car_product_details/ui/views/ca
 import 'package:bulka/modules/ad_details_modules/jop_details/ui/views/jop_details_screen.dart';
 import 'package:bulka/modules/ad_details_modules/post_details/ui/views/post_details_screen.dart';
 import 'package:bulka/modules/ad_details_modules/properity_product_details/ui/views/properity_product_details_screen.dart';
+import 'package:bulka/modules/offers/data/entities/offers_entity.dart';
+import 'package:bulka/modules/offers/data/models/offers_model.dart';
 import 'package:bulka/modules/posts/data/entity/post_details_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -48,7 +50,15 @@ Future<void> saveToken(TokenEntity tokenEntity) async {
     debugPrint(e.toString());
   }
 }
-
+Future<void> saveOffer(OffersEntity offerEntity) async {
+  try {
+    await SharedPrefHelper.setSecuredString(
+        SharedPrefKeys.claimOffer, jsonEncode(offerEntity.toJson()));
+    await getOffer();
+  } catch (e) {
+    debugPrint(e.toString());
+  }
+}
 Future<TokenEntity?> getToken() async {
   try {
     final String? userToken =
@@ -61,7 +71,18 @@ Future<TokenEntity?> getToken() async {
   }
   return null;
 }
-
+Future<OffersEntity?> getOffer() async {
+  try {
+    final String? offer =
+        await SharedPrefHelper.getSecuredString(SharedPrefKeys.claimOffer);
+    cachedOffer =
+        offer != null ? OffersModel.fromJson(jsonDecode(offer)) : null;
+    return cachedOffer;
+  } catch (e) {
+    debugPrint(e.toString());
+  }
+  return null;
+}
 bool isScreenSmallFun(BuildContext context) {
   if (Responsive.isSmall(context) || Responsive.isMedium(context)) {
     return isScreenSmall = true;

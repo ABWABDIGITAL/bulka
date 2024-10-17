@@ -2,11 +2,11 @@ import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class OfferDetailsDescription extends StatelessWidget {
-  const OfferDetailsDescription({super.key});
+  final String description;
+  const OfferDetailsDescription({super.key, required this.description});
 
   @override
   Widget build(BuildContext context) {
-    return Text('AppStrings.afterYouComplete3Deals.tr()',
-        style: TextStyles.rubik14W400DarkGrey2);
+    return Text(description, style: TextStyles.rubik14W400DarkGrey2);
   }
 }

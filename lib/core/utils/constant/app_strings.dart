@@ -288,6 +288,7 @@ class AppStrings {
   static const String educationDegree = 'Education degree';
   static const String ok = 'Ok';
   static const String university = 'University';
+
   static const String certificationName = 'Certification Name';
   static const String certificationLink = 'Certification Link';
   static const String endDate = 'End date';
@@ -297,4 +298,23 @@ class AppStrings {
   static const String likes = 'Likes';
   static const String comments = 'Comments';
   static const String share = 'Share';
+
+  static const String forYou = 'For You';
+  static const String startDate = 'Start date';
+  static const String helloHowWeCanHelpYou = 'Hello How we can help you';
+  static const String contactLiveChat = 'Contact live Chat';
+  static const String contactLiveChatDescription =
+      'You can start a live chat and we will respond to you immediately';
+  static const String sendUsAnEmail = 'Send us an email';
+  static const String sendUsAnEmailDescription =
+      'You can send a message to our email and we will respond to you as soon as possible';
+  static const String locationOffice = 'Location office';
+  static const String locationOfficeDescription =
+      'If the matter requires a meet, we don\'t mind, we always help you';
+  static const String changePassword = 'Change password';
+  static const String enterNewPassword = 'Enter New Password';
+  static const String changePasswordDescription =
+      'Please ender your old password correctly to change your password.';
+  static const String confirmNewPassword = 'Confirm New Password';
+  static const String oldPassword = 'Old Password';
 }
