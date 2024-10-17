@@ -247,8 +247,6 @@
   "Likes": "Likes",
   "Comments": "Comments",
   "Share": "Share",
-  "Post Comments": "Post Comments",
-  "Write Comment": "Write Comment",
   "For You": "For You",
   "Start date": "Start date",
   "Hello How we can help you": "Hello, How we can help you?",
@@ -256,5 +254,9 @@
   "Change password": "Change password",
   "Enter New Password": "Enter New Password",
   "Please enter your old password correctly to change your password.": "Please enter your old password correctly to change your password.",
-  "Confirm New Password": "Confirm New Password"
+  "Confirm New Password": "Confirm New Password",
+  "All": "All",
+  "Buying": "Buying",
+  "Selling": "Selling",
+  "Important": "Important"
 }

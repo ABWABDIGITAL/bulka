@@ -1,4 +1,5 @@
 // ignore_for_file: depend_on_referenced_packages
+import 'package:bulka/core/utils/home_utilites.dart';
 import 'package:bulka/modules/chats/specific_chat/data/entity/chat_entity.dart';
 import 'package:bulka/modules/chats/specific_chat/data/model/my_side_in_chat_model.dart';
 import 'package:bulka/modules/chats/specific_chat/data/model/other_side_in_chat_model.dart';
@@ -12,6 +13,7 @@ class ChatModel extends ChatEntity {
   });
   factory ChatModel.fromJson(Map<String, dynamic> json) {
     List<chat.Message> messages = [];
+    final int? userId = getUserIdFromToken();
 
     // if (checkFromArray(json['messages'])) {
     //   messages = (json['messages'] as List)
@@ -27,8 +29,12 @@ class ChatModel extends ChatEntity {
     // }
 
     return ChatModel(
-      mySideInChatEntity: MySideInChatModel.fromJson(json['user']),
-      otherSideInChatEntity: OtherSideInChatModel.fromJson(json['other']),
+      mySideInChatEntity: json['sender']['id'] == userId
+          ? MySideInChatModel.fromJson(json['sender'])
+          : MySideInChatModel.fromJson(json['receiver']),
+      otherSideInChatEntity: json['sender']['id'] == userId
+          ? OtherSideInChatModel.fromJson(json['other'])
+          : OtherSideInChatModel.fromJson(json['other']),
       messages: messages,
     );
   }

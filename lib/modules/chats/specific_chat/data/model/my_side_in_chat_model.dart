@@ -1,4 +1,5 @@
 import 'package:bulka/modules/chats/specific_chat/data/entity/my_side_in_chat_entity.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_chat_types/flutter_chat_types.dart' as chat;
 
 class MySideInChatModel extends MySideInChatEntity {
