@@ -8,7 +8,6 @@ import 'package:bulka/modules/certifications/ui/screens/add_certifications_scree
 import 'package:bulka/modules/contact_info/ui/views/contact_info_screen.dart';
 import 'package:bulka/modules/cv/ui/views/add_cv_screen.dart';
 import 'package:bulka/modules/education/view/widgets/education_bottom_sheet.dart';
-import 'package:bulka/modules/languages/ui/views/choose_languages_screen.dart';
 import 'package:bulka/modules/offers/view/screens/offers_screen.dart';
 import 'package:bulka/modules/packages/views/screens/packages_screen.dart';
 import 'package:bulka/modules/profile/data/entities/profile_entity.dart';
@@ -16,6 +15,7 @@ import 'package:bulka/modules/profile/ui/widgets/profile_list_tile_widget.dart';
 import 'package:bulka/modules/profile_location/view/screens/profile_empty_location_screen.dart';
 import 'package:bulka/modules/skills/view/screens/add_skills_screen.dart';
 import 'package:bulka/modules/support/view/screens/support_screen.dart';
+import 'package:bulka/modules/user_language/view/screens/user_languages_screen.dart';
 import 'package:bulka/modules/verify_id/view/screens/verify_id_screen.dart';
 import 'package:bulka/modules/work_experience/view/widgets/work_experience_bottom_sheet.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -43,7 +43,7 @@ class ProfileBasicInfoWidget extends StatelessWidget {
         },
         title: AppStrings.verifyId.tr(),
       ),
-       ProfileTileEntity(
+      ProfileTileEntity(
         svgPath: AssetIcons.skillSvg,
         svgColor: AppColors.black4,
         onTap: () {
@@ -52,39 +52,35 @@ class ProfileBasicInfoWidget extends StatelessWidget {
         title: AppStrings.skills.tr(),
       ),
       ProfileTileEntity(
-        svgPath: AssetIcons.workExperienceSvg,
-        title: AppStrings.workExperience.tr(),
-        onTap: (){
-          showModalBottomSheet(
-                context: context,
-                isScrollControlled: true,
-                shape: const RoundedRectangleBorder(
-                  borderRadius:
-                      BorderRadius.vertical(top: Radius.circular(25.0)),
-                ),
-                builder: (BuildContext context) {
-                  return const WorkExperienceBottomSheet();
-                },
-              );
-        }
-      ),
+          svgPath: AssetIcons.workExperienceSvg,
+          title: AppStrings.workExperience.tr(),
+          onTap: () {
+            showModalBottomSheet(
+              context: context,
+              isScrollControlled: true,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(25.0)),
+              ),
+              builder: (BuildContext context) {
+                return const WorkExperienceBottomSheet();
+              },
+            );
+          }),
       ProfileTileEntity(
-        svgPath: AssetIcons.educationSvg,
-        title: AppStrings.education.tr(),
-        onTap: (){
-          showModalBottomSheet(
-                context: context,
-                isScrollControlled: true,
-                shape: const RoundedRectangleBorder(
-                  borderRadius:
-                      BorderRadius.vertical(top: Radius.circular(25.0)),
-                ),
-                builder: (BuildContext context) {
-                  return const EducationBottomSheet();
-                },
-              );
-        }
-      ),
+          svgPath: AssetIcons.educationSvg,
+          title: AppStrings.education.tr(),
+          onTap: () {
+            showModalBottomSheet(
+              context: context,
+              isScrollControlled: true,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(25.0)),
+              ),
+              builder: (BuildContext context) {
+                return const EducationBottomSheet();
+              },
+            );
+          }),
       ProfileTileEntity(
           svgPath: AssetIcons.certificationSvg,
           title: AppStrings.certification.tr(),
@@ -108,7 +104,7 @@ class ProfileBasicInfoWidget extends StatelessWidget {
           svgPath: AssetIcons.languageSvg,
           title: AppStrings.languages.tr(),
           onTap: () {
-            context.push(const ChooseLanguagesScreen());
+            context.push(const UserLanguagesScreen());
           }),
       ProfileTileEntity(
           svgPath: AssetIcons.locationOutlineSvg,

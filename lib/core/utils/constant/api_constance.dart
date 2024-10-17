@@ -76,6 +76,8 @@ class ApiConstance {
   static const String skills = '/app/cv/skill';
   //---------------------------------CHANGE PASSWORD-----------------------------------------//
   static const String changePassword = '/app/profile/edit-password';
+  //---------------------------------FAQ-----------------------------------------//
+  static const String faq = '/app/faq';
   //---------------------------------LOGOUT------------------------------------//
   static const String logout = '/app/logout';
 }
