@@ -79,13 +79,13 @@ class CreateAdScreen extends StatelessWidget {
                       const CreateAdDescriptionFieldWidget(),
                       const SizedBox(height: 20),
                       //---------------------//
-                      if (adType != AdType.jobs && adType != AdType.posts)
+                      if (adType == AdType.jobs || adType == AdType.posts)
                         CreateAdTitleWidget(
                           title: '${AppStrings.thePrice.tr()}*',
                         ),
-                      if (adType != AdType.jobs && adType != AdType.posts)
+                      if (adType == AdType.jobs || adType == AdType.posts)
                         const CreateAdPriceFieldWidget(),
-                      if (adType != AdType.jobs && adType != AdType.posts)
+                      if (adType == AdType.jobs || adType == AdType.posts)
                         const SizedBox(height: 20),
                       //---------------------//
                       CreateAdTitleWidget(

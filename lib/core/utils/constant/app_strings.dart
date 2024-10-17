@@ -293,9 +293,12 @@ class AppStrings {
   static const String certificationLink = 'Certification Link';
   static const String endDate = 'End date';
   static const String describeYourCertification = 'Describe your certification';
-
   static const String postComments = 'Post Comments';
   static const String writeComment = 'Write Comment';
+  static const String likes = 'Likes';
+  static const String comments = 'Comments';
+  static const String share = 'Share';
+
   static const String forYou = 'For You';
   static const String startDate = 'Start date';
   static const String helloHowWeCanHelpYou = 'Hello How we can help you';
@@ -312,8 +315,6 @@ class AppStrings {
   static const String enterNewPassword = 'Enter New Password';
   static const String changePasswordDescription =
       'Please ender your old password correctly to change your password.';
-  static const String confirmNewPassword= 'Confirm New Password';
+  static const String confirmNewPassword = 'Confirm New Password';
   static const String oldPassword = 'Old Password';
-  
-
 }

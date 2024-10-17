@@ -1,4 +1,5 @@
 import 'package:bulka/core/services/ad_details/data/model/ad_details_model.dart';
+import 'package:bulka/core/utils/enums/enum_switch_return.dart';
 import 'package:bulka/core/utils/home_utilites.dart';
 import 'package:bulka/modules/posts/data/entity/post_details_entity.dart';
 
@@ -11,6 +12,7 @@ class PostDetailsModel extends PostDetailsEntity {
     required super.sharedCount,
     required super.isReacted,
     required super.isSaved,
+    required super.reaction,
   });
 
   factory PostDetailsModel.fromJson(Map<String, dynamic> json) {
@@ -24,6 +26,7 @@ class PostDetailsModel extends PostDetailsEntity {
       sharedCount: json['share_count'],
       isReacted: json['is_reacted'],
       isSaved: json['is_saved'],
+      reaction: EnumSwitchReturn.getReactionType(json['react_type']),
     );
   }
 }

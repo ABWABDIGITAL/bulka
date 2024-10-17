@@ -39,10 +39,10 @@ class PostsScreen extends StatelessWidget {
           if (state is GetPostsError) {
             return GetPostsErrorStateWidget(state.error);
           }
-          if (state is GetPostsSuccess) {
+          if (cubit.postsEntity != null || state is GetPostsSuccess) {
             return const GetPostsSuccessStateWidget();
           }
-          return Text('no state provided');
+          return const Text('no state provided');
         },
       ),
     );

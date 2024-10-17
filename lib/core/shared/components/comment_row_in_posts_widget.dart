@@ -3,12 +3,21 @@ import 'dart:convert';
 import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/services/profile_info/controller/cubit/my_profile_info_cubit.dart';
 import 'package:bulka/core/services/profile_info/controller/cubit/my_profile_info_state.dart';
+import 'package:bulka/core/shared/widgets/like_animated_react_widget.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/core/utils/enums/enums.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
+import 'package:bulka/core/utils/widgets/dialogs/dialogs.dart';
+import 'package:bulka/core/utils/widgets/loading/adaptive_circuler.dart';
+import 'package:bulka/modules/posts/controller/cubit/posts_cubit.dart';
+import 'package:bulka/modules/posts/controller/cubit/posts_state.dart';
 import 'package:bulka/modules/posts/data/entity/post_details_entity.dart';
+import 'package:bulka/modules/posts/data/params/post_react_params.dart';
+import 'package:bulka/modules/posts/data/params/post_save_params.dart';
+import 'package:bulka/modules/posts/data/params/post_share_params.dart';
 import 'package:bulka/modules/posts_comments/views/screens/posts_comments_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -24,20 +33,39 @@ class CommentRowInPostsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          height: 40.h,
-          width: 40.w,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            border: Border.all(color: AppColors.grey),
-            borderRadius: BorderRadius.circular(10.r),
-            color: AppColors.mediumGrey8,
-          ),
-          child: SvgPicture.asset(
-            AssetIcons.heartSvg,
-            height: 20.h,
-            width: 20.w,
-          ),
+        BlocBuilder<PostsCubit, PostsState>(
+          buildWhen: (previous, current) =>
+              current is ToggleReactLoading ||
+              current is ToggleReactSuccess ||
+              current is ToggleReactError,
+          builder: (context, state) {
+            return Container(
+              height: 40.h,
+              width: 40.w,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                border: Border.all(color: AppColors.grey),
+                borderRadius: BorderRadius.circular(10.r),
+                color: AppColors.mediumGrey8,
+              ),
+              child: LikeAnimatedReactWidget(
+                onReactionChanged: (reaction) {
+                  if (state is! ToggleReactLoading) {
+                    context
+                        .read<PostsCubit>()
+                        .toggleReactOnPostStatesHandled(PostReactParams(
+                          adId: post.adDetailsEntity.mainInfo.id,
+                          react: reaction,
+                        ));
+                  }
+                },
+                overlayColor: AppColors.mediumGrey8,
+                initialReaction: post.isReacted
+                    ? (post.reaction ?? ReactionTypes.like)
+                    : null,
+              ),
+            );
+          },
         ),
         hSpace(8),
         Expanded(
@@ -98,36 +126,72 @@ class CommentRowInPostsWidget extends StatelessWidget {
           ),
         ),
         hSpace(8),
-        Container(
-          height: 40.h,
-          width: 40.w,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            border: Border.all(color: AppColors.grey),
-            borderRadius: BorderRadius.circular(10.r),
-            color: AppColors.mediumGrey8,
-          ),
-          child: SvgPicture.asset(
-            AssetIcons.bookMarkSvg,
-            height: 20.h,
-            width: 20.w,
-          ),
+        BlocBuilder<PostsCubit, PostsState>(
+          buildWhen: (previous, current) =>
+              current is SavePostLoading ||
+              current is SavePostSuccess ||
+              current is SavePostError,
+          builder: (context, state) {
+            return GestureDetector(
+              onTap: () {
+                context.read<PostsCubit>().savePostStatesHandled(PostSaveParams(
+                      adId: post.adDetailsEntity.mainInfo.id,
+                    ));
+              },
+              child: Container(
+                height: 40.h,
+                width: 40.w,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  border: Border.all(color: AppColors.grey),
+                  borderRadius: BorderRadius.circular(10.r),
+                  color: AppColors.mediumGrey8,
+                ),
+                child: state is SavePostLoading
+                    ? const AdaptiveCircularProgress()
+                    : SvgPicture.asset(
+                        AssetIcons.bookMarkSvg,
+                        height: 20.h,
+                        width: 20.w,
+                        color: post.isSaved ? AppColors.primary : null,
+                      ),
+              ),
+            );
+          },
         ),
         hSpace(8),
-        Container(
-          height: 40.h,
-          width: 40.w,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            border: Border.all(color: AppColors.grey),
-            borderRadius: BorderRadius.circular(10.r),
-            color: AppColors.mediumGrey8,
-          ),
-          child: SvgPicture.asset(
-            AssetIcons.shareSvg,
-            height: 20.h,
-            width: 20.w,
-          ),
+        BlocBuilder<PostsCubit, PostsState>(
+          buildWhen: (previous, current) =>
+              current is SharePostLoading ||
+              current is SharePostSuccess ||
+              current is SharePostError,
+          builder: (context, state) {
+            return GestureDetector(
+              onTap: () {
+                if (state is! SharePostLoading) {
+                  context.read<PostsCubit>().sharePostStatesHandled(
+                      PostShareParams(adId: post.adDetailsEntity.mainInfo.id));
+                }
+              },
+              child: Container(
+                height: 40.h,
+                width: 40.w,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  border: Border.all(color: AppColors.grey),
+                  borderRadius: BorderRadius.circular(10.r),
+                  color: AppColors.mediumGrey8,
+                ),
+                child: state is SavePostLoading
+                    ? const AdaptiveCircularProgress()
+                    : SvgPicture.asset(
+                        AssetIcons.shareSvg,
+                        height: 20.h,
+                        width: 20.w,
+                      ),
+              ),
+            );
+          },
         ),
       ],
     );

@@ -2,6 +2,9 @@ import 'package:bulka/core/services/ad_details/data/params/ad_details_params.dar
 import 'package:bulka/core/services/sub_subcategory/data/params/sub_subcategory_params.dart';
 import 'package:bulka/core/services/subcategory/data/params/subcategory_params.dart';
 import 'package:bulka/modules/favourites/data/params/toggle_favourite_params.dart';
+import 'package:bulka/modules/posts/data/params/post_details_params.dart';
+import 'package:bulka/modules/posts/data/params/post_save_params.dart';
+import 'package:bulka/modules/posts/data/params/post_share_params.dart';
 import 'package:bulka/modules/posts_comments/data/params/post_comments_params.dart';
 
 class ApiConstance {
@@ -37,7 +40,13 @@ class ApiConstance {
   static String postComments(PostCommentsParams params) =>
       '/app/posts/comment/${params.postId}';
   static const String sendComment = '/app/posts/comment';
-
+  static String savePost(PostSaveParams params) =>
+      '/app/posts/save/${params.adId}';
+  static String postDetails(PostDetailsParams params) =>
+      '/app/posts/show/${params.adId}';
+  static const String reactOnPost = '/app/posts/react';
+  static String postShare(PostShareParams params) =>
+      '/app/posts/share/${params.adId}';
 //-----------------------------------PROFILE----------------------------------//
   static const String profile = '/app/profile';
 //-------------------------------CATEGORY FIELDS------------------------------//

@@ -75,6 +75,6 @@ class AssetIcons {
   static const String deleteLocationSvg = 'assets/icons/delete_location.svg';
   static const String addSvg = 'assets/icons/add.svg';
   static const String editSvg = 'assets/icons/edit.svg';
+  static const String emotionsSvg = 'assets/icons/emotions.svg';
   static const String settingsSvg = 'assets/icons/setting.svg';
-
 }
