@@ -16,6 +16,7 @@ import 'package:bulka/core/services/servies_locator/modules/home_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/interests_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/logout_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/navbar_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/notifications_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/offers_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/packages_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/posts_locator.dart';
@@ -69,28 +70,29 @@ class ServiceLocator {
     seeAllLocator();
 //----------------------------------LOGOUT------------------------------------//
     logoutLocator();
-    //--------------------------------SETTINGS------------------------------------//
+//--------------------------------SETTINGS------------------------------------//
     settingsLocator();
-    //--------------------------------PACKAGES------------------------------------//
+//--------------------------------PACKAGES------------------------------------//
     packagesLocator();
-    //--------------------------------EDIT PROFILE------------------------------------//
+//--------------------------------EDIT PROFILE------------------------------------//
     editProfileLocator();
-    //--------------------------------WORK EXPERIENCE------------------------------------//
+//--------------------------------WORK EXPERIENCE------------------------------------//
     workExperienceLocator();
-    //--------------------------------EDUCATION------------------------------------//
+//--------------------------------EDUCATION------------------------------------//
     educationLocator();
-    //--------------------------------CERTIFICATION------------------------------------//
+//--------------------------------CERTIFICATION------------------------------------//
     certificationLocator();
-    //--------------------------------CV------------------------------------//
+//--------------------------------CV------------------------------------//
     cvLocator();
-    //--------------------------------SKILLS------------------------------------//
+//--------------------------------SKILLS------------------------------------//
     skillsLocator();
-    //--------------------------------OFFERS------------------------------------//
+//--------------------------------OFFERS------------------------------------//
     offersLocator();
-    //--------------------------------CHANGE PASSWORD------------------------------------//
+//--------------------------------CHANGE PASSWORD------------------------------------//
     changePasswordLocator();
-     //--------------------------------FAQ------------------------------------//
+//--------------------------------FAQ------------------------------------//
     faqLocator();
-
+//-------------------------------NOTIFCAITONS------------------------------------//
+    notificationsLocator();
   }
 }
