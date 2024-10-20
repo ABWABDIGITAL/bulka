@@ -2,6 +2,7 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:bulka/modules/chats/specific_chat/data/params/get_specific_chat_params.dart';
+import 'package:bulka/modules/chats/all_chats/views/screens/all_chats_screen.dart';
 import 'package:bulka/modules/chats/specific_chat/view/screens/specific_chat_screen.dart';
 import 'package:bulka/modules/home/ui/views/home_screen.dart';
 import 'package:bulka/modules/home/ui/widgets/home_appbar_widget.dart';
@@ -12,6 +13,7 @@ import 'package:bulka/modules/profile/ui/widgets/profile_appbar_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class NavbarLayoutCubit extends Cubit<NavbarLayoutState> {
   NavbarLayoutCubit() : super(NavbarLayoutInitial());
 //---------------------------------VARIABLES----------------------------------//
@@ -22,7 +24,8 @@ class NavbarLayoutCubit extends Cubit<NavbarLayoutState> {
     const HomeScreen(),
     const PostsScreen(),
     const HomeScreen(),
-    const SpecificChatScreen(GetSpecificChatParams(chatId: "1")),
+    const AllChatsScreen(),
+    // const SpecificChatScreen(GetSpecificChatParams(chatId: "1")),
     const ProfileScreen(),
   ];
 

@@ -298,7 +298,6 @@ class AppStrings {
   static const String likes = 'Likes';
   static const String comments = 'Comments';
   static const String share = 'Share';
-
   static const String forYou = 'For You';
   static const String startDate = 'Start date';
   static const String helloHowWeCanHelpYou = 'Hello How we can help you';
@@ -317,6 +316,7 @@ class AppStrings {
       'Please ender your old password correctly to change your password.';
   static const String confirmNewPassword = 'Confirm New Password';
   static const String oldPassword = 'Old Password';
+
   static const String addLanguage = 'Add Language';
   static const String nolanguagesAddedYet = 'No languages added yet';
   static const String userLanguages = 'User Languages';
@@ -325,4 +325,11 @@ class AppStrings {
   static const String allLanguages = 'All Languages';
   static const String addLevel = 'Add Level';
   static const String pleaseSelectLangFirst = 'Please select a language first';
+
+  static const String all = 'All';
+  static const String buying = 'Buying';
+  static const String selling = 'Selling';
+  static const String important = 'Important';
+    static const String unreadChat = 'Unread Chat';
+
 }
