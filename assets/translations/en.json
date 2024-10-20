@@ -247,8 +247,6 @@
   "Likes": "Likes",
   "Comments": "Comments",
   "Share": "Share",
-  "Post Comments": "Post Comments",
-  "Write Comment": "Write Comment",
   "For You": "For You",
   "Start date": "Start date",
   "Hello How we can help you": "Hello, How we can help you?",
@@ -256,5 +254,13 @@
   "Change password": "Change password",
   "Enter New Password": "Enter New Password",
   "Please enter your old password correctly to change your password.": "Please enter your old password correctly to change your password.",
-  "Confirm New Password": "Confirm New Password"
+  "Confirm New Password": "Confirm New Password",
+  "Add Language": "Add Language",
+  "No languages added yet": "No languages added yet",
+  "User Languages": "User Languages",
+  "Search for a skill": "Search for a skill",
+  "Search for a language": "Search for a language",
+  "All Languages": "All Languages",
+  "Add Level": "Add Level",
+  "Please select a language first": "Please select a language first"
 }
