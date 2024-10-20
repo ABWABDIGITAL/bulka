@@ -29,6 +29,7 @@ class CustomAppBarWidget extends StatelessWidget
     this.height,
     this.statusbarColor,
     this.statusBarIconBrightness,
+    this.bottom,
   });
   final double? height;
   final Color? backgroundColor;
@@ -48,6 +49,7 @@ class CustomAppBarWidget extends StatelessWidget
   final IconThemeData? iconTheme;
   final Color? statusbarColor;
   final Brightness? statusBarIconBrightness;
+  final PreferredSizeWidget? bottom;
 
   @override
   Widget build(BuildContext context) {
@@ -95,6 +97,7 @@ class CustomAppBarWidget extends StatelessWidget
       toolbarHeight: toolbarHeight,
       flexibleSpace: flexibleSpace,
       shape: shape,
+      bottom: bottom,
     );
   }
 

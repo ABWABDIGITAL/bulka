@@ -245,8 +245,6 @@
   "Likes": "الإعجابات",
   "Comments": "تعليقات",
   "Share": "مشاركه",
-  "Post Comments": "نشر التعليقات",
-  "Write Comment": "اكتب تعليق",
   "For You": "من اجلك",
   "Start date": "تاريخ البداية",
   "Hello How we can help you": "مرحبًا، كيف يمكننا مساعدتك؟",
@@ -254,5 +252,20 @@
   "Change password": "تغيير كلمة المرور",
   "Enter New Password": "أدخل كلمة المرور الجديدة",
   "Please enter your old password correctly to change your password.": "يرجى إدخال كلمة المرور القديمة بشكل صحيح لتغيير كلمة المرور الخاصة بك.",
-  "Confirm New Password": "تأكيد كلمة المرور الجديدة"
+  "Confirm New Password": "تأكيد كلمة المرور الجديدة",
+<<<<<<< HEAD
+  "Add Language": "إضافة لغة",
+  "No languages added yet": "لم تتم إضافة أي لغة بعد",
+  "User Languages": "لغات المستخدم",
+  "Search for a skill": "ابحث عن مهارة",
+  "Search for a language": "ابحث عن لغة",
+  "All Languages": "جميع اللغات",
+  "Add Level": "إضافة المستوى",
+  "Please select a language first": "الرجاء اختيار اللغة أولا"
+=======
+  "All": "الجميع",
+  "Buying": "شراء",
+  "Selling": "بيع",
+  "Important": "مهم"
+>>>>>>> ab60f8ecaeb252df755bc56aaf886fbc37837ce3
 }

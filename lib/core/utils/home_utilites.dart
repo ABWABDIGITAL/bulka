@@ -22,6 +22,7 @@ import 'package:bulka/modules/offers/data/models/offers_model.dart';
 import 'package:bulka/modules/posts/data/entity/post_details_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:jwt_decode/jwt_decode.dart';
 
 bool checkFromArray(dynamic myArray) {
   if (myArray != null && myArray is List && myArray.isNotEmpty) {
@@ -50,6 +51,7 @@ Future<void> saveToken(TokenEntity tokenEntity) async {
     debugPrint(e.toString());
   }
 }
+
 Future<void> saveOffer(OffersEntity offerEntity) async {
   try {
     await SharedPrefHelper.setSecuredString(
@@ -59,6 +61,13 @@ Future<void> saveOffer(OffersEntity offerEntity) async {
     debugPrint(e.toString());
   }
 }
+
+int? getUserIdFromToken() {
+  if (token == null) return null;
+  Map<String, dynamic> payload = Jwt.parseJwt(token!.token);
+  return int.parse(payload['sub']);
+}
+
 Future<TokenEntity?> getToken() async {
   try {
     final String? userToken =
@@ -71,6 +80,7 @@ Future<TokenEntity?> getToken() async {
   }
   return null;
 }
+
 Future<OffersEntity?> getOffer() async {
   try {
     final String? offer =
@@ -83,6 +93,7 @@ Future<OffersEntity?> getOffer() async {
   }
   return null;
 }
+
 bool isScreenSmallFun(BuildContext context) {
   if (Responsive.isSmall(context) || Responsive.isMedium(context)) {
     return isScreenSmall = true;

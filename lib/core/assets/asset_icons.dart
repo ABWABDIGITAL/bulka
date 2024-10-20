@@ -77,4 +77,6 @@ class AssetIcons {
   static const String editSvg = 'assets/icons/edit.svg';
   static const String emotionsSvg = 'assets/icons/emotions.svg';
   static const String settingsSvg = 'assets/icons/setting.svg';
+  static const String startInCircle = 'assets/icons/star_in_circle.png';
+  static const String startInCircleSvg = 'assets/icons/star_in_circle.svg';
 }

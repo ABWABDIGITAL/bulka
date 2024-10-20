@@ -247,8 +247,6 @@
   "Likes": "Нравится",
   "Comments": "Комментарии",
   "Share": "Мачар",
-  "Post Comments": "Опубликовать комментарии",
-  "Write Comment": "Написать комментарий",
   "For You": "Для тебя",
   "Start date": "Дата начала",
   "Hello How we can help you": "Здравствуйте! Чем мы можем вам помочь?",
@@ -256,5 +254,20 @@
   "Change password": "Изменить пароль",
   "Enter New Password": "Введите новый пароль",
   "Please enter your old password correctly to change your password.": "Пожалуйста, введите ваш старый пароль правильно, чтобы изменить его.",
-  "Confirm New Password": "Подтвердите новый пароль"
+  "Confirm New Password": "Подтвердите новый пароль",
+<<<<<<< HEAD
+  "Add Language": "Добавить язык",
+  "No languages added yet": "Пока не добавлено ни одного языка",
+  "User Languages": "Языки пользователя",
+  "Search for a skill": "Поиск навыка",
+  "Search for a language": "Поиск языка",
+  "All Languages": "Все языки",
+  "Add Level": "Добавить уровень",
+  "Please select a language first": "Сначала выберите язык."
+=======
+  "All": "Все",
+  "Buying": "Покупка",
+  "Selling": "Продажа",
+  "Important": "Важный"
+>>>>>>> ab60f8ecaeb252df755bc56aaf886fbc37837ce3
 }

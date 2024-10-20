@@ -1,6 +1,8 @@
 import 'package:bulka/core/assets/asset_icons.dart';
+import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/widgets/form_fields/default_form_field.dart';
 import 'package:bulka/modules/skills/cubit/skills_cubit.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -16,7 +18,7 @@ class CustomSkillSearchBar extends StatelessWidget {
         return DefaultFormField(
           controller: cubit.searchController,
           needValidation: false,
-          hintText: 'Search for a skill',
+          hintText: AppStrings.searchForSkill.tr(),
           prefixIcon: Padding(
             padding: const EdgeInsets.all(16.0),
             child: SvgPicture.asset(
@@ -30,7 +32,7 @@ class CustomSkillSearchBar extends StatelessWidget {
               ? IconButton(
                   onPressed: () {
                     cubit.searchController.clear();
-                    
+
                     cubit.getSearchedSkills();
                   },
                   icon: const Icon(

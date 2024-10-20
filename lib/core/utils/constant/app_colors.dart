@@ -77,6 +77,9 @@ class AppColors {
   static const Color white = Colors.white;
   static const Color darkText = Color(0xFF494747);
   static const Color gold = Color(0xFFFFC529);
+  static const Color yellow = Color(0xFFFFDE33);
+  static const Color orange = Color(0xFFFF7E00);
+
   static const Color darkGold = Color(0xFFB08F29);
   static const Color offersBigCardBackground = Color(0xff485DA6);
 }
