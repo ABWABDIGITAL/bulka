@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 enum UserRole { user, company, visitor, unkown }
 
 enum VerifyAccountMethod { email, phone, unkown }
@@ -41,3 +43,7 @@ enum CategoryProductsDisplayTypes { list, grid }
 enum CommentType { text, image, video, file, unkown }
 
 enum ReactionTypes { like, love, sad, idea, angry, none }
+
+enum NotificationTypes {
+  approved_ad_by_admin,none
+}

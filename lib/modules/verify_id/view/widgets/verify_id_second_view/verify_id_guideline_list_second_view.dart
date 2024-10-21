@@ -1,3 +1,4 @@
+import 'package:bulka/core/assets/asset_images.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/modules/verify_id/view/widgets/verify_id_second_view/verify_id_second_view_guideline.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -15,12 +16,18 @@ class VerifyIdGuidelineListSecondView extends StatelessWidget {
       AppStrings.useEnoughLightings.tr(),
       
     ];
+     List<String> images = [
+      AssetImages.verifyPhoto1,
+      AssetImages.verifyPhoto2,
+      AssetImages.verifyPhoto3,
+      AssetImages.verifyPhoto4
+    ];
     return Column(
       children: List.generate(
         text.length,
         (index) => Padding(
           padding: const EdgeInsets.only(bottom:8.0),
-          child: VerifyIdSecondViewGuideline(title: text[index]),
+          child: VerifyIdSecondViewGuideline(title: text[index], image: images[index]),
         ),
       ),
     );
