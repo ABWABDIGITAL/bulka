@@ -331,5 +331,7 @@ class AppStrings {
   static const String selling = 'Selling';
   static const String important = 'Important';
     static const String unreadChat = 'Unread Chat';
+  static const String check = 'Check';
+  static const String next = 'Next';
 
 }
