@@ -27,6 +27,7 @@ import 'package:bulka/core/services/servies_locator/modules/settings_locator.dar
 import 'package:bulka/core/services/servies_locator/modules/skills_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/sub_subcategory_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/subcategory_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/user_language_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/work_experience_locator.dart';
 import 'package:get_it/get_it.dart';
 
@@ -94,5 +95,9 @@ class ServiceLocator {
     faqLocator();
 //-------------------------------NOTIFCAITONS------------------------------------//
     notificationsLocator();
+    //--------------------------------FAQ------------------------------------//
+    faqLocator();
+    //--------------------------------USER LANGUAGE------------------------------------//
+    userLanguageLocator();
   }
 }

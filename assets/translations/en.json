@@ -255,8 +255,19 @@
   "Enter New Password": "Enter New Password",
   "Please enter your old password correctly to change your password.": "Please enter your old password correctly to change your password.",
   "Confirm New Password": "Confirm New Password",
+<<<<<<< HEAD
+  "Add Language": "Add Language",
+  "No languages added yet": "No languages added yet",
+  "User Languages": "User Languages",
+  "Search for a skill": "Search for a skill",
+  "Search for a language": "Search for a language",
+  "All Languages": "All Languages",
+  "Add Level": "Add Level",
+  "Please select a language first": "Please select a language first"
+=======
   "All": "All",
   "Buying": "Buying",
   "Selling": "Selling",
   "Important": "Important"
+>>>>>>> ab60f8ecaeb252df755bc56aaf886fbc37837ce3
 }
