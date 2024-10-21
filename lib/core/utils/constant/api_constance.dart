@@ -100,7 +100,13 @@ class ApiConstance {
   static const String allLanguages = '/app/helpers/languages';
   static const String allLevels = '/app/helpers/language/levels/';
   static const String deleteLanguage = '/app/cv/language/remove/';
-
+  //---------------------------------CONTACT INFO-----------------------------------------//
+  static const String updateEmailApprove = '/app/profile/update-mail';
+  static const String updateEmail = '/app/profile/update-mail-request';
+  static const String updatePhoneApprove = '/app/profile/update-phone';
+  static const String updatePhone = '/app/profile/update-phone-request';
+//---------------------------------SUPPORT----------------------------------------//
+  static const String emailSupport = '/app/profile/contact';
   //---------------------------------FAQ-----------------------------------------//
   static const String faq = '/app/faq';
   //---------------------------------LOGOUT------------------------------------//

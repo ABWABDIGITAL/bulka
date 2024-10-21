@@ -333,5 +333,7 @@ class AppStrings {
     static const String unreadChat = 'Unread Chat';
   static const String check = 'Check';
   static const String next = 'Next';
+  static const String subjectLine = 'Subject Line';
+  static const String emailSupport = 'Email Support';
 
 }

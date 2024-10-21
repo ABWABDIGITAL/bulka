@@ -3,7 +3,9 @@ import 'package:bulka/core/shared/widgets/appbar_widget.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/modules/support/data/entities/support_entity.dart';
+import 'package:bulka/modules/support/view/screens/email_support_screen.dart';
 import 'package:bulka/modules/support/view/widgets/support_animated_headphone_sparkle.dart';
 import 'package:bulka/modules/support/view/widgets/support_list_tile.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -24,7 +26,9 @@ class SupportScreen extends StatelessWidget {
           icon: AssetIcons.smsSvg,
           title: AppStrings.sendUsAnEmail.tr(),
           description: AppStrings.sendUsAnEmailDescription.tr(),
-          onTap: () {}),
+          onTap: () {
+            context.push(const EmailSupportScreen());
+          }),
       SupportEntity(
           icon: AssetIcons.locationSvg,
           title: AppStrings.locationOffice.tr(),

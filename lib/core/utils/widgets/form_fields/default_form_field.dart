@@ -115,6 +115,7 @@ class DefaultFormField extends StatelessWidget {
                   ? const EdgeInsetsDirectional.only(bottom: 0)
                   : EdgeInsets.zero,
               child: TextFormField(
+                
                 onTap: onTap,
                 onTapOutside: onTapOutside ??
                     (pointer) {
