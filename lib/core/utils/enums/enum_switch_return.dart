@@ -173,4 +173,13 @@ class EnumSwitchReturn {
         return ReactionTypes.none;
     }
   }
+
+  static NotificationTypes getNotificationType(String? notificationType) {
+    switch (notificationType) {
+      case 'approved_ad_by_admin':
+        return NotificationTypes.approved_ad_by_admin;
+      default:
+        return NotificationTypes.none;
+    }
+  }
 }

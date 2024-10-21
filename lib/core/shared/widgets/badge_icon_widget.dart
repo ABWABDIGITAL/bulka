@@ -1,5 +1,7 @@
 import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
+import 'package:bulka/core/utils/extensions/extensions.dart';
+import 'package:bulka/modules/notifications/views/screens/notifications_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,6 +16,9 @@ class BadgeIconWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return badges.Badge(
+      onTap: () {
+        context.push(const NotificationsScreen());
+      },
       position: badges.BadgePosition.topEnd(top: -10, end: -6),
       showBadge: true,
       ignorePointer: false,

@@ -2,6 +2,7 @@ import 'package:bulka/core/services/ad_details/data/params/ad_details_params.dar
 import 'package:bulka/core/services/sub_subcategory/data/params/sub_subcategory_params.dart';
 import 'package:bulka/core/services/subcategory/data/params/subcategory_params.dart';
 import 'package:bulka/modules/favourites/data/params/toggle_favourite_params.dart';
+import 'package:bulka/modules/notifications/data/params/notification_details_params.dart';
 import 'package:bulka/modules/posts/data/params/post_details_params.dart';
 import 'package:bulka/modules/posts/data/params/post_save_params.dart';
 import 'package:bulka/modules/posts/data/params/post_share_params.dart';
@@ -47,6 +48,11 @@ class ApiConstance {
   static const String reactOnPost = '/app/posts/react';
   static String postShare(PostShareParams params) =>
       '/app/posts/share/${params.adId}';
+//--------------------------------NOTIFICATIONS----------------------------------//
+  static const String allNotifications = '/app/notifications';
+  static String notificationDetails(NotificationDetailsParams params) =>
+      '/app/notifications/${params.notificationId}';
+
 //-----------------------------------PROFILE----------------------------------//
   static const String profile = '/app/profile';
 //-------------------------------CATEGORY FIELDS------------------------------//

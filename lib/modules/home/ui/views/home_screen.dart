@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:bulka/core/services/notifications/firebase_notification_api.dart';
 import 'package:bulka/core/services/servies_locator/service_locator.dart';
 import 'package:bulka/modules/home/controller/cubit/home_cubit.dart';
 import 'package:bulka/modules/home/controller/cubit/home_state.dart';
@@ -13,6 +16,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log(fcmToken.toString());
     return BlocProvider(
       create: (context) => HomeCubit(sl())..homeStatesHandled(),
       child: Padding(
