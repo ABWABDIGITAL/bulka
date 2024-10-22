@@ -73,34 +73,36 @@ class ApiConstance {
   static const String paySubscribtion = '/app/subscription/confirm-payment';
 //----------------------------------Ad Details------------------------------------//
   static String adDetails(AdDetailsParams params) => '/app/ad/${params.id}';
-  //-------------------------------WORK EXPERIENCE--------------------------------//
+//------------------------------------CHAT------------------------------------//
+  static const String allChats = '/app/chat/list';
+
+//-------------------------------WORK EXPERIENCE--------------------------------//
   static const String jobTitles = '/app/helpers/job-titles';
   static const String workExperience = '/app/cv/work-experience';
-  //-------------------------------EDUCATION--------------------------------//
+//-------------------------------EDUCATION--------------------------------//
   static const String educationDegree = '/app/helpers/education-degrees';
   static const String education = '/app/cv/education';
   static const String educationUniversity = '/app/helpers/universities';
-  //-------------------------------OFFERS------------------------------------//
+//-------------------------------OFFERS------------------------------------//
   static const String offersBanner = '/app/profile/offer-banners';
   static const String offers = '/app/profile/offers';
-  //-------------------------------CERTIFICATION------------------------------------//
+//-------------------------------CERTIFICATION------------------------------------//
   static const String certification = '/app/cv/certificate';
-  //-------------------------------CV------------------------------------//
+//-------------------------------CV------------------------------------//
   static const String uploadCv = '/app/cv/cv/upload';
-  //---------------------------------SKILLS-----------------------------------------//
+//---------------------------------SKILLS-----------------------------------------//
   static const String userSkills = '/app/cv/skill';
   static const String skills = '/app/helpers/skills';
   static const String deleteSkills = '/app/cv/skill/remove';
-  //---------------------------------CHANGE PASSWORD-----------------------------------------//
+//---------------------------------CHANGE PASSWORD-----------------------------------------//
   static const String changePassword = '/app/profile/edit-password';
-
-  //---------------------------------USER LANGUAGE-----------------------------------------//
+//---------------------------------USER LANGUAGE-----------------------------------------//
   static const String userLanguage = '/app/cv/language';
   static const String allLanguages = '/app/helpers/languages';
   static const String allLevels = '/app/helpers/language/levels/';
   static const String deleteLanguage = '/app/cv/language/remove/';
-  //---------------------------------FAQ-----------------------------------------//
+//---------------------------------FAQ-----------------------------------------//
   static const String faq = '/app/faq';
-  //---------------------------------LOGOUT------------------------------------//
+//---------------------------------LOGOUT------------------------------------//
   static const String logout = '/app/logout';
 }

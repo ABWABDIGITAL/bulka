@@ -10,6 +10,7 @@ import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/core/utils/widgets/form_fields/default_form_field.dart';
+import 'package:bulka/modules/notifications/views/screens/notifications_screen.dart';
 import 'package:bulka/modules/search/views/screens/search_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -83,10 +84,15 @@ class _HomeAppbarWidgetState extends State<HomeAppbarWidget> {
                     'Worry from free deals',
                     style: TextStyles.rubik12W400DarkGrey4,
                   ),
-                  trailing: const CircleAvatar(
+                  trailing: CircleAvatar(
                     backgroundColor: AppColors.white,
                     radius: 22,
-                    child: BadgeIconWidget(),
+                    child: GestureDetector(
+                      onTap: () {
+                        context.push(const NotificationsScreen());
+                      },
+                      child: const BadgeIconWidget(),
+                    ),
                   ),
                 ),
                 Padding(
