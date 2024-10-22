@@ -99,10 +99,11 @@ class ServiceLocator {
     faqLocator();
 //-------------------------------NOTIFCAITONS------------------------------------//
     notificationsLocator();
-   
+
     //--------------------------------USER LANGUAGE------------------------------------//
     userLanguageLocator();
     //-------------------------------VERIFY ID---------------------------------//
+
      verifyIdLocator();
      //-------------------------------SUPPORT---------------------------------//
      supportLocator();
@@ -110,5 +111,6 @@ class ServiceLocator {
      contactInfoLocator();
      //-------------------------------ABOUT US---------------------------------//
      aboutUsLocator();
+
   }
 }

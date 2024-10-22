@@ -44,6 +44,10 @@ enum CommentType { text, image, video, file, unkown }
 
 enum ReactionTypes { like, love, sad, idea, angry, none }
 
-enum NotificationTypes {
-  approved_ad_by_admin,none
-}
+enum NotificationTypes { approved_ad_by_admin, none }
+
+enum MessageTypes { image }
+
+enum ChatHistoryTypes { all, buying, selling }
+
+enum ChatHistoryKeywords { all, important, unread }

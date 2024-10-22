@@ -14,6 +14,7 @@ class MyProfileInfoEntity extends Equatable {
     required this.isNotified,
     required this.avatar,
     required this.companyData,
+    this.unreadNotifications,
   });
   final int id;
   final String fullName;
@@ -25,6 +26,8 @@ class MyProfileInfoEntity extends Equatable {
   final bool isActive;
   final bool isBan;
   final bool isNotified;
+  final int? unreadNotifications;
+
   final CompanyDataEntity? companyData;
 
   @override
@@ -39,7 +42,8 @@ class MyProfileInfoEntity extends Equatable {
         isActive,
         isBan,
         isNotified,
-        companyData
+        companyData,
+        unreadNotifications,
       ];
 }
 
