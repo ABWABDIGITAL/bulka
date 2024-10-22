@@ -1,9 +1,7 @@
 import 'package:bulka/core/shared/widgets/appbar_widget.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
-import 'package:bulka/core/utils/enums/enums.dart';
 import 'package:bulka/modules/notifications/controller/cubit/notification_cubit.dart';
 import 'package:bulka/modules/notifications/controller/cubit/notification_state.dart';
-import 'package:bulka/modules/notifications/data/entity/notification_entity.dart';
 import 'package:bulka/modules/notifications/data/params/notification_details_params.dart';
 import 'package:bulka/modules/notifications/views/stats/notification_details/notification_details_error_state_widget.dart';
 import 'package:bulka/modules/notifications/views/stats/notification_details/notification_details_loading_state_widget.dart';

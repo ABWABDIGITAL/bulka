@@ -10,15 +10,21 @@ class DefaultEmailFormFieldWidget extends StatelessWidget {
   const DefaultEmailFormFieldWidget({
     super.key,
     this.controller,
+    this.onChanged,
+    this.suffixIcon
   });
   final TextEditingController? controller;
+  final Function(String)? onChanged;
+  final Widget? suffixIcon;
   @override
   Widget build(BuildContext context) {
     return DefaultFormField(
+      onChanged:onChanged ,
       titleText: AppStrings.email.tr(),
       hintText: AppStrings.enterYourEmail.tr(),
       validator: (value) => validateEmail(value),
       controller: controller,
+      suffixIcon: suffixIcon,
       prefixIcon: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
