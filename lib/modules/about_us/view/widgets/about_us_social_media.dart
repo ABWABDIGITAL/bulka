@@ -1,7 +1,9 @@
-import 'dart:io';
-
-import 'package:bulka/core/utils/constant/app_colors.dart';
+import 'package:bulka/modules/about_us/controller/about_us_cubit.dart';
+import 'package:bulka/modules/about_us/view/states/about_us_error_view.dart';
+import 'package:bulka/modules/about_us/view/states/about_us_loading_view.dart';
+import 'package:bulka/modules/about_us/view/states/about_us_success_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AboutUsSocialMedia extends StatelessWidget {
   const AboutUsSocialMedia({
@@ -10,41 +12,26 @@ class AboutUsSocialMedia extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppColors.darkGrey3),
-      ),
-      child: Column(
-        children: [
-          ListTile(
-            title: const Text('Facebook'),
-            trailing: const Icon(Icons.arrow_forward_ios),
-            onTap: () {},
-          ),
-          const Divider(height: 1, color: AppColors.darkGrey3),
-          ListTile(
-            title: const Text('Instagram'),
-            trailing: Icon(
-                Platform.isIOS ? Icons.arrow_forward_ios : Icons.arrow_forward),
-            onTap: () {},
-          ),
-          const Divider(height: 1),
-          ListTile(
-            title: const Text('Twitter'),
-            trailing: Icon(
-                Platform.isIOS ? Icons.arrow_forward_ios : Icons.arrow_forward),
-            onTap: () {},
-          ),
-          const Divider(height: 1, color: AppColors.darkGrey3),
-          ListTile(
-            title: const Text('Linkedin'),
-            trailing: Icon(
-                Platform.isIOS ? Icons.arrow_forward_ios : Icons.arrow_forward),
-            onTap: () {},
-          ),
-        ],
-      ),
-    );
+    return BlocBuilder<AboutUsCubit, AboutUsState>(
+        buildWhen: (previous, current) =>
+            current is AboutUsError ||
+            current is AboutUsLoaded ||
+            current is AboutUsLoading,
+        builder: (context, state) {
+          if (state is AboutUsLoading) {
+            return const AboutUsLoadingView();
+          }
+          if (state is AboutUsLoaded) {
+            return AboutUsSuccessView(
+              aboutUsEntity: state.aboutUsEntity,
+            );
+          }
+          if (state is AboutUsError) {
+            return AboutUsErrorView(
+              error: state.error,
+            );
+          }
+          return const AboutUsLoadingView();
+        });
   }
 }

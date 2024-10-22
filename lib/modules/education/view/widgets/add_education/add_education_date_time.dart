@@ -1,10 +1,11 @@
-import 'dart:developer';
-
 import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
+import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/core/utils/widgets/form_fields/default_form_field.dart';
 import 'package:bulka/modules/education/controller/education_cubit.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -28,7 +29,8 @@ class _AddEducationDateTimeState extends State<AddEducationDateTime> {
     ).then((value) {
       setState(() {
         widget.cubit.selectedStartDate = value;
-        log('start :${widget.cubit.selectedStartDate.toString()}');
+        widget.cubit.startDateController.text =
+            '${widget.cubit.selectedStartDate!.day}/${widget.cubit.selectedStartDate!.month}/${widget.cubit.selectedStartDate!.year}';
       });
       if (value == null) {
         return;
@@ -45,7 +47,8 @@ class _AddEducationDateTimeState extends State<AddEducationDateTime> {
     ).then((value) {
       setState(() {
         widget.cubit.selectedEndDate = value;
-        log('end :${widget.cubit.selectedEndDate.toString()}');
+        widget.cubit.endDateController.text =
+            '${widget.cubit.selectedEndDate!.day}/${widget.cubit.selectedEndDate!.month}/${widget.cubit.selectedEndDate!.year}';
       });
       if (value == null) {
         return;
@@ -61,36 +64,29 @@ class _AddEducationDateTimeState extends State<AddEducationDateTime> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Start date',
+              AppStrings.startDate.tr(),
               style: TextStyles.rubik14W500Black,
             ),
             vSpace(8),
-            OutlinedButton.icon(
-              icon: SvgPicture.asset(
-                AssetIcons.calenderSvg,
-                color: AppColors.darkGrey5,
-              ),
-              //     iconAlignment: IconAlignment.start,
-              style: OutlinedButton.styleFrom(
-                alignment: AlignmentDirectional.centerStart,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
+            SizedBox(
+              width: MediaQuery.of(context).size.width / 2 - 4,
+              child: DefaultFormField(
+                prefixIconConstraints: const BoxConstraints(
+                  minWidth: 24,
+                  minHeight: 24,
                 ),
-                side: const BorderSide(color: AppColors.darkGrey3),
-                minimumSize:
-                    Size(MediaQuery.of(context).size.width / 2 - 4, 48),
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: SvgPicture.asset(AssetIcons.calenderSvg,
+                      color: AppColors.darkGrey5),
+                ),
+                controller: widget.cubit.startDateController,
+                hintText: 'dd/mm/yy',
+                onTap: () async {
+                  await startDateMethod();
+                },
               ),
-              onPressed: () async {
-                await startDateMethod();
-                log(widget.cubit.selectedStartDate.toString());
-              },
-              label: widget.cubit.selectedStartDate == null
-                  ? const Text('dd/mm/yy',
-                      style: TextStyle(color: AppColors.darkGrey2))
-                  : Text(
-                      '${widget.cubit.selectedStartDate!.day}/${widget.cubit.selectedStartDate!.month}/${widget.cubit.selectedStartDate!.year}',
-                      style: const TextStyle(color: AppColors.black)),
-            ),
+            )
           ],
         ),
       ),
@@ -100,40 +96,29 @@ class _AddEducationDateTimeState extends State<AddEducationDateTime> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'End date',
+              AppStrings.endDate.tr(),
               style: TextStyles.rubik14W500Black,
             ),
             vSpace(8),
-            OutlinedButton.icon(
-              icon: SvgPicture.asset(
-                AssetIcons.calenderSvg,
-                color: AppColors.darkGrey5,
-              ),
-              style: OutlinedButton.styleFrom(
-                alignment: AlignmentDirectional.centerStart,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
+            SizedBox(
+              width: MediaQuery.of(context).size.width / 2 - 4,
+              child: DefaultFormField(
+                prefixIconConstraints: const BoxConstraints(
+                  minWidth: 24,
+                  minHeight: 24,
                 ),
-                side: const BorderSide(color: AppColors.darkGrey3),
-                minimumSize: Size(MediaQuery.of(context).size.width / 2, 48),
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: SvgPicture.asset(AssetIcons.calenderSvg,
+                      color: AppColors.darkGrey5),
+                ),
+                controller: widget.cubit.endDateController,
+                hintText: 'dd/mm/yy',
+                onTap: () async {
+                  await endDateMethod();
+                },
               ),
-              onPressed: () async {
-                await endDateMethod();
-                log(widget.cubit.selectedStartDate.toString());
-                setState(() {
-                  difference = widget.cubit.selectedStartDate!
-                      .difference(widget.cubit.selectedStartDate!)
-                      .inDays;
-                });
-                log(difference.toString());
-              },
-              label: widget.cubit.selectedEndDate == null
-                  ? const Text('dd/mm/yy',
-                      style: TextStyle(color: AppColors.darkGrey2))
-                  : Text(
-                      '${widget.cubit.selectedEndDate!.day}/${widget.cubit.selectedEndDate!.month}/${widget.cubit.selectedEndDate!.year}',
-                      style: const TextStyle(color: AppColors.black)),
-            ),
+            )
           ],
         ),
       ),

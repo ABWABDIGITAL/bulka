@@ -104,7 +104,13 @@ class ApiConstance {
   static const String updateEmailApprove = '/app/profile/update-mail';
   static const String updateEmail = '/app/profile/update-mail-request';
   static const String updatePhoneApprove = '/app/profile/update-phone';
-  static const String updatePhone = '/app/profile/update-phone-request';
+  static const String updatePhone =
+      '/app/profile/update-phone-request';
+  //---------------------------------SETTINGS-----------------------------------------//
+  static const String notificationToggle = '/app/profile/notification-toggle';
+       //---------------------------------ABOUT US----------------------------------------//
+  static const String aboutUsLinks = '/app/social';
+  static const String terms = '/app/terms';
 //---------------------------------SUPPORT----------------------------------------//
   static const String emailSupport = '/app/profile/contact';
   //---------------------------------FAQ-----------------------------------------//

@@ -17,6 +17,12 @@ class CustomDropDownFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return DropdownButtonFormField<String>(
       hint: value == null ? null : Text(value!),
+      validator: (value) {
+        if (value == null) {
+          return 'Please select an option';
+        }
+        return null;
+      },
       icon: const Icon(Icons.keyboard_arrow_down_rounded),
       decoration: InputDecoration(
           focusedBorder: OutlineInputBorder(

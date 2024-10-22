@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:bulka/core/shared/entity/api_error_entity.dart';
 import 'package:bulka/modules/profile_change_password/data/params/profile_change_password.dart';
 import 'package:bulka/modules/profile_change_password/data/repo/profile_change_password_repo.dart';
-import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
 part 'profile_change_password_state.dart';

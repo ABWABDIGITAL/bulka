@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
@@ -23,7 +25,7 @@ class SettingsPasswordListTile extends StatelessWidget {
         child: Image.asset(AssetIcons.lock1),
       ),
       title: Text(AppStrings.password.tr(), style: TextStyles.rubik13W400Black),
-      trailing: const Icon(Icons.arrow_forward_ios),
+      trailing:  Icon(Platform.isIOS?  Icons.arrow_forward_ios: Icons.arrow_forward),
       onTap: () {
         context.push(const ProfileChangePasswordScreen());
       },

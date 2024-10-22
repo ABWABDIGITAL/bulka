@@ -16,35 +16,44 @@ class ProfileChangePasswordFormFields extends StatelessWidget {
     final cubit = context.read<ProfileChangePasswordCubit>();
     return Form(
       key: cubit.formKey,
-      child: Column(
-        children: [
-          DefaultPasswordFormFieldWidget(
-
-            title: AppStrings.oldPassword.tr(),
-            controller: cubit.oldPasswordController,
-isVisiable: cubit.isVisiableOld,
-changeVisiabiltyOnPressed: (){
-  cubit.changeOldVisibility();
-},          ),
-          vSpace(20),
-          DefaultPasswordFormFieldWidget(
-            controller: cubit.newPasswordController,
-            title: AppStrings.newPassword.tr(),
-            isVisiable: cubit.isVisiableNew,
-            changeVisiabiltyOnPressed: (){
-              cubit.changeNewVisibility();
-            },
-          ),
-          vSpace(20),
-          DefaultPasswordFormFieldWidget(
-            title: AppStrings.confirmNewPassword.tr(),
-            controller: cubit.confirmNewPasswordController,
-            isVisiable: cubit.isVisiableconfirmNew,
-            changeVisiabiltyOnPressed: (){
-              cubit.changeConfirmNewVisibility();
-            },
-          ),
-        ],
+      child:
+          BlocBuilder<ProfileChangePasswordCubit, ProfileChangePasswordState>(
+        buildWhen: (previous, current) =>
+            current is ProfileOldPasswordStatus ||
+            current is ProfileNewPasswordStatus ||
+            current is ProfileConfirmNewPasswordStatus,
+        builder: (context, state) {
+          return Column(
+            children: [
+              DefaultPasswordFormFieldWidget(
+                title: AppStrings.oldPassword.tr(),
+                controller: cubit.oldPasswordController,
+                isVisiable: cubit.isVisiableOld,
+                changeVisiabiltyOnPressed: () {
+                  cubit.changeOldVisibility();
+                },
+              ),
+              vSpace(20),
+              DefaultPasswordFormFieldWidget(
+                controller: cubit.newPasswordController,
+                title: AppStrings.newPassword.tr(),
+                isVisiable: cubit.isVisiableNew,
+                changeVisiabiltyOnPressed: () {
+                  cubit.changeNewVisibility();
+                },
+              ),
+              vSpace(20),
+              DefaultPasswordFormFieldWidget(
+                title: AppStrings.confirmNewPassword.tr(),
+                controller: cubit.confirmNewPasswordController,
+                isVisiable: cubit.isVisiableconfirmNew,
+                changeVisiabiltyOnPressed: () {
+                  cubit.changeConfirmNewVisibility();
+                },
+              ),
+            ],
+          );
+        },
       ),
     );
   }

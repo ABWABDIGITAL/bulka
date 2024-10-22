@@ -3,6 +3,7 @@ import 'package:bulka/core/shared/widgets/spacing.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/core/utils/widgets/form_fields/default_form_field.dart';
 import 'package:bulka/modules/certifications/controllers/certification_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,9 @@ class _AddCertificationEndDateState extends State<AddCertificationEndDate> {
     ).then((value) {
       setState(() {
         cubit.endDate = value;
+         cubit.endDateController.text =
+            '${cubit.endDate!.day}/${cubit.endDate!.month}/${cubit.endDate!.year}';
+     
       });
       if (value == null) {
         return;
@@ -46,30 +50,37 @@ class _AddCertificationEndDateState extends State<AddCertificationEndDate> {
           style: TextStyles.rubik14W500Black,
         ),
         vSpace(8),
-        OutlinedButton.icon(
-          icon: SvgPicture.asset(
-            AssetIcons.calenderSvg,
-            color: AppColors.darkGrey5,
-          ),
-          style: OutlinedButton.styleFrom(
-            alignment: AlignmentDirectional.centerStart,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
+          Expanded(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              AppStrings.endDate.tr(),
+              style: TextStyles.rubik14W500Black,
             ),
-            side: const BorderSide(color: AppColors.darkGrey3),
-            minimumSize: Size(MediaQuery.of(context).size.width / 2, 48),
-          ),
-          onPressed: () async {
-            await endDateMethod();
-          },
-          label: cubit.endDate == null
-              ? const Text('dd/mm/yy',
-                  style: TextStyle(color: AppColors.darkGrey2))
-              : Text(
-                  '${cubit.endDate!.day}/${cubit.endDate!.month}/${cubit.endDate!.year}',
-                  style: const TextStyle(color: AppColors.black)),
+            vSpace(8),
+            SizedBox(
+              width: MediaQuery.of(context).size.width / 2 - 4,
+              child: DefaultFormField(
+                prefixIconConstraints: const BoxConstraints(
+                  minWidth: 24,
+                  minHeight: 24,
+                ),
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: SvgPicture.asset(AssetIcons.calenderSvg,
+                      color: AppColors.darkGrey5),
+                ),
+                controller: cubit.endDateController,
+                hintText: 'dd/mm/yy',
+                onTap: () async {
+                  await endDateMethod();
+                },
+              ),
+            )
+          ],
         ),
-      ],
+      ),],
     );
   }
 }
