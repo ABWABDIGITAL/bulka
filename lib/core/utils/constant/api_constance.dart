@@ -96,12 +96,21 @@ class ApiConstance {
   static const String deleteSkills = '/app/cv/skill/remove';
 //---------------------------------CHANGE PASSWORD-----------------------------------------//
   static const String changePassword = '/app/profile/edit-password';
-//---------------------------------USER LANGUAGE-----------------------------------------//
+//---------------------------------VERIFY ID-----------------------------------------//
+  static const String verifyId = '/app/profile/update-id';
+  //---------------------------------USER LANGUAGE-----------------------------------------//
   static const String userLanguage = '/app/cv/language';
   static const String allLanguages = '/app/helpers/languages';
   static const String allLevels = '/app/helpers/language/levels/';
   static const String deleteLanguage = '/app/cv/language/remove/';
-//---------------------------------FAQ-----------------------------------------//
+  //---------------------------------CONTACT INFO-----------------------------------------//
+  static const String updateEmailApprove = '/app/profile/update-mail';
+  static const String updateEmail = '/app/profile/update-mail-request';
+  static const String updatePhoneApprove = '/app/profile/update-phone';
+  static const String updatePhone = '/app/profile/update-phone-request';
+//---------------------------------SUPPORT----------------------------------------//
+  static const String emailSupport = '/app/profile/contact';
+  //---------------------------------FAQ-----------------------------------------//
   static const String faq = '/app/faq';
 //---------------------------------LOGOUT------------------------------------//
   static const String logout = '/app/logout';

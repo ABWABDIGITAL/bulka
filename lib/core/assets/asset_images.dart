@@ -31,4 +31,9 @@ class AssetImages {
   static const String noResultFound = 'assets/images/no_result_found.png';
   static const String emptyLocation = 'assets/images/empty_location.png';
   static const String changePassword = 'assets/images/change_password.png';
+  static const String verifyPhoto1= 'assets/images/verify_photo1.png';
+  static const String verifyPhoto2= 'assets/images/verify_photo2.png';
+  static const String verifyPhoto3= 'assets/images/verify_photo3.png';
+  static const String verifyPhoto4= 'assets/images/verify_photo4.png';
+  
 }

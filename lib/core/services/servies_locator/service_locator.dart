@@ -6,6 +6,7 @@ import 'package:bulka/core/services/servies_locator/modules/category_products_lo
 import 'package:bulka/core/services/servies_locator/modules/certification_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/change_password_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/chat_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/contact_info_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/country_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/create_ad_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/cv_locator.dart';
@@ -27,7 +28,9 @@ import 'package:bulka/core/services/servies_locator/modules/settings_locator.dar
 import 'package:bulka/core/services/servies_locator/modules/skills_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/sub_subcategory_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/subcategory_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/support_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/user_language_locator.dart';
+import 'package:bulka/core/services/servies_locator/modules/verify_id_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/work_experience_locator.dart';
 import 'package:get_it/get_it.dart';
 
@@ -95,7 +98,14 @@ class ServiceLocator {
     faqLocator();
 //-------------------------------NOTIFCAITONS------------------------------------//
     notificationsLocator();
-//--------------------------------USER LANGUAGE------------------------------------//
+
+    //--------------------------------USER LANGUAGE------------------------------------//
     userLanguageLocator();
+    //-------------------------------VERIFY ID---------------------------------//
+    verifyIdLocator();
+    //-------------------------------SUPPORT---------------------------------//
+    supportLocator();
+    //-------------------------------CONTACT INFO---------------------------------//
+    contactInfoLocator();
   }
 }
