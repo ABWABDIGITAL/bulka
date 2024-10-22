@@ -11,12 +11,14 @@ class ImagePickerHandler {
             .path); */
     return imagesList;
   }
-getSingleImage() async {
-    File pickedFile =
-        File((await ImagePicker().pickImage(source: ImageSource.gallery))!.path);
+
+  getSingleImage() async {
+    File pickedFile = File(
+        (await ImagePicker().pickImage(source: ImageSource.gallery))!.path);
 
     return pickedFile;
   }
+
   getCameraImage() async {
     File pickedFile =
         File((await ImagePicker().pickImage(source: ImageSource.camera))!.path);

@@ -39,7 +39,7 @@ class HomeJopsSectionWidget extends StatelessWidget {
                     return JopCardWidget(
                       width: 180.w,
                       height: 185.h,
-                      isLoading: true,
+                      isLoading: isLoading,
                       info: products[index].mainInformation,
                     );
                   },

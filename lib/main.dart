@@ -19,15 +19,43 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   DioHelper.init();
-  await ServiceLocator().init();
-  await SharedPrefHelper.init();
-  await ScreenUtil.ensureScreenSize();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  currentLanguage = await AssetTranslations.getLanguage();
+  EasyLocalization.ensureInitialized();
   Bloc.observer = MyBlocObserver();
   HttpOverrides.global = MyHttpOverrides();
-  EasyLocalization.ensureInitialized();
-  FirebaseNotificationApi().initNotification();
+
+  try {
+    await ServiceLocator().init();
+  } catch (e) {
+    print(e.toString());
+  }
+
+  try {
+    await SharedPrefHelper.init();
+  } catch (e) {
+    print(e.toString());
+  }
+
+  try {
+    await ScreenUtil.ensureScreenSize();
+  } catch (e) {
+    print(e.toString());
+  }
+
+  try {
+    await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform);
+    FirebaseNotificationApi().initNotification();
+  } catch (e) {
+    print(e.toString());
+  }
+
+  try {
+    currentLanguage = await AssetTranslations.getLanguage();
+  } catch (e) {
+    currentLanguage = AssetTranslations.english;
+    print(e.toString());
+  }
+
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,

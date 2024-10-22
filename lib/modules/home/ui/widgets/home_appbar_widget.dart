@@ -84,14 +84,15 @@ class _HomeAppbarWidgetState extends State<HomeAppbarWidget> {
                     'Worry from free deals',
                     style: TextStyles.rubik12W400DarkGrey4,
                   ),
-                  trailing: CircleAvatar(
-                    backgroundColor: AppColors.white,
-                    radius: 22,
-                    child: GestureDetector(
-                      onTap: () {
-                        context.push(const NotificationsScreen());
-                      },
-                      child: const BadgeIconWidget(),
+                  trailing: InkWell(
+                    borderRadius: BorderRadius.circular(500),
+                    onTap: () {
+                      context.push(const NotificationsScreen());
+                    },
+                    child: const CircleAvatar(
+                      backgroundColor: AppColors.white,
+                      radius: 22,
+                      child: BadgeIconWidget(),
                     ),
                   ),
                 ),
