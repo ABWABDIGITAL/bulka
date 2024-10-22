@@ -13,29 +13,26 @@ class AddCertificationFormFields extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<CertificationCubit>();
-    return Form(
-      key: cubit.certificationKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(AppStrings.certificationName.tr(),
-              style: TextStyles.rubik14W500Black),
-          vSpace(8),
-          DefaultFormField(
-            //  validator: (value)=>v,
-            controller: cubit.certificationNameController,
-            hintText: AppStrings.certificationName.tr(),
-          ),
-          vSpace(20),
-          Text(AppStrings.certificationLink.tr(),
-              style: TextStyles.rubik14W500Black),
-          vSpace(8),
-          DefaultFormField(
-            controller: cubit.certificationLinkController,
-            hintText: AppStrings.certificationLink.tr(),
-          ),
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(AppStrings.certificationName.tr(),
+            style: TextStyles.rubik14W500Black),
+        vSpace(8),
+        DefaultFormField(
+          //  validator: (value)=>v,
+          controller: cubit.certificationNameController,
+          hintText: AppStrings.certificationName.tr(),
+        ),
+        vSpace(20),
+        Text(AppStrings.certificationLink.tr(),
+            style: TextStyles.rubik14W500Black),
+        vSpace(8),
+        DefaultFormField(
+          controller: cubit.certificationLinkController,
+          hintText: AppStrings.certificationLink.tr(),
+        ),
+      ],
     );
   }
 }

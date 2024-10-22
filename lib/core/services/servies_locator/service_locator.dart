@@ -1,3 +1,4 @@
+import 'package:bulka/core/services/servies_locator/modules/about_us_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/ad_details_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/authentication_locator.dart';
 import 'package:bulka/core/services/servies_locator/modules/category_field_locator.dart';
@@ -106,5 +107,13 @@ class ServiceLocator {
     supportLocator();
 //-------------------------------CONTACT INFO---------------------------------//
     contactInfoLocator();
+//-------------------------------VERIFY ID---------------------------------//
+    verifyIdLocator();
+//-------------------------------SUPPORT---------------------------------//
+    supportLocator();
+//-------------------------------CONTACT INFO---------------------------------//
+    contactInfoLocator();
+//-------------------------------ABOUT US---------------------------------//
+    aboutUsLocator();
   }
 }

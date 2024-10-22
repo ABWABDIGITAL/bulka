@@ -42,23 +42,26 @@ class EditWorkExperienceScreen extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           padding: EdgeInsets.all(24.0.r),
-          child: Column(
-            children: [
-               EditWorkExperienceJobDropDownFormField(
-                cubit: cubit,
-              ),
-              vSpace(20),
-              const EditWorkExperienceCompanyFormField(),
-              vSpace(20),
-              const EditExperienceDateTime(),
-              vSpace(8),
-              const EditExperiencePositionCheckbox(),
-              const EditWorkExperienceDescription(),
-              vSpace(60),
-              const EditWorkExperienceSaveButton(),
-              vSpace(10),
-              EditWorkExperienceRemoveButton(workCubit: cubit)
-            ],
+          child: Form(
+            key: cubit.formKey,
+            child: Column(
+              children: [
+                 EditWorkExperienceJobDropDownFormField(
+                  cubit: cubit,
+                ),
+                vSpace(20),
+                const EditWorkExperienceCompanyFormField(),
+                vSpace(20),
+                const EditExperienceDateTime(),
+                vSpace(8),
+                const EditExperiencePositionCheckbox(),
+                const EditWorkExperienceDescription(),
+                vSpace(60),
+                const EditWorkExperienceSaveButton(),
+                vSpace(10),
+                EditWorkExperienceRemoveButton(workCubit: cubit)
+              ],
+            ),
           ),
         ),
       ),

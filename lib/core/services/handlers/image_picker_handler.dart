@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 
 class ImagePickerHandler {
-  getImages() async {
+  Future<List<File>> getImages() async {
     List<XFile> images = await ImagePicker().pickMultiImage();
     List<File> imagesList = images.map((e) => File(e.path)).toList();
     /* File pickedFile = File(
@@ -12,7 +12,7 @@ class ImagePickerHandler {
     return imagesList;
   }
 
-  getSingleImage() async {
+  Future<File> getSingleImage() async {
     File pickedFile = File(
         (await ImagePicker().pickImage(source: ImageSource.gallery))!.path);
 

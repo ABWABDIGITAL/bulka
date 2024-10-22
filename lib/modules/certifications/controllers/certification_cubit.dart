@@ -17,6 +17,7 @@ class CertificationCubit extends Cubit<CertificationState> {
   TextEditingController certificationLinkController = TextEditingController();
   TextEditingController certificationDescriptionController =
       TextEditingController();
+      TextEditingController endDateController = TextEditingController();
   DateTime? endDate;
   GlobalKey<FormState> certificationKey = GlobalKey<FormState>();
 

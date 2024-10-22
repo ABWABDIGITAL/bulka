@@ -52,7 +52,8 @@ class EditEducationSaveButton extends StatelessWidget {
         return DefaultButton(
           
           onPressed: () {
-            cubit.postEditEducation();
+           if (cubit.formKey.currentState!.validate()) 
+             { cubit.postEditEducation();}
           },
           isLoading: state is PostEducationLoading? true:false ,
          text: AppStrings.save.tr(),

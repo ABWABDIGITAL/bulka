@@ -17,7 +17,7 @@ class EducationCubit extends Cubit<EducationState> {
   EducationCubit(this._educationRepo) : super(EducationInitial());
   //------------------------------------------variables----------------------------------------//
   int? id;
-
+GlobalKey<FormState> formKey = GlobalKey<FormState>();
   bool isCurrentPosition = false;
   int? stillStudy;
   String selectedDegree = AppStrings.select.tr();
@@ -27,6 +27,10 @@ class EducationCubit extends Cubit<EducationState> {
   TextEditingController descriptionController = TextEditingController();
   DateTime? selectedStartDate;
   DateTime? selectedEndDate;
+TextEditingController startDateController =
+      TextEditingController();
+      TextEditingController endDateController =
+      TextEditingController();
 
   bool editIsCurrentPosition = false;
   int? editStillStudy;
@@ -34,6 +38,9 @@ class EducationCubit extends Cubit<EducationState> {
   int? editSelectedEducationDegreeId;
   String? editSelectedUniversity;
   int? editSelectedUniversityId;
+    TextEditingController editStartDateController =
+      TextEditingController();
+      TextEditingController editEndDateController =TextEditingController();
   TextEditingController editDescriptionController = TextEditingController();
   DateTime? editSelectedStartDate;
   DateTime? editSelectedEndDate;

@@ -70,3 +70,4 @@ final class PostWorkExperienceLoaded extends WorkExperienceState {
 //--------------------------------Work Experience current position--------------------------//
 
 final class WorkExperienceCurrentPosition extends WorkExperienceState {}
+

@@ -17,13 +17,17 @@ class WorkExperienceCubit extends Cubit<WorkExperienceState> {
       : super(WorkExperienceInitial());
   //------------------------------------------variables----------------------------------------//
   int? id;
-
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
   bool isCurrentPosition = false;
   int? stillWorkng;
   String selectedJob = AppStrings.select.tr();
   int? selectedJobId;
   TextEditingController companyController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
+  TextEditingController startDateController =
+      TextEditingController();
+      TextEditingController endDateController =
+      TextEditingController();
   DateTime? selectedStartDate;
   DateTime? selectedEndDate;
 
@@ -31,6 +35,10 @@ class WorkExperienceCubit extends Cubit<WorkExperienceState> {
   int? editStillWorkng;
   String? editSelectedJob;
   int? editSelectedJobId;
+  TextEditingController editStartDateController =
+      TextEditingController();
+      TextEditingController editEndDateController =
+      TextEditingController();
   TextEditingController editCompanyController = TextEditingController();
   TextEditingController editDescriptionController = TextEditingController();
   DateTime? editSelectedStartDate;
@@ -46,12 +54,13 @@ class WorkExperienceCubit extends Cubit<WorkExperienceState> {
     }
     emit(WorkExperienceCurrentPosition());
   }
+ 
 
   void initValues(
     BuildContext context,
     WorkExperienceEntity workExperience,
   ) {
-    id=workExperience.id;
+    id = workExperience.id;
     editCompanyController.text = workExperience.companyName;
     editDescriptionController.text = workExperience.description;
     editSelectedStartDate =
@@ -115,9 +124,10 @@ class WorkExperienceCubit extends Cubit<WorkExperienceState> {
       (jobTitles) => emit(PostWorkExperienceLoaded(jobTitles)),
     );
   }
-   void removeWorkExperience() async {
+
+  void removeWorkExperience() async {
     emit(RemoveWorkExperienceLoading());
-   
+
     final response = await _workExperienceRepo.removeWorkExperience(id!);
     response.fold(
       (error) => emit(PostWorkExperienceError(error)),

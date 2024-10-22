@@ -37,23 +37,26 @@ class EditEducationScreen extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           padding: EdgeInsets.all(24.0.r),
-          child: Column(
-            children: [
-              EditEducationDegreeDropDownFormField(cubit: cubit),
-              vSpace(20),
-              EditEducationUniversityDropDownFormField(
-                cubit: cubit,
-              ),
-              vSpace(20),
-              const EditEducationDateTime(),
-              vSpace(8),
-              const EditEducationPositionCheckbox(),
-              const EditEducationDescription(),
-              vSpace(60),
-              const EditEducationSaveButton(),
-              vSpace(10),
-               EditEducationRemoveButton(cubit: cubit,)
-            ],
+          child: Form(
+            key: cubit.formKey,
+            child: Column(
+              children: [
+                EditEducationDegreeDropDownFormField(cubit: cubit),
+                vSpace(20),
+                EditEducationUniversityDropDownFormField(
+                  cubit: cubit,
+                ),
+                vSpace(20),
+                const EditEducationDateTime(),
+                vSpace(8),
+                const EditEducationPositionCheckbox(),
+                const EditEducationDescription(),
+                vSpace(60),
+                const EditEducationSaveButton(),
+                vSpace(10),
+                 EditEducationRemoveButton(cubit: cubit,)
+              ],
+            ),
           ),
         ),
       ),
