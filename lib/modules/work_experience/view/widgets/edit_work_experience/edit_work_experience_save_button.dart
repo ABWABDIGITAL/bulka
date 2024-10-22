@@ -52,7 +52,9 @@ class EditWorkExperienceSaveButton extends StatelessWidget {
         return DefaultButton(
           
           onPressed: () {
-            cubit.postEditWorkExperience();
+            if (cubit.formKey.currentState!.validate()){
+              cubit.postEditWorkExperience();
+            }
           },
           isLoading: state is PostWorkExperienceLoading? true:false ,
          text: AppStrings.save.tr(),

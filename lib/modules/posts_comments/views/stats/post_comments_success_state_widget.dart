@@ -4,6 +4,7 @@ import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/theme/text_styles/text_styles.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/enums/enums.dart';
+import 'package:bulka/core/utils/widgets/format_date/date_format.dart';
 import 'package:bulka/core/utils/widgets/misc/default_network_image.dart';
 import 'package:bulka/core/utils/widgets/text/expandable_text.dart';
 import 'package:bulka/modules/posts_comments/data/entity/post_comments_entity.dart';
@@ -69,7 +70,7 @@ class PostCommentsSuccessStateWidget extends StatelessWidget {
                     ),
                   const SizedBox(height: 5),
                   Text(
-                    timeAgo(
+                    DateFormats.timeAgo(
                         DateTime.parse(comments[index].createdAt).toLocal()),
                     style: const TextStyle(color: Colors.grey, fontSize: 12),
                   ),
@@ -80,21 +81,6 @@ class PostCommentsSuccessStateWidget extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  String timeAgo(DateTime timestamp) {
-    final now = DateTime.now();
-    final difference = now.difference(timestamp);
-
-    if (difference.inDays > 0) {
-      return '${difference.inDays} day${difference.inDays > 1 ? 's' : ''} ago';
-    } else if (difference.inHours > 0) {
-      return '${difference.inHours} hour${difference.inHours > 1 ? 's' : ''} ago';
-    } else if (difference.inMinutes > 0) {
-      return '${difference.inMinutes} minute${difference.inMinutes > 1 ? 's' : ''} ago';
-    } else {
-      return 'Just now';
-    }
   }
 }
 

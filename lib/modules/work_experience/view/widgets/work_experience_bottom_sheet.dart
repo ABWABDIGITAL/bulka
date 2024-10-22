@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/services/servies_locator/service_locator.dart';
 import 'package:bulka/core/shared/widgets/spacing.dart';
@@ -45,8 +43,6 @@ class WorkExperienceBottomSheet extends StatelessWidget {
                 ),
                 ListTile(
                   onTap: () {
-                    log('add work experience');
-                    log('${context.read<WorkExperienceCubit>()}');
                     context.push(AddWorkExperienceScreen(
                       cubit: context.read<WorkExperienceCubit>(),
                     ));
@@ -57,7 +53,6 @@ class WorkExperienceBottomSheet extends StatelessWidget {
                   trailing: SvgPicture.asset(AssetIcons.addSvg),
                 ),
                 vSpace(16),
-                const Divider(),
                 const WorkExperiencesListView(),
               ],
             ),

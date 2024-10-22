@@ -36,21 +36,24 @@ class AddWorkExperienceScreen extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           padding: EdgeInsets.all(24.0.r),
-          child: Column(
-            children: [
-               AddWorkExperienceJobDropDownFormField(
-                 cubit: cubit
-               ),
-              vSpace(20),
-               AddWorkExperienceCompanyFormField(cubit: cubit,),
-              vSpace(20),
-               AddExperienceDateTime(cubit: cubit,),
-              vSpace(8),
-                AddExperiencePositionCheckbox(cubit: cubit,),
-                AddWorkExperienceDescription(cubit: cubit,),
-              vSpace(80),
-                AddWorkExperienceSaveButton(cubit: cubit,),
-            ],
+          child: Form(
+            key:cubit.formKey,
+            child: Column(
+              children: [
+                 AddWorkExperienceJobDropDownFormField(
+                   cubit: cubit
+                 ),
+                vSpace(20),
+                 AddWorkExperienceCompanyFormField(cubit: cubit,),
+                vSpace(20),
+                 AddExperienceDateTime(cubit: cubit,),
+                vSpace(8),
+                  AddExperiencePositionCheckbox(cubit: cubit,),
+                  AddWorkExperienceDescription(cubit: cubit,),
+                vSpace(80),
+                  AddWorkExperienceSaveButton(cubit: cubit,),
+              ],
+            ),
           ),
         ),
       ),

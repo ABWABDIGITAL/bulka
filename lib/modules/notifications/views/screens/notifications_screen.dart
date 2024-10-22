@@ -3,6 +3,7 @@ import 'package:bulka/core/shared/widgets/appbar_widget.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
 import 'package:bulka/modules/notifications/controller/cubit/notification_cubit.dart';
 import 'package:bulka/modules/notifications/controller/cubit/notification_state.dart';
+import 'package:bulka/modules/notifications/views/stats/all_notifications/all_notifications_error_state_widget.dart';
 import 'package:bulka/modules/notifications/views/stats/all_notifications/all_notifications_loading_state_widget.dart';
 import 'package:bulka/modules/notifications/views/stats/all_notifications/all_notifications_success_state_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -30,7 +31,7 @@ class NotificationsScreen extends StatelessWidget {
               return const AllNotificationsLoadingStateWidget();
             }
             if (state is GetAllNotificationsError) {
-              return Center(child: Text(state.error.message));
+              return AllNotificationsErrorStateWidget(state.error);
             }
             if (cubit.allNotificationsEntity != null ||
                 state is GetAllNotificationsSuccess) {

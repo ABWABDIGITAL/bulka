@@ -17,7 +17,7 @@ class FaqSuccessView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       separatorBuilder: (context, index) => vSpace(16),
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(24.0),
       itemCount: faqItems.length,
       itemBuilder: (context, index) {
         return Container(

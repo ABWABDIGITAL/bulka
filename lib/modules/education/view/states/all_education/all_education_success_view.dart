@@ -12,13 +12,18 @@ class AllEducationSuccessView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        itemBuilder: (context, index) => EducationListTile(
-              education: education[index],
-            ),
-        separatorBuilder: (context, index) => vSpace(8),
-        itemCount: education.length);
+    return Column(
+      children: [
+        const Divider(),
+        ListView.separated(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) => EducationListTile(
+                  education: education[index],
+                ),
+            separatorBuilder: (context, index) => vSpace(8),
+            itemCount: education.length),
+      ],
+    );
   }
 }

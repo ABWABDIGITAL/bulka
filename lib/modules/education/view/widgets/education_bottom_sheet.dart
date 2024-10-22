@@ -53,7 +53,7 @@ class EducationBottomSheet extends StatelessWidget {
                   trailing: SvgPicture.asset(AssetIcons.addSvg),
                 ),
                 vSpace(16),
-                const Divider(),
+                
                 const EducationListView(),
               ],
             ),

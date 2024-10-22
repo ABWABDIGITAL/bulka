@@ -16,9 +16,7 @@ class BadgeIconWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return badges.Badge(
-      onTap: () {
-        context.push(const NotificationsScreen());
-      },
+      onTap: () {},
       position: badges.BadgePosition.topEnd(top: -10, end: -6),
       showBadge: true,
       ignorePointer: false,

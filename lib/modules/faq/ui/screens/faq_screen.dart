@@ -14,10 +14,8 @@ class FAQScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBarWidget(
-        title: AppStrings.faqs.tr(),
-        titleStyle: TextStyles.rubik14W500Black,
-        centerTitle: true,
+      appBar: OpacityAppbarWidget(
+        title: AppStrings.faq.tr(),
       ),
       body: BlocProvider(
         create: (context) => FaqCubit(sl())..getFaqs(),

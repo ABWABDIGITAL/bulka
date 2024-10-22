@@ -22,17 +22,21 @@ class AddCertificationsScreen extends StatelessWidget {
         create: (context) => CertificationCubit(sl()),
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const AddCertificationFormFields(),
-              vSpace(20),
-              const AddCertificationEndDate(),
-              vSpace(20),
-              const AddCertificationDescription(),
-              vSpace(60),
-              const AddCertificationSaveButton()
-            ],
+          child: Form(
+
+            key: context.read<CertificationCubit>().certificationKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const AddCertificationFormFields(),
+                vSpace(20),
+                const AddCertificationEndDate(),
+                vSpace(20),
+                const AddCertificationDescription(),
+                vSpace(60),
+                const AddCertificationSaveButton()
+              ],
+            ),
           ),
         ),
       ),

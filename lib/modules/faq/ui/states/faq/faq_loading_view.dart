@@ -11,6 +11,7 @@ class FaqLoadingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       shrinkWrap: true,
+      padding: const EdgeInsets.all(24),
       itemBuilder: (context, index) => ShimmerContainerWidget(
         width: MediaQuery.sizeOf(context).width,
         height: 100,

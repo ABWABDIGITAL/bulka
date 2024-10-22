@@ -33,25 +33,28 @@ class AddEducationScreen extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           padding: EdgeInsets.all(24.0.r),
-          child: Column(
-            children: [
-              AddEducationDegreeDropDownFormField(
-                cubit: cubit,
-              ),
-              vSpace(20),
-              AddEducationUniversityDropDownFormField(
-                cubit: cubit,
-              ),
-              vSpace(20),
-              AddEducationDateTime(
-                cubit: cubit,
-              ),
-              vSpace(8),
-              AddEducationPositionCheckbox(cubit: cubit),
-              AddEducationDescription(cubit: cubit),
-              vSpace(80),
-              AddEducationSaveButton(cubit: cubit),
-            ],
+          child: Form(
+            key: cubit.formKey,
+            child: Column(
+              children: [
+                AddEducationDegreeDropDownFormField(
+                  cubit: cubit,
+                ),
+                vSpace(20),
+                AddEducationUniversityDropDownFormField(
+                  cubit: cubit,
+                ),
+                vSpace(20),
+                AddEducationDateTime(
+                  cubit: cubit,
+                ),
+                vSpace(8),
+                AddEducationPositionCheckbox(cubit: cubit),
+                AddEducationDescription(cubit: cubit),
+                vSpace(80),
+                AddEducationSaveButton(cubit: cubit),
+              ],
+            ),
           ),
         ),
       ),

@@ -14,6 +14,7 @@ class MyProfileInfoModel extends MyProfileInfoEntity {
     required super.isNotified,
     required super.avatar,
     required super.companyData,
+    required super.unreadNotifications,
   });
 
   factory MyProfileInfoModel.fromJson(Map<String, dynamic> json) {
@@ -31,6 +32,7 @@ class MyProfileInfoModel extends MyProfileInfoEntity {
       companyData: json['company_data'] != null
           ? CompanyDataModel.fromJson(json['company_data'])
           : null,
+      unreadNotifications: json['unread_notifications'],
     );
   }
   static Map<String, dynamic> toJson(MyProfileInfoEntity info) {

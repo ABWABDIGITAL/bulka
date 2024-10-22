@@ -1,10 +1,9 @@
 part of 'profile_change_password_cubit.dart';
 
-sealed class ProfileChangePasswordState extends Equatable {
+sealed class ProfileChangePasswordState  {
   const ProfileChangePasswordState();
 
-  @override
-  List<Object> get props => [];
+ 
 }
 
 final class ProfileChangePasswordInitial extends ProfileChangePasswordState {}
@@ -16,8 +15,7 @@ final class ProfileChangePasswordLoaded extends ProfileChangePasswordState {
 
   const ProfileChangePasswordLoaded(this.message);
 
-  @override
-  List<Object> get props => [message];
+  
 }
 
 final class ProfileChangePasswordError extends ProfileChangePasswordState {
@@ -25,8 +23,7 @@ final class ProfileChangePasswordError extends ProfileChangePasswordState {
 
   const ProfileChangePasswordError(this.error);
 
-  @override
-  List<Object> get props => [error];
+
 }
 
 final class ProfileOldPasswordStatus extends ProfileChangePasswordState {}
