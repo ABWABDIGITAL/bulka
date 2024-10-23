@@ -5,22 +5,22 @@ import 'package:bulka/modules/chats/specific_chat/data/params/get_specific_chat_
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class GetSpecificChatErrorWidget extends StatelessWidget {
-  const GetSpecificChatErrorWidget({
-    super.key,
-    required this.error,
-    required this.params,
-  });
-  final ApiErrorEntity error;
-  final GetSpecificChatParams params;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: ErrorScreen(
-      error: error,
-      onPressed: () {
-        context.read<SpecificChatCubit>().getSpecificChatStatesHandled(params);
-      },
-    ));
-  }
-}
+// class GetSpecificChatErrorWidget extends StatelessWidget {
+//   const GetSpecificChatErrorWidget({
+//     super.key,
+//     required this.error,
+//     required this.params,
+//   });
+//   final ApiErrorEntity error;
+//   final GetSpecificChatParams params;
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//         body: ErrorScreen(
+//       error: error,
+//       onPressed: () {
+//         context.read<SpecificChatCubit>().getSpecificChatStatesHandled(params);
+//       },
+//     ));
+//   }
+// }

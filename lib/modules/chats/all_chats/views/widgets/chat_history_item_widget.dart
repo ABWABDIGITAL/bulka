@@ -2,7 +2,9 @@ import 'dart:convert';
 
 import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
+import 'package:bulka/core/utils/extensions/extensions.dart';
 import 'package:bulka/core/utils/widgets/format_date/date_format.dart';
+import 'package:bulka/modules/chats/specific_chat/view/screens/specific_chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -31,6 +33,9 @@ class ChatHistoryItemWidget extends StatelessWidget {
           color: unread > 0 ? const Color(0xFFF5F7FC) : AppColors.white,
           padding: EdgeInsets.zero,
           child: ListTile(
+            onTap: () {
+              context.push(SpecificChatScreen());
+            },
             leading: avatarUrl == null
                 ? CircleAvatar(
                     backgroundColor: AppColors.white,

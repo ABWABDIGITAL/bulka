@@ -10,11 +10,11 @@ class ChatHistoryModel extends ChatHistoryEntity {
     required super.paggination,
   });
 
-  factory ChatHistoryModel.fromJson(Map<String, dynamic> json, int myId) {
+  factory ChatHistoryModel.fromJson(Map<String, dynamic> json) {
     return ChatHistoryModel(
       data: checkFromArray(json['data'])
           ? (json['data'] as List)
-              .map((e) => ChatHistoryDataModel.fromJson(e, myId))
+              .map((e) => ChatHistoryDataModel.fromJson(e))
               .toList()
           : [],
       paggination: PagginationModel.fromJson(json['meta']),

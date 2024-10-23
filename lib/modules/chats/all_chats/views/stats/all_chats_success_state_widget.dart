@@ -3,6 +3,7 @@
 import 'package:bulka/core/assets/asset_icons.dart';
 import 'package:bulka/core/utils/constant/app_colors.dart';
 import 'package:bulka/core/utils/constant/app_strings.dart';
+import 'package:bulka/core/utils/enums/enums.dart';
 import 'package:bulka/modules/chats/all_chats/controller/cubit/all_chats_cubit.dart';
 import 'package:bulka/modules/chats/all_chats/controller/cubit/all_chats_state.dart';
 import 'package:bulka/modules/chats/all_chats/views/widgets/chat_history_item_widget.dart';
@@ -33,6 +34,9 @@ class AllChatsSuccessStateWidget extends StatelessWidget {
                   FilterHistoryChipWidget(
                     avatar: SvgPicture.asset(AssetIcons.startInCircleSvg),
                     label: AppStrings.all.tr(),
+                    isSelected: cubit.keyWords == ChatHistoryKeywords.all
+                        ? true
+                        : false,
                   ),
                   FilterHistoryChipWidget(
                     avatar: SvgPicture.asset(
@@ -40,6 +44,9 @@ class AllChatsSuccessStateWidget extends StatelessWidget {
                       color: AppColors.yellow,
                     ),
                     label: AppStrings.important.tr(),
+                    isSelected: cubit.keyWords == ChatHistoryKeywords.important
+                        ? true
+                        : false,
                   ),
                   FilterHistoryChipWidget(
                     avatar: SvgPicture.asset(
@@ -47,6 +54,9 @@ class AllChatsSuccessStateWidget extends StatelessWidget {
                       color: AppColors.orange,
                     ),
                     label: AppStrings.unreadChat.tr(),
+                    isSelected: cubit.keyWords == ChatHistoryKeywords.unread
+                        ? true
+                        : false,
                   ),
                 ],
               ),
@@ -61,11 +71,11 @@ class AllChatsSuccessStateWidget extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final chat = cubit.chatHistoryEntity!.data[index];
                   return ChatHistoryItemWidget(
-                    name: chat.otherSideInChatEntity.user.firstName ?? "",
+                    name: chat.otherSideInChatEntity.name,
                     message: chat.lastMessage,
                     time: chat.lastMessageTime,
                     unread: chat.unreadMessagesCount,
-                    avatarUrl: chat.otherSideInChatEntity.user.imageUrl,
+                    avatarUrl: chat.otherSideInChatEntity.avatar,
                   );
                 },
                 itemCount: cubit.chatHistoryEntity!.data.length,

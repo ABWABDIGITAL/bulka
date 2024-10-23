@@ -8,6 +8,9 @@ sealed class SpecificChatState {
 final class SpecificChatInitial extends SpecificChatState {}
 
 final class UpdateChatUi extends SpecificChatState {}
+final class ToggleAttachmentActions extends SpecificChatState {}
+
+final class AddMessageSuccess extends SpecificChatState {}
 
 final class UpdateChatFormField extends SpecificChatState {}
 

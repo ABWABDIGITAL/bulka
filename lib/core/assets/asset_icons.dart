@@ -23,7 +23,6 @@ class AssetIcons {
   static const String smsSvg = 'assets/icons/sms_svg.svg';
   static const String postSvg = 'assets/icons/post.svg';
   static const String homeSvg = 'assets/icons/home.svg';
-  static const String profileeSvg = 'assets/icons/profile.svg';
   static const String messagesSvg = 'assets/icons/messages.svg';
   static const String chatSvg = 'assets/icons/Chat.svg';
   static const String bellSvg = 'assets/icons/bell.svg';
@@ -40,12 +39,10 @@ class AssetIcons {
   static const String unlockSvg = 'assets/icons/Unlock.svg';
   static const String scanSvg = 'assets/icons/scan.svg';
   static const String heartSvg = 'assets/icons/Heart.svg';
-  static const String imageSvg = 'assets/icons/image.svg';
   static const String bookMarkSvg = 'assets/icons/book_mark.svg';
   static const String shareSvg = 'assets/icons/share.svg';
   static const String verifySvg = 'assets/icons/verify.svg';
   static const String rateSvg = 'assets/icons/rate.svg';
-  static const String locationSvg = 'assets/icons/location.svg';
   static const String fuelSvg = 'assets/icons/fuel.svg';
   static const String checkBlue = 'assets/icons/check_blue.png';
   static const String boxTickCompeleted =
@@ -79,4 +76,13 @@ class AssetIcons {
   static const String settingsSvg = 'assets/icons/setting.svg';
   static const String startInCircle = 'assets/icons/star_in_circle.png';
   static const String startInCircleSvg = 'assets/icons/star_in_circle.svg';
+  static const String sendSvg = 'assets/icons/send.svg';
+  static const String imageSvg = 'assets/icons/image.svg';
+  static const String videoSquare = 'assets/icons/video_square.svg';
+  static const String locationSvg = 'assets/icons/location.svg';
+  static const String profileeSvg = 'assets/icons/profile.svg';
+  static const String documentSvg = 'assets/icons/document.svg';
+  static const String headphoneSvg = 'assets/icons/headphone.svg';
+  static const String linkSvg = 'assets/icons/link.svg';
+  static const String cameraSvg = 'assets/icons/Camera.svg';
 }

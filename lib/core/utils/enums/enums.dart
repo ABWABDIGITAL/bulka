@@ -46,8 +46,10 @@ enum ReactionTypes { like, love, sad, idea, angry, none }
 
 enum NotificationTypes { approved_ad_by_admin, none }
 
-enum MessageTypes { image }
-
 enum ChatHistoryTypes { all, buying, selling }
 
 enum ChatHistoryKeywords { all, important, unread }
+
+enum ChatClientSideRole { mySide, otherSide }
+
+enum ChatMessageTypes { text, video, image, audio, file, location, contact }

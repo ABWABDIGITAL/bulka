@@ -27,10 +27,10 @@ class AllChatRepo {
       }
       final response = await DioHelper.get(
         ApiConstance.allChats,
-        queries: params?.returnedMap(),
+        // queries: params?.returnedMap(),
       );
 
-      return Right(ChatHistoryModel.fromJson(response.data, myId));
+      return Right(ChatHistoryModel.fromJson(response.data));
     } catch (error) {
       return Left(ErrorHandler.handleError(error));
     }

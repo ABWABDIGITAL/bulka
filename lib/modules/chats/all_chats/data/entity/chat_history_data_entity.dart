@@ -1,5 +1,4 @@
-import 'package:bulka/modules/chats/specific_chat/data/entity/my_side_in_chat_entity.dart';
-import 'package:bulka/modules/chats/specific_chat/data/entity/other_side_in_chat_entity.dart';
+import 'package:bulka/modules/chats/all_chats/data/entity/chat_client_entity.dart';
 import 'package:equatable/equatable.dart';
 
 class ChatHistoryDataEntity extends Equatable {
@@ -12,8 +11,8 @@ class ChatHistoryDataEntity extends Equatable {
     required this.unreadMessagesCount,
   });
   final int id;
-  final MySideInChatEntity mySideInChatEntity;
-  final OtherSideInChatEntity otherSideInChatEntity;
+  final ChatClientEntity mySideInChatEntity;
+  final ChatClientEntity otherSideInChatEntity;
   final String lastMessage;
   final String lastMessageTime;
   final int unreadMessagesCount;

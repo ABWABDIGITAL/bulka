@@ -25,18 +25,18 @@ class MyProfileInfoCubit extends Cubit<MyProfileInfoState> {
   Future<void> saveMyProfileInfo(MyProfileInfoEntity info) async {
     final Map<String, dynamic> json = MyProfileInfoModel.toJson(info);
     try {
-      await SharedPrefHelper.setSecuredString(
+      await SharedPrefHelper.setString(
           SharedPrefKeys.profileInfo, jsonEncode(json));
-      _profileEntity = await getMyProfileInfo();
+      _profileEntity = getMyProfileInfo();
     } catch (e) {
       debugPrint(e.toString());
     }
   }
 
-  Future<MyProfileInfoEntity> getMyProfileInfo() async {
+  MyProfileInfoEntity getMyProfileInfo() {
     try {
       final String? profileInfo =
-          await SharedPrefHelper.getSecuredString(SharedPrefKeys.profileInfo);
+          SharedPrefHelper.getString(SharedPrefKeys.profileInfo);
       final Map<String, dynamic>? json =
           profileInfo != null ? jsonDecode(profileInfo) : null;
       return json != null ? MyProfileInfoModel.fromJson(json) : visitorData();
@@ -64,7 +64,7 @@ class MyProfileInfoCubit extends Cubit<MyProfileInfoState> {
 
   Future<void> removeProfileData() async {
     try {
-      await SharedPrefHelper.removeSecuredString(SharedPrefKeys.profileInfo);
+      await SharedPrefHelper.removeString(SharedPrefKeys.profileInfo);
     } catch (e) {
       debugPrint(e.toString());
     }
@@ -72,7 +72,7 @@ class MyProfileInfoCubit extends Cubit<MyProfileInfoState> {
 
 //----------------------------------REQUEST-----------------------------------//
   Future<void> profileStatesHandled() async {
-    await getMyProfileInfo();
+    getMyProfileInfo();
     emit(const MyProfileInfoLoading());
     final response = await _myProfileInfoRepo.profile();
     response.fold((failure) {

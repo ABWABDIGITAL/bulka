@@ -1,8 +1,7 @@
 import 'package:bulka/core/utils/enums/enums.dart';
 import 'package:bulka/core/utils/home_utilites.dart';
 import 'package:bulka/modules/chats/all_chats/data/entity/chat_history_data_entity.dart';
-import 'package:bulka/modules/chats/specific_chat/data/model/my_side_in_chat_model.dart';
-import 'package:bulka/modules/chats/specific_chat/data/model/other_side_in_chat_model.dart';
+import 'package:bulka/modules/chats/all_chats/data/model/chat_client_model.dart';
 
 class ChatHistoryDataModel extends ChatHistoryDataEntity {
   const ChatHistoryDataModel({
@@ -14,7 +13,8 @@ class ChatHistoryDataModel extends ChatHistoryDataEntity {
     required super.unreadMessagesCount,
   });
 
-  factory ChatHistoryDataModel.fromJson(Map<String, dynamic> json, int myId) {
+  factory ChatHistoryDataModel.fromJson(Map<String, dynamic> json) {
+    final int? myId = getUserIdFromToken();
     final Map<String, dynamic> mySideInChatEntity =
         myId == json['sender']['id'] ? json['sender'] : json['receiver'];
     final Map<String, dynamic> otherSideInChatEntity =
@@ -22,12 +22,14 @@ class ChatHistoryDataModel extends ChatHistoryDataEntity {
 
     final String lastMessage = checkFromArray(json['messages']['data'])
         ? ((json['messages']['data'] as List).last['message_type'] ==
-                MessageTypes.image)
+                ChatMessageTypes.image)
             ? "Image message sent"
             : (json['messages']['data'] as List).last['message']
         : "";
 
-    final String lastMessageTime = DateTime.now().toString();
+    final String lastMessageTime = checkFromArray(json['messages']['data'])
+        ? (json['messages']['data'] as List).last['created_at']
+        : DateTime.now().toString();
 
     int unreadCount = 0;
     if (checkFromArray(json['messages']['data'])) {
@@ -40,9 +42,8 @@ class ChatHistoryDataModel extends ChatHistoryDataEntity {
 
     return ChatHistoryDataModel(
       id: json['id'],
-      mySideInChatEntity: MySideInChatModel.fromJson(mySideInChatEntity),
-      otherSideInChatEntity:
-          OtherSideInChatModel.fromJson(otherSideInChatEntity),
+      mySideInChatEntity: ChatClientModel.fromJson(mySideInChatEntity),
+      otherSideInChatEntity: ChatClientModel.fromJson(otherSideInChatEntity),
       lastMessage: lastMessage,
       lastMessageTime: lastMessageTime,
       unreadMessagesCount: unreadCount,

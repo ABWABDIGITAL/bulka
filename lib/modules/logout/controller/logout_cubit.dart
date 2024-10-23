@@ -27,7 +27,7 @@ class LogoutCubit extends Cubit<LogoutState> {
             SharedPrefHelper.getString(SharedPrefKeys.userToken).toString(),
         type: Platform.operatingSystem);
     final result = await _logoutRepo.logout(params);
-    SharedPrefHelper.removeData(SharedPrefKeys.userToken);
+    await SharedPrefHelper.removeString(SharedPrefKeys.userToken);
     // SharedPrefHelper.setData(key: SharedPrefKeys., value: false);
     // SharedPrefHelper.removeData(SharedKeys().userType);
     result.fold(
@@ -35,9 +35,7 @@ class LogoutCubit extends Cubit<LogoutState> {
         emit(LogoutError(error));
       },
       (success) {
-        emit(
-          LogoutLoaded(success),
-        );
+        emit(LogoutLoaded(success));
       },
     );
   }

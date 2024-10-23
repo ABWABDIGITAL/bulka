@@ -10,5 +10,5 @@ double appbarheight = 56.h;
 bool isScreenSmall = true;
 LanguageConfig? currentLanguage;
 TokenEntity? token;
- OffersEntity? cachedOffer;
+OffersEntity? cachedOffer;
 // MyProfileInfoEntity? myProfileInfo;

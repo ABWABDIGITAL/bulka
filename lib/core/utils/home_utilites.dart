@@ -44,7 +44,7 @@ bool checkFromMap(dynamic myMap) {
 
 Future<void> saveToken(TokenEntity tokenEntity) async {
   try {
-    await SharedPrefHelper.setSecuredString(
+    await SharedPrefHelper.setString(
         SharedPrefKeys.userToken, jsonEncode(tokenEntity.toJson()));
     await getToken();
   } catch (e) {
@@ -54,7 +54,7 @@ Future<void> saveToken(TokenEntity tokenEntity) async {
 
 Future<void> saveOffer(OffersEntity offerEntity) async {
   try {
-    await SharedPrefHelper.setSecuredString(
+    await SharedPrefHelper.setString(
         SharedPrefKeys.claimOffer, jsonEncode(offerEntity.toJson()));
     await getOffer();
   } catch (e) {
@@ -68,10 +68,10 @@ int? getUserIdFromToken() {
   return int.parse(payload['sub']);
 }
 
-Future<TokenEntity?> getToken() async {
+TokenEntity? getToken() {
   try {
     final String? userToken =
-        await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
+        SharedPrefHelper.getString(SharedPrefKeys.userToken);
     token =
         userToken != null ? TokenModel.fromJson(jsonDecode(userToken)) : null;
     return token;
@@ -81,10 +81,9 @@ Future<TokenEntity?> getToken() async {
   return null;
 }
 
-Future<OffersEntity?> getOffer() async {
+OffersEntity? getOffer() {
   try {
-    final String? offer =
-        await SharedPrefHelper.getSecuredString(SharedPrefKeys.claimOffer);
+    final String? offer = SharedPrefHelper.getString(SharedPrefKeys.claimOffer);
     cachedOffer =
         offer != null ? OffersModel.fromJson(jsonDecode(offer)) : null;
     return cachedOffer;
@@ -112,7 +111,7 @@ String getSuitableImageForScreen(final Map<String, dynamic> photos) {
 
 Future<bool> clearAllDataToLogout() async {
   try {
-    await SharedPrefHelper.clearAllSecuredData();
+    await SharedPrefHelper.clearAllData();
     return true;
   } catch (e) {
     debugPrint(e.toString());

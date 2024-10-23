@@ -1,28 +1,13 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPrefHelper extends Equatable {
   // private constructor as I don't want to allow creating an instance of this class itself.
   const SharedPrefHelper._();
   static late SharedPreferences _sharedPreferences;
-  static const FlutterSecureStorage _flutterSecureStorage =
-      FlutterSecureStorage();
   static Future init() async {
     _sharedPreferences = await SharedPreferences.getInstance();
-  }
-
-  /// Removes a value from SharedPreferences with given [key].
-  static removeData(String key) async {
-    debugPrint('SharedPrefHelper : data with key : $key has been removed');
-    await _sharedPreferences.remove(key);
-  }
-
-  /// Removes all keys and values in the SharedPreferences
-  static clearAllData() async {
-    debugPrint('SharedPrefHelper : all data has been cleared');
-    await _sharedPreferences.clear();
   }
 
   /// Saves a [value] with a [key] in the SharedPreferences.
@@ -61,42 +46,64 @@ class SharedPrefHelper extends Equatable {
   }
 
   /// Gets an String value from SharedPreferences with given [key].
-  static Future<String?> getString(String key) async {
-    debugPrint('SharedPrefHelper : getString with key : $key');
-    return _sharedPreferences.getString(key);
-  }
-
-  /// Gets an String value from SharedPreferences with given [key].
   static getData(String key) async {
     debugPrint('SharedPrefHelper : getObject with key : $key');
 
     return _sharedPreferences.get(key);
   }
 
-  /// Saves a [value] with a [key] in the FlutterSecureStorage.
-  static Future<void> setSecuredString(String key, String value) async {
+  static Future<void> setString(String key, String value) async {
     debugPrint(
-        "FlutterSecureStorage : setSecuredString with key : $key and value : $value");
-    await _flutterSecureStorage.write(key: key, value: value);
+        "FlutterSharedPref : setString with key : $key and value : $value");
+    await _sharedPreferences.setString(key, value);
   }
+
+  static String? getString(String key) {
+    debugPrint('FlutterSharedPref : getString with key :$key');
+    return _sharedPreferences.getString(key);
+  }
+
+  static Future<bool> removeString(String key) async {
+    debugPrint('FlutterSharedPref : removeString with key :$key');
+    return await _sharedPreferences.remove(key);
+  }
+
+  /// Removes all keys and values in the SharedPreferences
+  static clearAllData() async {
+    debugPrint('SharedPrefHelper : all data has been cleared');
+    await _sharedPreferences.clear();
+  }
+
+  /// Gets an String value from SharedPreferences with given [key].
+  // static Future<String?> getString(String key) async {
+  //   debugPrint('SharedPrefHelper : getString with key : $key');
+  //   return _sharedPreferences.getString(key);
+  // }
+
+  /// Saves a [value] with a [key] in the FlutterSecureStorage.
+  // static Future<void> setSecuredString(String key, String value) async {
+  //   debugPrint(
+  //       "FlutterSecureStorage : setSecuredString with key : $key and value : $value");
+  //   await _flutterSecureStorage.write(key: key, value: value);
+  // }
 
   /// Gets an String value from FlutterSecureStorage with given [key].
-  static Future<String?> getSecuredString(String key) async {
-    debugPrint('FlutterSecureStorage : getSecuredString with key :');
-    return await _flutterSecureStorage.read(key: key);
-  }
+  // static Future<String?> getSecuredString(String key) async {
+  //   debugPrint('FlutterSecureStorage : getSecuredString with key :');
+  //   return await _flutterSecureStorage.read(key: key);
+  // }
 
-  static Future<void> removeSecuredString(String key) async {
-    debugPrint('FlutterSecureStorage : removeSecuredString with key :');
-    return await _flutterSecureStorage.delete(key: key);
-  }
+  // static Future<void> removeSecuredString(String key) async {
+  //   debugPrint('FlutterSecureStorage : removeSecuredString with key :');
+  //   return await _flutterSecureStorage.delete(key: key);
+  // }
 
   /// Removes all keys and values in the FlutterSecureStorage
-  static Future<void> clearAllSecuredData() async {
-    debugPrint('FlutterSecureStorage : all data has been cleared');
-    await _flutterSecureStorage.deleteAll();
-  }
+  // static Future<void> clearAllSecuredData() async {
+  //   debugPrint('FlutterSecureStorage : all data has been cleared');
+  //   await _flutterSecureStorage.deleteAll();
+  // }
 
   @override
-  List<Object?> get props => [_sharedPreferences, _flutterSecureStorage];
+  List<Object?> get props => [_sharedPreferences];
 }

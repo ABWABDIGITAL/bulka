@@ -182,4 +182,25 @@ class EnumSwitchReturn {
         return NotificationTypes.none;
     }
   }
+
+  static ChatMessageTypes getMessageType(String messageType) {
+    switch (messageType) {
+      case 'image':
+        return ChatMessageTypes.image;
+      case 'text':
+        return ChatMessageTypes.text;
+      case 'video':
+        return ChatMessageTypes.video;
+      case 'audio':
+        return ChatMessageTypes.audio;
+      case 'file':
+        return ChatMessageTypes.file;
+      case 'location':
+        return ChatMessageTypes.location;
+      case 'contact':
+        return ChatMessageTypes.contact;
+      default:
+        return ChatMessageTypes.contact;
+    }
+  }
 }
